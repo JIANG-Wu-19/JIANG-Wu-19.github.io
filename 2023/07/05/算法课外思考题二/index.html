@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="算法课外思考题一, J&amp;Ocean BLOG">
+    <meta name="keywords" content="算法课外思考题二, J&amp;Ocean BLOG">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>算法课外思考题一 | J&amp;Ocean BLOG</title>
+    <title>算法课外思考题二 | J&amp;Ocean BLOG</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -235,12 +235,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">算法课外思考题一</h1>
+                    <h1 class="description center-align post-title">算法课外思考题二</h1>
                 </div>
             </div>
         </div>
@@ -364,10 +364,6 @@
                                 <span class="chip bg-color">栈</span>
                             </a>
                         
-                            <a href="/tags/%E5%86%92%E6%B3%A1/">
-                                <span class="chip bg-color">冒泡</span>
-                            </a>
-                        
                     </div>
                     
                 </div>
@@ -398,7 +394,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.5k
+                    1.4k
                 </div>
                 
 
@@ -423,68 +419,119 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>设计一栈结构，使得出栈、入栈以及求栈的最小值均能在$O (1)$时间内完成</p>
-<h3 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h3><p><strong>针对出入栈</strong>，由数据结构的顺序栈知识可以得知，出入栈的时间复杂度都是$O (1)$，因此对于出入栈只需要普通栈就可以实现问题要求；</p>
-<p><strong>针对求栈的最小值</strong>，使用遍历法求栈最小值的时间复杂度为$O (n)$，因此需要设计一种特殊栈，通过记录栈中的最小值，在求栈的最小值时只需要将最小值输出即可，其时间复杂度为$O (1)$。</p>
-<h3 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h3><p>先构建顺序栈的数据结构</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">typedef struct&#123;&#x2F;&#x2F;顺序栈
-    SElemType* base;
-    SElemtyoe* top;
-    int stacksize;
-&#125;SqStack;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                <h2 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>给出不同策略求两个整数的最大公约数GCD(m,n)；并进行分析</p>
+<h3 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h3><p>本问题求两数的最大公约数，第一个想法是<strong>暴力枚举法</strong>；</p>
+<p>在数学上，能够证明：$m、n\neq0,GCD(m,n)&#x3D;GCD(n,m<del>mod</del>n)$，递归出最大公约数，也就是<strong>欧几里得算法</strong>，上述等式是欧几里得算法的数学基础；</p>
+<p>对于两数的最大公约数$GCD(m,n)$，有：</p>
+<p>$m&lt;n,GCD(m,n)&#x3D;GCD(n,m)$</p>
+<p>$ m<del>is ~even、n</del>is~even,GCD(m,n)&#x3D;2*GCD(m&#x2F;2,n&#x2F;2)$</p>
+<p>$ m<del>is ~even、n</del>is~odd,GCD(m,n)&#x3D;GCD(m&#x2F;2,n)$</p>
+<p>$ m<del>is ~odd、n</del>is~even,GCD(m,n)&#x3D;GCD(m,n&#x2F;2)$</p>
+<p>$ m<del>is ~odd、n</del>is~odd,GCD(m,n)&#x3D;GCD(n,m-n)$</p>
+<p>基于上述理论进行递归，也就是<strong>二进制算法</strong>。</p>
+<h3 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h3><p>对于<strong>暴力枚举法</strong>，确定两数中最小值，从1~最小值进行循环，使用一个变量更新能被共同整除的数，循环结束时，返回变量的最新值；</p>
+<p>对于<strong>欧几里得算法</strong>，编写GCD函数，两数都不为零时，按照规则递归调用GCD函数；</p>
+<p>对于<strong>二进制算法</strong>，编写GCD函数，对m、n进行上述规则判断，然后进行递归调用GCD函数。</p>
+<h3 id="算法代码与分析"><a href="#算法代码与分析" class="headerlink" title="算法代码与分析"></a>算法代码与分析</h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;iostream&gt;
+using namespace std;
 
-<p>然后构建一个特殊的辅助栈，包括存储所有数据的原栈和存储最小值序列的新栈</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">typedef struct&#123;&#x2F;&#x2F;记录最小值的辅助栈
-    SqStack Data;
-    Sqstack MinData;
-&#125;MinStack;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<ul>
-<li><p>入栈操作</p>
-<p>对于第一个元素，一定会进入两个栈；</p>
-<p>对于后面的每一元素一定会进入Data栈，如果该元素&lt;&#x3D;Mindata栈的栈顶元素，则该元素进入Mindata栈，否则不进入</p>
-</li>
-</ul>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void MinPush(Minstack* minstack, SElemType e) &#123;
-	Push(&amp;minstack-&gt;Data, e);
-	if (minstack-&gt;MinData.base&#x3D;&#x3D;minstack-&gt;MinData.top) &#123;
-		Push(&amp;minstack-&gt;MinData, e);
-	&#125;
-	else &#123;
-		if (e &lt;&#x3D; GetTop(minstack-&gt;MinData)) &#123;
-			Push(&amp;minstack-&gt;MinData, e);
+&#x2F;&#x2F;暴力枚举法
+int Min(int m, int n);
+int GCD1(int m, int n) &#123;
+	int num &#x3D; 0;
+	for (int i &#x3D; 1; i &lt;&#x3D; Min(m, n); i++) &#123;
+		if (m % i &#x3D;&#x3D; 0 &amp;&amp; n % i &#x3D;&#x3D; 0) &#123;
+			num &#x3D; i;
 		&#125;
 	&#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+	return num;
+&#125;
+int Min(int m, int n) &#123;
+	return m &gt; n ? n : m;
+&#125;
 
-<ul>
-<li><p>出栈操作</p>
-<p>对于某一元素的出栈，Data栈一定会执行出栈操作，如果Data栈的栈顶元素和MinData栈的栈顶元素相同，则MinData栈也执行出栈操作</p>
-</li>
-</ul>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void MinPop(Minstack* minstack, SElemType* e) &#123;
-	if (GetTop(minstack-&gt;Data) &#x3D;&#x3D; GetTop(minstack-&gt;MinData)) &#123;
-		Pop(&amp;minstack-&gt;Data, e);
-		Pop(&amp;minstack-&gt;MinData, e);
-		return;
+&#x2F;&#x2F;欧几里得算法
+int GCD2(int m, int n) &#123;
+	if (n &#x3D;&#x3D; 0) &#123;
+		return m;
 	&#125;
-	Pop(&amp;minstack-&gt;Data, e);
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+	return GCD2(n, m % n);
+&#125;
 
-<ul>
-<li><p>求栈最小值</p>
-<p>最小值已经存储在MinData栈中，因此只需要获取MinData栈的栈顶元素就可以得到栈的最小值</p>
-</li>
-</ul>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">SElemType GetMin(Minstack* minstack) &#123;
-	return GetTop(minstack-&gt;MinData);
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+&#x2F;&#x2F;二进制算法
+int GCD3(int m, int n) &#123;
+	if (m &#x3D;&#x3D; 0) &#123;
+		return n;
+	&#125;
+	if (n &#x3D;&#x3D; 0) &#123;
+		return m;
+	&#125;
 
-<h3 id="算法代码与分析"><a href="#算法代码与分析" class="headerlink" title="算法代码与分析"></a>算法代码与分析</h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;iostream&gt;
+	if (m % 2 &#x3D;&#x3D; 0 &amp;&amp; n % 2 &#x3D;&#x3D; 0) &#123;
+		return 2 * GCD3(m &#x2F; 2, n &#x2F; 2);
+	&#125;
+	else if (m % 2 &#x3D;&#x3D; 0 &amp;&amp; n % 2 &#x3D;&#x3D; 1) &#123;
+		return GCD3(m &#x2F; 2, n);
+	&#125;
+	else if (m % 2 &#x3D;&#x3D; 1 &amp;&amp; n % 2 &#x3D;&#x3D; 0) &#123;
+		return GCD3(m, n &#x2F; 2);
+	&#125;
+	else &#123;
+		return GCD3(Min(m, n), abs(m - n));
+	&#125;
+&#125;
+int main() &#123;
+
+	int m &#x3D; 197456;
+	int n &#x3D; 400000;
+	cout &lt;&lt; GCD1(m, n) &lt;&lt; endl;
+	cout &lt;&lt; GCD2(m, n) &lt;&lt; endl;
+	cout &lt;&lt; GCD3(m, n) &lt;&lt; endl;
+	system(&quot;pause&quot;);
+	return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/imgs/sikao2/1.png" alt="image-20230305174550409"></p>
+<p>后续查资料得知，GCD3函数并没有体现真正的二进制算法，没有避免大量取模运算，改进如下：</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">int GCD3(int m,int n)&#123;
+    if(m&#x3D;&#x3D;0)&#123;
+        return n;
+    &#125;
+    if(n&#x3D;&#x3D;0)&#123;
+        return m;
+    &#125;
+    
+    if((m&amp;1)&#x3D;&#x3D;0&amp;&amp;(n&amp;1)&#x3D;&#x3D;0)&#123;
+        return GCD3(m&gt;&gt;1,n&gt;&gt;1)&lt;&lt;1;
+    &#125;
+    else if((m&amp;1)&#x3D;&#x3D;0&amp;&amp;(n&amp;1)!&#x3D;0)&#123;
+        return GCD3(m&gt;&gt;1,n);
+    &#125;
+    else if((m&amp;1)!&#x3D;0&amp;&amp;(n&amp;1)&#x3D;&#x3D;0)&#123;
+        return GCD3(m,n&gt;&gt;1);
+    &#125;
+    else&#123;
+        return GCD3(Min(m,n),abs(m-n));
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>对于数值较小的两数来说，三种方法的速度相差不大，默认$m&gt;n$</p>
+<p>则对于枚举法，其时间复杂度是$O(n)$；</p>
+<p>对于欧几里得算法，其时间复杂度是$O(log_2n)$；</p>
+<p>对于二进制算法，其时间复杂度是$O(log_2(m+n))$；</p>
+<p>所以，对于大数来说，后两种算法的处理速度更快；针对后两种算法，改进的二进制算法避免了大量的取余运算。</p>
+<h2 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h2><h3 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h3><p>给出方案返回一可以动态变化的序列（可增可减）中的最大值，并对你的方案进行分析</p>
+<h3 id="问题分析-1"><a href="#问题分析-1" class="headerlink" title="问题分析"></a>问题分析</h3><p>本序列是动态变化的，可以采用顺序栈的数据结构，对于求取序列最大值，采用辅助栈的方式处理；</p>
+<h3 id="算法思路-1"><a href="#算法思路-1" class="headerlink" title="算法思路"></a>算法思路</h3><p>建立两个栈，一个栈存取元素，另一个栈存最大元素；</p>
+<h3 id="算法代码与分析-1"><a href="#算法代码与分析-1" class="headerlink" title="算法代码与分析"></a>算法代码与分析</h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;iostream&gt;
 #define STACK_INIT_SIZE 100
+#define LIST_SIZE 100
 using namespace std;
 typedef int SElemType;
 
+&#x2F;&#x2F;栈结构
 typedef struct &#123;
 	SElemType* base;
 	SElemType* top;
@@ -493,8 +540,8 @@ typedef struct &#123;
 
 typedef struct &#123;
 	SqStack Data;
-	SqStack MinData;
-&#125;Minstack;
+	SqStack MaxData;
+&#125;Maxstack;
 
 void InitStack(SqStack* s) &#123;
 	s-&gt;base &#x3D; (SElemType*)malloc(STACK_INIT_SIZE * sizeof(SElemType));
@@ -526,135 +573,61 @@ void DestroyStack(SqStack* s) &#123;
 	s-&gt;stacksize &#x3D; 0;
 &#125;
 
-
-void MinInit(Minstack* minstack) &#123;
-	InitStack(&amp;(minstack-&gt;Data));
-	InitStack(&amp;(minstack-&gt;MinData));
+void MaxInit(Maxstack* maxstack) &#123;
+	InitStack(&amp;(maxstack-&gt;Data));
+	InitStack(&amp;(maxstack-&gt;MaxData));
 &#125;
 
-void MinDestroy(Minstack* minstack) &#123;
-	DestroyStack(&amp;minstack-&gt;Data);
-	DestroyStack(&amp;minstack-&gt;MinData);
+void MaxDestroy(Maxstack* maxstack) &#123;
+	DestroyStack(&amp;maxstack-&gt;Data);
+	DestroyStack(&amp;maxstack-&gt;MaxData);
 &#125;
 
-void MinPush(Minstack* minstack, SElemType e) &#123;
-	Push(&amp;minstack-&gt;Data, e);
-	if (minstack-&gt;MinData.base&#x3D;&#x3D;minstack-&gt;MinData.top) &#123;
-		Push(&amp;minstack-&gt;MinData, e);
+void MaxPush(Maxstack* maxstack, SElemType e) &#123;
+	Push(&amp;maxstack-&gt;Data, e);
+	if (maxstack-&gt;MaxData.base &#x3D;&#x3D; maxstack-&gt;MaxData.top) &#123;
+		Push(&amp;maxstack-&gt;MaxData, e);
 	&#125;
 	else &#123;
-		if (e &lt;&#x3D; GetTop(minstack-&gt;MinData)) &#123;
-			Push(&amp;minstack-&gt;MinData, e);
+		if (e &gt;&#x3D; GetTop(maxstack-&gt;MaxData)) &#123;
+			Push(&amp;maxstack-&gt;MaxData, e);
 		&#125;
 	&#125;
 &#125;
 
-void MinPop(Minstack* minstack, SElemType* e) &#123;
-	if (GetTop(minstack-&gt;Data) &#x3D;&#x3D; GetTop(minstack-&gt;MinData)) &#123;
-		Pop(&amp;minstack-&gt;Data, e);
-		Pop(&amp;minstack-&gt;MinData, e);
+void MaxPop(Maxstack* maxstack, SElemType* e) &#123;
+	if (GetTop(maxstack-&gt;Data) &#x3D;&#x3D; GetTop(maxstack-&gt;MaxData)) &#123;
+		Pop(&amp;maxstack-&gt;Data, e);
+		Pop(&amp;maxstack-&gt;MaxData, e);
 		return;
 	&#125;
-	Pop(&amp;minstack-&gt;Data, e);
+	Pop(&amp;maxstack-&gt;Data, e);
 &#125;
 
-SElemType GetMin(Minstack* minstack) &#123;
-	return GetTop(minstack-&gt;MinData);
+SElemType GetMax(Maxstack* maxstack) &#123;
+	return GetTop(maxstack-&gt;MaxData);
 &#125;
+
+
+
 
 
 int main() &#123;
-	Minstack minstack;
+	Maxstack maxstack;
 	SElemType e;
-	MinInit(&amp;minstack);
+	MaxInit(&amp;maxstack);
 
-	MinPush(&amp;minstack, 1);
-	MinPush(&amp;minstack, 2);
-	MinPush(&amp;minstack, 3);
-	MinPush(&amp;minstack, 1);
-	MinPop(&amp;minstack, &amp;e);
-	cout &lt;&lt; GetMin(&amp;minstack) &lt;&lt; endl;
+	MaxPush(&amp;maxstack, 1);
+	MaxPush(&amp;maxstack, 2);
+	MaxPush(&amp;maxstack, 3);
+	MaxPush(&amp;maxstack, 1);
 
-	system(&quot;pause&quot;);
-	return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><strong>实验结果</strong>：</p>
-<p><img src="/imgs/sikao1/1.png" alt="image-20230302194755588"></p>
-<p><strong>分析</strong>：</p>
-<p>本算法能够实现出入栈、求栈最小值时间复杂度$O (1)$，但是在数据类型的定义上，关于栈和特殊栈存在重复，经查阅资料，可以采用结构体继承解决。</p>
-<h2 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h2><h3 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h3><p>改进冒泡排序使得在最好情况下可以在线性时间内完成</p>
-<h3 id="问题分析-1"><a href="#问题分析-1" class="headerlink" title="问题分析"></a>问题分析</h3><p>对于普通的冒泡排序算法，在最坏的情况下其时间复杂度为$O (n^2)$。第一趟排序进行了$(n-1)$次比较，第i趟排序进行了$(n-i)$次比较；但是对于$(n-1)$趟排序，如果序列在某一次排序时恰好有序，则在该次之后的每一次排序都是无用的，为了优化冒泡排序，只需要在该次以后终止冒泡排序。</p>
-<h3 id="算法思路-1"><a href="#算法思路-1" class="headerlink" title="算法思路"></a>算法思路</h3><p>设置一个标志变量确定某一序列中的数据是否发生了交换，如果某一次冒泡过程中发现没有交换操作时，则说明序列已经排好序了，终止冒泡排序。</p>
-<h3 id="算法代码及分析"><a href="#算法代码及分析" class="headerlink" title="算法代码及分析"></a>算法代码及分析</h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;iostream&gt;
-using namespace std;
-
-void BubbleSort(int array[], int n,int* num) &#123;
-	for (int i &#x3D; 0; i &lt; n - 1; i++) &#123;
-		bool flag &#x3D; true;
-		for (int j &#x3D; 0; j &lt; n - i - 1; j++) &#123;
-			if (array[j] &gt; array[j + 1]) &#123;
-				int temp &#x3D; array[j];
-				array[j] &#x3D; array[j + 1];
-				array[j + 1] &#x3D; temp;
-				flag &#x3D; false;
-			&#125;
-		&#125;
-
-		if (flag) &#123;
-			break;
-		&#125;
-
-		(*num)++;
-	&#125;
+	cout &lt;&lt; GetMax(&amp;maxstack) &lt;&lt; endl;
 &#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-int main() &#123;
-	int num &#x3D; 0;
-	int array[] &#x3D; &#123; 5,4,3,6,7,8 &#125;;
-	int n1 &#x3D; sizeof(array) &#x2F; sizeof(int);
-	cout &lt;&lt; &quot;排序前：&quot;;
-	for (int i &#x3D; 0; i &lt; n1; i++) &#123;
-		cout &lt;&lt; array[i] &lt;&lt; &quot;,&quot;;
-	&#125;
-	cout &lt;&lt; endl;
-
-	BubbleSort(array, n1, &amp;num);
-	cout &lt;&lt; &quot;排序后：&quot;;
-	for (int i &#x3D; 0; i &lt; n1; i++) &#123;
-		cout &lt;&lt; array[i] &lt;&lt; &quot;,&quot;;
-	&#125;
-	cout &lt;&lt; endl;
-
-	int array1[] &#x3D; &#123; 1,2,3,4,5,6 &#125;;
-	int n2 &#x3D; sizeof(array1) &#x2F; sizeof(int);
-	cout &lt;&lt; &quot;排序前：&quot;;
-	for (int i &#x3D; 0; i &lt; n2; i++) &#123;
-		cout &lt;&lt; array1[i] &lt;&lt; &quot;,&quot;;
-	&#125;
-	cout &lt;&lt; endl;
-
-	cout &lt;&lt; num &lt;&lt; endl;
-
-	num &#x3D; 0;
-
-	BubbleSort(array1, n2, &amp;num);
-	cout &lt;&lt; &quot;排序后：&quot;;
-	for (int i &#x3D; 0; i &lt; n2; i++) &#123;
-		cout &lt;&lt; array1[i] &lt;&lt; &quot;,&quot;;
-	&#125;
-	cout &lt;&lt; endl;
-
-	cout &lt;&lt; num &lt;&lt; endl;
-
-	system(&quot;pause&quot;);
-	return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><strong>实验结果</strong>：</p>
-<p><img src="/imgs/sikao1/2.png" alt="image-20230302210218006"></p>
-<p><strong>分析</strong>：</p>
-<p>通过实验分析，在数据极端良好的情况下，能够实现时间复杂度为$O (1)$；在数据较为不良的情况下，仍能减少数据排序次数，使其在线性时间内完成。</p>
+<p><img src="/imgs/sikao2/2.png" alt="image-20230305233550207"></p>
+<p>对于栈方式存储动态序列以及求取最大值比较容易实现，对于最大值引入最大栈用空间换时间，时间复杂度达到$O(1)$，但是不够对于序列的操作不够灵活，只能在栈顶进行操作。</p>
 
                 
             </div>
@@ -681,7 +654,7 @@ int main() &#123;
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jiang-wu-19.github.io/2023/07/05/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E4%B8%80/">https://jiang-wu-19.github.io/2023/07/05/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E4%B8%80/</a>
+                    <a href="https://jiang-wu-19.github.io/2023/07/05/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E4%BA%8C/">https://jiang-wu-19.github.io/2023/07/05/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E4%BA%8C/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -725,10 +698,6 @@ int main() &#123;
                             
                                 <a href="/tags/%E6%A0%88/">
                                     <span class="chip bg-color">栈</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%86%92%E6%B3%A1/">
-                                    <span class="chip bg-color">冒泡</span>
                                 </a>
                             
                         </div>
@@ -1161,76 +1130,24 @@ int main() &#123;
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/07/05/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/">
+                <a href="/2023/07/05/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E4%BA%8C/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="数据库笔记">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="算法课外思考题二">
                         
-                        <span class="card-title">数据库笔记</span>
+                        <span class="card-title">算法课外思考题二</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            数据库的最后一轮复习笔记
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-07-05
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
-                                    笔记
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
-                        <span class="chip bg-color">数据库</span>
-                    </a>
-                    
-                    <a href="/tags/SQL/">
-                        <span class="chip bg-color">SQL</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2023/07/05/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E4%B8%80/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="算法课外思考题一">
-                        
-                        <span class="card-title">算法课外思考题一</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            优化栈结构和冒泡排序
+                            求最大公约数和求序列最大值
                         
                     </div>
                     <div class="publish-info">
@@ -1261,8 +1178,57 @@ int main() &#123;
                         <span class="chip bg-color">栈</span>
                     </a>
                     
-                    <a href="/tags/%E5%86%92%E6%B3%A1/">
-                        <span class="chip bg-color">冒泡</span>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/07/05/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="数据库笔记">
+                        
+                        <span class="card-title">数据库笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            数据库的最后一轮复习笔记
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-05
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                        <span class="chip bg-color">数据库</span>
+                    </a>
+                    
+                    <a href="/tags/SQL/">
+                        <span class="chip bg-color">SQL</span>
                     </a>
                     
                 </div>
