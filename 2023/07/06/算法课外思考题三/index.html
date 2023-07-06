@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="算法课外思考题一, J&amp;Ocean BLOG">
+    <meta name="keywords" content="算法课外思考题三, J&amp;Ocean BLOG">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>算法课外思考题一 | J&amp;Ocean BLOG</title>
+    <title>算法课外思考题三 | J&amp;Ocean BLOG</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -235,12 +235,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">算法课外思考题一</h1>
+                    <h1 class="description center-align post-title">算法课外思考题三</h1>
                 </div>
             </div>
         </div>
@@ -360,12 +360,12 @@
                                 <span class="chip bg-color">算法</span>
                             </a>
                         
-                            <a href="/tags/%E6%A0%88/">
-                                <span class="chip bg-color">栈</span>
+                            <a href="/tags/%E9%9B%86%E5%90%88/">
+                                <span class="chip bg-color">集合</span>
                             </a>
                         
-                            <a href="/tags/%E5%86%92%E6%B3%A1/">
-                                <span class="chip bg-color">冒泡</span>
+                            <a href="/tags/%E7%9B%B8%E4%BC%BC%E5%BA%A6/">
+                                <span class="chip bg-color">相似度</span>
                             </a>
                         
                     </div>
@@ -389,7 +389,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-07-05
+                    2023-07-06
                 </div>
                 
 
@@ -398,14 +398,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.5k
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    5 分
                 </div>
                 
 
@@ -423,238 +423,74 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>设计一栈结构，使得出栈、入栈以及求栈的最小值均能在$O (1)$时间内完成</p>
-<h3 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h3><p><strong>针对出入栈</strong>，由数据结构的顺序栈知识可以得知，出入栈的时间复杂度都是$O (1)$，因此对于出入栈只需要普通栈就可以实现问题要求；</p>
-<p><strong>针对求栈的最小值</strong>，使用遍历法求栈最小值的时间复杂度为$O (n)$，因此需要设计一种特殊栈，通过记录栈中的最小值，在求栈的最小值时只需要将最小值输出即可，其时间复杂度为$O (1)$。</p>
-<h3 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h3><p>先构建顺序栈的数据结构</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">typedef struct&#123;&#x2F;&#x2F;顺序栈
-    SElemType* base;
-    SElemtyoe* top;
-    int stacksize;
-&#125;SqStack;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>然后构建一个特殊的辅助栈，包括存储所有数据的原栈和存储最小值序列的新栈</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">typedef struct&#123;&#x2F;&#x2F;记录最小值的辅助栈
-    SqStack Data;
-    Sqstack MinData;
-&#125;MinStack;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<ul>
-<li><p>入栈操作</p>
-<p>对于第一个元素，一定会进入两个栈；</p>
-<p>对于后面的每一元素一定会进入Data栈，如果该元素&lt;&#x3D;Mindata栈的栈顶元素，则该元素进入Mindata栈，否则不进入</p>
-</li>
-</ul>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void MinPush(Minstack* minstack, SElemType e) &#123;
-	Push(&amp;minstack-&gt;Data, e);
-	if (minstack-&gt;MinData.base&#x3D;&#x3D;minstack-&gt;MinData.top) &#123;
-		Push(&amp;minstack-&gt;MinData, e);
-	&#125;
-	else &#123;
-		if (e &lt;&#x3D; GetTop(minstack-&gt;MinData)) &#123;
-			Push(&amp;minstack-&gt;MinData, e);
-		&#125;
-	&#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<ul>
-<li><p>出栈操作</p>
-<p>对于某一元素的出栈，Data栈一定会执行出栈操作，如果Data栈的栈顶元素和MinData栈的栈顶元素相同，则MinData栈也执行出栈操作</p>
-</li>
-</ul>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void MinPop(Minstack* minstack, SElemType* e) &#123;
-	if (GetTop(minstack-&gt;Data) &#x3D;&#x3D; GetTop(minstack-&gt;MinData)) &#123;
-		Pop(&amp;minstack-&gt;Data, e);
-		Pop(&amp;minstack-&gt;MinData, e);
-		return;
-	&#125;
-	Pop(&amp;minstack-&gt;Data, e);
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<ul>
-<li><p>求栈最小值</p>
-<p>最小值已经存储在MinData栈中，因此只需要获取MinData栈的栈顶元素就可以得到栈的最小值</p>
-</li>
-</ul>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">SElemType GetMin(Minstack* minstack) &#123;
-	return GetTop(minstack-&gt;MinData);
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="算法代码与分析"><a href="#算法代码与分析" class="headerlink" title="算法代码与分析"></a>算法代码与分析</h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;iostream&gt;
-#define STACK_INIT_SIZE 100
-using namespace std;
-typedef int SElemType;
-
-typedef struct &#123;
-	SElemType* base;
-	SElemType* top;
-	int stacksize;
-&#125;SqStack;
-
-typedef struct &#123;
-	SqStack Data;
-	SqStack MinData;
-&#125;Minstack;
-
-void InitStack(SqStack* s) &#123;
-	s-&gt;base &#x3D; (SElemType*)malloc(STACK_INIT_SIZE * sizeof(SElemType));
-	s-&gt;top &#x3D; s-&gt;base;
-	s-&gt;stacksize &#x3D; STACK_INIT_SIZE;
-&#125;
-
-void Push(SqStack* s, SElemType e) &#123;
-	if (s-&gt;top - s-&gt;base &gt;&#x3D; s-&gt;stacksize) &#123;
-		s-&gt;base &#x3D; (SElemType*)realloc(s-&gt;base, (s-&gt;stacksize + 10) * sizeof(SElemType));
-		s-&gt;top &#x3D; s-&gt;base + s-&gt;stacksize;
-		s-&gt;stacksize +&#x3D; 10;
-	&#125;
-	*s-&gt;top++ &#x3D; e;
-&#125;
-
-void Pop(SqStack* s, SElemType* e) &#123;
-	*e &#x3D; *--s-&gt;top;
-&#125;
-
-SElemType GetTop(SqStack s) &#123;
-	return *(--s.top);
-&#125;
-
-void DestroyStack(SqStack* s) &#123;
-	free(s-&gt;base);
-	s-&gt;base &#x3D; NULL;
-	s-&gt;top &#x3D; NULL;
-	s-&gt;stacksize &#x3D; 0;
-&#125;
-
-
-void MinInit(Minstack* minstack) &#123;
-	InitStack(&amp;(minstack-&gt;Data));
-	InitStack(&amp;(minstack-&gt;MinData));
-&#125;
-
-void MinDestroy(Minstack* minstack) &#123;
-	DestroyStack(&amp;minstack-&gt;Data);
-	DestroyStack(&amp;minstack-&gt;MinData);
-&#125;
-
-void MinPush(Minstack* minstack, SElemType e) &#123;
-	Push(&amp;minstack-&gt;Data, e);
-	if (minstack-&gt;MinData.base&#x3D;&#x3D;minstack-&gt;MinData.top) &#123;
-		Push(&amp;minstack-&gt;MinData, e);
-	&#125;
-	else &#123;
-		if (e &lt;&#x3D; GetTop(minstack-&gt;MinData)) &#123;
-			Push(&amp;minstack-&gt;MinData, e);
-		&#125;
-	&#125;
-&#125;
-
-void MinPop(Minstack* minstack, SElemType* e) &#123;
-	if (GetTop(minstack-&gt;Data) &#x3D;&#x3D; GetTop(minstack-&gt;MinData)) &#123;
-		Pop(&amp;minstack-&gt;Data, e);
-		Pop(&amp;minstack-&gt;MinData, e);
-		return;
-	&#125;
-	Pop(&amp;minstack-&gt;Data, e);
-&#125;
-
-SElemType GetMin(Minstack* minstack) &#123;
-	return GetTop(minstack-&gt;MinData);
-&#125;
-
-
-int main() &#123;
-	Minstack minstack;
-	SElemType e;
-	MinInit(&amp;minstack);
-
-	MinPush(&amp;minstack, 1);
-	MinPush(&amp;minstack, 2);
-	MinPush(&amp;minstack, 3);
-	MinPush(&amp;minstack, 1);
-	MinPop(&amp;minstack, &amp;e);
-	cout &lt;&lt; GetMin(&amp;minstack) &lt;&lt; endl;
-
-	system(&quot;pause&quot;);
-	return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><strong>实验结果</strong>：</p>
-<p><img src="/imgs/sikao1/1.png" alt="image-20230302194755588"></p>
-<p><strong>分析</strong>：</p>
-<p>本算法能够实现出入栈、求栈最小值时间复杂度$O (1)$，但是在数据类型的定义上，关于栈和特殊栈存在重复，经查阅资料，可以采用结构体继承解决。</p>
-<h2 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h2><h3 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h3><p>改进冒泡排序使得在最好情况下可以在线性时间内完成</p>
-<h3 id="问题分析-1"><a href="#问题分析-1" class="headerlink" title="问题分析"></a>问题分析</h3><p>对于普通的冒泡排序算法，在最坏的情况下其时间复杂度为$O (n^2)$。第一趟排序进行了$(n-1)$次比较，第i趟排序进行了$(n-i)$次比较；但是对于$(n-1)$趟排序，如果序列在某一次排序时恰好有序，则在该次之后的每一次排序都是无用的，为了优化冒泡排序，只需要在该次以后终止冒泡排序。</p>
-<h3 id="算法思路-1"><a href="#算法思路-1" class="headerlink" title="算法思路"></a>算法思路</h3><p>设置一个标志变量确定某一序列中的数据是否发生了交换，如果某一次冒泡过程中发现没有交换操作时，则说明序列已经排好序了，终止冒泡排序。</p>
-<h3 id="算法代码及分析"><a href="#算法代码及分析" class="headerlink" title="算法代码及分析"></a>算法代码及分析</h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;iostream&gt;
+                <h2 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>给出策略列举出包含n元素的集合的所有子集，并进行分析</p>
+<h3 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h3><p>通过数学知识，得到子集的个数是$2^n$，而$n$位的二进制码正好可以表示$2^n$个整数，因此可以对每一子集进行二进制编码（其中，第$i$位编码为1则有该元素，为0则没有），使用二进制数所表示的整数来代表每一个子集。</p>
+<h3 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h3><p>使用一字符数组存储包含n个元素的集合$0,1,\cdots,2^n-1$逐一遍历</p>
+<p>对数$i$移位操作按位与判断是否存在某一元素</p>
+<p>打印输出每一个子集</p>
+<h3 id="算法实现与分析"><a href="#算法实现与分析" class="headerlink" title="算法实现与分析"></a>算法实现与分析</h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;iostream&gt;
 using namespace std;
 
-void BubbleSort(int array[], int n,int* num) &#123;
-	for (int i &#x3D; 0; i &lt; n - 1; i++) &#123;
-		bool flag &#x3D; true;
-		for (int j &#x3D; 0; j &lt; n - i - 1; j++) &#123;
-			if (array[j] &gt; array[j + 1]) &#123;
-				int temp &#x3D; array[j];
-				array[j] &#x3D; array[j + 1];
-				array[j + 1] &#x3D; temp;
-				flag &#x3D; false;
+void PrintSet(int array[],int n) &#123;
+	int m &#x3D; 1 &lt;&lt; n;
+	for (int i &#x3D; 0; i &lt; m; i++) &#123;
+		cout &lt;&lt; &quot;&#123; &quot;;
+		for (int j &#x3D; 0; j &lt; n; j++) &#123;
+			if ((i &gt;&gt; j) &amp; 1) &#123;
+				cout &lt;&lt; array[j] &lt;&lt; &quot; &quot;;
 			&#125;
 		&#125;
-
-		if (flag) &#123;
-			break;
-		&#125;
-
-		(*num)++;
+		cout &lt;&lt; &quot;&#125;&quot; &lt;&lt; endl;
 	&#125;
 &#125;
 
 int main() &#123;
-	int num &#x3D; 0;
-	int array[] &#x3D; &#123; 5,4,3,6,7,8 &#125;;
-	int n1 &#x3D; sizeof(array) &#x2F; sizeof(int);
-	cout &lt;&lt; &quot;排序前：&quot;;
-	for (int i &#x3D; 0; i &lt; n1; i++) &#123;
-		cout &lt;&lt; array[i] &lt;&lt; &quot;,&quot;;
-	&#125;
+	int array1[] &#x3D; &#123; 1,2,3,4 &#125;;
+	int n1 &#x3D; sizeof(array1) &#x2F; sizeof(array1[0]);
+	PrintSet(array1,n1);
+
 	cout &lt;&lt; endl;
 
-	BubbleSort(array, n1, &amp;num);
-	cout &lt;&lt; &quot;排序后：&quot;;
-	for (int i &#x3D; 0; i &lt; n1; i++) &#123;
-		cout &lt;&lt; array[i] &lt;&lt; &quot;,&quot;;
-	&#125;
-	cout &lt;&lt; endl;
-
-	int array1[] &#x3D; &#123; 1,2,3,4,5,6 &#125;;
-	int n2 &#x3D; sizeof(array1) &#x2F; sizeof(int);
-	cout &lt;&lt; &quot;排序前：&quot;;
-	for (int i &#x3D; 0; i &lt; n2; i++) &#123;
-		cout &lt;&lt; array1[i] &lt;&lt; &quot;,&quot;;
-	&#125;
-	cout &lt;&lt; endl;
-
-	cout &lt;&lt; num &lt;&lt; endl;
-
-	num &#x3D; 0;
-
-	BubbleSort(array1, n2, &amp;num);
-	cout &lt;&lt; &quot;排序后：&quot;;
-	for (int i &#x3D; 0; i &lt; n2; i++) &#123;
-		cout &lt;&lt; array1[i] &lt;&lt; &quot;,&quot;;
-	&#125;
-	cout &lt;&lt; endl;
-
-	cout &lt;&lt; num &lt;&lt; endl;
-
+	int array2[] &#x3D; &#123; 1,2,3 &#125;;
+	int n2 &#x3D; sizeof(array2) &#x2F; sizeof(array2[0]);
+	PrintSet(array2, n2);
 	system(&quot;pause&quot;);
 	return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><strong>实验结果</strong>：</p>
-<p><img src="/imgs/sikao1/2.png" alt="image-20230302210218006"></p>
-<p><strong>分析</strong>：</p>
-<p>通过实验分析，在数据极端良好的情况下，能够实现时间复杂度为$O (1)$；在数据较为不良的情况下，仍能减少数据排序次数，使其在线性时间内完成。</p>
+<p>输出结果：</p>
+<p><img src="/imgs/sikao3/1.png" alt="image-20230308232014309"></p>
+<p>本算法的时间复杂度是$\Omicron(n*2^n)$，对于元素个数大的集合来说，耗费时间相当大</p>
+<h2 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h2><h3 id="问题分析-1"><a href="#问题分析-1" class="headerlink" title="问题分析"></a>问题分析</h3><p>在机器学习、文本处理、推荐系统等应用领域，经常使用相似度指标，调研学习当前业界经常使用的相似度指标</p>
+<h3 id="问题关键字"><a href="#问题关键字" class="headerlink" title="问题关键字"></a>问题关键字</h3><p>相似度指标</p>
+<h3 id="调研学习报告"><a href="#调研学习报告" class="headerlink" title="调研学习报告"></a>调研学习报告</h3><p>相似度指标的定义是衡量对象之间的相似程度的数值，相似度指标可以氛围两大类：基于距离和基于角度。</p>
+<h4 id="基于距离的相似度指标："><a href="#基于距离的相似度指标：" class="headerlink" title="基于距离的相似度指标："></a>基于距离的相似度指标：</h4><p>根据两个对象之间的距离来计算相似度，<strong>距离越近，相似度越高</strong></p>
+<p>常见的指标有欧氏距离、曼哈顿距离、闵可夫斯基距离等</p>
+<h4 id="基于角度的相似度指标："><a href="#基于角度的相似度指标：" class="headerlink" title="基于角度的相似度指标："></a>基于角度的相似度指标：</h4><p>根据两个对象之间的夹角来计算相似度，<strong>夹角越小，相似度越高</strong></p>
+<p>常见的指标有余弦相似度、皮尔逊相关系数等</p>
+<h4 id="常见的相似度指标："><a href="#常见的相似度指标：" class="headerlink" title="常见的相似度指标："></a>常见的相似度指标：</h4><h5 id="欧几里得距离"><a href="#欧几里得距离" class="headerlink" title="欧几里得距离"></a>欧几里得距离</h5><p>根据勾股定理计算两个点之间的直线距离</p>
+<p>欧氏距离越小，表示两个对象越相似</p>
+<h6 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h6><p>$$<br>\sqrt{\sum_{i&#x3D;1}^n\left(x_i-y_i\right)^2}<br>$$</p>
+<h6 id="标准化公式"><a href="#标准化公式" class="headerlink" title="标准化公式"></a>标准化公式</h6><p>$$<br>\sqrt{\sum_{k&#x3D;1}^n\left(\frac{x_{1 k}-x_{2 k}}{s_k}\right)^2}<br>$$</p>
+<h6 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h6><p>欧氏距离适用于<strong>连续变量</strong>，比如坐标、长度、速度等</p>
+<h5 id="余弦相似度"><a href="#余弦相似度" class="headerlink" title="余弦相似度"></a>余弦相似度</h5><p>余弦相似度通过计算两个向量之间的夹角余弦值来衡量它们的方向是否一致</p>
+<p>余弦相似度越大，两个对象越相似；值为负，两向量负相关</p>
+<h6 id="公式-1"><a href="#公式-1" class="headerlink" title="公式"></a>公式</h6><p>$$<br>\cos (\theta)&#x3D;\frac{\sum_{k&#x3D;1}^n x_{1 k} x_{2 k}}{\sqrt{\sum_{k&#x3D;1}^n x_{1 k}^2} \sqrt{\sum_{k&#x3D;1}^n x_{2 k}^2}}<br>$$</p>
+<p>余弦相似度无法衡量每个维数值的差异，因此引入<strong>调整余弦相似度</strong>（虽然没有看懂）：</p>
+<h6 id="调整余弦相似度公式"><a href="#调整余弦相似度公式" class="headerlink" title="调整余弦相似度公式"></a>调整余弦相似度公式</h6><p>$$<br>\operatorname{sim}(i, j)&#x3D;\frac{\sum_{u \in U}\left(R_{u, i}-\bar{R}<em>u\right)\left(R</em>{u, j}-\bar{R_u}\right)}{\sqrt{\sum_{u \in U}\left(R_{u, i}-\bar{R}<em>u\right)^2} \sqrt{\sum</em>{u \in U}\left(R_{u,j}-\bar{R}_u\right)^2}}<br>$$</p>
+<h6 id="适用场景-1"><a href="#适用场景-1" class="headerlink" title="适用场景"></a>适用场景</h6><p>余弦相似度适用于<strong>稀疏向量</strong>，比如文本、图像、音频等</p>
+<h5 id="皮尔逊相关系数"><a href="#皮尔逊相关系数" class="headerlink" title="皮尔逊相关系数"></a>皮尔逊相关系数</h5><p>在概率论与数理统计中学习到的衡量两变量之间线性相关程度的统计指标</p>
+<p>皮尔逊相关系数越接近1或者-1，表示两者越相关</p>
+<h6 id="公式-2"><a href="#公式-2" class="headerlink" title="公式"></a>公式</h6><p>$$<br>\rho_{X, Y}&#x3D;\frac{\operatorname{cov}(X, Y)}{\sigma_X \sigma_Y}&#x3D;\frac{E\left(\left(X-\mu_X\right)\left(Y-\mu_Y\right)\right)}{\sigma_X \sigma_Y}&#x3D;\frac{E(X Y)-E(X) E(Y)}{\sqrt{E\left(X^2\right)-E^2(X)} \sqrt{E\left(Y^2\right)-E^2(Y)}}<br>$$</p>
+<h6 id="适用场景-2"><a href="#适用场景-2" class="headerlink" title="适用场景"></a>适用场景</h6><p>皮尔逊相关系数适用于<strong>评分数据</strong>，比如用户对商品、电影的评分</p>
+<h5 id="杰卡德相似系数"><a href="#杰卡德相似系数" class="headerlink" title="杰卡德相似系数"></a>杰卡德相似系数</h5><p>一种衡量集合之间重合程度的指标，通过两个集合交集和并集的比值得到</p>
+<p>杰卡德相似系数越接近1，表示两个对象越相似</p>
+<h6 id="公式-3"><a href="#公式-3" class="headerlink" title="公式"></a>公式</h6><p>$$<br>\operatorname{Jaccard}(X, Y)&#x3D;\frac{X \cap Y}{X \cup Y}<br>$$</p>
+<h6 id="适用场景-3"><a href="#适用场景-3" class="headerlink" title="适用场景"></a>适用场景</h6><p>杰卡德相似系数适用于二元变量或者名义变量，比如词汇、元素、特征</p>
+<h4 id="具体应用"><a href="#具体应用" class="headerlink" title="具体应用"></a>具体应用</h4><ul>
+<li>在文本处理中，比较两文本之间的语义相似性，可以使用深度学习模型来学习文本向量，适用余弦相似度或其他自定义损失函数来计算文本间的语义匹配程度</li>
+<li>在推荐系统中，比较用户或者物品之间的偏好或者兴趣，可以使用用户-物品偏好矩阵作为输入数据，并使用欧氏距离或者皮尔逊相关系数等方法来计算用户或者物品之间的协同过滤得分。</li>
+</ul>
 
                 
             </div>
@@ -681,7 +517,7 @@ int main() &#123;
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jiang-wu-19.github.io/2023/07/05/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E4%B8%80/">https://jiang-wu-19.github.io/2023/07/05/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E4%B8%80/</a>
+                    <a href="https://jiang-wu-19.github.io/2023/07/06/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E4%B8%89/">https://jiang-wu-19.github.io/2023/07/06/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E4%B8%89/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -723,12 +559,12 @@ int main() &#123;
                                     <span class="chip bg-color">算法</span>
                                 </a>
                             
-                                <a href="/tags/%E6%A0%88/">
-                                    <span class="chip bg-color">栈</span>
+                                <a href="/tags/%E9%9B%86%E5%90%88/">
+                                    <span class="chip bg-color">集合</span>
                                 </a>
                             
-                                <a href="/tags/%E5%86%92%E6%B3%A1/">
-                                    <span class="chip bg-color">冒泡</span>
+                                <a href="/tags/%E7%9B%B8%E4%BC%BC%E5%BA%A6/">
+                                    <span class="chip bg-color">相似度</span>
                                 </a>
                             
                         </div>
@@ -1161,81 +997,29 @@ int main() &#123;
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/07/05/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/">
+                <a href="/2023/07/06/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E4%B8%89/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="数据库笔记">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="算法课外思考题三">
                         
-                        <span class="card-title">数据库笔记</span>
+                        <span class="card-title">算法课外思考题三</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            数据库的最后一轮复习笔记
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-07-05
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
-                                    笔记
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
-                        <span class="chip bg-color">数据库</span>
-                    </a>
-                    
-                    <a href="/tags/SQL/">
-                        <span class="chip bg-color">SQL</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2023/07/05/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E4%B8%80/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="算法课外思考题一">
-                        
-                        <span class="card-title">算法课外思考题一</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            优化栈结构和冒泡排序
+                            求子集和相似度指标调研
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-06
                             </span>
                         <span class="publish-author">
                             
@@ -1257,12 +1041,65 @@ int main() &#123;
                         <span class="chip bg-color">算法</span>
                     </a>
                     
-                    <a href="/tags/%E6%A0%88/">
-                        <span class="chip bg-color">栈</span>
+                    <a href="/tags/%E9%9B%86%E5%90%88/">
+                        <span class="chip bg-color">集合</span>
                     </a>
                     
-                    <a href="/tags/%E5%86%92%E6%B3%A1/">
-                        <span class="chip bg-color">冒泡</span>
+                    <a href="/tags/%E7%9B%B8%E4%BC%BC%E5%BA%A6/">
+                        <span class="chip bg-color">相似度</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/07/05/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E4%BA%8C/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="算法课外思考题二">
+                        
+                        <span class="card-title">算法课外思考题二</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            求最大公约数和求序列最大值
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-05
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AE%97%E6%B3%95%E6%80%9D%E8%80%83%E9%A2%98/" class="post-category">
+                                    算法思考题
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%A0%88/">
+                        <span class="chip bg-color">栈</span>
                     </a>
                     
                 </div>
