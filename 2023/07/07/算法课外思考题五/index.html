@@ -425,7 +425,7 @@
             <div id="articleContent">
                 <h2 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>在计算机科学与社会生活中，经常涉及到要求前K个元素即top-k的问题，请给出不同策解决这一问题，并对比分析</p>
 <h3 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h3><p>本题假设取最大的k个元素</p>
-<p>首先最直接的想法就是先进行排序，再取前k个元素，选取快速排序作为本题的排序算法，时间复杂度是$\Omicron(nlogn)$，然后选择前k个元素，总时间复杂度是$\Omicron(nlogn)$，以下是快速排序的实现。</p>
+<p>首先最直接的想法就是先进行排序，再取前k个元素，选取快速排序作为本题的排序算法，时间复杂度是$O(nlogn)$，然后选择前k个元素，总时间复杂度是$O(nlogn)$，以下是快速排序的实现。</p>
 <pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void quickSort(int arr[], int left, int right) &#123;
     int i &#x3D; left, j &#x3D; right;
     int tmp;
@@ -483,7 +483,7 @@
     cout &lt;&lt; endl;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>方法三是对方法一的改进，将快速排序改成快速选择算法，找到第k大的元素，然后对整个序列进行遍历，筛选出大于第k大元素的元素组成数组，到这里为止，时间复杂度是$\Omicron(n)$，但是还要进行降序输出，因此进行排序，在下列实现中，调用了sort函数，但是排序消耗的时间是$\Omicron(klogk)$。</p>
+<p>方法三是对方法一的改进，将快速排序改成快速选择算法，找到第k大的元素，然后对整个序列进行遍历，筛选出大于第k大元素的元素组成数组，到这里为止，时间复杂度是$O(n)$，但是还要进行降序输出，因此进行排序，在下列实现中，调用了sort函数，但是排序消耗的时间是$O(klogk)$。</p>
 <pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">int QuickSelect(vector&lt;int&gt;&amp; nums, int left, int right, int k) &#123;
     int pivot &#x3D; nums[left];
     int i &#x3D; left, j &#x3D; right;
@@ -647,9 +647,9 @@ int main() &#123;
 
 <p>实现：</p>
 <p><img src="/imgs/sikao5/1.png" alt="image-20230319213101105"></p>
-<p>方法一的时间复杂度是$\Omicron(nlogn)$</p>
-<p>方法二的时间复杂度是$\Omicron(nlogk)$</p>
-<p>方法三的时间复杂度是$\Omicron(n+klogk)$</p>
+<p>方法一的时间复杂度是$O(nlogn)$</p>
+<p>方法二的时间复杂度是$O(nlogk)$</p>
+<p>方法三的时间复杂度是$O(n+klogk)$</p>
 <h2 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h2><h3 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h3><p>请用递归方式实现堆排序，并进行性能分析</p>
 <h3 id="算法实现与分析-1"><a href="#算法实现与分析-1" class="headerlink" title="算法实现与分析"></a>算法实现与分析</h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;iostream&gt;
 #include&lt;vector&gt;
@@ -696,8 +696,8 @@ int main() &#123;
 
 <p>实现：</p>
 <p><img src="/imgs/sikao5/2.png" alt="image-20230319222526781"></p>
-<p>对于递归方式的堆排序，每次对子树进行heapify操作的时间复杂度是$\Omicron(logn)$，对于每一棵包含n个结点的完全二叉树，高度为$logn$，因此堆排序的时间复杂度是$\Omicron(nlogn)$。</p>
-<p>递归方式的堆排序使用了函数递归调用，每次递归都会将一部分数据压入栈中，栈的深度等于堆的高度，最坏情况下堆的高度是$logn$，空间复杂度是$\Omicron(logn)$。</p>
+<p>对于递归方式的堆排序，每次对子树进行heapify操作的时间复杂度是$O(logn)$，对于每一棵包含n个结点的完全二叉树，高度为$logn$，因此堆排序的时间复杂度是$O(nlogn)$。</p>
+<p>递归方式的堆排序使用了函数递归调用，每次递归都会将一部分数据压入栈中，栈的深度等于堆的高度，最坏情况下堆的高度是$logn$，空间复杂度是$O(logn)$。</p>
 
                 
             </div>
