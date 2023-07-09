@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="算法课外思考题四, J&amp;Ocean BLOG">
+    <meta name="keywords" content="算法课外思考题六, J&amp;Ocean BLOG">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>算法课外思考题四 | J&amp;Ocean BLOG</title>
+    <title>算法课外思考题六 | J&amp;Ocean BLOG</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -235,12 +235,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">算法课外思考题四</h1>
+                    <h1 class="description center-align post-title">算法课外思考题六</h1>
                 </div>
             </div>
         </div>
@@ -360,12 +360,12 @@
                                 <span class="chip bg-color">算法</span>
                             </a>
                         
-                            <a href="/tags/%E6%9F%A5%E6%89%BE%E6%95%88%E7%8E%87/">
-                                <span class="chip bg-color">查找效率</span>
+                            <a href="/tags/%E6%91%A9%E5%B0%94%E6%8A%95%E7%A5%A8%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">摩尔投票算法</span>
                             </a>
                         
-                            <a href="/tags/%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84/">
-                                <span class="chip bg-color">旋转数组</span>
+                            <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+                                <span class="chip bg-color">动态规划</span>
                             </a>
                         
                     </div>
@@ -389,7 +389,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-07-06
+                    2023-07-10
                 </div>
                 
 
@@ -398,14 +398,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    1.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    9 分
                 </div>
                 
 
@@ -423,117 +423,324 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>对于一个序列可以采用二分查找或顺序查找，请结合实施查找的次数，确定在什么情况下使用二分查找效率更高？</p>
-<h3 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h3><p>顺序查找是按照序列原有顺序对数组进行遍历比较查询的基本查找算法，时间复杂度是$O(n)$，在最坏的情况下，查询值在数组末尾或没有该查询值，需要遍历完整个数组；</p>
-<p>二分查找是在顺序存储结构、元素有序排列中，从表中间开始查找，若不相等，则将表分成前后两个字表，根据中间元素的查询结果在对应表中进行第二次查找，时间复杂度是$O(log_2n)$，在最坏的情况下，没有该查询值，则至少需要查询$\lfloor log_2n \rfloor$次；查询成功时，最多查询$\lceil log_2n \rceil$次。</p>
-<p>本题通过记录查找次数来进行比较</p>
-<h3 id="算法实现与分析"><a href="#算法实现与分析" class="headerlink" title="算法实现与分析"></a>算法实现与分析</h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;iostream&gt;
-#include&lt;vector&gt;
-using namespace std;
+                <h2 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>给出不同策略返回一序列数中的众数（出现次数不小于序列长度的一半），并分析</p>
+<h3 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h3><p>最简单的算法是先对序列进行排序，然后选取$(n&#x2F;2)$和$(n&#x2F;2-1)$位置的元素，分别与序列初值和末尾进行比较，如果有其中一个元素相等，则该元素是众数</p>
+<p>选取其中一个元素作为侯选数，众数是出现次数不小于序列长度的一半的数，根据鸽笼原理得到序列中的其他元素的个数少于众数的个数，依据上述原理，能够判断侯选数是否为众数，这就是<strong>摩尔投票算法</strong>的基本步骤。</p>
+<p>使用$hashtable$来存储</p>
+<h3 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h3><h4 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h4><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void quickSort(int arr[], int left, int right) &#123;
+	int i &#x3D; left, j &#x3D; right;
+	int temp;
+	int pivot &#x3D; arr[(left + right) &#x2F; 2];
 
-&#x2F;&#x2F;顺序查找
-int SequentialSearch(vector&lt;int&gt;&amp; arr, int target) &#123;
-	int n &#x3D; arr.size();
-	int num &#x3D; 0;
+	while (i &lt;&#x3D; j) &#123;
+		while (arr[i] &lt; pivot)
+			i++;
+		while (arr[j] &gt; pivot)
+			j--;
+		if (i &lt;&#x3D; j) &#123;
+			temp &#x3D; arr[i];
+			arr[i] &#x3D; arr[j];
+			arr[j] &#x3D; temp;
+			i++;
+			j--;
+		&#125;
+	&#125;
+
+	if (left &lt; j)
+		quickSort(arr, left, j);
+	if (i &lt; right)
+		quickSort(arr, i, right);
+&#125;
+
+int FindMajority1(int arr[], int n) &#123;
+	quickSort(arr, 0, n - 1);
+	if (n % 2 &#x3D;&#x3D; 0) &#123;
+		if (arr[n &#x2F; 2] &#x3D;&#x3D; arr[0] || arr[n &#x2F; 2] &#x3D;&#x3D; arr[n - 1]) &#123;
+			return arr[n &#x2F; 2];
+		&#125;
+		if (arr[n &#x2F; 2 - 1] &#x3D;&#x3D; arr[0] || arr[n &#x2F; 2 - 1] &#x3D;&#x3D; arr[n - 1]) &#123;
+			return arr[n &#x2F; 2 - 1];
+		&#125;
+	&#125;
+	else &#123;
+		if (arr[n &#x2F; 2] &#x3D;&#x3D; arr[0] || arr[n &#x2F; 2] &#x3D;&#x3D; arr[n - 1]) &#123;
+			return arr[n &#x2F; 2];
+		&#125;
+	&#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h4 id="摩尔投票算法"><a href="#摩尔投票算法" class="headerlink" title="摩尔投票算法"></a>摩尔投票算法</h4><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">int FindMajority1(int array[],int n) &#123;
+	int count &#x3D; 0;
+	int cur;
 	for (int i &#x3D; 0; i &lt; n; i++) &#123;
-		num++;
-		if (arr[i] &#x3D;&#x3D; target) &#123;
-			cout &lt;&lt; &quot;Search for &quot; &lt;&lt; num &lt;&lt; &quot; times&quot; &lt;&lt; endl;
-			return i;
+		if (count &#x3D;&#x3D; 0) &#123;
+			cur &#x3D; array[i];
 		&#125;
-	&#125;
-	cout &lt;&lt; &quot;Search for &quot; &lt;&lt; num &lt;&lt; &quot; times&quot; &lt;&lt; endl;
-	return -1;
-&#125;
-
-&#x2F;&#x2F;二分查找
-int BinarySearch(vector&lt;int&gt;&amp; arr, int target) &#123;
-	int n &#x3D; arr.size();
-	int left &#x3D; 0, right &#x3D; n - 1, middle;
-	int num &#x3D; 0;
-	while (left &lt;&#x3D; right) &#123;
-		num++;
-		middle &#x3D; left + ((right - left) &gt;&gt; 2);
-		if (arr[middle] &#x3D;&#x3D; target) &#123;
-			cout &lt;&lt; &quot;Search for &quot; &lt;&lt; num &lt;&lt; &quot; times&quot; &lt;&lt; endl;
-			return middle;
-		&#125;
-		else if (arr[middle] &lt; target) &#123;
-			left &#x3D; middle + 1;
+		if (cur &#x3D;&#x3D; array[i]) &#123;
+			count++;
 		&#125;
 		else &#123;
-			right &#x3D; middle - 1;
+			count--;
 		&#125;
 	&#125;
-	cout &lt;&lt; &quot;Search for &quot; &lt;&lt; num &lt;&lt; &quot; times&quot; &lt;&lt; endl;
-	return -1;
-&#125;
+	if (n !&#x3D; 2 &amp;&amp; cur &#x3D;&#x3D; array[n - 1]) &#123;
+		return INT_MAX;
+	&#125;
+	else &#123;
+		return cur;
+	&#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-int main() &#123;
-	vector&lt;int&gt; arr &#x3D; &#123; 1,2,3,4,5,6,7,8,9,10 &#125;;
-	int target &#x3D; 7;
-	int a &#x3D; SequentialSearch(arr, target);
-	cout &lt;&lt; a &lt;&lt; endl;
-	int b &#x3D; BinarySearch(arr, target);
-	cout &lt;&lt; b &lt;&lt; endl;
 
-	return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>实验结果：</p>
-<p><img src="/imgs/sikao4/1.png" alt="image-20230316143509778"></p>
-<p>从上述实验中，查询元素7的值，顺序查找的次数为7次，而二分查找的次数为4次，最终查询结果都正确，但是在本序列中，元素数量并不是很多，因此查询次数在数量级上并没有显著差距。</p>
-<p>下面对两查找效率进行比较：</p>
-<ol>
-<li>以升序序列为例，在最小值片进行查询的时候，顺序查找的次数会小于二分查找，因此使用顺序查找查询较小的值即查询值下标$&lt; \lfloor log_2n \rfloor$时，效率更高、次数更小；</li>
-<li>对于升序序列，在查询相对较大的值的时候，二分查找的次数就会小于顺序查找，因此使用二分查找查询较大的值即查询值下标$&gt; \lfloor log_2n \rfloor$，效率更高、次数更少；</li>
-<li>对于查询值个数不止一个的操作来说，使用二分查找的效率比顺序查找要高得多，二分查找只需要在初始状态进行一次排序，之后的每次查找都可以利用有序性，而顺序查找则需要每次查询都进行一次数组遍历。</li>
-</ol>
-<h2 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h2><h3 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h3><p>现有一个序列，它是由一个有序系列绕着某个元素旋转得到的。请给出一个在此序列实施查找的有效算法，并对你的算法进行分析</p>
-<h3 id="问题分析-1"><a href="#问题分析-1" class="headerlink" title="问题分析"></a>问题分析</h3><p>有序序列绕着某个元素旋转得到旋转数组可以使用改进后的二分查找进行查询，在循环中进行有序性判断</p>
-<p>如果左端元素小于中间元素，则左半部分为有序数组，如果目标值在左半部分，则继续在左半部分进行查找，否则在右半部分查找；若左端元素大于中间元素，那么右半部分为有序数组，若目标值在右半部分，则继续在右半部分进行查找，否则在左半部分进行查找。</p>
-<p>另一种办法就是将旋转序列恢复后在进行二分查找，但是恢复旋转序列存在很多问题，一是<strong>旋转序列恢复的时间复杂度是$O(n)$，恢复后排序增加操作时间</strong>；二是<strong>查找得到的值并不是旋转序列的下标</strong>，在实际应用中不会使用。</p>
-<p>使用顺序查找的办法，时间复杂度是$O(n)$，简单易懂，但是需要遍历整个序列，大规模数据呈现劣势</p>
-<h3 id="算法实现与分析-1"><a href="#算法实现与分析-1" class="headerlink" title="算法实现与分析"></a>算法实现与分析</h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;iostream&gt;
-#include&lt;vector&gt;
+<h4 id="hashtable-法"><a href="#hashtable-法" class="headerlink" title="$hashtable$法"></a>$hashtable$法</h4><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">int FindMajority3(int arr[], int n) &#123;
+	unordered_map&lt;int, int&gt; counts;
+	int maxCount &#x3D; 0;
+	int mode &#x3D; 0;
+
+	for (int i &#x3D; 0; i &lt; n; i++) &#123;
+		counts[arr[i]]++;
+		if (counts[arr[i]] &gt; maxCount) &#123;
+			maxCount &#x3D; counts[arr[i]];
+			mode &#x3D; arr[i];
+		&#125;
+	&#125;
+
+	if (maxCount &gt;&#x3D; n &#x2F; 2) &#123;
+		return mode;
+	&#125;
+	return INT_MAX;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="算法实现与分析"><a href="#算法实现与分析" class="headerlink" title="算法实现与分析"></a>算法实现与分析</h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;iostream&gt;
+#include&lt;unordered_map&gt;
 using namespace std;
 
-int BinarySearch(vector&lt;int&gt;&amp; arr, int target) &#123;
-	int left &#x3D; 0, right &#x3D; arr.size() - 1;
-	while (left &lt;&#x3D; right) &#123;
-		int middle &#x3D; left + ((right - left) &gt;&gt; 1);
-		if (arr[middle] &#x3D;&#x3D; target) &#123;
-			return middle;
-		&#125;
-		if (arr[left] &lt;&#x3D; arr[middle]) &#123;
-			if (target &gt;&#x3D; arr[left] &amp;&amp; target &lt; arr[middle]) &#123;
-				right &#x3D; middle - 1;
-			&#125;
-			else &#123;
-				left &#x3D; middle + 1;
-			&#125;
-		&#125;
-		else &#123;
-			if (target &gt; arr[middle] &amp;&amp; target &lt;&#x3D; arr[right]) &#123;
-				left &#x3D; middle + 1;
-			&#125;
-			else &#123;
-				right &#x3D; middle - 1;
-			&#125;
+void quickSort(int arr[], int left, int right) &#123;
+	int i &#x3D; left, j &#x3D; right;
+	int temp;
+	int pivot &#x3D; arr[(left + right) &#x2F; 2];
+
+	while (i &lt;&#x3D; j) &#123;
+		while (arr[i] &lt; pivot)
+			i++;
+		while (arr[j] &gt; pivot)
+			j--;
+		if (i &lt;&#x3D; j) &#123;
+			temp &#x3D; arr[i];
+			arr[i] &#x3D; arr[j];
+			arr[j] &#x3D; temp;
+			i++;
+			j--;
 		&#125;
 	&#125;
-	return -1;
+
+	if (left &lt; j)
+		quickSort(arr, left, j);
+	if (i &lt; right)
+		quickSort(arr, i, right);
+&#125;
+
+int FindMajority1(int arr[], int n) &#123;
+	quickSort(arr, 0, n - 1);
+	if (n % 2 &#x3D;&#x3D; 0) &#123;
+		if (arr[n &#x2F; 2] &#x3D;&#x3D; arr[0] || arr[n &#x2F; 2] &#x3D;&#x3D; arr[n - 1]) &#123;
+			return arr[n &#x2F; 2];
+		&#125;
+		if (arr[n &#x2F; 2 - 1] &#x3D;&#x3D; arr[0] || arr[n &#x2F; 2 - 1] &#x3D;&#x3D; arr[n - 1]) &#123;
+			return arr[n &#x2F; 2 - 1];
+		&#125;
+	&#125;
+	else &#123;
+		if (arr[n &#x2F; 2] &#x3D;&#x3D; arr[0] || arr[n &#x2F; 2] &#x3D;&#x3D; arr[n - 1]) &#123;
+			return arr[n &#x2F; 2];
+		&#125;
+	&#125;
+&#125;
+
+int FindMajority2(int array[],int n) &#123;
+	int count &#x3D; 0;
+	int cur &#x3D; INT_MAX;
+	for (int i &#x3D; 0; i &lt; n; i++) &#123;
+		if (count &#x3D;&#x3D; 0) &#123;
+			cur &#x3D; array[i];
+		&#125;
+		if (cur &#x3D;&#x3D; array[i]) &#123;
+			count++;
+		&#125;
+		else &#123;
+			count--;
+		&#125;
+	&#125;
+	if (n !&#x3D; 2 &amp;&amp; cur &#x3D;&#x3D; array[n - 1]) &#123;
+		return INT_MAX;
+	&#125;
+	else &#123;
+		return cur;
+	&#125;
+&#125;
+
+int FindMajority3(int arr[], int n) &#123;
+	unordered_map&lt;int, int&gt; counts;
+	int maxCount &#x3D; 0;
+	int mode &#x3D; 0;
+
+	for (int i &#x3D; 0; i &lt; n; i++) &#123;
+		counts[arr[i]]++;
+		if (counts[arr[i]] &gt; maxCount) &#123;
+			maxCount &#x3D; counts[arr[i]];
+			mode &#x3D; arr[i];
+		&#125;
+	&#125;
+
+	if (maxCount &gt;&#x3D; n &#x2F; 2) &#123;
+		return mode;
+	&#125;
+	return INT_MAX;
 &#125;
 
 int main() &#123;
-	vector&lt;int&gt; arr &#x3D; &#123; 4,5,6,7,1,2,3 &#125;;
-	int target &#x3D; 1;
-	cout &lt;&lt; BinarySearch(arr, target) &lt;&lt; endl;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+	int array[] &#x3D; &#123; 1,1,1,2,3,4 &#125;;
+	int n &#x3D; sizeof(array) &#x2F; sizeof(array[0]);
+	cout &lt;&lt; FindMajority1(array, n) &lt;&lt; endl;
+	cout &lt;&lt; FindMajority2(array, n) &lt;&lt; endl;
+	cout &lt;&lt; FindMajority3(array, n) &lt;&lt; endl;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>实验结果：</p>
-<p><img src="/imgs/sikao4/2.png" alt="image-20230316144631569"></p>
-<p>改进二分法的时间复杂度是$O(log_2n)$，是一种高效的查找方法，在大规模数据下呈现优势</p>
+<p>实现：</p>
+<p><img src="/imgs/sikao6/1.png" alt="image-20230323094831456"></p>
+<p><strong>针对方法一</strong>，使用快速排序，因此时间复杂度是$O(nlogn)$，空间复杂度是$O(logn)$；</p>
+<p><strong>针对方法二</strong>，遍历一次数组，时间复杂度是$O(n)$，空间复杂度是$O(1)$；</p>
+<p><strong>针对方法三</strong>，遍历一次数组，时间复杂度是$O(n)$，空间复杂度是$O(n)$。</p>
+<h2 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h2><h3 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h3><p>给出不同策略将偶数个元素形成的序列分成两个子序列$S_1$$、$$S_2$$，要求$$S_1$$、$$S_2$的和差值最大</p>
+<h3 id="问题分析-1"><a href="#问题分析-1" class="headerlink" title="问题分析"></a>问题分析</h3><p>方法一是使用动态规划算法，使用一个二维数组$dp[i][j]$表示前i个元素中是否存在一些元素的和为j，通过动态规划的方式逐步地求出$dp$数组地所有制，在dp数组中找到一个满足条件的最大的j。如果$dp[n][j]$的值为true，S1的和为j，S2为sum-j，两者差为$sum-2j$。</p>
+<p>方法二是使用暴力枚举法，例举出两子序列分别进行求和，比较不同子序列之差</p>
+<h3 id="算法实现与分析-1"><a href="#算法实现与分析-1" class="headerlink" title="算法实现与分析"></a>算法实现与分析</h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;iostream&gt;
+#include&lt;algorithm&gt;
+#include&lt;vector&gt;
+
+using namespace std;
+
+vector&lt;vector&lt;int&gt;&gt; MaxDifference(vector&lt;int&gt; nums) &#123;
+	int n &#x3D; nums.size();
+	int sum &#x3D; 0;
+	for (int i &#x3D; 0; i &lt; n; i++) &#123;
+		sum +&#x3D; nums[i];
+	&#125;
+	vector&lt;vector&lt;int&gt;&gt; dp(n + 1, vector&lt;int&gt;((sum &gt;&gt; 1) + 1, 0));
+	dp[0][0] &#x3D; 1;
+
+	for (int i &#x3D; 1; i &lt;&#x3D; n; i++) &#123;
+		for (int j &#x3D; 0; j &lt;&#x3D; (sum &gt;&gt; 1); j++) &#123;
+			dp[i][j] &#x3D; dp[i - 1][j];
+			if (j &gt;&#x3D; nums[i - 1]) &#123;
+				dp[i][j] |&#x3D; dp[i - 1][j - nums[i - 1]];
+			&#125;
+		&#125;
+	&#125;
+
+	int maxdiff &#x3D; 0;
+	int index &#x3D; 0;
+	for (int j &#x3D; (sum &gt;&gt; 1); j &gt;&#x3D; 0; j--) &#123;
+		if (dp[n][j]) &#123;
+			maxdiff &#x3D; sum - 2 * j;
+			index &#x3D; j;
+			break;
+		&#125;
+	&#125;
+
+	vector&lt;int&gt; S1, S2;
+	int i &#x3D; n;
+	int j &#x3D; index;
+	while (i &gt; 0 &amp;&amp; j &gt; 0) &#123;
+		if (dp[i - 1][j]) &#123;
+			i--;
+		&#125;
+		else &#123;
+			S1.push_back(nums[i - 1]);
+			j -&#x3D; nums[i - 1];
+			i--;
+		&#125;
+	&#125;
+
+	for (int i &#x3D; 0; i &lt; n; i++) &#123;
+		if (find(S1.begin(), S1.end(), nums[i]) &#x3D;&#x3D; S1.end()) &#123;
+			S2.push_back(nums[i]);
+		&#125;
+	&#125;
+
+	return &#123; S1,S2 &#125;;
+&#125;
+
+int main() &#123;
+	vector&lt;int&gt; nums &#x3D; &#123; 1,6,5,11,3,2 &#125;;
+	vector&lt;int&gt; S1, S2;
+	int n &#x3D; nums.size();
+
+	vector&lt;vector&lt;int&gt;&gt; result &#x3D; MaxDifference(nums);
+
+	S1 &#x3D; result[0];
+	S2 &#x3D; result[1];
+
+	for (int i &#x3D; 1; i &lt; (n &gt;&gt; 1); i++) &#123;
+		cout &lt;&lt; S1[i] &lt;&lt; &quot; &quot;;
+	&#125;
+	cout &lt;&lt; endl;
+
+	for (int i &#x3D; 1; i &lt; (n &gt;&gt; 1); i++) &#123;
+		cout &lt;&lt; S2[i] &lt;&lt; &quot; &quot;;
+	&#125;
+	cout &lt;&lt; endl;
+
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>该算法的时间复杂度是$O(n^2)$，针对元素较多的序列处理能力强</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+vector&lt;int&gt; findMaxDiffSubsequence(const vector&lt;int&gt;&amp; nums) &#123;
+    int n &#x3D; nums.size();
+    int maxDiff &#x3D; INT_MIN;
+    vector&lt;int&gt; maxS1, maxS2;
+
+    for (int i &#x3D; 0; i &lt; (1 &lt;&lt; n); i++) &#123;
+        int s1sum &#x3D; 0, s2sum &#x3D; 0;
+        vector&lt;int&gt; s1, s2;
+        for (int j &#x3D; 0; j &lt; n; j++) &#123;
+            if (i &amp; (1 &lt;&lt; j)) &#123;
+                s1.push_back(nums[j]);
+                s1sum +&#x3D; nums[j];
+            &#125; else &#123;
+                s2.push_back(nums[j]);
+                s2sum +&#x3D; nums[j];
+            &#125;
+        &#125;
+        int diff &#x3D; s1sum - s2sum;
+        if (diff &gt; maxDiff) &#123;
+            maxDiff &#x3D; diff;
+            maxS1 &#x3D; s1;
+            maxS2 &#x3D; s2;
+        &#125;
+    &#125;
+
+    return maxDiff &gt; 0 ? maxS1 : maxS2;
+&#125;
+
+int main() &#123;
+    vector&lt;int&gt; nums &#x3D; &#123;1, 2, 3, 4, 5, 6&#125;;
+    vector&lt;int&gt; subsequence &#x3D; findMaxDiffSubsequence(nums);
+    for (int i &#x3D; 0; i &lt; subsequence.size(); i++) &#123;
+        cout &lt;&lt; subsequence[i] &lt;&lt; &quot; &quot;;
+    &#125;
+    cout &lt;&lt; endl;
+    return 0;
+&#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>暴力枚举法的时间复杂度是$O(n2^n)$，处理方法简单，能够保证结果的正确性，但是时间复杂度很高，针对长序列不适用</p>
 
                 
             </div>
@@ -560,7 +767,7 @@ int main() &#123;
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jiang-wu-19.github.io/2023/07/06/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E5%9B%9B/">https://jiang-wu-19.github.io/2023/07/06/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E5%9B%9B/</a>
+                    <a href="https://jiang-wu-19.github.io/2023/07/10/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E5%85%AD/">https://jiang-wu-19.github.io/2023/07/10/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E5%85%AD/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -602,12 +809,12 @@ int main() &#123;
                                     <span class="chip bg-color">算法</span>
                                 </a>
                             
-                                <a href="/tags/%E6%9F%A5%E6%89%BE%E6%95%88%E7%8E%87/">
-                                    <span class="chip bg-color">查找效率</span>
+                                <a href="/tags/%E6%91%A9%E5%B0%94%E6%8A%95%E7%A5%A8%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">摩尔投票算法</span>
                                 </a>
                             
-                                <a href="/tags/%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84/">
-                                    <span class="chip bg-color">旋转数组</span>
+                                <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+                                    <span class="chip bg-color">动态规划</span>
                                 </a>
                             
                         </div>
@@ -1040,50 +1247,56 @@ int main() &#123;
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/07/06/Python%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/">
+                <a href="/2023/07/10/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E5%85%AD/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Python数据处理">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="算法课外思考题六">
                         
-                        <span class="card-title">Python数据处理</span>
+                        <span class="card-title">算法课外思考题六</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Python学习笔记
+                            求众数和两序列最大和插值
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-07-06
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-10
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
-                                    笔记
+                            <a href="/categories/%E7%AE%97%E6%B3%95%E6%80%9D%E8%80%83%E9%A2%98/" class="post-category">
+                                    算法思考题
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Python/">
-                        <span class="chip bg-color">Python</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/">
-                        <span class="chip bg-color">数据处理</span>
+                    <a href="/tags/%E6%91%A9%E5%B0%94%E6%8A%95%E7%A5%A8%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">摩尔投票算法</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+                        <span class="chip bg-color">动态规划</span>
                     </a>
                     
                 </div>
@@ -1097,24 +1310,24 @@ int main() &#123;
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/07/06/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E4%B8%89/">
+                <a href="/2023/07/07/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E4%BA%94/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="算法课外思考题三">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="算法课外思考题五">
                         
-                        <span class="card-title">算法课外思考题三</span>
+                        <span class="card-title">算法课外思考题五</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            求子集和相似度指标调研
+                            求top-k元素和递归实现堆排序
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-06
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-07
                             </span>
                         <span class="publish-author">
                             
@@ -1135,12 +1348,12 @@ int main() &#123;
                         <span class="chip bg-color">算法</span>
                     </a>
                     
-                    <a href="/tags/%E9%9B%86%E5%90%88/">
-                        <span class="chip bg-color">集合</span>
+                    <a href="/tags/top-k/">
+                        <span class="chip bg-color">top-k</span>
                     </a>
                     
-                    <a href="/tags/%E7%9B%B8%E4%BC%BC%E5%BA%A6/">
-                        <span class="chip bg-color">相似度</span>
+                    <a href="/tags/%E5%A0%86%E6%8E%92%E5%BA%8F/">
+                        <span class="chip bg-color">堆排序</span>
                     </a>
                     
                 </div>
