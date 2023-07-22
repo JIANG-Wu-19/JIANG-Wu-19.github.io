@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="算法课外思考题四, J&amp;Ocean BLOG">
+    <meta name="keywords" content="课程设计的index, J&amp;Ocean BLOG">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>算法课外思考题四 | J&amp;Ocean BLOG</title>
+    <title>课程设计的index | J&amp;Ocean BLOG</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -235,12 +235,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">算法课外思考题四</h1>
+                    <h1 class="description center-align post-title">课程设计的index</h1>
                 </div>
             </div>
         </div>
@@ -356,16 +356,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">算法</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%9F%A5%E6%89%BE%E6%95%88%E7%8E%87/">
-                                <span class="chip bg-color">查找效率</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84/">
-                                <span class="chip bg-color">旋转数组</span>
+                            <a href="/tags/%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/">
+                                <span class="chip bg-color">课程设计</span>
                             </a>
                         
                     </div>
@@ -376,8 +368,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%AE%97%E6%B3%95%E6%80%9D%E8%80%83%E9%A2%98/" class="post-category">
-                                算法思考题
+                            <a href="/categories/index/" class="post-category">
+                                index
                             </a>
                         
                     </div>
@@ -389,7 +381,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-07-06
+                    2023-07-22
                 </div>
                 
 
@@ -398,14 +390,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    51
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    1 分
                 </div>
                 
 
@@ -423,117 +415,14 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>对于一个序列可以采用二分查找或顺序查找，请结合实施查找的次数，确定在什么情况下使用二分查找效率更高？</p>
-<h3 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h3><p>顺序查找是按照序列原有顺序对数组进行遍历比较查询的基本查找算法，时间复杂度是$O(n)$，在最坏的情况下，查询值在数组末尾或没有该查询值，需要遍历完整个数组；</p>
-<p>二分查找是在顺序存储结构、元素有序排列中，从表中间开始查找，若不相等，则将表分成前后两个字表，根据中间元素的查询结果在对应表中进行第二次查找，时间复杂度是$O(log_2n)$，在最坏的情况下，没有该查询值，则至少需要查询$\lfloor log_2n \rfloor$次；查询成功时，最多查询$\lceil log_2n \rceil$次。</p>
-<p>本题通过记录查找次数来进行比较</p>
-<h3 id="算法实现与分析"><a href="#算法实现与分析" class="headerlink" title="算法实现与分析"></a>算法实现与分析</h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;iostream&gt;
-#include&lt;vector&gt;
-using namespace std;
-
-&#x2F;&#x2F;顺序查找
-int SequentialSearch(vector&lt;int&gt;&amp; arr, int target) &#123;
-	int n &#x3D; arr.size();
-	int num &#x3D; 0;
-	for (int i &#x3D; 0; i &lt; n; i++) &#123;
-		num++;
-		if (arr[i] &#x3D;&#x3D; target) &#123;
-			cout &lt;&lt; &quot;Search for &quot; &lt;&lt; num &lt;&lt; &quot; times&quot; &lt;&lt; endl;
-			return i;
-		&#125;
-	&#125;
-	cout &lt;&lt; &quot;Search for &quot; &lt;&lt; num &lt;&lt; &quot; times&quot; &lt;&lt; endl;
-	return -1;
-&#125;
-
-&#x2F;&#x2F;二分查找
-int BinarySearch(vector&lt;int&gt;&amp; arr, int target) &#123;
-	int n &#x3D; arr.size();
-	int left &#x3D; 0, right &#x3D; n - 1, middle;
-	int num &#x3D; 0;
-	while (left &lt;&#x3D; right) &#123;
-		num++;
-		middle &#x3D; left + ((right - left) &gt;&gt; 2);
-		if (arr[middle] &#x3D;&#x3D; target) &#123;
-			cout &lt;&lt; &quot;Search for &quot; &lt;&lt; num &lt;&lt; &quot; times&quot; &lt;&lt; endl;
-			return middle;
-		&#125;
-		else if (arr[middle] &lt; target) &#123;
-			left &#x3D; middle + 1;
-		&#125;
-		else &#123;
-			right &#x3D; middle - 1;
-		&#125;
-	&#125;
-	cout &lt;&lt; &quot;Search for &quot; &lt;&lt; num &lt;&lt; &quot; times&quot; &lt;&lt; endl;
-	return -1;
-&#125;
-
-int main() &#123;
-	vector&lt;int&gt; arr &#x3D; &#123; 1,2,3,4,5,6,7,8,9,10 &#125;;
-	int target &#x3D; 7;
-	int a &#x3D; SequentialSearch(arr, target);
-	cout &lt;&lt; a &lt;&lt; endl;
-	int b &#x3D; BinarySearch(arr, target);
-	cout &lt;&lt; b &lt;&lt; endl;
-
-	return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>实验结果：</p>
-<p><img src="/imgs/sikao4/1.png" alt="image-20230316143509778"></p>
-<p>从上述实验中，查询元素7的值，顺序查找的次数为7次，而二分查找的次数为4次，最终查询结果都正确，但是在本序列中，元素数量并不是很多，因此查询次数在数量级上并没有显著差距。</p>
-<p>下面对两查找效率进行比较：</p>
-<ol>
-<li>以升序序列为例，在最小值片进行查询的时候，顺序查找的次数会小于二分查找，因此使用顺序查找查询较小的值即查询值下标$&lt; \lfloor log_2n \rfloor$时，效率更高、次数更小；</li>
-<li>对于升序序列，在查询相对较大的值的时候，二分查找的次数就会小于顺序查找，因此使用二分查找查询较大的值即查询值下标$&gt; \lfloor log_2n \rfloor$，效率更高、次数更少；</li>
-<li>对于查询值个数不止一个的操作来说，使用二分查找的效率比顺序查找要高得多，二分查找只需要在初始状态进行一次排序，之后的每次查找都可以利用有序性，而顺序查找则需要每次查询都进行一次数组遍历。</li>
-</ol>
-<h2 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h2><h3 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h3><p>现有一个序列，它是由一个有序系列绕着某个元素旋转得到的。请给出一个在此序列实施查找的有效算法，并对你的算法进行分析</p>
-<h3 id="问题分析-1"><a href="#问题分析-1" class="headerlink" title="问题分析"></a>问题分析</h3><p>有序序列绕着某个元素旋转得到旋转数组可以使用改进后的二分查找进行查询，在循环中进行有序性判断</p>
-<p>如果左端元素小于中间元素，则左半部分为有序数组，如果目标值在左半部分，则继续在左半部分进行查找，否则在右半部分查找；若左端元素大于中间元素，那么右半部分为有序数组，若目标值在右半部分，则继续在右半部分进行查找，否则在左半部分进行查找。</p>
-<p>另一种办法就是将旋转序列恢复后在进行二分查找，但是恢复旋转序列存在很多问题，一是<strong>旋转序列恢复的时间复杂度是$O(n)$，恢复后排序增加操作时间</strong>；二是<strong>查找得到的值并不是旋转序列的下标</strong>，在实际应用中不会使用。</p>
-<p>使用顺序查找的办法，时间复杂度是$O(n)$，简单易懂，但是需要遍历整个序列，大规模数据呈现劣势</p>
-<h3 id="算法实现与分析-1"><a href="#算法实现与分析-1" class="headerlink" title="算法实现与分析"></a>算法实现与分析</h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;iostream&gt;
-#include&lt;vector&gt;
-using namespace std;
-
-int BinarySearch(vector&lt;int&gt;&amp; arr, int target) &#123;
-	int left &#x3D; 0, right &#x3D; arr.size() - 1;
-	while (left &lt;&#x3D; right) &#123;
-		int middle &#x3D; left + ((right - left) &gt;&gt; 1);
-		if (arr[middle] &#x3D;&#x3D; target) &#123;
-			return middle;
-		&#125;
-		if (arr[left] &lt;&#x3D; arr[middle]) &#123;
-			if (target &gt;&#x3D; arr[left] &amp;&amp; target &lt; arr[middle]) &#123;
-				right &#x3D; middle - 1;
-			&#125;
-			else &#123;
-				left &#x3D; middle + 1;
-			&#125;
-		&#125;
-		else &#123;
-			if (target &gt; arr[middle] &amp;&amp; target &lt;&#x3D; arr[right]) &#123;
-				left &#x3D; middle + 1;
-			&#125;
-			else &#123;
-				right &#x3D; middle - 1;
-			&#125;
-		&#125;
-	&#125;
-	return -1;
-&#125;
-
-int main() &#123;
-	vector&lt;int&gt; arr &#x3D; &#123; 4,5,6,7,1,2,3 &#125;;
-	int target &#x3D; 1;
-	cout &lt;&lt; BinarySearch(arr, target) &lt;&lt; endl;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>实验结果：</p>
-<p><img src="/imgs/sikao4/2.png" alt="image-20230316144631569"></p>
-<p>改进二分法的时间复杂度是$O(log_2n)$，是一种高效的查找方法，在大规模数据下呈现优势</p>
+                <ul>
+<li>高级程序设计实践：联系J&amp;Ocean，联系方式在本页底部</li>
+<li>计算机原理与汇编语言课程设计：<a target="_blank" rel="noopener" href="https://github.com/JIANG-Wu-19/AssenblyLanguage_Practice">AssenblyLanguage_Practice</a></li>
+<li>应用基础实践一（网络+Java）：<a target="_blank" rel="noopener" href="https://github.com/JIANG-Wu-19/JavaNetworks">JavaNetworks</a></li>
+</ul>
+<blockquote>
+<p>To be continued</p>
+</blockquote>
 
                 
             </div>
@@ -560,7 +449,7 @@ int main() &#123;
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jiang-wu-19.github.io/2023/07/06/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E5%9B%9B/">https://jiang-wu-19.github.io/2023/07/06/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E5%9B%9B/</a>
+                    <a href="https://jiang-wu-19.github.io/2023/07/22/%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E7%9A%84index/">https://jiang-wu-19.github.io/2023/07/22/%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E7%9A%84index/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -598,16 +487,8 @@ int main() &#123;
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">算法</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%9F%A5%E6%89%BE%E6%95%88%E7%8E%87/">
-                                    <span class="chip bg-color">查找效率</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84/">
-                                    <span class="chip bg-color">旋转数组</span>
+                                <a href="/tags/%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/">
+                                    <span class="chip bg-color">课程设计</span>
                                 </a>
                             
                         </div>
@@ -1040,50 +921,48 @@ int main() &#123;
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/07/06/Python%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/">
+                <a href="/2023/07/22/%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E7%9A%84index/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Python数据处理">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="课程设计的index">
                         
-                        <span class="card-title">Python数据处理</span>
+                        <span class="card-title">课程设计的index</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Python学习笔记
+                            本文摘录了J&Ocean的课程设计项目地址
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-07-06
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-22
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
-                                    笔记
+                            <a href="/categories/index/" class="post-category">
+                                    index
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Python/">
-                        <span class="chip bg-color">Python</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/">
-                        <span class="chip bg-color">数据处理</span>
+                    <a href="/tags/%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/">
+                        <span class="chip bg-color">课程设计</span>
                     </a>
                     
                 </div>
@@ -1097,31 +976,31 @@ int main() &#123;
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/07/06/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E4%B8%89/">
+                <a href="/2023/07/22/%E8%AF%BE%E5%86%85%E5%AE%9E%E9%AA%8C%E7%9A%84index/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="算法课外思考题三">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="课内实验的index">
                         
-                        <span class="card-title">算法课外思考题三</span>
+                        <span class="card-title">课内实验的index</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            求子集和相似度指标调研
+                            本文摘录了J&Ocean的课内实验项目地址
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-06
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-22
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%AE%97%E6%B3%95%E6%80%9D%E8%80%83%E9%A2%98/" class="post-category">
-                                    算法思考题
+                            <a href="/categories/index/" class="post-category">
+                                    index
                                 </a>
                             
                             
@@ -1131,16 +1010,8 @@ int main() &#123;
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
-                    </a>
-                    
-                    <a href="/tags/%E9%9B%86%E5%90%88/">
-                        <span class="chip bg-color">集合</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%9B%B8%E4%BC%BC%E5%BA%A6/">
-                        <span class="chip bg-color">相似度</span>
+                    <a href="/tags/%E8%AF%BE%E5%86%85%E5%AE%9E%E9%AA%8C/">
+                        <span class="chip bg-color">课内实验</span>
                     </a>
                     
                 </div>
@@ -1308,13 +1179,6 @@ int main() &#123;
 
 </main>
 
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
 
 
 
