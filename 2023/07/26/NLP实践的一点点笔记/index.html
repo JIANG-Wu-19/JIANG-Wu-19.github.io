@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="算法课外思考题四, J&amp;Ocean BLOG">
+    <meta name="keywords" content="NLP实践的一点点笔记, J&amp;Ocean BLOG">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>算法课外思考题四 | J&amp;Ocean BLOG</title>
+    <title>NLP实践的一点点笔记 | J&amp;Ocean BLOG</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -235,12 +235,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">算法课外思考题四</h1>
+                    <h1 class="description center-align post-title">NLP实践的一点点笔记</h1>
                 </div>
             </div>
         </div>
@@ -356,16 +356,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">算法</span>
+                            <a href="/tags/NLP/">
+                                <span class="chip bg-color">NLP</span>
                             </a>
                         
-                            <a href="/tags/%E6%9F%A5%E6%89%BE%E6%95%88%E7%8E%87/">
-                                <span class="chip bg-color">查找效率</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84/">
-                                <span class="chip bg-color">旋转数组</span>
+                            <a href="/tags/Python/">
+                                <span class="chip bg-color">Python</span>
                             </a>
                         
                     </div>
@@ -376,8 +372,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%AE%97%E6%B3%95%E6%80%9D%E8%80%83%E9%A2%98/" class="post-category">
-                                算法思考题
+                            <a href="/categories/%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0/" class="post-category">
+                                暑期实习
                             </a>
                         
                     </div>
@@ -389,7 +385,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-07-06
+                    2023-07-26
                 </div>
                 
 
@@ -398,14 +394,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    4.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    23 分
                 </div>
                 
 
@@ -423,117 +419,364 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>对于一个序列可以采用二分查找或顺序查找，请结合实施查找的次数，确定在什么情况下使用二分查找效率更高？</p>
-<h3 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h3><p>顺序查找是按照序列原有顺序对数组进行遍历比较查询的基本查找算法，时间复杂度是$O(n)$，在最坏的情况下，查询值在数组末尾或没有该查询值，需要遍历完整个数组；</p>
-<p>二分查找是在顺序存储结构、元素有序排列中，从表中间开始查找，若不相等，则将表分成前后两个字表，根据中间元素的查询结果在对应表中进行第二次查找，时间复杂度是$O(log_2n)$，在最坏的情况下，没有该查询值，则至少需要查询$\lfloor log_2n \rfloor$次；查询成功时，最多查询$\lceil log_2n \rceil$次。</p>
-<p>本题通过记录查找次数来进行比较</p>
-<h3 id="算法实现与分析"><a href="#算法实现与分析" class="headerlink" title="算法实现与分析"></a>算法实现与分析</h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;iostream&gt;
-#include&lt;vector&gt;
-using namespace std;
+                <p>友情连接：<a target="_blank" rel="noopener" href="https://datawhaler.feishu.cn/docx/WirRd4oB5oMe2ixw1rxcTnHFnHh">Datawhale-NLP实践</a></p>
+<p>GitHub项目地址：<a target="_blank" rel="noopener" href="https://github.com/JIANG-Wu-19/NLP_project">NLP_project</a></p>
+<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><h3 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h3><ul>
+<li>miniconda的安装，本人选择了anaconda的安装，本质上来说miniconda是anaconda的轻量版，anaconda完整性更好</li>
+<li>对于镜像源，本人并没有进行替换，增加了清华源</li>
+</ul>
+<h3 id="pytorch环境的搭建"><a href="#pytorch环境的搭建" class="headerlink" title="pytorch环境的搭建"></a>pytorch环境的搭建</h3><ul>
+<li><p>创建conda环境</p>
+<pre class="line-numbers language-none"><code class="language-none">conda create -n pytorch python&#x3D;3.10<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-&#x2F;&#x2F;顺序查找
-int SequentialSearch(vector&lt;int&gt;&amp; arr, int target) &#123;
-	int n &#x3D; arr.size();
-	int num &#x3D; 0;
-	for (int i &#x3D; 0; i &lt; n; i++) &#123;
-		num++;
-		if (arr[i] &#x3D;&#x3D; target) &#123;
-			cout &lt;&lt; &quot;Search for &quot; &lt;&lt; num &lt;&lt; &quot; times&quot; &lt;&lt; endl;
-			return i;
-		&#125;
-	&#125;
-	cout &lt;&lt; &quot;Search for &quot; &lt;&lt; num &lt;&lt; &quot; times&quot; &lt;&lt; endl;
-	return -1;
-&#125;
+<p>环境名称：pytorch</p>
+<p>python版本：3.10</p>
+</li>
+<li><p>激活pytorch环境</p>
+<pre class="line-numbers language-none"><code class="language-none">conda activate pytorch<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-&#x2F;&#x2F;二分查找
-int BinarySearch(vector&lt;int&gt;&amp; arr, int target) &#123;
-	int n &#x3D; arr.size();
-	int left &#x3D; 0, right &#x3D; n - 1, middle;
-	int num &#x3D; 0;
-	while (left &lt;&#x3D; right) &#123;
-		num++;
-		middle &#x3D; left + ((right - left) &gt;&gt; 2);
-		if (arr[middle] &#x3D;&#x3D; target) &#123;
-			cout &lt;&lt; &quot;Search for &quot; &lt;&lt; num &lt;&lt; &quot; times&quot; &lt;&lt; endl;
-			return middle;
-		&#125;
-		else if (arr[middle] &lt; target) &#123;
-			left &#x3D; middle + 1;
-		&#125;
-		else &#123;
-			right &#x3D; middle - 1;
-		&#125;
-	&#125;
-	cout &lt;&lt; &quot;Search for &quot; &lt;&lt; num &lt;&lt; &quot; times&quot; &lt;&lt; endl;
-	return -1;
-&#125;
+<p>从base-&gt;pytorch</p>
+</li>
+<li><p>安装pytorch</p>
+<p>先在<strong>Anaconda Powershell Prompt</strong>中输入：</p>
+<pre class="line-numbers language-none"><code class="language-none">nvidia-smi<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-int main() &#123;
-	vector&lt;int&gt; arr &#x3D; &#123; 1,2,3,4,5,6,7,8,9,10 &#125;;
-	int target &#x3D; 7;
-	int a &#x3D; SequentialSearch(arr, target);
-	cout &lt;&lt; a &lt;&lt; endl;
-	int b &#x3D; BinarySearch(arr, target);
-	cout &lt;&lt; b &lt;&lt; endl;
+<p>得到如下图片：</p>
+<p><img src="/imgs/nlpproject/1.png" alt="image-20230721163031733"></p>
+<p>CUDA Version&#x3D;12.0，因此我的pytorch-cuda版本最高不能超过12.0，在这里安装了11.8版本：</p>
+<pre class="line-numbers language-none"><code class="language-none">conda install pytorch torchvision torchaudio pytorch-cuda&#x3D;11.8 -c pytorch -c nvidia<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>验证pytorch是否安装成功</p>
+<p>进入pytorch环境，键入python进入python编译器，输入：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> torch
+torch<span class="token punctuation">.</span>cuda<span class="token punctuation">.</span>is_available<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-	return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>实验结果：</p>
-<p><img src="/imgs/sikao4/1.png" alt="image-20230316143509778"></p>
-<p>从上述实验中，查询元素7的值，顺序查找的次数为7次，而二分查找的次数为4次，最终查询结果都正确，但是在本序列中，元素数量并不是很多，因此查询次数在数量级上并没有显著差距。</p>
-<p>下面对两查找效率进行比较：</p>
-<ol>
-<li>以升序序列为例，在最小值片进行查询的时候，顺序查找的次数会小于二分查找，因此使用顺序查找查询较小的值即查询值下标$&lt; \lfloor log_2n \rfloor$时，效率更高、次数更小；</li>
-<li>对于升序序列，在查询相对较大的值的时候，二分查找的次数就会小于顺序查找，因此使用二分查找查询较大的值即查询值下标$&gt; \lfloor log_2n \rfloor$，效率更高、次数更少；</li>
-<li>对于查询值个数不止一个的操作来说，使用二分查找的效率比顺序查找要高得多，二分查找只需要在初始状态进行一次排序，之后的每次查找都可以利用有序性，而顺序查找则需要每次查询都进行一次数组遍历。</li>
+<p>返回<code>True</code>则安装成功</p>
+</li>
+</ul>
+<h2 id="读题"><a href="#读题" class="headerlink" title="读题"></a>读题</h2><h3 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h3><p><a target="_blank" rel="noopener" href="https://challenge.xfyun.cn/topic/info?type=abstract-of-the-paper&ch=ZuoaKcY">基于论文摘要的文本分类与关键词抽取挑战赛</a></p>
+<ul>
+<li><p>task 1</p>
+<p>判断是否是医学论文</p>
+</li>
+<li><p>task 2</p>
+<p>关键词抽取</p>
+</li>
+</ul>
+<h3 id="baseline"><a href="#baseline" class="headerlink" title="baseline"></a>baseline</h3><ol>
+<li>传统方法</li>
+<li>BERT预训练模型</li>
+<li>微调chatGLM2-6B</li>
 </ol>
-<h2 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h2><h3 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h3><p>现有一个序列，它是由一个有序系列绕着某个元素旋转得到的。请给出一个在此序列实施查找的有效算法，并对你的算法进行分析</p>
-<h3 id="问题分析-1"><a href="#问题分析-1" class="headerlink" title="问题分析"></a>问题分析</h3><p>有序序列绕着某个元素旋转得到旋转数组可以使用改进后的二分查找进行查询，在循环中进行有序性判断</p>
-<p>如果左端元素小于中间元素，则左半部分为有序数组，如果目标值在左半部分，则继续在左半部分进行查找，否则在右半部分查找；若左端元素大于中间元素，那么右半部分为有序数组，若目标值在右半部分，则继续在右半部分进行查找，否则在左半部分进行查找。</p>
-<p>另一种办法就是将旋转序列恢复后在进行二分查找，但是恢复旋转序列存在很多问题，一是<strong>旋转序列恢复的时间复杂度是$O(n)$，恢复后排序增加操作时间</strong>；二是<strong>查找得到的值并不是旋转序列的下标</strong>，在实际应用中不会使用。</p>
-<p>使用顺序查找的办法，时间复杂度是$O(n)$，简单易懂，但是需要遍历整个序列，大规模数据呈现劣势</p>
-<h3 id="算法实现与分析-1"><a href="#算法实现与分析-1" class="headerlink" title="算法实现与分析"></a>算法实现与分析</h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;iostream&gt;
-#include&lt;vector&gt;
-using namespace std;
+<h2 id="跑通baseline"><a href="#跑通baseline" class="headerlink" title="跑通baseline"></a>跑通baseline</h2><p>首先fork了其中一个<a target="_blank" rel="noopener" href="https://aistudio.baidu.com/aistudio/projectdetail/6522950?sUid=377372&shared=1&ts=1689827255213">baseline</a>，运行在百度AI Studio上，选择<code>V100 16G</code>运行</p>
+<p>运行完之后，提交<code>submit_task1.csv</code>，获得分数0.99384</p>
+<p><del>对于第二段代码生成的<code>submit_task2.csv</code>，结果存在一定问题，还需要进行相关debug</del></p>
+<h2 id="对baseline进行fine-tune"><a href="#对baseline进行fine-tune" class="headerlink" title="对baseline进行fine-tune"></a>对baseline进行fine-tune</h2><p>将baseline下载到本地，对于Logistic回归模型进行替换，替换模型有：SVM（支持向量机）、随机森林模型，对baseline进行相关代码替换</p>
+<p>结果显示，在default参数的情况下，Logistic回归模型表现更好，Random Forest次之，SVM表现最差，因此这条选择不同分类器的优化路径行不通。</p>
+<p>仍然基于baseline，对LogisticRegression模型的超参数进行调参优化，使用交叉验证技术来找到最佳的参数组合，将得到的参数组合重新应用于baseline，得到的结果略微优于原结果</p>
+<h2 id="使用BERT模型进行分类"><a href="#使用BERT模型进行分类" class="headerlink" title="使用BERT模型进行分类"></a>使用BERT模型进行分类</h2><p>使用了BERT模型进行预训练</p>
+<p>相关参数进行调整：</p>
+<ul>
+<li>考虑到本地的硬件配置（4GB显存），采用batch_xize&#x3D;16，在第二轮训练中就会爆显存；设置batch_size&#x3D;10</li>
+<li>为了防止数据过拟合，设置epoch&#x3D;10</li>
+</ul>
+<p>训练过程如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">Device: cuda
+inputs: &#123;&#39;input_ids&#39;: tensor([[  101,  2470,  2006,  ...,  6742,  4118,   102],
+        [  101,  2070,  2047,  ...,  2951,  4106,   102],
+        [  101, 12509,  1011,  ...,  3728,  2764,   102],
+        ...,
+        [  101, 11968,  6767,  ...,  1998,  3707,   102],
+        [  101,  3935,  8360,  ...,  2256,  9896,   102],
+        [  101, 11742,  6047,  ...,  1006, 24529,   102]]), &#39;token_type_ids&#39;: tensor([[0, 0, 0,  ..., 0, 0, 0],
+        [0, 0, 0,  ..., 0, 0, 0],
+        [0, 0, 0,  ..., 0, 0, 0],
+        ...,
+        [0, 0, 0,  ..., 0, 0, 0],
+        [0, 0, 0,  ..., 0, 0, 0],
+        [0, 0, 0,  ..., 0, 0, 0]]), &#39;attention_mask&#39;: tensor([[1, 1, 1,  ..., 1, 1, 1],
+        [1, 1, 1,  ..., 1, 1, 1],
+        [1, 1, 1,  ..., 1, 1, 1],
+        ...,
+        [1, 1, 1,  ..., 1, 1, 1],
+        [1, 1, 1,  ..., 1, 1, 1],
+        [1, 1, 1,  ..., 1, 1, 1]])&#125;
+targets: tensor([0, 1, 1, 0, 0, 1, 1, 1, 0, 0])
+Epoch 1&#x2F;10, Step: 49&#x2F;540, total loss:15.7107
+Epoch 1&#x2F;10, Step: 99&#x2F;540, total loss:7.6416
+Epoch 1&#x2F;10, Step: 149&#x2F;540, total loss:6.4683
+Epoch 1&#x2F;10, Step: 199&#x2F;540, total loss:7.7938
+Epoch 1&#x2F;10, Step: 249&#x2F;540, total loss:6.7497
+Epoch 1&#x2F;10, Step: 299&#x2F;540, total loss:6.3569
+Epoch 1&#x2F;10, Step: 349&#x2F;540, total loss:5.7305
+Epoch 1&#x2F;10, Step: 399&#x2F;540, total loss:7.5373
+Epoch 1&#x2F;10, Step: 449&#x2F;540, total loss:3.2843
+Epoch 1&#x2F;10, Step: 499&#x2F;540, total loss:5.0083
+Epoch 1, accuracy: 0.9567, validation loss: 0.0112
+Epoch 2&#x2F;10, Step: 9&#x2F;540, total loss:6.4998
+Epoch 2&#x2F;10, Step: 59&#x2F;540, total loss:3.8504
+Epoch 2&#x2F;10, Step: 109&#x2F;540, total loss:4.3037
+Epoch 2&#x2F;10, Step: 159&#x2F;540, total loss:3.7314
+Epoch 2&#x2F;10, Step: 209&#x2F;540, total loss:2.8143
+Epoch 2&#x2F;10, Step: 259&#x2F;540, total loss:2.6459
+Epoch 2&#x2F;10, Step: 309&#x2F;540, total loss:4.2030
+Epoch 2&#x2F;10, Step: 359&#x2F;540, total loss:4.3778
+Epoch 2&#x2F;10, Step: 409&#x2F;540, total loss:3.6712
+Epoch 2&#x2F;10, Step: 459&#x2F;540, total loss:3.7527
+Epoch 2&#x2F;10, Step: 509&#x2F;540, total loss:4.8828
+Epoch 2, accuracy: 0.9717, validation loss: 0.0076
+Epoch 3&#x2F;10, Step: 19&#x2F;540, total loss:4.3283
+Epoch 3&#x2F;10, Step: 69&#x2F;540, total loss:1.9251
+Epoch 3&#x2F;10, Step: 119&#x2F;540, total loss:3.9258
+Epoch 3&#x2F;10, Step: 169&#x2F;540, total loss:3.9836
+Epoch 3&#x2F;10, Step: 219&#x2F;540, total loss:2.5203
+Epoch 3&#x2F;10, Step: 269&#x2F;540, total loss:3.0695
+Epoch 3&#x2F;10, Step: 319&#x2F;540, total loss:3.0718
+Epoch 3&#x2F;10, Step: 369&#x2F;540, total loss:2.8674
+Epoch 3&#x2F;10, Step: 419&#x2F;540, total loss:1.6683
+Epoch 3&#x2F;10, Step: 469&#x2F;540, total loss:3.6798
+Epoch 3&#x2F;10, Step: 519&#x2F;540, total loss:2.5205
+Epoch 3, accuracy: 0.9667, validation loss: 0.0095
+Epoch 4&#x2F;10, Step: 29&#x2F;540, total loss:1.2602
+Epoch 4&#x2F;10, Step: 79&#x2F;540, total loss:1.7367
+Epoch 4&#x2F;10, Step: 129&#x2F;540, total loss:1.7730
+Epoch 4&#x2F;10, Step: 179&#x2F;540, total loss:2.7801
+Epoch 4&#x2F;10, Step: 229&#x2F;540, total loss:2.7113
+Epoch 4&#x2F;10, Step: 279&#x2F;540, total loss:2.2387
+Epoch 4&#x2F;10, Step: 329&#x2F;540, total loss:1.8035
+Epoch 4&#x2F;10, Step: 379&#x2F;540, total loss:3.1783
+Epoch 4&#x2F;10, Step: 429&#x2F;540, total loss:2.4875
+Epoch 4&#x2F;10, Step: 479&#x2F;540, total loss:1.0889
+Epoch 4&#x2F;10, Step: 529&#x2F;540, total loss:1.8472
+Epoch 4, accuracy: 0.9717, validation loss: 0.0093
+Epoch 5&#x2F;10, Step: 39&#x2F;540, total loss:1.4521
+Epoch 5&#x2F;10, Step: 89&#x2F;540, total loss:2.7088
+Epoch 5&#x2F;10, Step: 139&#x2F;540, total loss:1.3743
+Epoch 5&#x2F;10, Step: 189&#x2F;540, total loss:0.9969
+Epoch 5&#x2F;10, Step: 239&#x2F;540, total loss:3.5632
+Epoch 5&#x2F;10, Step: 289&#x2F;540, total loss:1.6101
+Epoch 5&#x2F;10, Step: 339&#x2F;540, total loss:0.6479
+Epoch 5&#x2F;10, Step: 389&#x2F;540, total loss:1.6050
+Epoch 5&#x2F;10, Step: 439&#x2F;540, total loss:1.4850
+Epoch 5&#x2F;10, Step: 489&#x2F;540, total loss:1.8811
+Epoch 5&#x2F;10, Step: 539&#x2F;540, total loss:1.7147
+Epoch 5, accuracy: 0.9800, validation loss: 0.0079
+Epoch 6&#x2F;10, Step: 49&#x2F;540, total loss:0.9615
+Epoch 6&#x2F;10, Step: 99&#x2F;540, total loss:0.7971
+Epoch 6&#x2F;10, Step: 149&#x2F;540, total loss:1.5873
+Epoch 6&#x2F;10, Step: 199&#x2F;540, total loss:4.3790
+Epoch 6&#x2F;10, Step: 249&#x2F;540, total loss:1.6141
+Epoch 6&#x2F;10, Step: 299&#x2F;540, total loss:2.8523
+Epoch 6&#x2F;10, Step: 349&#x2F;540, total loss:2.9342
+Epoch 6&#x2F;10, Step: 399&#x2F;540, total loss:1.8583
+Epoch 6&#x2F;10, Step: 449&#x2F;540, total loss:1.2382
+Epoch 6&#x2F;10, Step: 499&#x2F;540, total loss:2.0442
+Epoch 6, accuracy: 0.9633, validation loss: 0.0106
+Epoch 7&#x2F;10, Step: 9&#x2F;540, total loss:1.9456
+Epoch 7&#x2F;10, Step: 59&#x2F;540, total loss:0.3481
+Epoch 7&#x2F;10, Step: 109&#x2F;540, total loss:0.7371
+Epoch 7&#x2F;10, Step: 159&#x2F;540, total loss:1.0779
+Epoch 7&#x2F;10, Step: 209&#x2F;540, total loss:0.5513
+Epoch 7&#x2F;10, Step: 259&#x2F;540, total loss:0.6267
+Epoch 7&#x2F;10, Step: 309&#x2F;540, total loss:0.6717
+Epoch 7&#x2F;10, Step: 359&#x2F;540, total loss:0.0804
+Epoch 7&#x2F;10, Step: 409&#x2F;540, total loss:0.7880
+Epoch 7&#x2F;10, Step: 459&#x2F;540, total loss:1.2405
+Epoch 7&#x2F;10, Step: 509&#x2F;540, total loss:0.3852
+Epoch 7, accuracy: 0.9717, validation loss: 0.0113
+Epoch 8&#x2F;10, Step: 19&#x2F;540, total loss:0.0597
+Epoch 8&#x2F;10, Step: 69&#x2F;540, total loss:0.1654
+Epoch 8&#x2F;10, Step: 119&#x2F;540, total loss:0.0882
+Epoch 8&#x2F;10, Step: 169&#x2F;540, total loss:0.0558
+Epoch 8&#x2F;10, Step: 219&#x2F;540, total loss:2.7450
+Epoch 8&#x2F;10, Step: 269&#x2F;540, total loss:2.9093
+Epoch 8&#x2F;10, Step: 319&#x2F;540, total loss:0.2964
+Epoch 8&#x2F;10, Step: 369&#x2F;540, total loss:2.9049
+Epoch 8&#x2F;10, Step: 419&#x2F;540, total loss:0.8974
+Epoch 8&#x2F;10, Step: 469&#x2F;540, total loss:0.8773
+Epoch 8&#x2F;10, Step: 519&#x2F;540, total loss:0.8961
+Epoch 8, accuracy: 0.9783, validation loss: 0.0136
+Epoch 9&#x2F;10, Step: 29&#x2F;540, total loss:0.6021
+Epoch 9&#x2F;10, Step: 79&#x2F;540, total loss:0.2185
+Epoch 9&#x2F;10, Step: 129&#x2F;540, total loss:0.0978
+Epoch 9&#x2F;10, Step: 179&#x2F;540, total loss:0.8829
+Epoch 9&#x2F;10, Step: 229&#x2F;540, total loss:0.9440
+Epoch 9&#x2F;10, Step: 279&#x2F;540, total loss:0.4725
+Epoch 9&#x2F;10, Step: 329&#x2F;540, total loss:0.8252
+Epoch 9&#x2F;10, Step: 379&#x2F;540, total loss:0.2206
+Epoch 9&#x2F;10, Step: 429&#x2F;540, total loss:0.2055
+Epoch 9&#x2F;10, Step: 479&#x2F;540, total loss:1.2238
+Epoch 9&#x2F;10, Step: 529&#x2F;540, total loss:0.3699
+Epoch 9, accuracy: 0.9767, validation loss: 0.0137
+Epoch 10&#x2F;10, Step: 39&#x2F;540, total loss:0.1256
+Epoch 10&#x2F;10, Step: 89&#x2F;540, total loss:0.0799
+Epoch 10&#x2F;10, Step: 139&#x2F;540, total loss:0.0696
+Epoch 10&#x2F;10, Step: 189&#x2F;540, total loss:0.0255
+Epoch 10&#x2F;10, Step: 239&#x2F;540, total loss:0.2567
+Epoch 10&#x2F;10, Step: 289&#x2F;540, total loss:0.0501
+Epoch 10&#x2F;10, Step: 339&#x2F;540, total loss:1.4652
+Epoch 10&#x2F;10, Step: 389&#x2F;540, total loss:2.1342
+Epoch 10&#x2F;10, Step: 439&#x2F;540, total loss:0.2545
+Epoch 10&#x2F;10, Step: 489&#x2F;540, total loss:0.0748
+Epoch 10&#x2F;10, Step: 539&#x2F;540, total loss:0.2158
+Epoch 10, accuracy: 0.9633, validation loss: 0.0198<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-int BinarySearch(vector&lt;int&gt;&amp; arr, int target) &#123;
-	int left &#x3D; 0, right &#x3D; arr.size() - 1;
-	while (left &lt;&#x3D; right) &#123;
-		int middle &#x3D; left + ((right - left) &gt;&gt; 1);
-		if (arr[middle] &#x3D;&#x3D; target) &#123;
-			return middle;
-		&#125;
-		if (arr[left] &lt;&#x3D; arr[middle]) &#123;
-			if (target &gt;&#x3D; arr[left] &amp;&amp; target &lt; arr[middle]) &#123;
-				right &#x3D; middle - 1;
-			&#125;
-			else &#123;
-				left &#x3D; middle + 1;
-			&#125;
-		&#125;
-		else &#123;
-			if (target &gt; arr[middle] &amp;&amp; target &lt;&#x3D; arr[right]) &#123;
-				left &#x3D; middle + 1;
-			&#125;
-			else &#123;
-				right &#x3D; middle - 1;
-			&#125;
-		&#125;
-	&#125;
-	return -1;
-&#125;
+<p>不难看出，第五轮训练的模型最好，跑了测试集之后，得到的分数是0.99425，有所提升。</p>
+<h2 id="更新了B集"><a href="#更新了B集" class="headerlink" title="更新了B集"></a>更新了B集</h2><p>7月24日0时，官方更新了数据集B，与原始测试集不同的是取消了Keywords那一列，因此需要对baseline进行调整。</p>
+<p>然而，仅仅使用baseline的适应版本会出大问题，先不说Keywords是否能够提取到，最要命的是连文本分类都错误频出，分数仅有0.27164。</p>
+<p>所以选择转换思路，选用BERT模型重新进行训练，本次训练过程如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">Device: cuda
+inputs: &#123;&#39;input_ids&#39;: tensor([[  101, 24655,  4997,  ...,  2057, 16599,   102],
+        [  101,  2943,  4487,  ...,  4725,  2000,   102],
+        [  101,  5090,  1998,  ...,  2050,  1010,   102],
+        ...,
+        [  101,  1996,  2110,  ...,  2192,  1010,   102],
+        [  101, 11643,  2986,  ..., 11650,  4819,   102],
+        [  101,  4254,  1997,  ...,  2426,  3633,   102]]), &#39;token_type_ids&#39;: tensor([[0, 0, 0,  ..., 0, 0, 0],
+        [0, 0, 0,  ..., 0, 0, 0],
+        [0, 0, 0,  ..., 0, 0, 0],
+        ...,
+        [0, 0, 0,  ..., 0, 0, 0],
+        [0, 0, 0,  ..., 0, 0, 0],
+        [0, 0, 0,  ..., 0, 0, 0]]), &#39;attention_mask&#39;: tensor([[1, 1, 1,  ..., 1, 1, 1],
+        [1, 1, 1,  ..., 1, 1, 1],
+        [1, 1, 1,  ..., 1, 1, 1],
+        ...,
+        [1, 1, 1,  ..., 1, 1, 1],
+        [1, 1, 1,  ..., 1, 1, 1],
+        [1, 1, 1,  ..., 1, 1, 1]])&#125;
+targets: tensor([0, 0, 1, 0, 1, 0, 1, 0, 1, 1])
+Epoch 1&#x2F;10, Step: 49&#x2F;540, total loss:17.4060
+Epoch 1&#x2F;10, Step: 99&#x2F;540, total loss:8.2182
+Epoch 1&#x2F;10, Step: 149&#x2F;540, total loss:4.8785
+Epoch 1&#x2F;10, Step: 199&#x2F;540, total loss:4.3230
+Epoch 1&#x2F;10, Step: 249&#x2F;540, total loss:6.6983
+Epoch 1&#x2F;10, Step: 299&#x2F;540, total loss:5.8578
+Epoch 1&#x2F;10, Step: 349&#x2F;540, total loss:6.6283
+Epoch 1&#x2F;10, Step: 399&#x2F;540, total loss:6.4032
+Epoch 1&#x2F;10, Step: 449&#x2F;540, total loss:5.9323
+Epoch 1&#x2F;10, Step: 499&#x2F;540, total loss:7.5971
+Epoch 1, accuracy: 0.9850, validation loss: 0.0058
+Epoch 2&#x2F;10, Step: 9&#x2F;540, total loss:5.0577
+Epoch 2&#x2F;10, Step: 59&#x2F;540, total loss:3.1802
+Epoch 2&#x2F;10, Step: 109&#x2F;540, total loss:3.2457
+Epoch 2&#x2F;10, Step: 159&#x2F;540, total loss:2.3691
+Epoch 2&#x2F;10, Step: 209&#x2F;540, total loss:5.8829
+Epoch 2&#x2F;10, Step: 259&#x2F;540, total loss:4.4065
+Epoch 2&#x2F;10, Step: 309&#x2F;540, total loss:3.9642
+Epoch 2&#x2F;10, Step: 359&#x2F;540, total loss:3.4601
+Epoch 2&#x2F;10, Step: 409&#x2F;540, total loss:3.7005
+Epoch 2&#x2F;10, Step: 459&#x2F;540, total loss:2.4082
+Epoch 2&#x2F;10, Step: 509&#x2F;540, total loss:4.9357
+Epoch 2, accuracy: 0.9817, validation loss: 0.0051
+Epoch 3&#x2F;10, Step: 19&#x2F;540, total loss:3.0975
+Epoch 3&#x2F;10, Step: 69&#x2F;540, total loss:3.5217
+Epoch 3&#x2F;10, Step: 119&#x2F;540, total loss:2.2069
+Epoch 3&#x2F;10, Step: 169&#x2F;540, total loss:2.1020
+Epoch 3&#x2F;10, Step: 219&#x2F;540, total loss:2.2251
+Epoch 3&#x2F;10, Step: 269&#x2F;540, total loss:1.9019
+Epoch 3&#x2F;10, Step: 319&#x2F;540, total loss:5.7179
+Epoch 3&#x2F;10, Step: 369&#x2F;540, total loss:2.3129
+Epoch 3&#x2F;10, Step: 419&#x2F;540, total loss:2.5967
+Epoch 3&#x2F;10, Step: 469&#x2F;540, total loss:3.6328
+Epoch 3&#x2F;10, Step: 519&#x2F;540, total loss:3.5887
+Epoch 3, accuracy: 0.9783, validation loss: 0.0083
+Epoch 4&#x2F;10, Step: 29&#x2F;540, total loss:2.9215
+Epoch 4&#x2F;10, Step: 79&#x2F;540, total loss:2.5634
+Epoch 4&#x2F;10, Step: 129&#x2F;540, total loss:2.2718
+Epoch 4&#x2F;10, Step: 179&#x2F;540, total loss:2.1903
+Epoch 4&#x2F;10, Step: 229&#x2F;540, total loss:3.9422
+Epoch 4&#x2F;10, Step: 279&#x2F;540, total loss:4.1438
+Epoch 4&#x2F;10, Step: 329&#x2F;540, total loss:2.5862
+Epoch 4&#x2F;10, Step: 379&#x2F;540, total loss:2.5173
+Epoch 4&#x2F;10, Step: 429&#x2F;540, total loss:2.3017
+Epoch 4&#x2F;10, Step: 479&#x2F;540, total loss:2.8343
+Epoch 4&#x2F;10, Step: 529&#x2F;540, total loss:2.1349
+Epoch 4, accuracy: 0.9817, validation loss: 0.0047
+Epoch 5&#x2F;10, Step: 39&#x2F;540, total loss:1.4322
+Epoch 5&#x2F;10, Step: 89&#x2F;540, total loss:0.5360
+Epoch 5&#x2F;10, Step: 139&#x2F;540, total loss:1.1301
+Epoch 5&#x2F;10, Step: 189&#x2F;540, total loss:1.0405
+Epoch 5&#x2F;10, Step: 239&#x2F;540, total loss:1.5703
+Epoch 5&#x2F;10, Step: 289&#x2F;540, total loss:1.2585
+Epoch 5&#x2F;10, Step: 339&#x2F;540, total loss:2.3381
+Epoch 5&#x2F;10, Step: 389&#x2F;540, total loss:1.5830
+Epoch 5&#x2F;10, Step: 439&#x2F;540, total loss:1.9213
+Epoch 5&#x2F;10, Step: 489&#x2F;540, total loss:2.2533
+Epoch 5&#x2F;10, Step: 539&#x2F;540, total loss:2.3482
+Epoch 5, accuracy: 0.9700, validation loss: 0.0080
+Epoch 6&#x2F;10, Step: 49&#x2F;540, total loss:0.6322
+Epoch 6&#x2F;10, Step: 99&#x2F;540, total loss:1.8027
+Epoch 6&#x2F;10, Step: 149&#x2F;540, total loss:0.9355
+Epoch 6&#x2F;10, Step: 199&#x2F;540, total loss:0.7137
+Epoch 6&#x2F;10, Step: 249&#x2F;540, total loss:0.2431
+Epoch 6&#x2F;10, Step: 299&#x2F;540, total loss:0.7320
+Epoch 6&#x2F;10, Step: 349&#x2F;540, total loss:1.9910
+Epoch 6&#x2F;10, Step: 399&#x2F;540, total loss:0.5313
+Epoch 6&#x2F;10, Step: 449&#x2F;540, total loss:2.3987
+Epoch 6&#x2F;10, Step: 499&#x2F;540, total loss:1.3163
+Epoch 6, accuracy: 0.9767, validation loss: 0.0059
+Epoch 7&#x2F;10, Step: 9&#x2F;540, total loss:2.2099
+Epoch 7&#x2F;10, Step: 59&#x2F;540, total loss:1.0356
+Epoch 7&#x2F;10, Step: 109&#x2F;540, total loss:0.3613
+Epoch 7&#x2F;10, Step: 159&#x2F;540, total loss:0.3013
+Epoch 7&#x2F;10, Step: 209&#x2F;540, total loss:0.9905
+Epoch 7&#x2F;10, Step: 259&#x2F;540, total loss:0.9220
+Epoch 7&#x2F;10, Step: 309&#x2F;540, total loss:1.8809
+Epoch 7&#x2F;10, Step: 359&#x2F;540, total loss:0.6842
+Epoch 7&#x2F;10, Step: 409&#x2F;540, total loss:0.8110
+Epoch 7&#x2F;10, Step: 459&#x2F;540, total loss:0.5501
+Epoch 7&#x2F;10, Step: 509&#x2F;540, total loss:0.1008
+Epoch 7, accuracy: 0.9783, validation loss: 0.0114
+Epoch 8&#x2F;10, Step: 19&#x2F;540, total loss:0.1257
+Epoch 8&#x2F;10, Step: 69&#x2F;540, total loss:0.6099
+Epoch 8&#x2F;10, Step: 119&#x2F;540, total loss:0.0731
+Epoch 8&#x2F;10, Step: 169&#x2F;540, total loss:0.0690
+Epoch 8&#x2F;10, Step: 219&#x2F;540, total loss:0.0463
+Epoch 8&#x2F;10, Step: 269&#x2F;540, total loss:0.7255
+Epoch 8&#x2F;10, Step: 319&#x2F;540, total loss:1.3453
+Epoch 8&#x2F;10, Step: 369&#x2F;540, total loss:0.9634
+Epoch 8&#x2F;10, Step: 419&#x2F;540, total loss:2.3351
+Epoch 8&#x2F;10, Step: 469&#x2F;540, total loss:1.0744
+Epoch 8&#x2F;10, Step: 519&#x2F;540, total loss:0.9177
+Epoch 8, accuracy: 0.9833, validation loss: 0.0094
+Epoch 9&#x2F;10, Step: 29&#x2F;540, total loss:0.0825
+Epoch 9&#x2F;10, Step: 79&#x2F;540, total loss:0.5531
+Epoch 9&#x2F;10, Step: 129&#x2F;540, total loss:0.1029
+Epoch 9&#x2F;10, Step: 179&#x2F;540, total loss:1.6060
+Epoch 9&#x2F;10, Step: 229&#x2F;540, total loss:1.4814
+Epoch 9&#x2F;10, Step: 279&#x2F;540, total loss:0.2794
+Epoch 9&#x2F;10, Step: 329&#x2F;540, total loss:0.8993
+Epoch 9&#x2F;10, Step: 379&#x2F;540, total loss:0.2361
+Epoch 9&#x2F;10, Step: 429&#x2F;540, total loss:0.8100
+Epoch 9&#x2F;10, Step: 479&#x2F;540, total loss:1.0517
+Epoch 9&#x2F;10, Step: 529&#x2F;540, total loss:1.9690
+Epoch 9, accuracy: 0.9800, validation loss: 0.0081
+Epoch 10&#x2F;10, Step: 39&#x2F;540, total loss:0.3611
+Epoch 10&#x2F;10, Step: 89&#x2F;540, total loss:1.1712
+Epoch 10&#x2F;10, Step: 139&#x2F;540, total loss:1.2629
+Epoch 10&#x2F;10, Step: 189&#x2F;540, total loss:0.4406
+Epoch 10&#x2F;10, Step: 239&#x2F;540, total loss:0.7798
+Epoch 10&#x2F;10, Step: 289&#x2F;540, total loss:0.7707
+Epoch 10&#x2F;10, Step: 339&#x2F;540, total loss:0.9512
+Epoch 10&#x2F;10, Step: 389&#x2F;540, total loss:0.1460
+Epoch 10&#x2F;10, Step: 439&#x2F;540, total loss:0.4900
+Epoch 10&#x2F;10, Step: 489&#x2F;540, total loss:1.2117
+Epoch 10&#x2F;10, Step: 539&#x2F;540, total loss:0.6272
+Epoch 10, accuracy: 0.9783, validation loss: 0.0093<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-int main() &#123;
-	vector&lt;int&gt; arr &#x3D; &#123; 4,5,6,7,1,2,3 &#125;;
-	int target &#x3D; 1;
-	cout &lt;&lt; BinarySearch(arr, target) &lt;&lt; endl;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>实验结果：</p>
-<p><img src="/imgs/sikao4/2.png" alt="image-20230316144631569"></p>
-<p>改进二分法的时间复杂度是$O(log_2n)$，是一种高效的查找方法，在大规模数据下呈现优势</p>
+<p>可以看到，第一轮的模型就是最优，准确率达到0.9850，使用该模型得到的分数是0.39905</p>
+<h2 id="调用ChatGLM的API的一点点尝试"><a href="#调用ChatGLM的API的一点点尝试" class="headerlink" title="调用ChatGLM的API的一点点尝试"></a>调用ChatGLM的API的一点点尝试</h2><p>看了群友的发言，感觉单纯采用从text中提取keywords已经无法提高准确率，于是转向使用生成式，that’s to say，微调大模型</p>
+<p><del>在deadline前，才想起来尝试使用大模型</del></p>
+<p>困于本地环境不足，尝试调用API，这里为了保持稳定性选用了国产ChatGLM-std的API，代码也敲好了（属于是第一个完完整整自己敲下来的东西），<del>创业未半而中道崩殂</del>，跑到第9个被官方ban掉了，原因是里面有敏感词，验证可行（<strong>请不要输入易生成敏感用语的话题</strong>）</p>
+<blockquote>
+<p>To be continued</p>
+</blockquote>
+<h2 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h2><p>2023年7月21日：跑通了baseline</p>
+<p>2023年7月22日：对baseline进行了fine-tune，实际结果略微优于baseline；尝试使用BERT模型，但是从运行中输出的部分参数来看，结果不尽如人意，同时显存爆了，建议上云</p>
+<p>2023年7月23日：使用BERT模型进行训练，epoch&#x3D;10，训练出的最优模型的准确率是0.9800，实际获得分数也优于22日的fine-tuned baseline</p>
+<p>2023年7月24日：官方更新了B集，砍掉了Keywords，准确率下降不少，选用BERT模型的分数稍微高一点点</p>
+<p>2023年7月26日：调用ChatGLM的API，但是由于触碰敏感词被ban掉了，所以可能需要本地的Chat GLM模型，但是huggingface上下载下来的是原始模型，自己无法完成训练，有训练完的模型可以使用，之后再进行尝试</p>
 
                 
             </div>
@@ -560,7 +803,7 @@ int main() &#123;
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jiang-wu-19.github.io/2023/07/06/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E5%9B%9B/">https://jiang-wu-19.github.io/2023/07/06/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E5%9B%9B/</a>
+                    <a href="https://jiang-wu-19.github.io/2023/07/26/NLP%E5%AE%9E%E8%B7%B5%E7%9A%84%E4%B8%80%E7%82%B9%E7%82%B9%E7%AC%94%E8%AE%B0/">https://jiang-wu-19.github.io/2023/07/26/NLP%E5%AE%9E%E8%B7%B5%E7%9A%84%E4%B8%80%E7%82%B9%E7%82%B9%E7%AC%94%E8%AE%B0/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -598,16 +841,12 @@ int main() &#123;
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">算法</span>
+                                <a href="/tags/NLP/">
+                                    <span class="chip bg-color">NLP</span>
                                 </a>
                             
-                                <a href="/tags/%E6%9F%A5%E6%89%BE%E6%95%88%E7%8E%87/">
-                                    <span class="chip bg-color">查找效率</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84/">
-                                    <span class="chip bg-color">旋转数组</span>
+                                <a href="/tags/Python/">
+                                    <span class="chip bg-color">Python</span>
                                 </a>
                             
                         </div>
@@ -1040,50 +1279,52 @@ int main() &#123;
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/07/06/Python%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/">
+                <a href="/2023/07/26/NLP%E5%AE%9E%E8%B7%B5%E7%9A%84%E4%B8%80%E7%82%B9%E7%82%B9%E7%AC%94%E8%AE%B0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Python数据处理">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="NLP实践的一点点笔记">
                         
-                        <span class="card-title">Python数据处理</span>
+                        <span class="card-title">NLP实践的一点点笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Python学习笔记
+                            第一个NLP项目：基于论文摘要的文本分类与关键词抽取
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-07-06
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-26
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
-                                    笔记
+                            <a href="/categories/%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0/" class="post-category">
+                                    暑期实习
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Python/">
-                        <span class="chip bg-color">Python</span>
+                    <a href="/tags/NLP/">
+                        <span class="chip bg-color">NLP</span>
                     </a>
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/">
-                        <span class="chip bg-color">数据处理</span>
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
                     </a>
                     
                 </div>
@@ -1097,31 +1338,31 @@ int main() &#123;
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/07/06/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E4%B8%89/">
+                <a href="/2023/07/22/%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E7%9A%84index/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="算法课外思考题三">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="课程设计的index">
                         
-                        <span class="card-title">算法课外思考题三</span>
+                        <span class="card-title">课程设计的index</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            求子集和相似度指标调研
+                            本文摘录了J&Ocean的课程设计项目地址
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-06
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-22
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%AE%97%E6%B3%95%E6%80%9D%E8%80%83%E9%A2%98/" class="post-category">
-                                    算法思考题
+                            <a href="/categories/index/" class="post-category">
+                                    index
                                 </a>
                             
                             
@@ -1131,16 +1372,8 @@ int main() &#123;
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
-                    </a>
-                    
-                    <a href="/tags/%E9%9B%86%E5%90%88/">
-                        <span class="chip bg-color">集合</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%9B%B8%E4%BC%BC%E5%BA%A6/">
-                        <span class="chip bg-color">相似度</span>
+                    <a href="/tags/%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/">
+                        <span class="chip bg-color">课程设计</span>
                     </a>
                     
                 </div>
