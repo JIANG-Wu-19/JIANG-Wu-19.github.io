@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="课内实验的index, J&amp;Ocean BLOG">
+    <meta name="keywords" content="算法课外思考题八, J&amp;Ocean BLOG">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>课内实验的index | J&amp;Ocean BLOG</title>
+    <title>算法课外思考题八 | J&amp;Ocean BLOG</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -235,12 +235,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">课内实验的index</h1>
+                    <h1 class="description center-align post-title">算法课外思考题八</h1>
                 </div>
             </div>
         </div>
@@ -356,8 +356,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E8%AF%BE%E5%86%85%E5%AE%9E%E9%AA%8C/">
-                                <span class="chip bg-color">课内实验</span>
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">算法</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5/">
+                                <span class="chip bg-color">旋转矩阵</span>
+                            </a>
+                        
+                            <a href="/tags/%E4%BA%8C%E7%BB%B4%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/">
+                                <span class="chip bg-color">二维最短路径</span>
                             </a>
                         
                     </div>
@@ -368,8 +376,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/index/" class="post-category">
-                                index
+                            <a href="/categories/%E7%AE%97%E6%B3%95%E6%80%9D%E8%80%83%E9%A2%98/" class="post-category">
+                                算法思考题
                             </a>
                         
                     </div>
@@ -381,7 +389,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-07-22
+                    2023-07-27
                 </div>
                 
 
@@ -390,14 +398,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    55
+                    1.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    7 分
                 </div>
                 
 
@@ -415,28 +423,140 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="大一"><a href="#大一" class="headerlink" title="大一"></a>大一</h2><ul>
-<li>数据结构：<a target="_blank" rel="noopener" href="https://gitee.com/wu-jiang-nineteen/dsexperiment">DSExperiment</a></li>
+                <h2 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>给出策略打印旋转矩阵</p>
+<h3 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h3><p>$\left[\begin{array}{cccc}a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1 n} \ a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2 n} \ a_{31} &amp; a_{32} &amp; \cdots &amp; a_{3 n} \ \cdots &amp; \cdots &amp; &amp; \cdots \ a_{m 1} &amp; a_{m 2} &amp; \cdots &amp; a_{m n}\end{array}\right]$</p>
+<p>对于上述矩阵，假定采用顺时针进行旋转打印</p>
+<p>对打印顺序进行分析，顺时针旋转一圈，打印的是在外面的一层元素</p>
+<p>因此对矩阵进行分层，从外向内划分依次得到以下分层：</p>
+<p>$[1,1,1,1,1,1,1]$<br>$[1,2,2,2,2,2,1]$<br>$[1,2,3,3,3,2,1]$<br>$[1,2,2,2,2,2,1]$<br>$[1,1,1,1,1,1,1]$</p>
+<p>采用左上$(top,left)$、左下$(bottom,left)$、右上$(top,right)$、右下$(top,right)$四个点定位各层的位置，将打印层分为上下左右四个片区分别进行打印，遍历完当前层的元素后<em>left</em>++、<em>top</em>++、<em>right</em>–、<em>bottom</em>–，进入下一层开始遍历，最终得到整个旋转矩阵。</p>
+<h3 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;iostream&gt;
+#include&lt;vector&gt;
+using namespace std;
+
+void PrintMatrix(vector&lt;vector&lt;int&gt;&gt;&amp; matrix) &#123;
+	int r &#x3D; matrix.size();
+	int c &#x3D; matrix[0].size();
+	int top &#x3D; 0, bottom &#x3D; r - 1, left &#x3D; 0, right &#x3D; c - 1;
+	while (left &lt;&#x3D; right &amp;&amp; top &lt;&#x3D; bottom) &#123;
+		for (int i &#x3D; left; i &lt;&#x3D; right; i++) &#123;
+			cout &lt;&lt; matrix[top][i] &lt;&lt; &quot; &quot;;
+		&#125;
+		for (int i &#x3D; top + 1; i &lt;&#x3D; bottom; i++) &#123;
+			cout &lt;&lt; matrix[i][right] &lt;&lt; &quot; &quot;;
+		&#125;
+		if (left &lt; right &amp;&amp; top &lt; bottom) &#123;
+			for (int i &#x3D; right - 1; i &gt; left; i--) &#123;
+				cout &lt;&lt; matrix[bottom][i] &lt;&lt; &quot; &quot;;
+			&#125;
+			for (int i &#x3D; bottom; i &gt; top; i--) &#123;
+				cout &lt;&lt; matrix[i][left] &lt;&lt; &quot; &quot;;
+			&#125;
+		&#125;
+		top++;
+		left++;
+		right--;
+		bottom--;
+	&#125;
+	cout &lt;&lt; endl;
+&#125;
+
+int main() &#123;
+	vector&lt;vector&lt;int&gt;&gt; matrix &#x3D; &#123; &#123;1,2,3&#125;,&#123;4,5,6&#125;,&#123;7,8,9&#125; &#125;;
+	vector&lt;vector&lt;int&gt;&gt; matrix1 &#x3D; &#123; &#123;1,2,3,4&#125;,&#123;5,6,7,8&#125;,&#123;9,10,11,12&#125;,&#123;13,14,15,16&#125; &#125;;
+	PrintMatrix(matrix);
+	PrintMatrix(matrix1);
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在这个问题中，每一元素都要被遍历一次，因此算法的时间复杂度是$O(r*c)$，r为矩阵行数，c为矩阵列数，本算法并不需要开辟额外的空间，故空间复杂度为$O(1)$。</p>
+<h3 id="附加思考"><a href="#附加思考" class="headerlink" title="附加思考"></a>附加思考</h3><h4 id="顺时针旋转矩阵-90°"><a href="#顺时针旋转矩阵-90°" class="headerlink" title="顺时针旋转矩阵$90°$"></a>顺时针旋转矩阵$90°$</h4><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">vector&lt;vector&lt;int&gt;&gt; RotateMatrix(vector&lt;vector&lt;int&gt;&gt;&amp; matrix) &#123;
+	vector&lt;vector&lt;int&gt; &gt; rotate;
+	vector&lt;int&gt; temp;
+	int r &#x3D; matrix.size(), c &#x3D; matrix[0].size();
+	for (int j &#x3D; 0; j &lt; c; j++) &#123;
+		for (int i &#x3D; r - 1; i &gt;&#x3D; 0; i--) &#123;
+			temp.push_back(matrix[i][j]);
+		&#125;
+		rotate.push_back(temp);
+		temp.clear();
+	&#125;
+	return rotate;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="“之”字形打印矩阵"><a href="#“之”字形打印矩阵" class="headerlink" title="“之”字形打印矩阵"></a>“之”字形打印矩阵</h4><p>使用两个指针分别从00位置开始，一个指针沿右下的路线抵达矩阵右下角元素，另一个沿下右的路线抵达矩阵右下角，两指针确定的直线上再根据奇偶性判断打印方向</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void ZhiPrint(vector&lt;vector&lt;int&gt;&gt;&amp; matrix) &#123;
+	int r &#x3D; matrix.size();
+	int c &#x3D; matrix[0].size();
+	int ar &#x3D; 0, ac &#x3D; 0;
+	int br &#x3D; 0, bc &#x3D; 0;
+	int n;
+	do &#123;
+		n &#x3D; ar + ac;
+		if ( n % 2 &#x3D;&#x3D; 0) &#123;
+			for (int i &#x3D; ar; i &lt;&#x3D; br; i++) &#123;
+				cout &lt;&lt; matrix[i][n - i] &lt;&lt; &quot; &quot;;
+			&#125;
+		&#125;
+		else &#123;
+			for (int i &#x3D; br; i &gt;&#x3D; ar; i--) &#123;
+				cout &lt;&lt; matrix[i][n - i] &lt;&lt; &quot; &quot;;
+			&#125;
+		&#125;
+		if (br &lt; r) &#123;
+			br++;
+		&#125;
+		else &#123;
+			bc++;
+		&#125;
+		if (ac &lt; c) &#123;
+			ac++;
+		&#125;
+		else &#123;
+			ar++;
+		&#125;
+	&#125; while (ar !&#x3D; br &amp;&amp; ac !&#x3D; bc);
+	cout &lt;&lt; matrix[r - 1][c - 1] &lt;&lt; endl;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h2><h3 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h3><p>给出策略返回一个m*n矩阵中从[1,1]到[m,n]的和最小的一条路径。</p>
+<h3 id="问题分析-1"><a href="#问题分析-1" class="headerlink" title="问题分析"></a>问题分析</h3><p>已知在某一点时想要确定路径下一个元素的位置，路径方向只能是向下&#x2F;向右，因此网格的第一行&#x2F;第一列上的元素下一位置只能是该元素的右边&#x2F;左边，然后确定剩下路径</p>
+<p>对于每一待定元素可由其左边&#x2F;上边的元素到达，比较两数的大小，确定更小的那一个，然后依次得到不同路径，直至抵达[m,n]，再通过回溯得到最小路径。</p>
+<ul>
+<li>当 $i&gt;0$ 且 $j&#x3D;0$ 时， $d p[i][0]&#x3D;d p[i-1][0]+\operatorname{grid}[i][0]$ </li>
+<li>当 $i&#x3D;0$ 且 $j&gt;0$ 时， $d p[0][j]&#x3D;d p[0][j-1]+\operatorname{grid}[0][j]$ </li>
+<li>当 $i&gt;0$ 且 $j&gt;0$ 时， $d p[i][j]&#x3D;\min (d p[i-1][j], d p[i][j-1])+\operatorname{grid}[i][j]$</li>
 </ul>
-<h2 id="大二"><a href="#大二" class="headerlink" title="大二"></a>大二</h2><ul>
-<li><p>汇编实验：<a target="_blank" rel="noopener" href="https://github.com/JIANG-Wu-19/Assembly_experiments">Assembly_experiments</a></p>
-</li>
-<li><p>Java实验：<a target="_blank" rel="noopener" href="https://github.com/JIANG-Wu-19/Java_experiments">Java_experiments</a></p>
-</li>
-<li><p>数据库实验：<a target="_blank" rel="noopener" href="https://github.com/JIANG-Wu-19/database_experiments">database_experiments</a></p>
-</li>
-<li><p>计算机网络实验：<a target="_blank" rel="noopener" href="https://github.com/JIANG-Wu-19/ComputerNetworks_experiment">ComputerNetworks_experiment</a></p>
-</li>
-<li><p>Python数据处理实验：<a target="_blank" rel="noopener" href="https://github.com/JIANG-Wu-19/python_dataprocess">python_dataprocess</a></p>
-</li>
-<li><p>算法实验：<a target="_blank" rel="noopener" href="https://github.com/JIANG-Wu-19/Algorithms_experiments">Algorithms_experiments</a></p>
-</li>
-<li><p>操作系统实验：<a target="_blank" rel="noopener" href="https://github.com/JIANG-Wu-19/OS_Experiment">OS_Experiment</a></p>
-</li>
-</ul>
-<blockquote>
-<p>To be continued</p>
-</blockquote>
+<h3 id="算法实现-1"><a href="#算法实现-1" class="headerlink" title="算法实现"></a>算法实现</h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;iostream&gt;
+#include&lt;vector&gt;
+#include&lt;algorithm&gt;
+
+using namespace std;
+
+int MinPath(vector&lt;vector&lt;int&gt;&gt;&amp; matrix) &#123;
+	int r &#x3D; matrix.size(), c &#x3D; matrix.size();
+	auto dp &#x3D; vector&lt;vector&lt;int&gt; &gt;(r, vector&lt;int&gt;(c));
+	dp[0][0] &#x3D; matrix[0][0];
+	for (int i &#x3D; 1; i &lt; r; i++) &#123;
+		dp[i][0] &#x3D; dp[i - 1][0] + matrix[i][0];
+	&#125;
+	for (int i &#x3D; 1; i &lt; c; i++) &#123;
+		dp[0][i] &#x3D; dp[0][i - 1] + matrix[0][i];
+	&#125;
+	for (int i &#x3D; 1; i &lt; r; i++) &#123;
+		for (int j &#x3D; 1; j &lt; c; j++) &#123;
+			dp[i][j] &#x3D; min(dp[i - 1][j], dp[i][j - 1]) + matrix[i][j];
+		&#125;
+	&#125;
+	return dp[r - 1][c - 1];
+&#125;
+
+int main() &#123;
+	vector&lt;vector&lt;int&gt; &gt; matrix &#x3D; &#123; &#123;1,3,1&#125;,&#123;1,5,1&#125;,&#123;4,2,1&#125; &#125;;
+	cout &lt;&lt; MinPath(matrix) &lt;&lt; endl;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>需要遍历整个数组，时间复杂度是$O(mn)$</p>
+<p>重新开辟了一个大小相同的向量空间，空间复杂度是$O(mn)$，在空间方面可以进行优化，直接在原矩阵上进行dp操作，不使用额外空间，改进到$O(1)$</p>
 
                 
             </div>
@@ -463,7 +583,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jiang-wu-19.github.io/2023/07/22/%E8%AF%BE%E5%86%85%E5%AE%9E%E9%AA%8C%E7%9A%84index/">https://jiang-wu-19.github.io/2023/07/22/%E8%AF%BE%E5%86%85%E5%AE%9E%E9%AA%8C%E7%9A%84index/</a>
+                    <a href="https://jiang-wu-19.github.io/2023/07/27/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E5%85%AB/">https://jiang-wu-19.github.io/2023/07/27/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E5%85%AB/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -501,8 +621,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E8%AF%BE%E5%86%85%E5%AE%9E%E9%AA%8C/">
-                                    <span class="chip bg-color">课内实验</span>
+                                <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">算法</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5/">
+                                    <span class="chip bg-color">旋转矩阵</span>
+                                </a>
+                            
+                                <a href="/tags/%E4%BA%8C%E7%BB%B4%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/">
+                                    <span class="chip bg-color">二维最短路径</span>
                                 </a>
                             
                         </div>
@@ -935,46 +1063,56 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/07/22/%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E7%9A%84index/">
+                <a href="/2023/07/27/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E5%85%AB/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="课程设计的index">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="算法课外思考题八">
                         
-                        <span class="card-title">课程设计的index</span>
+                        <span class="card-title">算法课外思考题八</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文摘录了J&Ocean的课程设计项目地址
+                            给出策略打印旋转矩阵和给出策略返回一个m*n矩阵中从[1,1]到[m,n]的和最小的一条路径
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-07-22
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-27
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/index/" class="post-category">
-                                    index
+                            <a href="/categories/%E7%AE%97%E6%B3%95%E6%80%9D%E8%80%83%E9%A2%98/" class="post-category">
+                                    算法思考题
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/">
-                        <span class="chip bg-color">课程设计</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5/">
+                        <span class="chip bg-color">旋转矩阵</span>
+                    </a>
+                    
+                    <a href="/tags/%E4%BA%8C%E7%BB%B4%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/">
+                        <span class="chip bg-color">二维最短路径</span>
                     </a>
                     
                 </div>
@@ -988,31 +1126,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/07/22/%E7%AE%97%E6%B3%95%E5%AE%9E%E9%AA%8C/">
+                <a href="/2023/07/27/Baseline%E5%AE%9E%E7%8E%B0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="算法实验">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Baseline实现">
                         
-                        <span class="card-title">算法实验</span>
+                        <span class="card-title">Baseline实现</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            课内的算法实验
+                            跑通baseline并进行一定改进
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-22
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-27
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AF%BE%E5%86%85%E5%AE%9E%E9%AA%8C/" class="post-category">
-                                    课内实验
+                            <a href="/categories/%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0/" class="post-category">
+                                    暑期实习
                                 </a>
                             
                             
@@ -1022,8 +1160,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
+                    <a href="/tags/NLP/">
+                        <span class="chip bg-color">NLP</span>
+                    </a>
+                    
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
                     </a>
                     
                 </div>
