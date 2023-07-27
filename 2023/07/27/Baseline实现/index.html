@@ -1,0 +1,2027 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Baseline实现, J&amp;Ocean BLOG">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Baseline实现 | J&amp;Ocean BLOG</title>
+    <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+
+   <style>
+    body{
+       background-image: url(https://github.com/JIANG-Wu-19/JIANG-Wu-19/blob/master/99759389_p0.png?raw=true);
+       background-repeat:no-repeat;
+       background-size:cover;
+       background-attachment:fixed;
+    }
+</style>
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.ico" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">J&amp;Ocean BLOG</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.ico" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">J&amp;Ocean BLOG</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Baseline实现</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/NLP/">
+                                <span class="chip bg-color">NLP</span>
+                            </a>
+                        
+                            <a href="/tags/Python/">
+                                <span class="chip bg-color">Python</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0/" class="post-category">
+                                暑期实习
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-07-27
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    5.1k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    21 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>友情连接：<a target="_blank" rel="noopener" href="https://datawhaler.feishu.cn/docx/WirRd4oB5oMe2ixw1rxcTnHFnHh">Datawhale-NLP实践</a></p>
+<p>GitHub项目地址：<a target="_blank" rel="noopener" href="https://github.com/JIANG-Wu-19/NLP_project">NLP_project</a></p>
+<h2 id="import库"><a href="#import库" class="headerlink" title="import库"></a>import库</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 导入pandas用于读取表格数据</span>
+<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+
+<span class="token comment"># 导入BOW（词袋模型），可以选择将CountVectorizer替换为TfidfVectorizer（TF-IDF（词频-逆文档频率）），注意上下文要同时修改，亲测后者效果更佳</span>
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>feature_extraction<span class="token punctuation">.</span>text <span class="token keyword">import</span> CountVectorizer
+
+<span class="token comment"># 导入LogisticRegression回归模型</span>
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>linear_model <span class="token keyword">import</span> LogisticRegression
+
+<span class="token comment"># 过滤警告消息</span>
+<span class="token keyword">from</span> warnings <span class="token keyword">import</span> simplefilter
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>exceptions <span class="token keyword">import</span> ConvergenceWarning
+
+<span class="token comment"># 引入分词器</span>
+<span class="token keyword">from</span> nltk <span class="token keyword">import</span> word_tokenize<span class="token punctuation">,</span> ngrams
+simplefilter<span class="token punctuation">(</span><span class="token string">"ignore"</span><span class="token punctuation">,</span> category<span class="token operator">=</span>ConvergenceWarning<span class="token punctuation">)</span>
+
+<span class="token keyword">from</span> nltk<span class="token punctuation">.</span>corpus <span class="token keyword">import</span> stopwords<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>其中比较重要的几个库：<code>pandas</code>,<code>sklearn</code>,<code>nltk</code>。上述三个库进行分开讲解。</p>
+<h3 id="pandas"><a href="#pandas" class="headerlink" title="pandas"></a>pandas</h3><ul>
+<li>pandas是一个第三方的库，因此需要先下载</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">pip install pandas<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>pandas的功能非常强大，早在学习的时候便能窥见一二。</p>
+<p>pandas的主要数据结构<code>Series</code>和<code>DataFrame</code>，分别对应一维数据和二维数据</p>
+<p>Pandas 就像一把万能瑞士军刀，下面仅列出了它的部分优势 ：</p>
+<ul>
+<li>处理浮点与非浮点数据里的<strong>缺失数据</strong>，表示为 <code>NaN</code>；</li>
+<li>大小可变：<strong>插入或删除</strong> DataFrame 等多维对象的列；</li>
+<li>自动、显式<strong>数据对齐</strong>：显式地将对象与一组标签对齐，也可以忽略标签，在 Series、DataFrame 计算时自动与数据对齐；</li>
+<li>强大、灵活的<strong>分组</strong>（group by）功能：<strong>拆分-应用-组合</strong>数据集，聚合、转换数据；</li>
+<li>把 Python 和 NumPy 数据结构里不规则、不同索引的数据<strong>轻松</strong>地转换为 DataFrame 对象；</li>
+<li>基于智能标签，对大型数据集进行<strong>切片</strong>、<strong>花式索引</strong>、<strong>子集分解</strong>等操作；</li>
+<li>直观地<strong>合并（merge）</strong>、<strong>连接（join）</strong>数据集；</li>
+<li>灵活地<strong>重塑（reshape）</strong>、<strong>透视（pivot）</strong>数据集；</li>
+<li><strong>轴</strong>支持结构化标签：一个刻度支持多个标签；</li>
+<li>成熟的 IO 工具：读取<strong>文本文件</strong>（CSV 等支持分隔符的文件）、Excel 文件、数据库等来源的数据，利用超快的 <strong>HDF5</strong> 格式保存 &#x2F; 加载数据；</li>
+<li><strong>时间序列</strong>：支持日期范围生成、频率转换、移动窗口统计、移动窗口线性回归、日期位移等时间序列功能。</li>
+</ul>
+<p>在这里，我们主要用到的就是读取csv文件，然后对读取到的数据进行行操作、列操作。</p>
+<h3 id="sklearn"><a href="#sklearn" class="headerlink" title="sklearn"></a>sklearn</h3><p>scikit-learn，又写作sklearn，是一个开源的基于python语言的机器学习工具包。它通过NumPy, SciPy和Matplotlib等python数值计算的库实现高效的算法应用，并且涵盖了几乎所有主流机器学习算法。</p>
+<p>在这里baseline使用的是Logistic Regression，当然对于分类而言，还可以使用random forest、SVM等等，也是sklearn库中的模块，可以在baseline的基础上进行操作。</p>
+<h3 id="nltk"><a href="#nltk" class="headerlink" title="nltk"></a>nltk</h3><p>nltk全称Natural Language Toolkit，自然语言处理工具包，在NLP领域中，最常使用的一个Python库。</p>
+<p>在baseline中，使用了nltk库，对文本进行一系列操作如单词切分、去除停用词、抽取关键词等等操作</p>
+<h2 id="实现任务一"><a href="#实现任务一" class="headerlink" title="实现任务一"></a>实现任务一</h2><ul>
+<li>task 1：判断是否是医学论文</li>
+</ul>
+<p>官方给出的A集中已经含有Keywords一项，也就是说在前期工作中并不需要完成任务二。</p>
+<p>对于任务一来说，是一个简单的文本分类问题，官方给出了训练集，那么可以采用Logistic Regression来做分类的预测，实际上random forest和SVM也可以，在后文会略微提到一点，因为没有得到显著的提升效果。</p>
+<h3 id="Logistic-Regression"><a href="#Logistic-Regression" class="headerlink" title="Logistic Regression"></a>Logistic Regression</h3><p>逻辑回归（Logistic Regression）与线性回归（Linear Regression）都是一种广义线性模型（generalized linear model）。逻辑回归假设因变量 y 服从伯努利分布，而线性回归假设因变量 y 服从高斯分布。 因此与线性回归有很多相同之处，去除Sigmoid映射函数的话，逻辑回归算法就是一个线性回归。可以说，逻辑回归是以线性回归为理论支持的，但是逻辑回归通过Sigmoid函数引入了非线性因素，因此可以轻松处理0&#x2F;1分类问题。</p>
+<p>首先引入Sigmoid函数，称逻辑函数：<br>$$<br>g(z)&#x3D; \frac {1}{1+e^{-z}}<br>$$<br>上述函数对于解决二分类问题十分重要</p>
+<p>逻辑回归的假设函数形式如下：<br>$$<br>h_\theta(x)&#x3D;g\left(\theta^T x\right), g(z)&#x3D;\frac{1}{1+e^{-z}}<br>$$<br>得到：<br>$$<br>h_\theta(x)&#x3D;\frac{1}{1+e^{-\theta^T x}}<br>$$<br>$x$是输入数据，$\theta$是求取参数</p>
+<p>逻辑回归就是计算在给定上述两个参数的条件下$y&#x3D;1$的概率。</p>
+<p>做假设：<br>$$<br>P(y&#x3D;1 \mid x ; \theta)&#x3D;g\left(\theta^T x\right)&#x3D;\frac{1}{1+e^{-\theta^T}}<br>$$<br>决策函数就是：<br>$$<br>P(y&#x3D;1|x)&gt;0.5 \Rightarrow y^*&#x3D;1<br>$$</p>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><p>上一节中都是Logistic Regression的原理，在这里一笔带过，如果单纯的手撕逻辑回归代码会相当耗时，sklearn库已经为我们封装好了模型，只要将训练集的相关列组成文本向量然后进行训练就可以得到预测结果。</p>
+<p>首先使用pandas提供的IO操作进行数据集的读取：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 读取数据集</span>
+train <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'train.csv'</span><span class="token punctuation">)</span>
+train<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span> <span class="token operator">=</span> train<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+train<span class="token punctuation">[</span><span class="token string">'abstract'</span><span class="token punctuation">]</span> <span class="token operator">=</span> train<span class="token punctuation">[</span><span class="token string">'abstract'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+
+test <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'test.csv'</span><span class="token punctuation">)</span>
+test<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span> <span class="token operator">=</span> test<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+test<span class="token punctuation">[</span><span class="token string">'abstract'</span><span class="token punctuation">]</span> <span class="token operator">=</span> test<span class="token punctuation">[</span><span class="token string">'abstract'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>然后进行训练集、测试集的文本拼接：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">train<span class="token punctuation">[</span><span class="token string">'text'</span><span class="token punctuation">]</span> <span class="token operator">=</span> train<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span>  train<span class="token punctuation">[</span><span class="token string">'author'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> train<span class="token punctuation">[</span><span class="token string">'abstract'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> train<span class="token punctuation">[</span><span class="token string">'Keywords'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+test<span class="token punctuation">[</span><span class="token string">'text'</span><span class="token punctuation">]</span> <span class="token operator">=</span> test<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span>  test<span class="token punctuation">[</span><span class="token string">'author'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> test<span class="token punctuation">[</span><span class="token string">'abstract'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> train<span class="token punctuation">[</span><span class="token string">'Keywords'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>以上都是数据的预处理，接下来才是重点</p>
+<ul>
+<li><p>将文本向量化</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">vector <span class="token operator">=</span> CountVectorizer<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train<span class="token punctuation">[</span><span class="token string">'text'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+train_vector <span class="token operator">=</span> vector<span class="token punctuation">.</span>transform<span class="token punctuation">(</span>train<span class="token punctuation">[</span><span class="token string">'text'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+test_vector <span class="token operator">=</span> vector<span class="token punctuation">.</span>transform<span class="token punctuation">(</span>test<span class="token punctuation">[</span><span class="token string">'text'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>将数据集输入模型进行训练</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 引入模型</span>
+model <span class="token operator">=</span> LogisticRegression<span class="token punctuation">(</span><span class="token operator">**</span>param_dist<span class="token punctuation">)</span>
+
+<span class="token comment"># 开始训练，这里可以考虑修改默认的batch_size与epoch来取得更好的效果</span>
+model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_vector<span class="token punctuation">,</span> train<span class="token punctuation">[</span><span class="token string">'label'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>其中，Logistic Regression模型中的超参数在另一个程序中通过交叉验证得到，以下是程序运行后得到的一个优解</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">param_dict <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token string">'C'</span><span class="token punctuation">:</span> <span class="token number">2.8496190796154743</span><span class="token punctuation">,</span>       <span class="token comment"># LogisticRegression的惩罚参数C在0.1~10之间均匀分布</span>
+    <span class="token string">'penalty'</span><span class="token punctuation">:</span> <span class="token string">'l2'</span><span class="token punctuation">,</span>     <span class="token comment"># 正则化类型：L1正则化或L2正则化</span>
+    <span class="token string">'max_iter'</span><span class="token punctuation">:</span> <span class="token number">3000</span>  <span class="token comment"># 最大迭代次数</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>具体程序不在这里赘述，感兴趣的见附录。</p>
+</li>
+<li><p>对测试机label进行预测</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">test<span class="token punctuation">[</span><span class="token string">'label'</span><span class="token punctuation">]</span> <span class="token operator">=</span> model<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>test_vector<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>生成csv文件</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">test<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'uuid'</span><span class="token punctuation">,</span> <span class="token string">'Keywords'</span><span class="token punctuation">,</span> <span class="token string">'label'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">.</span>to_csv<span class="token punctuation">(</span><span class="token string">'submit_task1.csv'</span><span class="token punctuation">,</span> index<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+<p>最终，在笔者使用了一点trick的情况下，跑出来的分数还是比较可观的</p>
+<p><img src="/imgs/baseline/2.png" alt="image-20230727173735393"></p>
+<p>但是，如果是关键词未给出的B集，Logistic Regression的表现就会比较糟糕</p>
+<h2 id="任务一模型的选择"><a href="#任务一模型的选择" class="headerlink" title="任务一模型的选择"></a>任务一模型的选择</h2><p>在超参数缺省的情况下，random forest的表现最好，随后依次是Logistic Regression、SVM；</p>
+<p>如果分别对模型的参数进行交叉验证得到一组优化的参数，Logistic Regression的表现最好，随后依次是random forest、SVM；</p>
+<p>也就是说，SVM在本分类中并不适合。</p>
+<p>Logistic Regression和random forest两者的差距不大，都可以选择</p>
+<h2 id="实现任务二"><a href="#实现任务二" class="headerlink" title="实现任务二"></a>实现任务二</h2><ul>
+<li>task 2：关键词抽取</li>
+</ul>
+<p>官方更新的B集中，去除了Keywords一列，因此需要进行提取</p>
+<p>baseline中的实现过程是对文本进行关键词的抽取</p>
+<p>相关库已经import，在上述任务一的基础上进行后续操作</p>
+<ul>
+<li><p>停用词的设置，这里直接使用nltk自带的停用词库</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">stops <span class="token operator">=</span> <span class="token builtin">set</span><span class="token punctuation">(</span>stopwords<span class="token punctuation">.</span>words<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>定义筛选函数</p>
+<p>从给定文档的标题和摘要中提取关键词吗，遵循特定的过程来识别频繁出现的词组（二元组），作为潜在的关键词。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">extract_keywords_by_freq</span><span class="token punctuation">(</span>title<span class="token punctuation">,</span> abstract<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    ngrams_count <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span>ngrams<span class="token punctuation">(</span>word_tokenize<span class="token punctuation">(</span>title<span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token builtin">list</span><span class="token punctuation">(</span>ngrams<span class="token punctuation">(</span>word_tokenize<span class="token punctuation">(</span>abstract<span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    ngrams_count <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>ngrams_count<span class="token punctuation">)</span>
+    ngrams_count <span class="token operator">=</span> ngrams_count<span class="token punctuation">[</span><span class="token operator">~</span>ngrams_count<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>isin<span class="token punctuation">(</span>stops<span class="token punctuation">)</span><span class="token punctuation">]</span>
+    ngrams_count <span class="token operator">=</span> ngrams_count<span class="token punctuation">[</span><span class="token operator">~</span>ngrams_count<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>isin<span class="token punctuation">(</span>stops<span class="token punctuation">)</span><span class="token punctuation">]</span>
+    ngrams_count <span class="token operator">=</span> ngrams_count<span class="token punctuation">[</span>ngrams_count<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">apply</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">3</span><span class="token punctuation">]</span>
+    ngrams_count <span class="token operator">=</span> ngrams_count<span class="token punctuation">[</span>ngrams_count<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">apply</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">3</span><span class="token punctuation">]</span>
+    ngrams_count<span class="token punctuation">[</span><span class="token string">'phrase'</span><span class="token punctuation">]</span> <span class="token operator">=</span> ngrams_count<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> ngrams_count<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+    ngrams_count <span class="token operator">=</span> ngrams_count<span class="token punctuation">[</span><span class="token string">'phrase'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>value_counts<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    ngrams_count <span class="token operator">=</span> ngrams_count<span class="token punctuation">[</span>ngrams_count <span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">]</span>
+    <span class="token keyword">return</span> <span class="token builtin">list</span><span class="token punctuation">(</span>ngrams_count<span class="token punctuation">.</span>index<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">6</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li><code>ngrams_count = list(ngrams(word_tokenize(title.lower()), 2)) + list(ngrams(word_tokenize(abstract.lower()), 2))</code>：首先，将<code>title</code>和<code>abstract</code>拆分成小写单词，并从标题和摘要中创建二元组（两个连续的单词序列）。这些二元组存储在<code>ngrams_count</code>列表中</li>
+<li><code>ngrams_count = pd.DataFrame(ngrams_count)</code>：将<code>ngrams_count</code>列表中的二元组转换为pandas DataFrame，以便更容易地进行数据处理</li>
+<li><code>ngrams_count = ngrams_count[~ngrams_count[0].isin(stops)]</code> 和 <code>ngrams_count = ngrams_count[~ngrams_count[1].isin(stops)]</code>：在这里，函数过滤掉包含停用词的二元组。停用词是常用词，在文本分析中通常被忽略，因为它们没有很重要的意义</li>
+<li><code>ngrams_count = ngrams_count[ngrams_count[0].apply(len) &gt; 3]</code> 和 <code>ngrams_count = ngrams_count[ngrams_count[1].apply(len) &gt; 3]</code>：函数过滤掉第一个和第二个单词长度小于等于3个字符的二元组。这样做是为了去除非常短和不太有信息量的短语</li>
+<li><code>ngrams_count[&#39;phrase&#39;] = ngrams_count[0] + &#39; &#39; + ngrams_count[1]</code>：将每个二元组的第一个单词和第二个单词连接起来，创建一个名为’phrase’的新列</li>
+<li><code>ngrams_count = ngrams_count[&#39;phrase&#39;].value_counts()</code>：然后，函数计算每个唯一二元组短语的出现次数</li>
+<li><code>ngrams_count = ngrams_count[ngrams_count &gt; 1]</code>：它过滤掉仅出现一次的二元组短语，因为它们可能作为关键词的相关性较低</li>
+<li><code>return list(ngrams_count.index)[:6]</code>：最后，函数返回出现频率最高的前6个二元组短语作为提取的关键词</li>
+</ul>
+</li>
+<li><p>对测试集提取关键词</p>
+<p>使用之前定义的<code>extract_keywords_by_freq</code>函数从给定的测试数据中提取关键词，并将提取到的关键词拼接成一个字符串</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">test_words <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> row <span class="token keyword">in</span> test<span class="token punctuation">.</span>iterrows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 读取第每一行数据的标题与摘要并提取关键词</span>
+    prediction_keywords <span class="token operator">=</span> extract_keywords_by_freq<span class="token punctuation">(</span>row<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>title<span class="token punctuation">,</span> row<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>abstract<span class="token punctuation">)</span>
+    <span class="token comment"># 利用文章标题进一步提取关键词</span>
+    prediction_keywords <span class="token operator">=</span> <span class="token punctuation">[</span>x<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">for</span> x <span class="token keyword">in</span> prediction_keywords<span class="token punctuation">]</span>
+    <span class="token comment"># 如果未能提取到关键词</span>
+    <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>prediction_keywords<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        prediction_keywords <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">]</span>
+    test_words<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">'; '</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>prediction_keywords<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li><p><code>prediction_keywords = extract_keywords_by_freq(row[1].title, row[1].abstract)</code>: 从当前行的标题和摘要中调用<code>extract_keywords_by_freq</code>函数提取关键词，并将结果存储在<code>prediction_keywords</code>变量中。</p>
+</li>
+<li><p><code>prediction_keywords = [x.title() for x in prediction_keywords]</code>: 将<code>prediction_keywords</code>中的每个关键词的首字母大写，形成一个新的列表，这是为了统一关键词的格式。</p>
+</li>
+<li><p><code>if len(prediction_keywords) == 0: prediction_keywords = [&#39;A&#39;, &#39;B&#39;]</code>: 如果未能提取到关键词（即<code>prediction_keywords</code>为空列表），则将默认关键词<code>[&#39;A&#39;, &#39;B&#39;]</code>赋值给<code>prediction_keywords</code>。</p>
+</li>
+<li><p><code>test_words.append(&#39;; &#39;.join(prediction_keywords))</code>: 将处理后的关键词列表转换为以分号为分隔符的字符串，并将这个字符串添加到<code>test_words</code>列表中。</p>
+</li>
+</ul>
+</li>
+<li><p>将得到的test_words存入Series中，并生成csv文件</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">test<span class="token punctuation">[</span><span class="token string">'Keywords'</span><span class="token punctuation">]</span> <span class="token operator">=</span> test_words
+test<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'uuid'</span><span class="token punctuation">,</span> <span class="token string">'Keywords'</span><span class="token punctuation">,</span> <span class="token string">'label'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">.</span>to_csv<span class="token punctuation">(</span><span class="token string">'submit_task2.csv'</span><span class="token punctuation">,</span> index<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+</ul>
+<p>抽取式关键字存在比较大的缺陷，文献的标题、摘要中不一定会出现关键字，因此造成的准确率不高，跑出来的分数也不是很好看。</p>
+<h2 id="任务顺序的变换"><a href="#任务顺序的变换" class="headerlink" title="任务顺序的变换"></a>任务顺序的变换</h2><p>由于任务二是提取关键字，而任务一的准确率又和关键字挂钩，有没有可能通过调整任务的顺序，先提取关键字，然后将关键字加入进行训练以得到更准确的分类。</p>
+<p>这种idea很容易实现，因为代码都是现成的，只需要稍加改动就可以了，原理在前面两节都已经提及，实现代码见附录。</p>
+<p>虽然分数都不是很好看，但是有那么一丢丢进步。</p>
+<p><img src="/imgs/baseline/3.png" alt="image-20230727173918592"></p>
+<p><img src="/imgs/baseline/4.png" alt="image-20230727174658234"></p>
+<h2 id="不足"><a href="#不足" class="headerlink" title="不足"></a>不足</h2><p>上述都只是一个baseline的实现过程，也就是说都还有进步空间，对于传统机器学习，已经到达极限。</p>
+<p>后续笔者冲榜的时候对任务一的实现进行改进，使用了BERT模型，对于文本分类的准确度，有较大的提升。</p>
+<p>对于任务二，笔者没有进行改动，但是看了群友的思路后，觉得抽取式关键词的准确率也就那样了，可能要转向生成式关键词，也就是使用LLM，笔者困于时间，在deadline前没有足够时间完成</p>
+<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><h3 id="baseline-tuning-py"><a href="#baseline-tuning-py" class="headerlink" title="baseline_tuning.py"></a>baseline_tuning.py</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>feature_extraction<span class="token punctuation">.</span>text <span class="token keyword">import</span> CountVectorizer
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>linear_model <span class="token keyword">import</span> LogisticRegression
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword">import</span> RandomizedSearchCV
+<span class="token keyword">from</span> scipy<span class="token punctuation">.</span>stats <span class="token keyword">import</span> uniform
+
+<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+
+<span class="token comment"># 读取数据集</span>
+train <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'train.csv'</span><span class="token punctuation">)</span>
+train<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span> <span class="token operator">=</span> train<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+train<span class="token punctuation">[</span><span class="token string">'abstract'</span><span class="token punctuation">]</span> <span class="token operator">=</span> train<span class="token punctuation">[</span><span class="token string">'abstract'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+train<span class="token punctuation">[</span><span class="token string">'text'</span><span class="token punctuation">]</span> <span class="token operator">=</span> train<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span>  train<span class="token punctuation">[</span><span class="token string">'author'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> train<span class="token punctuation">[</span><span class="token string">'abstract'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> train<span class="token punctuation">[</span><span class="token string">'Keywords'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+
+
+<span class="token comment"># 定义参数搜索空间</span>
+param_dist <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token string">'C'</span><span class="token punctuation">:</span> uniform<span class="token punctuation">(</span><span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span>       <span class="token comment"># LogisticRegression的惩罚参数C在0.1~10之间均匀分布</span>
+    <span class="token string">'penalty'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'l1'</span><span class="token punctuation">,</span> <span class="token string">'l2'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>     <span class="token comment"># 正则化类型：L1正则化或L2正则化</span>
+    <span class="token string">'max_iter'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">2000</span><span class="token punctuation">,</span> <span class="token number">3000</span><span class="token punctuation">]</span>  <span class="token comment"># 最大迭代次数</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment"># 创建CountVectorizer</span>
+vectorizer <span class="token operator">=</span> CountVectorizer<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 转换文本数据为特征向量</span>
+train_vector <span class="token operator">=</span> vectorizer<span class="token punctuation">.</span>fit_transform<span class="token punctuation">(</span>train<span class="token punctuation">[</span><span class="token string">'text'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 创建LogisticRegression分类器</span>
+logreg <span class="token operator">=</span> LogisticRegression<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 初始化RandomizedSearchCV，传入模型、参数搜索空间、交叉验证的折数等</span>
+random_search <span class="token operator">=</span> RandomizedSearchCV<span class="token punctuation">(</span>estimator<span class="token operator">=</span>logreg<span class="token punctuation">,</span> param_distributions<span class="token operator">=</span>param_dist<span class="token punctuation">,</span> cv<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">,</span> n_jobs<span class="token operator">=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> n_iter<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 开始参数搜索与交叉验证</span>
+random_search<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_vector<span class="token punctuation">,</span> train<span class="token punctuation">[</span><span class="token string">'label'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 输出最佳参数组合</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Best parameters: "</span><span class="token punctuation">,</span> random_search<span class="token punctuation">.</span>best_params_<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="baseline1-py"><a href="#baseline1-py" class="headerlink" title="baseline1.py"></a>baseline1.py</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 导入pandas用于读取表格数据</span>
+<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+
+<span class="token comment"># 导入BOW（词袋模型），可以选择将CountVectorizer替换为TfidfVectorizer（TF-IDF（词频-逆文档频率）），注意上下文要同时修改，亲测后者效果更佳</span>
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>feature_extraction<span class="token punctuation">.</span>text <span class="token keyword">import</span> CountVectorizer
+
+<span class="token comment"># 导入LogisticRegression回归模型</span>
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>linear_model <span class="token keyword">import</span> LogisticRegression
+
+<span class="token comment"># 过滤警告消息</span>
+<span class="token keyword">from</span> warnings <span class="token keyword">import</span> simplefilter
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>exceptions <span class="token keyword">import</span> ConvergenceWarning
+simplefilter<span class="token punctuation">(</span><span class="token string">"ignore"</span><span class="token punctuation">,</span> category<span class="token operator">=</span>ConvergenceWarning<span class="token punctuation">)</span>
+
+
+<span class="token comment"># 读取数据集</span>
+train <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'train.csv'</span><span class="token punctuation">)</span>
+train<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span> <span class="token operator">=</span> train<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+train<span class="token punctuation">[</span><span class="token string">'abstract'</span><span class="token punctuation">]</span> <span class="token operator">=</span> train<span class="token punctuation">[</span><span class="token string">'abstract'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+
+test <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'test.csv'</span><span class="token punctuation">)</span>
+test<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span> <span class="token operator">=</span> test<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+test<span class="token punctuation">[</span><span class="token string">'abstract'</span><span class="token punctuation">]</span> <span class="token operator">=</span> test<span class="token punctuation">[</span><span class="token string">'abstract'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+
+param_dist <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token string">'C'</span><span class="token punctuation">:</span> <span class="token number">2.8496190796154743</span><span class="token punctuation">,</span>       <span class="token comment"># LogisticRegression的惩罚参数C在0.1~10之间均匀分布</span>
+    <span class="token string">'penalty'</span><span class="token punctuation">:</span> <span class="token string">'l2'</span><span class="token punctuation">,</span>     <span class="token comment"># 正则化类型：L1正则化或L2正则化</span>
+    <span class="token string">'max_iter'</span><span class="token punctuation">:</span> <span class="token number">3000</span>  <span class="token comment"># 最大迭代次数</span>
+<span class="token punctuation">&#125;</span>
+
+
+<span class="token comment"># 提取文本特征，生成训练集与测试集</span>
+train<span class="token punctuation">[</span><span class="token string">'text'</span><span class="token punctuation">]</span> <span class="token operator">=</span> train<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span>  train<span class="token punctuation">[</span><span class="token string">'author'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> train<span class="token punctuation">[</span><span class="token string">'abstract'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> train<span class="token punctuation">[</span><span class="token string">'Keywords'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+test<span class="token punctuation">[</span><span class="token string">'text'</span><span class="token punctuation">]</span> <span class="token operator">=</span> test<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span>  test<span class="token punctuation">[</span><span class="token string">'author'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> test<span class="token punctuation">[</span><span class="token string">'abstract'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> train<span class="token punctuation">[</span><span class="token string">'Keywords'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+
+vector <span class="token operator">=</span> CountVectorizer<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train<span class="token punctuation">[</span><span class="token string">'text'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+train_vector <span class="token operator">=</span> vector<span class="token punctuation">.</span>transform<span class="token punctuation">(</span>train<span class="token punctuation">[</span><span class="token string">'text'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+test_vector <span class="token operator">=</span> vector<span class="token punctuation">.</span>transform<span class="token punctuation">(</span>test<span class="token punctuation">[</span><span class="token string">'text'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+
+<span class="token comment"># 引入模型</span>
+model <span class="token operator">=</span> LogisticRegression<span class="token punctuation">(</span><span class="token operator">**</span>param_dist<span class="token punctuation">)</span>
+
+<span class="token comment"># 开始训练，这里可以考虑修改默认的batch_size与epoch来取得更好的效果</span>
+model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_vector<span class="token punctuation">,</span> train<span class="token punctuation">[</span><span class="token string">'label'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 利用模型对测试集label标签进行预测</span>
+test<span class="token punctuation">[</span><span class="token string">'label'</span><span class="token punctuation">]</span> <span class="token operator">=</span> model<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>test_vector<span class="token punctuation">)</span>
+
+<span class="token comment"># 生成任务一推测结果</span>
+test<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'uuid'</span><span class="token punctuation">,</span> <span class="token string">'Keywords'</span><span class="token punctuation">,</span> <span class="token string">'label'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">.</span>to_csv<span class="token punctuation">(</span><span class="token string">'submit_task1.csv'</span><span class="token punctuation">,</span> index<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="baseline2-py"><a href="#baseline2-py" class="headerlink" title="baseline2.py"></a>baseline2.py</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 导入pandas用于读取表格数据</span>
+<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+
+<span class="token comment"># 导入BOW（词袋模型），可以选择将CountVectorizer替换为TfidfVectorizer（TF-IDF（词频-逆文档频率）），注意上下文要同时修改，亲测后者效果更佳</span>
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>feature_extraction<span class="token punctuation">.</span>text <span class="token keyword">import</span> CountVectorizer
+
+<span class="token comment"># 导入LogisticRegression回归模型</span>
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>linear_model <span class="token keyword">import</span> LogisticRegression
+
+<span class="token comment"># 过滤警告消息</span>
+<span class="token keyword">from</span> warnings <span class="token keyword">import</span> simplefilter
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>exceptions <span class="token keyword">import</span> ConvergenceWarning
+
+<span class="token comment"># 引入分词器</span>
+<span class="token keyword">from</span> nltk <span class="token keyword">import</span> word_tokenize<span class="token punctuation">,</span> ngrams
+simplefilter<span class="token punctuation">(</span><span class="token string">"ignore"</span><span class="token punctuation">,</span> category<span class="token operator">=</span>ConvergenceWarning<span class="token punctuation">)</span>
+
+<span class="token keyword">from</span> nltk<span class="token punctuation">.</span>corpus <span class="token keyword">import</span> stopwords
+
+
+param_dist <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token string">'C'</span><span class="token punctuation">:</span> <span class="token number">2.8496190796154743</span><span class="token punctuation">,</span>       <span class="token comment"># LogisticRegression的惩罚参数C在0.1~10之间均匀分布</span>
+    <span class="token string">'penalty'</span><span class="token punctuation">:</span> <span class="token string">'l2'</span><span class="token punctuation">,</span>     <span class="token comment"># 正则化类型：L1正则化或L2正则化</span>
+    <span class="token string">'max_iter'</span><span class="token punctuation">:</span> <span class="token number">3000</span>  <span class="token comment"># 最大迭代次数</span>
+<span class="token punctuation">&#125;</span>
+
+
+<span class="token comment"># 读取数据集</span>
+train <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'train.csv'</span><span class="token punctuation">)</span>
+train<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span> <span class="token operator">=</span> train<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+train<span class="token punctuation">[</span><span class="token string">'abstract'</span><span class="token punctuation">]</span> <span class="token operator">=</span> train<span class="token punctuation">[</span><span class="token string">'abstract'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+
+test <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'testB.csv'</span><span class="token punctuation">)</span>
+test<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span> <span class="token operator">=</span> test<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+test<span class="token punctuation">[</span><span class="token string">'abstract'</span><span class="token punctuation">]</span> <span class="token operator">=</span> test<span class="token punctuation">[</span><span class="token string">'abstract'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+
+
+<span class="token comment"># 提取文本特征，生成训练集与测试集</span>
+train<span class="token punctuation">[</span><span class="token string">'text'</span><span class="token punctuation">]</span> <span class="token operator">=</span> train<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span>  train<span class="token punctuation">[</span><span class="token string">'author'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> train<span class="token punctuation">[</span><span class="token string">'abstract'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">' '</span> <span class="token operator">+</span> train<span class="token punctuation">[</span><span class="token string">'Keywords'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+test<span class="token punctuation">[</span><span class="token string">'text'</span><span class="token punctuation">]</span> <span class="token operator">=</span> test<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span>  test<span class="token punctuation">[</span><span class="token string">'author'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> test<span class="token punctuation">[</span><span class="token string">'abstract'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+
+vector <span class="token operator">=</span> CountVectorizer<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train<span class="token punctuation">[</span><span class="token string">'text'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+train_vector <span class="token operator">=</span> vector<span class="token punctuation">.</span>transform<span class="token punctuation">(</span>train<span class="token punctuation">[</span><span class="token string">'text'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+test_vector <span class="token operator">=</span> vector<span class="token punctuation">.</span>transform<span class="token punctuation">(</span>test<span class="token punctuation">[</span><span class="token string">'text'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+
+<span class="token comment"># 引入模型</span>
+model <span class="token operator">=</span> LogisticRegression<span class="token punctuation">(</span><span class="token operator">**</span>param_dist<span class="token punctuation">)</span>
+
+<span class="token comment"># 开始训练，这里可以考虑修改默认的batch_size与epoch来取得更好的效果</span>
+model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_vector<span class="token punctuation">,</span> train<span class="token punctuation">[</span><span class="token string">'label'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 利用模型对测试集label标签进行预测</span>
+test<span class="token punctuation">[</span><span class="token string">'label'</span><span class="token punctuation">]</span> <span class="token operator">=</span> model<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>test_vector<span class="token punctuation">)</span>
+
+<span class="token comment"># 生成任务一推测结果</span>
+test<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'uuid'</span><span class="token punctuation">,</span> <span class="token string">'label'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">.</span>to_csv<span class="token punctuation">(</span><span class="token string">'submit_task1.csv'</span><span class="token punctuation">,</span> index<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span>
+
+
+<span class="token comment"># 定义停用词，去掉出现较多，但对文章不关键的词语</span>
+stops <span class="token operator">=</span> <span class="token builtin">set</span><span class="token punctuation">(</span>stopwords<span class="token punctuation">.</span>words<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+
+<span class="token comment"># 定义方法按照词频筛选关键词</span>
+
+<span class="token keyword">def</span> <span class="token function">extract_keywords_by_freq</span><span class="token punctuation">(</span>title<span class="token punctuation">,</span> abstract<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    ngrams_count <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span>ngrams<span class="token punctuation">(</span>word_tokenize<span class="token punctuation">(</span>title<span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token builtin">list</span><span class="token punctuation">(</span>ngrams<span class="token punctuation">(</span>word_tokenize<span class="token punctuation">(</span>abstract<span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    ngrams_count <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>ngrams_count<span class="token punctuation">)</span>
+    ngrams_count <span class="token operator">=</span> ngrams_count<span class="token punctuation">[</span><span class="token operator">~</span>ngrams_count<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>isin<span class="token punctuation">(</span>stops<span class="token punctuation">)</span><span class="token punctuation">]</span>
+    ngrams_count <span class="token operator">=</span> ngrams_count<span class="token punctuation">[</span><span class="token operator">~</span>ngrams_count<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>isin<span class="token punctuation">(</span>stops<span class="token punctuation">)</span><span class="token punctuation">]</span>
+    ngrams_count <span class="token operator">=</span> ngrams_count<span class="token punctuation">[</span>ngrams_count<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">apply</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">3</span><span class="token punctuation">]</span>
+    ngrams_count <span class="token operator">=</span> ngrams_count<span class="token punctuation">[</span>ngrams_count<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">apply</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">3</span><span class="token punctuation">]</span>
+    ngrams_count<span class="token punctuation">[</span><span class="token string">'phrase'</span><span class="token punctuation">]</span> <span class="token operator">=</span> ngrams_count<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> ngrams_count<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+    ngrams_count <span class="token operator">=</span> ngrams_count<span class="token punctuation">[</span><span class="token string">'phrase'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>value_counts<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    ngrams_count <span class="token operator">=</span> ngrams_count<span class="token punctuation">[</span>ngrams_count <span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">]</span>
+    <span class="token keyword">return</span> <span class="token builtin">list</span><span class="token punctuation">(</span>ngrams_count<span class="token punctuation">.</span>index<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">6</span><span class="token punctuation">]</span>
+
+
+<span class="token comment">## 对测试集提取关键词</span>
+
+test_words <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> row <span class="token keyword">in</span> test<span class="token punctuation">.</span>iterrows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 读取第每一行数据的标题与摘要并提取关键词</span>
+    prediction_keywords <span class="token operator">=</span> extract_keywords_by_freq<span class="token punctuation">(</span>row<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>title<span class="token punctuation">,</span> row<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>abstract<span class="token punctuation">)</span>
+    <span class="token comment"># 利用文章标题进一步提取关键词</span>
+    prediction_keywords <span class="token operator">=</span> <span class="token punctuation">[</span>x<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">for</span> x <span class="token keyword">in</span> prediction_keywords<span class="token punctuation">]</span>
+    <span class="token comment"># 如果未能提取到关键词</span>
+    <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>prediction_keywords<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        prediction_keywords <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">]</span>
+    test_words<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">'; '</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>prediction_keywords<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+test<span class="token punctuation">[</span><span class="token string">'Keywords'</span><span class="token punctuation">]</span> <span class="token operator">=</span> test_words
+test<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'uuid'</span><span class="token punctuation">,</span> <span class="token string">'Keywords'</span><span class="token punctuation">,</span> <span class="token string">'label'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">.</span>to_csv<span class="token punctuation">(</span><span class="token string">'submit_task2.csv'</span><span class="token punctuation">,</span> index<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="baseline3-py"><a href="#baseline3-py" class="headerlink" title="baseline3.py"></a>baseline3.py</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 导入pandas用于读取表格数据</span>
+<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+
+<span class="token comment"># 导入BOW（词袋模型），可以选择将CountVectorizer替换为TfidfVectorizer（TF-IDF（词频-逆文档频率）），注意上下文要同时修改，亲测后者效果更佳</span>
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>feature_extraction<span class="token punctuation">.</span>text <span class="token keyword">import</span> CountVectorizer
+
+<span class="token comment"># 导入LogisticRegression回归模型</span>
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>linear_model <span class="token keyword">import</span> LogisticRegression
+
+<span class="token comment"># 过滤警告消息</span>
+<span class="token keyword">from</span> warnings <span class="token keyword">import</span> simplefilter
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>exceptions <span class="token keyword">import</span> ConvergenceWarning
+
+<span class="token comment"># 引入分词器</span>
+<span class="token keyword">from</span> nltk <span class="token keyword">import</span> word_tokenize<span class="token punctuation">,</span> ngrams
+simplefilter<span class="token punctuation">(</span><span class="token string">"ignore"</span><span class="token punctuation">,</span> category<span class="token operator">=</span>ConvergenceWarning<span class="token punctuation">)</span>
+
+<span class="token keyword">from</span> nltk<span class="token punctuation">.</span>corpus <span class="token keyword">import</span> stopwords
+
+
+param_dist <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token string">'C'</span><span class="token punctuation">:</span> <span class="token number">2.8496190796154743</span><span class="token punctuation">,</span>       <span class="token comment"># LogisticRegression的惩罚参数C在0.1~10之间均匀分布</span>
+    <span class="token string">'penalty'</span><span class="token punctuation">:</span> <span class="token string">'l2'</span><span class="token punctuation">,</span>     <span class="token comment"># 正则化类型：L1正则化或L2正则化</span>
+    <span class="token string">'max_iter'</span><span class="token punctuation">:</span> <span class="token number">3000</span>  <span class="token comment"># 最大迭代次数</span>
+<span class="token punctuation">&#125;</span>
+
+
+<span class="token comment"># 读取数据集</span>
+train <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'train.csv'</span><span class="token punctuation">)</span>
+train<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span> <span class="token operator">=</span> train<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+train<span class="token punctuation">[</span><span class="token string">'abstract'</span><span class="token punctuation">]</span> <span class="token operator">=</span> train<span class="token punctuation">[</span><span class="token string">'abstract'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+
+test <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'testB.csv'</span><span class="token punctuation">)</span>
+<span class="token comment"># fillna()函数用于填充缺失数据，这里将标题和摘要的缺失值填充为空字符串</span>
+test<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span> <span class="token operator">=</span> test<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+test<span class="token punctuation">[</span><span class="token string">'abstract'</span><span class="token punctuation">]</span> <span class="token operator">=</span> test<span class="token punctuation">[</span><span class="token string">'abstract'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+
+
+<span class="token comment"># 提取文本特征，生成训练集与测试集</span>
+train<span class="token punctuation">[</span><span class="token string">'text'</span><span class="token punctuation">]</span> <span class="token operator">=</span> train<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span>  train<span class="token punctuation">[</span><span class="token string">'author'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> train<span class="token punctuation">[</span><span class="token string">'abstract'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">' '</span> <span class="token operator">+</span> train<span class="token punctuation">[</span><span class="token string">'Keywords'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+test<span class="token punctuation">[</span><span class="token string">'text'</span><span class="token punctuation">]</span> <span class="token operator">=</span> test<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span>  test<span class="token punctuation">[</span><span class="token string">'author'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> test<span class="token punctuation">[</span><span class="token string">'abstract'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+
+vector <span class="token operator">=</span> CountVectorizer<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train<span class="token punctuation">[</span><span class="token string">'text'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+train_vector <span class="token operator">=</span> vector<span class="token punctuation">.</span>transform<span class="token punctuation">(</span>train<span class="token punctuation">[</span><span class="token string">'text'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+test_vector <span class="token operator">=</span> vector<span class="token punctuation">.</span>transform<span class="token punctuation">(</span>test<span class="token punctuation">[</span><span class="token string">'text'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 定义停用词，去掉出现较多，但对文章不关键的词语</span>
+stops <span class="token operator">=</span> <span class="token builtin">set</span><span class="token punctuation">(</span>stopwords<span class="token punctuation">.</span>words<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+
+<span class="token comment"># 定义方法按照词频筛选关键词</span>
+
+<span class="token keyword">def</span> <span class="token function">extract_keywords_by_freq</span><span class="token punctuation">(</span>title<span class="token punctuation">,</span> abstract<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    ngrams_count <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span>ngrams<span class="token punctuation">(</span>word_tokenize<span class="token punctuation">(</span>title<span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token builtin">list</span><span class="token punctuation">(</span>ngrams<span class="token punctuation">(</span>word_tokenize<span class="token punctuation">(</span>abstract<span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    ngrams_count <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>ngrams_count<span class="token punctuation">)</span>
+    ngrams_count <span class="token operator">=</span> ngrams_count<span class="token punctuation">[</span><span class="token operator">~</span>ngrams_count<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>isin<span class="token punctuation">(</span>stops<span class="token punctuation">)</span><span class="token punctuation">]</span>
+    ngrams_count <span class="token operator">=</span> ngrams_count<span class="token punctuation">[</span><span class="token operator">~</span>ngrams_count<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>isin<span class="token punctuation">(</span>stops<span class="token punctuation">)</span><span class="token punctuation">]</span>
+    ngrams_count <span class="token operator">=</span> ngrams_count<span class="token punctuation">[</span>ngrams_count<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">apply</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">3</span><span class="token punctuation">]</span>
+    ngrams_count <span class="token operator">=</span> ngrams_count<span class="token punctuation">[</span>ngrams_count<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">apply</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">3</span><span class="token punctuation">]</span>
+    ngrams_count<span class="token punctuation">[</span><span class="token string">'phrase'</span><span class="token punctuation">]</span> <span class="token operator">=</span> ngrams_count<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> ngrams_count<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+    ngrams_count <span class="token operator">=</span> ngrams_count<span class="token punctuation">[</span><span class="token string">'phrase'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>value_counts<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    ngrams_count <span class="token operator">=</span> ngrams_count<span class="token punctuation">[</span>ngrams_count <span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">]</span>
+    <span class="token keyword">return</span> <span class="token builtin">list</span><span class="token punctuation">(</span>ngrams_count<span class="token punctuation">.</span>index<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">6</span><span class="token punctuation">]</span>
+
+
+<span class="token comment"># 对测试集提取关键词</span>
+
+test_words <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> row <span class="token keyword">in</span> test<span class="token punctuation">.</span>iterrows<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 读取第每一行数据的标题与摘要并提取关键词</span>
+    prediction_keywords <span class="token operator">=</span> extract_keywords_by_freq<span class="token punctuation">(</span>row<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>title<span class="token punctuation">,</span> row<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>abstract<span class="token punctuation">)</span>
+    <span class="token comment"># 利用文章标题进一步提取关键词</span>
+    prediction_keywords <span class="token operator">=</span> <span class="token punctuation">[</span>x<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">for</span> x <span class="token keyword">in</span> prediction_keywords<span class="token punctuation">]</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>prediction_keywords<span class="token punctuation">)</span>
+    <span class="token comment"># 如果未能提取到关键词</span>
+    <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>prediction_keywords<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        prediction_keywords <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">]</span>
+    test_words<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">'; '</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>prediction_keywords<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+test<span class="token punctuation">[</span><span class="token string">'Keywords'</span><span class="token punctuation">]</span> <span class="token operator">=</span> test_words
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">type</span><span class="token punctuation">(</span>test<span class="token punctuation">[</span><span class="token string">'Keywords'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>test<span class="token punctuation">[</span><span class="token string">'Keywords'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+test<span class="token punctuation">[</span><span class="token string">'text'</span><span class="token punctuation">]</span> <span class="token operator">=</span> test<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span>  test<span class="token punctuation">[</span><span class="token string">'author'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> test<span class="token punctuation">[</span><span class="token string">'abstract'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">' '</span><span class="token operator">+</span>test<span class="token punctuation">[</span><span class="token string">'Keywords'</span><span class="token punctuation">]</span>
+test_vector <span class="token operator">=</span> vector<span class="token punctuation">.</span>transform<span class="token punctuation">(</span>test<span class="token punctuation">[</span><span class="token string">'text'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+
+<span class="token comment"># 引入模型</span>
+model <span class="token operator">=</span> LogisticRegression<span class="token punctuation">(</span><span class="token operator">**</span>param_dist<span class="token punctuation">)</span>
+
+<span class="token comment"># 开始训练，这里可以考虑修改默认的batch_size与epoch来取得更好的效果</span>
+model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_vector<span class="token punctuation">,</span> train<span class="token punctuation">[</span><span class="token string">'label'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 利用模型对测试集label标签进行预测</span>
+test<span class="token punctuation">[</span><span class="token string">'label'</span><span class="token punctuation">]</span> <span class="token operator">=</span> model<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>test_vector<span class="token punctuation">)</span>
+
+<span class="token comment"># 生成任务一推测结果</span>
+test<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'uuid'</span><span class="token punctuation">,</span> <span class="token string">'label'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">.</span>to_csv<span class="token punctuation">(</span><span class="token string">'submit_task1.csv'</span><span class="token punctuation">,</span> index<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span>
+
+
+
+test<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'uuid'</span><span class="token punctuation">,</span> <span class="token string">'Keywords'</span><span class="token punctuation">,</span> <span class="token string">'label'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">.</span>to_csv<span class="token punctuation">(</span><span class="token string">'submit_task2.csv'</span><span class="token punctuation">,</span> index<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="svm-test-py"><a href="#svm-test-py" class="headerlink" title="svm_test.py"></a>svm_test.py</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 导入pandas用于读取表格数据</span>
+<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+
+<span class="token comment"># 导入BOW（词袋模型），可以选择将CountVectorizer替换为TfidfVectorizer（TF-IDF（词频-逆文档频率）），注意上下文要同时修改，亲测后者效果更佳</span>
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>feature_extraction<span class="token punctuation">.</span>text <span class="token keyword">import</span> CountVectorizer
+
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>svm <span class="token keyword">import</span> SVC
+
+<span class="token comment"># 过滤警告消息</span>
+<span class="token keyword">from</span> warnings <span class="token keyword">import</span> simplefilter
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>exceptions <span class="token keyword">import</span> ConvergenceWarning
+simplefilter<span class="token punctuation">(</span><span class="token string">"ignore"</span><span class="token punctuation">,</span> category<span class="token operator">=</span>ConvergenceWarning<span class="token punctuation">)</span>
+
+
+<span class="token comment"># 读取数据集</span>
+train <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'train.csv'</span><span class="token punctuation">)</span>
+train<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span> <span class="token operator">=</span> train<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+train<span class="token punctuation">[</span><span class="token string">'abstract'</span><span class="token punctuation">]</span> <span class="token operator">=</span> train<span class="token punctuation">[</span><span class="token string">'abstract'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+
+test <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'test.csv'</span><span class="token punctuation">)</span>
+test<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span> <span class="token operator">=</span> test<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+test<span class="token punctuation">[</span><span class="token string">'abstract'</span><span class="token punctuation">]</span> <span class="token operator">=</span> test<span class="token punctuation">[</span><span class="token string">'abstract'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+
+
+<span class="token comment"># 提取文本特征，生成训练集与测试集</span>
+train<span class="token punctuation">[</span><span class="token string">'text'</span><span class="token punctuation">]</span> <span class="token operator">=</span> train<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span>  train<span class="token punctuation">[</span><span class="token string">'author'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> train<span class="token punctuation">[</span><span class="token string">'abstract'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> train<span class="token punctuation">[</span><span class="token string">'Keywords'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+test<span class="token punctuation">[</span><span class="token string">'text'</span><span class="token punctuation">]</span> <span class="token operator">=</span> test<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span>  test<span class="token punctuation">[</span><span class="token string">'author'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> test<span class="token punctuation">[</span><span class="token string">'abstract'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> train<span class="token punctuation">[</span><span class="token string">'Keywords'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+
+vector <span class="token operator">=</span> CountVectorizer<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train<span class="token punctuation">[</span><span class="token string">'text'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+train_vector <span class="token operator">=</span> vector<span class="token punctuation">.</span>transform<span class="token punctuation">(</span>train<span class="token punctuation">[</span><span class="token string">'text'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+test_vector <span class="token operator">=</span> vector<span class="token punctuation">.</span>transform<span class="token punctuation">(</span>test<span class="token punctuation">[</span><span class="token string">'text'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+
+<span class="token comment"># 引入模型</span>
+model <span class="token operator">=</span> SVC<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 开始训练，这里可以考虑修改默认的batch_size与epoch来取得更好的效果</span>
+model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_vector<span class="token punctuation">,</span> train<span class="token punctuation">[</span><span class="token string">'label'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 利用模型对测试集label标签进行预测</span>
+test<span class="token punctuation">[</span><span class="token string">'label'</span><span class="token punctuation">]</span> <span class="token operator">=</span> model<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>test_vector<span class="token punctuation">)</span>
+
+<span class="token comment"># 生成任务一推测结果</span>
+test<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'uuid'</span><span class="token punctuation">,</span> <span class="token string">'Keywords'</span><span class="token punctuation">,</span> <span class="token string">'label'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">.</span>to_csv<span class="token punctuation">(</span><span class="token string">'svm.csv'</span><span class="token punctuation">,</span> index<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="randomforest-test-py"><a href="#randomforest-test-py" class="headerlink" title="randomforest_test.py"></a>randomforest_test.py</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 导入pandas用于读取表格数据</span>
+<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+
+<span class="token comment"># 导入BOW（词袋模型），可以选择将CountVectorizer替换为TfidfVectorizer（TF-IDF（词频-逆文档频率）），注意上下文要同时修改，亲测后者效果更佳</span>
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>feature_extraction<span class="token punctuation">.</span>text <span class="token keyword">import</span> CountVectorizer
+
+<span class="token comment"># 导入随机森林分类器</span>
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>ensemble <span class="token keyword">import</span> RandomForestClassifier
+
+<span class="token comment"># 导入warnings库，过滤警告消息</span>
+<span class="token keyword">from</span> warnings <span class="token keyword">import</span> simplefilter
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>exceptions <span class="token keyword">import</span> ConvergenceWarning
+
+simplefilter<span class="token punctuation">(</span><span class="token string">"ignore"</span><span class="token punctuation">,</span> category<span class="token operator">=</span>ConvergenceWarning<span class="token punctuation">)</span>
+
+<span class="token comment"># 读取数据集</span>
+train <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'train.csv'</span><span class="token punctuation">)</span>
+train<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span> <span class="token operator">=</span> train<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+train<span class="token punctuation">[</span><span class="token string">'abstract'</span><span class="token punctuation">]</span> <span class="token operator">=</span> train<span class="token punctuation">[</span><span class="token string">'abstract'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+
+test <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'test.csv'</span><span class="token punctuation">)</span>
+test<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span> <span class="token operator">=</span> test<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+test<span class="token punctuation">[</span><span class="token string">'abstract'</span><span class="token punctuation">]</span> <span class="token operator">=</span> test<span class="token punctuation">[</span><span class="token string">'abstract'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 提取文本特征，生成训练集与测试集</span>
+train<span class="token punctuation">[</span><span class="token string">'text'</span><span class="token punctuation">]</span> <span class="token operator">=</span> train<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> train<span class="token punctuation">[</span><span class="token string">'author'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> train<span class="token punctuation">[</span><span class="token string">'abstract'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span>
+    <span class="token string">''</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> train<span class="token punctuation">[</span><span class="token string">'Keywords'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+test<span class="token punctuation">[</span><span class="token string">'text'</span><span class="token punctuation">]</span> <span class="token operator">=</span> test<span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> test<span class="token punctuation">[</span><span class="token string">'author'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> test<span class="token punctuation">[</span><span class="token string">'abstract'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> \
+               train<span class="token punctuation">[</span><span class="token string">'Keywords'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+
+vector <span class="token operator">=</span> CountVectorizer<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train<span class="token punctuation">[</span><span class="token string">'text'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+train_vector <span class="token operator">=</span> vector<span class="token punctuation">.</span>transform<span class="token punctuation">(</span>train<span class="token punctuation">[</span><span class="token string">'text'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+test_vector <span class="token operator">=</span> vector<span class="token punctuation">.</span>transform<span class="token punctuation">(</span>test<span class="token punctuation">[</span><span class="token string">'text'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 引入随机森林分类器</span>
+model <span class="token operator">=</span> RandomForestClassifier<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 开始训练，可以考虑修改n_estimators（树的数量）和其他超参数来取得更好的效果</span>
+model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_vector<span class="token punctuation">,</span> train<span class="token punctuation">[</span><span class="token string">'label'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 利用模型对测试集label标签进行预测</span>
+test<span class="token punctuation">[</span><span class="token string">'label'</span><span class="token punctuation">]</span> <span class="token operator">=</span> model<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>test_vector<span class="token punctuation">)</span>
+
+<span class="token comment"># 生成任务一推测结果</span>
+test<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'uuid'</span><span class="token punctuation">,</span> <span class="token string">'Keywords'</span><span class="token punctuation">,</span> <span class="token string">'label'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">.</span>to_csv<span class="token punctuation">(</span><span class="token string">'randomforest.csv'</span><span class="token punctuation">,</span> index<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">J&Ocean</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://jiang-wu-19.github.io/2023/07/27/Baseline%E5%AE%9E%E7%8E%B0/">https://jiang-wu-19.github.io/2023/07/27/Baseline%E5%AE%9E%E7%8E%B0/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">J&Ocean</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/NLP/">
+                                    <span class="chip bg-color">NLP</span>
+                                </a>
+                            
+                                <a href="/tags/Python/">
+                                    <span class="chip bg-color">Python</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">请我喝杯奶茶吧~</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'Nv6Wx6PAYH30bfcx7u0eDWHy-gzGzoHsz',
+        appKey: 'IhPcpC3fDP8Ro7eaPakG2vSt',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2023/07/27/Baseline%E5%AE%9E%E7%8E%B0/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Baseline实现">
+                        
+                        <span class="card-title">Baseline实现</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            跑通baseline并进行一定改进
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-27
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0/" class="post-category">
+                                    暑期实习
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/NLP/">
+                        <span class="chip bg-color">NLP</span>
+                    </a>
+                    
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/07/26/NLP%E5%AE%9E%E8%B7%B5%E7%9A%84%E4%B8%80%E7%82%B9%E7%82%B9%E7%AC%94%E8%AE%B0/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="NLP实践的一点点笔记">
+                        
+                        <span class="card-title">NLP实践的一点点笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            第一个NLP项目：基于论文摘要的文本分类与关键词抽取
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-26
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0/" class="post-category">
+                                    暑期实习
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/NLP/">
+                        <span class="chip bg-color">NLP</span>
+                    </a>
+                    
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: J&amp;Ocean BLOG<br />'
+            + '文章作者: J&amp;Ocean<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2023</span>
+            
+            <span id="year">2023</span>
+            <a href="/about" target="_blank">J&Ocean</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">86.2k</span>&nbsp;字
+            
+            
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2023";
+                    var startMonth = "7";
+                    var startDate = "2";
+                    var startHour = "12";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+    <a href="https://github.com/JIANG-Wu-19" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:wujiang0319@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=870027163" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 870027163" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+    <a href="https://www.zhihu.com/people/bei-wei-xiao-wu-32" class="tooltipped" target="_blank" data-tooltip="关注我的知乎: https://www.zhihu.com/people/bei-wei-xiao-wu-32" data-position="top" data-delay="50">
+        <i class="fab fa-zhihu1">知</i>
+    </a>
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
