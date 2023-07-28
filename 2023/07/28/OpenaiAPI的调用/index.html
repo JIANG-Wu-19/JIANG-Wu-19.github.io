@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="算法课外思考题一, J&amp;Ocean BLOG">
+    <meta name="keywords" content="OpenaiAPI的调用, J&amp;Ocean BLOG">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>算法课外思考题一 | J&amp;Ocean BLOG</title>
+    <title>OpenaiAPI的调用 | J&amp;Ocean BLOG</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -235,12 +235,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">算法课外思考题一</h1>
+                    <h1 class="description center-align post-title">OpenaiAPI的调用</h1>
                 </div>
             </div>
         </div>
@@ -356,16 +356,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">算法</span>
+                            <a href="/tags/NLP/">
+                                <span class="chip bg-color">NLP</span>
                             </a>
                         
-                            <a href="/tags/%E6%A0%88/">
-                                <span class="chip bg-color">栈</span>
+                            <a href="/tags/Python/">
+                                <span class="chip bg-color">Python</span>
                             </a>
                         
-                            <a href="/tags/%E5%86%92%E6%B3%A1/">
-                                <span class="chip bg-color">冒泡</span>
+                            <a href="/tags/OpenAI-API/">
+                                <span class="chip bg-color">OpenAI API</span>
                             </a>
                         
                     </div>
@@ -376,8 +376,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%AE%97%E6%B3%95%E6%80%9D%E8%80%83%E9%A2%98/" class="post-category">
-                                算法思考题
+                            <a href="/categories/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB%E7%9A%84%E4%B8%9C%E8%A5%BF/" class="post-category">
+                                杂七杂八的东西
                             </a>
                         
                     </div>
@@ -389,7 +389,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-07-05
+                    2023-07-28
                 </div>
                 
 
@@ -398,14 +398,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.5k
+                    647
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    2 分
                 </div>
                 
 
@@ -423,238 +423,80 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>设计一栈结构，使得出栈、入栈以及求栈的最小值均能在$O (1)$时间内完成</p>
-<h3 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h3><p><strong>针对出入栈</strong>，由数据结构的顺序栈知识可以得知，出入栈的时间复杂度都是$O (1)$，因此对于出入栈只需要普通栈就可以实现问题要求；</p>
-<p><strong>针对求栈的最小值</strong>，使用遍历法求栈最小值的时间复杂度为$O (n)$，因此需要设计一种特殊栈，通过记录栈中的最小值，在求栈的最小值时只需要将最小值输出即可，其时间复杂度为$O (1)$。</p>
-<h3 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h3><p>先构建顺序栈的数据结构</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">typedef struct&#123;&#x2F;&#x2F;顺序栈
-    SElemType* base;
-    SElemtyoe* top;
-    int stacksize;
-&#125;SqStack;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>然后构建一个特殊的辅助栈，包括存储所有数据的原栈和存储最小值序列的新栈</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">typedef struct&#123;&#x2F;&#x2F;记录最小值的辅助栈
-    SqStack Data;
-    Sqstack MinData;
-&#125;MinStack;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<ul>
-<li><p>入栈操作</p>
-<p>对于第一个元素，一定会进入两个栈；</p>
-<p>对于后面的每一元素一定会进入Data栈，如果该元素&lt;&#x3D;Mindata栈的栈顶元素，则该元素进入Mindata栈，否则不进入</p>
-</li>
+                <p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/JIANG-Wu-19/OpenAIAPI">OpenAIAPI</a></p>
+<h2 id="实现功能"><a href="#实现功能" class="headerlink" title="实现功能"></a>实现功能</h2><ul>
+<li>输入文本，返回API对文本的分类操作</li>
+<li>在本地使用chain of thought，进行文本清洗、特征提取</li>
+<li>调用API对文本进行分类</li>
+<li>断点重爬</li>
+<li>多线程</li>
 </ul>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void MinPush(Minstack* minstack, SElemType e) &#123;
-	Push(&amp;minstack-&gt;Data, e);
-	if (minstack-&gt;MinData.base&#x3D;&#x3D;minstack-&gt;MinData.top) &#123;
-		Push(&amp;minstack-&gt;MinData, e);
-	&#125;
-	else &#123;
-		if (e &lt;&#x3D; GetTop(minstack-&gt;MinData)) &#123;
-			Push(&amp;minstack-&gt;MinData, e);
-		&#125;
-	&#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<ul>
-<li><p>出栈操作</p>
-<p>对于某一元素的出栈，Data栈一定会执行出栈操作，如果Data栈的栈顶元素和MinData栈的栈顶元素相同，则MinData栈也执行出栈操作</p>
-</li>
+<h2 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h2><h3 id="启动画面"><a href="#启动画面" class="headerlink" title="启动画面"></a>启动画面</h3><p><img src="/imgs/openaiapi/1.png" alt="启动画面"></p>
+<h3 id="情感分析界面"><a href="#情感分析界面" class="headerlink" title="情感分析界面"></a>情感分析界面</h3><p><img src="/imgs/openaiapi/2.png" alt="情感分析界面"></p>
+<h3 id="断点重爬"><a href="#断点重爬" class="headerlink" title="断点重爬"></a>断点重爬</h3><p>清空当前输入界面</p>
+<p><img src="/imgs/openaiapi/3.png" alt="清空输入界面"></p>
+<p>点击Load Breakpoint</p>
+<p><img src="/imgs/openaiapi/4.png" alt="断点重爬"></p>
+<h3 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h3><p><img src="/imgs/openaiapi/5.png" alt="多线程"></p>
+<h2 id="使用技术"><a href="#使用技术" class="headerlink" title="使用技术"></a>使用技术</h2><ul>
+<li>使用Python作为主要编程语言</li>
 </ul>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void MinPop(Minstack* minstack, SElemType* e) &#123;
-	if (GetTop(minstack-&gt;Data) &#x3D;&#x3D; GetTop(minstack-&gt;MinData)) &#123;
-		Pop(&amp;minstack-&gt;Data, e);
-		Pop(&amp;minstack-&gt;MinData, e);
-		return;
-	&#125;
-	Pop(&amp;minstack-&gt;Data, e);
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+<h3 id="wxPython"><a href="#wxPython" class="headerlink" title="wxPython"></a>wxPython</h3><p>使用wxPython用于构建GUI</p>
+<h3 id="OpenAI-API"><a href="#OpenAI-API" class="headerlink" title="OpenAI API"></a>OpenAI API</h3><p>用于进行实现情感分析等文本分类问题</p>
+<h3 id="NLTK"><a href="#NLTK" class="headerlink" title="NLTK"></a>NLTK</h3><p>Natural Language Toolkit，主要在实现chain of thought中使用</p>
 <ul>
-<li><p>求栈最小值</p>
-<p>最小值已经存储在MinData栈中，因此只需要获取MinData栈的栈顶元素就可以得到栈的最小值</p>
-</li>
+<li>首先进行文本清洗，全部转化成小写字母、去除标点符号、去除停用词</li>
+<li>然后进行特征提取</li>
 </ul>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">SElemType GetMin(Minstack* minstack) &#123;
-	return GetTop(minstack-&gt;MinData);
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="Pickle"><a href="#Pickle" class="headerlink" title="Pickle"></a>Pickle</h3><p>用于断点数据的序列化和反序列化</p>
+<h2 id="难点和解决方法"><a href="#难点和解决方法" class="headerlink" title="难点和解决方法"></a>难点和解决方法</h2><h3 id="多步处理文本"><a href="#多步处理文本" class="headerlink" title="多步处理文本"></a>多步处理文本</h3><p>通过定义多个函数，将处理逻辑模块化，按照顺序组合调用。</p>
+<p>在实现中分别定义了不同文本处理函数，然后按照顺序依次进行处理一和处理二</p>
+<pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">def process_step1(text):
+    # 文本清洗
+    cleaned_text &#x3D; text.lower()  # 将文本转换为小写
+    cleaned_text &#x3D; remove_punctuation(cleaned_text)  # 去除标点符号
+    cleaned_text &#x3D; remove_stopwords(cleaned_text)  # 去除停用词
 
-<h3 id="算法代码与分析"><a href="#算法代码与分析" class="headerlink" title="算法代码与分析"></a>算法代码与分析</h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;iostream&gt;
-#define STACK_INIT_SIZE 100
-using namespace std;
-typedef int SElemType;
-
-typedef struct &#123;
-	SElemType* base;
-	SElemType* top;
-	int stacksize;
-&#125;SqStack;
-
-typedef struct &#123;
-	SqStack Data;
-	SqStack MinData;
-&#125;Minstack;
-
-void InitStack(SqStack* s) &#123;
-	s-&gt;base &#x3D; (SElemType*)malloc(STACK_INIT_SIZE * sizeof(SElemType));
-	s-&gt;top &#x3D; s-&gt;base;
-	s-&gt;stacksize &#x3D; STACK_INIT_SIZE;
-&#125;
-
-void Push(SqStack* s, SElemType e) &#123;
-	if (s-&gt;top - s-&gt;base &gt;&#x3D; s-&gt;stacksize) &#123;
-		s-&gt;base &#x3D; (SElemType*)realloc(s-&gt;base, (s-&gt;stacksize + 10) * sizeof(SElemType));
-		s-&gt;top &#x3D; s-&gt;base + s-&gt;stacksize;
-		s-&gt;stacksize +&#x3D; 10;
-	&#125;
-	*s-&gt;top++ &#x3D; e;
-&#125;
-
-void Pop(SqStack* s, SElemType* e) &#123;
-	*e &#x3D; *--s-&gt;top;
-&#125;
-
-SElemType GetTop(SqStack s) &#123;
-	return *(--s.top);
-&#125;
-
-void DestroyStack(SqStack* s) &#123;
-	free(s-&gt;base);
-	s-&gt;base &#x3D; NULL;
-	s-&gt;top &#x3D; NULL;
-	s-&gt;stacksize &#x3D; 0;
-&#125;
+    return cleaned_text
 
 
-void MinInit(Minstack* minstack) &#123;
-	InitStack(&amp;(minstack-&gt;Data));
-	InitStack(&amp;(minstack-&gt;MinData));
-&#125;
+def process_step2(text):
+    # 特征提取
+    features &#x3D; extract_features(text)  # 提取文本特征
 
-void MinDestroy(Minstack* minstack) &#123;
-	DestroyStack(&amp;minstack-&gt;Data);
-	DestroyStack(&amp;minstack-&gt;MinData);
-&#125;
+    print(features)
+    feature_text &#x3D; &quot;&quot;
+    while len(features) !&#x3D; 0:
+        key &#x3D; max(features)
+        feature_text &#x3D; feature_text + key + &#39; &#39;
+        del features[key]
+    return feature_text<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-void MinPush(Minstack* minstack, SElemType e) &#123;
-	Push(&amp;minstack-&gt;Data, e);
-	if (minstack-&gt;MinData.base&#x3D;&#x3D;minstack-&gt;MinData.top) &#123;
-		Push(&amp;minstack-&gt;MinData, e);
-	&#125;
-	else &#123;
-		if (e &lt;&#x3D; GetTop(minstack-&gt;MinData)) &#123;
-			Push(&amp;minstack-&gt;MinData, e);
-		&#125;
-	&#125;
-&#125;
-
-void MinPop(Minstack* minstack, SElemType* e) &#123;
-	if (GetTop(minstack-&gt;Data) &#x3D;&#x3D; GetTop(minstack-&gt;MinData)) &#123;
-		Pop(&amp;minstack-&gt;Data, e);
-		Pop(&amp;minstack-&gt;MinData, e);
-		return;
-	&#125;
-	Pop(&amp;minstack-&gt;Data, e);
-&#125;
-
-SElemType GetMin(Minstack* minstack) &#123;
-	return GetTop(minstack-&gt;MinData);
-&#125;
-
-
-int main() &#123;
-	Minstack minstack;
-	SElemType e;
-	MinInit(&amp;minstack);
-
-	MinPush(&amp;minstack, 1);
-	MinPush(&amp;minstack, 2);
-	MinPush(&amp;minstack, 3);
-	MinPush(&amp;minstack, 1);
-	MinPop(&amp;minstack, &amp;e);
-	cout &lt;&lt; GetMin(&amp;minstack) &lt;&lt; endl;
-
-	system(&quot;pause&quot;);
-	return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><strong>实验结果</strong>：</p>
-<p><img src="/imgs/sikao1/1.png" alt="image-20230302194755588"></p>
-<p><strong>分析</strong>：</p>
-<p>本算法能够实现出入栈、求栈最小值时间复杂度$O (1)$，但是在数据类型的定义上，关于栈和特殊栈存在重复，经查阅资料，可以采用结构体继承解决。</p>
-<h2 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h2><h3 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h3><p>改进冒泡排序使得在最好情况下可以在线性时间内完成</p>
-<h3 id="问题分析-1"><a href="#问题分析-1" class="headerlink" title="问题分析"></a>问题分析</h3><p>对于普通的冒泡排序算法，在最坏的情况下其时间复杂度为$O (n^2)$。第一趟排序进行了$(n-1)$次比较，第i趟排序进行了$(n-i)$次比较；但是对于$(n-1)$趟排序，如果序列在某一次排序时恰好有序，则在该次之后的每一次排序都是无用的，为了优化冒泡排序，只需要在该次以后终止冒泡排序。</p>
-<h3 id="算法思路-1"><a href="#算法思路-1" class="headerlink" title="算法思路"></a>算法思路</h3><p>设置一个标志变量确定某一序列中的数据是否发生了交换，如果某一次冒泡过程中发现没有交换操作时，则说明序列已经排好序了，终止冒泡排序。</p>
-<h3 id="算法代码及分析"><a href="#算法代码及分析" class="headerlink" title="算法代码及分析"></a>算法代码及分析</h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;iostream&gt;
-using namespace std;
-
-void BubbleSort(int array[], int n,int* num) &#123;
-	for (int i &#x3D; 0; i &lt; n - 1; i++) &#123;
-		bool flag &#x3D; true;
-		for (int j &#x3D; 0; j &lt; n - i - 1; j++) &#123;
-			if (array[j] &gt; array[j + 1]) &#123;
-				int temp &#x3D; array[j];
-				array[j] &#x3D; array[j + 1];
-				array[j + 1] &#x3D; temp;
-				flag &#x3D; false;
-			&#125;
-		&#125;
-
-		if (flag) &#123;
-			break;
-		&#125;
-
-		(*num)++;
-	&#125;
-&#125;
-
-int main() &#123;
-	int num &#x3D; 0;
-	int array[] &#x3D; &#123; 5,4,3,6,7,8 &#125;;
-	int n1 &#x3D; sizeof(array) &#x2F; sizeof(int);
-	cout &lt;&lt; &quot;排序前：&quot;;
-	for (int i &#x3D; 0; i &lt; n1; i++) &#123;
-		cout &lt;&lt; array[i] &lt;&lt; &quot;,&quot;;
-	&#125;
-	cout &lt;&lt; endl;
-
-	BubbleSort(array, n1, &amp;num);
-	cout &lt;&lt; &quot;排序后：&quot;;
-	for (int i &#x3D; 0; i &lt; n1; i++) &#123;
-		cout &lt;&lt; array[i] &lt;&lt; &quot;,&quot;;
-	&#125;
-	cout &lt;&lt; endl;
-
-	int array1[] &#x3D; &#123; 1,2,3,4,5,6 &#125;;
-	int n2 &#x3D; sizeof(array1) &#x2F; sizeof(int);
-	cout &lt;&lt; &quot;排序前：&quot;;
-	for (int i &#x3D; 0; i &lt; n2; i++) &#123;
-		cout &lt;&lt; array1[i] &lt;&lt; &quot;,&quot;;
-	&#125;
-	cout &lt;&lt; endl;
-
-	cout &lt;&lt; num &lt;&lt; endl;
-
-	num &#x3D; 0;
-
-	BubbleSort(array1, n2, &amp;num);
-	cout &lt;&lt; &quot;排序后：&quot;;
-	for (int i &#x3D; 0; i &lt; n2; i++) &#123;
-		cout &lt;&lt; array1[i] &lt;&lt; &quot;,&quot;;
-	&#125;
-	cout &lt;&lt; endl;
-
-	cout &lt;&lt; num &lt;&lt; endl;
-
-	system(&quot;pause&quot;);
-	return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><strong>实验结果</strong>：</p>
-<p><img src="/imgs/sikao1/2.png" alt="image-20230302210218006"></p>
-<p><strong>分析</strong>：</p>
-<p>通过实验分析，在数据极端良好的情况下，能够实现时间复杂度为$O (1)$；在数据较为不良的情况下，仍能减少数据排序次数，使其在线性时间内完成。</p>
+<h3 id="处理文本时文本清洗"><a href="#处理文本时文本清洗" class="headerlink" title="处理文本时文本清洗"></a>处理文本时文本清洗</h3><p>大小写转换、去除标点符号和停用词</p>
+<blockquote>
+<p>使用Python的<code>string</code>中的大小写转换</p>
+<pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">cleaned_text &#x3D; text.lower()  # 将文本转换为小写<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</blockquote>
+<blockquote>
+<p>使用Python的<code>string</code>模块中的<code>punctuation</code>字符串，利用<code>str.translate()</code>方法去除标点符号。</p>
+<pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">def remove_punctuation(text):
+ # 去除标点符号
+ cleaned_text &#x3D; text.translate(str.maketrans(&quot;&quot;, &quot;&quot;, string.punctuation))
+ return cleaned_text<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+<blockquote>
+<p>对于停用词，使用NLTK中的<code>stopwords</code>语料库，结合<code>word_tokenize()</code>方法对文本进行分词，然后通过列表推导式去除停用词。</p>
+<pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">def remove_stopwords(text):
+ # 去除停用词
+ stop_words &#x3D; set(stopwords.words(&quot;english&quot;))
+ word_tokens &#x3D; word_tokenize(text)
+ filtered_text &#x3D; [word for word in word_tokens if word.lower() not in stop_words]
+ cleaned_text &#x3D; &quot; &quot;.join(filtered_text)
+ return cleaned_text<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+<h3 id="断点重爬-1"><a href="#断点重爬-1" class="headerlink" title="断点重爬"></a>断点重爬</h3><p>在断点功能中，使用Pickle模块将断点数据保存为二进制文件，并在需要时加载和恢复数据，将加载按钮在图形化界面显示</p>
+<h3 id="OpenAI-API的调用"><a href="#OpenAI-API的调用" class="headerlink" title="OpenAI API的调用"></a>OpenAI API的调用</h3><p>使用OpenAI官方提供的Python SDK，通过创建API对象并设置API密钥，调用相应的API方法实现文本分类</p>
+<h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><p>由于需要在GitHub中设置public，API密钥并未在源代码给出，需要修改API密钥</p>
 
                 
             </div>
@@ -681,7 +523,7 @@ int main() &#123;
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jiang-wu-19.github.io/2023/07/05/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E4%B8%80/">https://jiang-wu-19.github.io/2023/07/05/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E4%B8%80/</a>
+                    <a href="https://jiang-wu-19.github.io/2023/07/28/OpenaiAPI%E7%9A%84%E8%B0%83%E7%94%A8/">https://jiang-wu-19.github.io/2023/07/28/OpenaiAPI%E7%9A%84%E8%B0%83%E7%94%A8/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -719,16 +561,16 @@ int main() &#123;
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">算法</span>
+                                <a href="/tags/NLP/">
+                                    <span class="chip bg-color">NLP</span>
                                 </a>
                             
-                                <a href="/tags/%E6%A0%88/">
-                                    <span class="chip bg-color">栈</span>
+                                <a href="/tags/Python/">
+                                    <span class="chip bg-color">Python</span>
                                 </a>
                             
-                                <a href="/tags/%E5%86%92%E6%B3%A1/">
-                                    <span class="chip bg-color">冒泡</span>
+                                <a href="/tags/OpenAI-API/">
+                                    <span class="chip bg-color">OpenAI API</span>
                                 </a>
                             
                         </div>
@@ -1161,50 +1003,56 @@ int main() &#123;
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/07/05/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/">
+                <a href="/2023/07/28/OpenaiAPI%E7%9A%84%E8%B0%83%E7%94%A8/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="数据库笔记">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="OpenaiAPI的调用">
                         
-                        <span class="card-title">数据库笔记</span>
+                        <span class="card-title">OpenaiAPI的调用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            数据库的最后一轮复习笔记
+                            OpenaiAPI的调用实现文本分类和情感分析
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-07-05
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-28
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
-                                    笔记
+                            <a href="/categories/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB%E7%9A%84%E4%B8%9C%E8%A5%BF/" class="post-category">
+                                    杂七杂八的东西
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
-                        <span class="chip bg-color">数据库</span>
+                    <a href="/tags/NLP/">
+                        <span class="chip bg-color">NLP</span>
                     </a>
                     
-                    <a href="/tags/SQL/">
-                        <span class="chip bg-color">SQL</span>
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
+                    </a>
+                    
+                    <a href="/tags/OpenAI-API/">
+                        <span class="chip bg-color">OpenAI API</span>
                     </a>
                     
                 </div>
@@ -1215,27 +1063,27 @@ int main() &#123;
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/07/05/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E4%B8%80/">
+                <a href="/2023/07/27/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E5%85%AB/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="算法课外思考题一">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="算法课外思考题八">
                         
-                        <span class="card-title">算法课外思考题一</span>
+                        <span class="card-title">算法课外思考题八</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            优化栈结构和冒泡排序
+                            给出策略打印旋转矩阵和给出策略返回一个m*n矩阵中从[1,1]到[m,n]的和最小的一条路径
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-27
                             </span>
                         <span class="publish-author">
                             
@@ -1249,7 +1097,6 @@ int main() &#123;
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1257,12 +1104,12 @@ int main() &#123;
                         <span class="chip bg-color">算法</span>
                     </a>
                     
-                    <a href="/tags/%E6%A0%88/">
-                        <span class="chip bg-color">栈</span>
+                    <a href="/tags/%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5/">
+                        <span class="chip bg-color">旋转矩阵</span>
                     </a>
                     
-                    <a href="/tags/%E5%86%92%E6%B3%A1/">
-                        <span class="chip bg-color">冒泡</span>
+                    <a href="/tags/%E4%BA%8C%E7%BB%B4%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/">
+                        <span class="chip bg-color">二维最短路径</span>
                     </a>
                     
                 </div>

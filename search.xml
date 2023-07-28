@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>OpenaiAPI的调用</title>
+      <link href="/2023/07/28/OpenaiAPI%E7%9A%84%E8%B0%83%E7%94%A8/"/>
+      <url>/2023/07/28/OpenaiAPI%E7%9A%84%E8%B0%83%E7%94%A8/</url>
+      
+        <content type="html"><![CDATA[<p>项目地址：<a href="https://github.com/JIANG-Wu-19/OpenAIAPI">OpenAIAPI</a></p><h2 id="实现功能"><a href="#实现功能" class="headerlink" title="实现功能"></a>实现功能</h2><ul><li>输入文本，返回API对文本的分类操作</li><li>在本地使用chain of thought，进行文本清洗、特征提取</li><li>调用API对文本进行分类</li><li>断点重爬</li><li>多线程</li></ul><h2 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h2><h3 id="启动画面"><a href="#启动画面" class="headerlink" title="启动画面"></a>启动画面</h3><p><img src="/imgs/openaiapi/1.png" alt="启动画面"></p><h3 id="情感分析界面"><a href="#情感分析界面" class="headerlink" title="情感分析界面"></a>情感分析界面</h3><p><img src="/imgs/openaiapi/2.png" alt="情感分析界面"></p><h3 id="断点重爬"><a href="#断点重爬" class="headerlink" title="断点重爬"></a>断点重爬</h3><p>清空当前输入界面</p><p><img src="/imgs/openaiapi/3.png" alt="清空输入界面"></p><p>点击Load Breakpoint</p><p><img src="/imgs/openaiapi/4.png" alt="断点重爬"></p><h3 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h3><p><img src="/imgs/openaiapi/5.png" alt="多线程"></p><h2 id="使用技术"><a href="#使用技术" class="headerlink" title="使用技术"></a>使用技术</h2><ul><li>使用Python作为主要编程语言</li></ul><h3 id="wxPython"><a href="#wxPython" class="headerlink" title="wxPython"></a>wxPython</h3><p>使用wxPython用于构建GUI</p><h3 id="OpenAI-API"><a href="#OpenAI-API" class="headerlink" title="OpenAI API"></a>OpenAI API</h3><p>用于进行实现情感分析等文本分类问题</p><h3 id="NLTK"><a href="#NLTK" class="headerlink" title="NLTK"></a>NLTK</h3><p>Natural Language Toolkit，主要在实现chain of thought中使用</p><ul><li>首先进行文本清洗，全部转化成小写字母、去除标点符号、去除停用词</li><li>然后进行特征提取</li></ul><h3 id="Pickle"><a href="#Pickle" class="headerlink" title="Pickle"></a>Pickle</h3><p>用于断点数据的序列化和反序列化</p><h2 id="难点和解决方法"><a href="#难点和解决方法" class="headerlink" title="难点和解决方法"></a>难点和解决方法</h2><h3 id="多步处理文本"><a href="#多步处理文本" class="headerlink" title="多步处理文本"></a>多步处理文本</h3><p>通过定义多个函数，将处理逻辑模块化，按照顺序组合调用。</p><p>在实现中分别定义了不同文本处理函数，然后按照顺序依次进行处理一和处理二</p><pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">def process_step1(text):    # 文本清洗    cleaned_text &#x3D; text.lower()  # 将文本转换为小写    cleaned_text &#x3D; remove_punctuation(cleaned_text)  # 去除标点符号    cleaned_text &#x3D; remove_stopwords(cleaned_text)  # 去除停用词    return cleaned_textdef process_step2(text):    # 特征提取    features &#x3D; extract_features(text)  # 提取文本特征    print(features)    feature_text &#x3D; &quot;&quot;    while len(features) !&#x3D; 0:        key &#x3D; max(features)        feature_text &#x3D; feature_text + key + &#39; &#39;        del features[key]    return feature_text<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="处理文本时文本清洗"><a href="#处理文本时文本清洗" class="headerlink" title="处理文本时文本清洗"></a>处理文本时文本清洗</h3><p>大小写转换、去除标点符号和停用词</p><blockquote><p>使用Python的<code>string</code>中的大小写转换</p><pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">cleaned_text &#x3D; text.lower()  # 将文本转换为小写<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></blockquote><blockquote><p>使用Python的<code>string</code>模块中的<code>punctuation</code>字符串，利用<code>str.translate()</code>方法去除标点符号。</p><pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">def remove_punctuation(text): # 去除标点符号 cleaned_text &#x3D; text.translate(str.maketrans(&quot;&quot;, &quot;&quot;, string.punctuation)) return cleaned_text<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></blockquote><blockquote><p>对于停用词，使用NLTK中的<code>stopwords</code>语料库，结合<code>word_tokenize()</code>方法对文本进行分词，然后通过列表推导式去除停用词。</p><pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">def remove_stopwords(text): # 去除停用词 stop_words &#x3D; set(stopwords.words(&quot;english&quot;)) word_tokens &#x3D; word_tokenize(text) filtered_text &#x3D; [word for word in word_tokens if word.lower() not in stop_words] cleaned_text &#x3D; &quot; &quot;.join(filtered_text) return cleaned_text<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></blockquote><h3 id="断点重爬-1"><a href="#断点重爬-1" class="headerlink" title="断点重爬"></a>断点重爬</h3><p>在断点功能中，使用Pickle模块将断点数据保存为二进制文件，并在需要时加载和恢复数据，将加载按钮在图形化界面显示</p><h3 id="OpenAI-API的调用"><a href="#OpenAI-API的调用" class="headerlink" title="OpenAI API的调用"></a>OpenAI API的调用</h3><p>使用OpenAI官方提供的Python SDK，通过创建API对象并设置API密钥，调用相应的API方法实现文本分类</p><h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><p>由于需要在GitHub中设置public，API密钥并未在源代码给出，需要修改API密钥</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 杂七杂八的东西 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> NLP </tag>
+            
+            <tag> Python </tag>
+            
+            <tag> OpenAI API </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>算法课外思考题八</title>
       <link href="/2023/07/27/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E5%85%AB/"/>
       <url>/2023/07/27/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E5%85%AB/</url>
