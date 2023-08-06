@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="算法课外思考题五, J&amp;Ocean BLOG">
+    <meta name="keywords" content="ChatGPT生成内容鉴别的实现, J&amp;Ocean BLOG">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>算法课外思考题五 | J&amp;Ocean BLOG</title>
+    <title>ChatGPT生成内容鉴别的实现 | J&amp;Ocean BLOG</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -235,12 +235,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">算法课外思考题五</h1>
+                    <h1 class="description center-align post-title">ChatGPT生成内容鉴别的实现</h1>
                 </div>
             </div>
         </div>
@@ -356,16 +356,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">算法</span>
+                            <a href="/tags/NLP/">
+                                <span class="chip bg-color">NLP</span>
                             </a>
                         
-                            <a href="/tags/top-k/">
-                                <span class="chip bg-color">top-k</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%A0%86%E6%8E%92%E5%BA%8F/">
-                                <span class="chip bg-color">堆排序</span>
+                            <a href="/tags/Python/">
+                                <span class="chip bg-color">Python</span>
                             </a>
                         
                     </div>
@@ -376,8 +372,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%AE%97%E6%B3%95%E6%80%9D%E8%80%83%E9%A2%98/" class="post-category">
-                                算法思考题
+                            <a href="/categories/%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0/" class="post-category">
+                                暑期实习
                             </a>
                         
                     </div>
@@ -389,7 +385,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-07-07
+                    2023-08-06
                 </div>
                 
 
@@ -398,14 +394,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.7k
+                    2.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    9 分
+                    8 分
                 </div>
                 
 
@@ -423,281 +419,225 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>在计算机科学与社会生活中，经常涉及到要求前K个元素即top-k的问题，请给出不同策解决这一问题，并对比分析</p>
-<h3 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h3><p>本题假设取最大的k个元素</p>
-<p>首先最直接的想法就是先进行排序，再取前k个元素，选取快速排序作为本题的排序算法，时间复杂度是$O(nlogn)$，然后选择前k个元素，总时间复杂度是$O(nlogn)$，以下是快速排序的实现。</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void quickSort(int arr[], int left, int right) &#123;
-    int i &#x3D; left, j &#x3D; right;
-    int tmp;
-    int pivot &#x3D; arr[(left + right) &gt;&gt; 1];
+                <p>题目链接：<a target="_blank" rel="noopener" href="https://challenge.xfyun.cn/topic/info?type=text-detector&option=phb">ChatGPT生成文本检测器</a></p>
+<p>友情链接：<a target="_blank" rel="noopener" href="https://datawhaler.feishu.cn/docx/OQjWdEuAZo2nTSxHmT6crhZ2nmf">Datawhale-NLP实践</a></p>
+<p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/JIANG-Wu-19/NLP_project">NLP_project</a></p>
+<h2 id="跑通一个baseline"><a href="#跑通一个baseline" class="headerlink" title="跑通一个baseline"></a>跑通一个baseline</h2><p>这次的baseline使用<strong>手工确定提取文本特征</strong>，在第四点中有体现</p>
+<ol>
+<li><p><strong>导入库</strong>：开始时导入必要的库，包括numpy、pandas和scikit-learn的LogisticRegression。</p>
+</li>
+<li><p><strong>加载数据</strong>：加载两个CSV文件——‘train.csv’和’test.csv’，并分别存储在pandas的DataFrame ‘train_data’和’test_data’中。</p>
+</li>
+<li><p><strong>数据预处理</strong>：对’train_data’和’test_data’的’content’列应用了一些预处理步骤。它使用lambda函数从’content’列中的每个字符串中移除第一个和最后一个字符，也就是移除“[”和“]”</p>
+</li>
+<li><p><strong>特征工程</strong>：定义一个名为’simple_feature(s)’的函数，它接受一个字符串’s’作为输入，并基于输入字符串的特性返回一个numpy数组作为特征，特征都是人为的选取所以效果并不是特别好这些特征包括：</p>
+<ul>
+<li>原始字符串的长度。</li>
+<li>字符串中字符的数量。</li>
+<li>字符串中唯一字符的数量。</li>
+<li>字符串中重复字符的数量。</li>
+<li>唯一字符数占总字符数的比例。</li>
+<li>字符串中字符频率的最大值。</li>
+<li>字符串中字符频率的最小值。</li>
+<li>字符串中字符频率的平均值。</li>
+<li>字符串中字符频率的标准差。</li>
+<li>字符串中字符频率的极差（最大值与最小值之间的差值）。</li>
+</ul>
+</li>
+<li><p><strong>生成训练和测试特征</strong>：使用<code>apply</code>方法将’simple_feature’函数应用于’train_data’和’test_data’的’content’列中的每个字符串。得到的特征被垂直堆叠以创建numpy数组’train_feature’和’test_feature’。</p>
+</li>
+<li><p><strong>模型训练</strong>：通过调用scikit-learn的<code>LogisticRegression()</code>来初始化一个逻辑回归模型’m’。然后，使用<code>fit</code>方法将训练特征’train_feature’和’train_data’中对应的’label’列用于训练模型。</p>
+</li>
+<li><p><strong>进行预测</strong>：训练好的模型使用<code>predict</code>方法对测试数据进行预测，得到测试集的标签。</p>
+</li>
+<li><p><strong>将结果保存为CSV</strong>：将预测的标签添加到’test_data’的’label’列中，然后创建一个只包含’name’和’label’列的新DataFrame。最后，将这个DataFrame保存为名为’simple.csv’的CSV文件，可以用于提交或进一步分析。</p>
+</li>
+</ol>
+<p>baseline跑出来的分数中规中矩，只有0.85+，还需要进行调整</p>
+<p>详细见附录</p>
+<h2 id="冲榜尝试，upper的产生"><a href="#冲榜尝试，upper的产生" class="headerlink" title="冲榜尝试，upper的产生"></a>冲榜尝试，upper的产生</h2><p>upper基于TF-IDF，简单了解一下TF-IDF</p>
+<h3 id="TF-IDF"><a href="#TF-IDF" class="headerlink" title="TF-IDF"></a>TF-IDF</h3><p>TF-IDF (Term Frequency-Inverse Document Frequency) 是一种在文本挖掘和信息检索中常用的特征表示方法，用于衡量一个词语对于一个文档集合中某个文档的重要程度。</p>
+<p>TF-IDF 特征由两部分组成：Term Frequency (TF) 和 Inverse Document Frequency (IDF)。</p>
+<ol>
+<li><p>**Term Frequency (TF)**：指定词语在文档中出现的频率。它表示一个词在文档中的重要程度。一般情况下，一个词在文档中出现的次数越多，它对文档的内容表达越重要。</p>
+<p>TF &#x3D; (词语在文档中出现的次数) &#x2F; (文档中总词语数)</p>
+</li>
+<li><p>**Inverse Document Frequency (IDF)**：指定词语在整个文档集合中的重要程度。它是通过对所有文档计算某个词的出现频率，然后取其倒数来计算的。IDF 的目的是降低在多个文档中频繁出现的常见词的权重，增加对于少数文档中出现但对于整个文档集合较为重要的词的权重。</p>
+<p>IDF &#x3D; log(文档集合中的文档总数 &#x2F; 含有该词的文档数 + 1)</p>
+</li>
+</ol>
+<p>最终的 TF-IDF 特征是将 TF 和 IDF 相乘得到的。TF-IDF 特征考虑了一个词在当前文档中的重要性（TF），以及它在整个文档集合中的全局重要性（IDF）。因此，TF-IDF 特征能够在文本分类和信息检索任务中更好地捕捉每个词在文档中的信息价值，从而在构建特征表示时更好地区分不同的文档。</p>
+<h3 id="upper的思路"><a href="#upper的思路" class="headerlink" title="upper的思路"></a>upper的思路</h3><ol>
+<li><p><strong>导入库</strong>：开始时导入所需的库，包括pandas、sklearn的LogisticRegression类、TfidfVectorizer类以及一些评估指标相关的库。</p>
+</li>
+<li><p><strong>加载数据</strong>：加载两个CSV文件——‘train.csv’和’test.csv’，并将它们分别存储在pandas的DataFrame ‘train_data’和’test_data’中。</p>
+</li>
+<li><p><strong>数据预处理</strong>：对’train_data’和’test_data’的’content’列应用了一些预处理步骤。它使用lambda函数从’content’列中的每个字符串中移除第一个和最后一个字符。</p>
+</li>
+<li><p><strong>TF-IDF特征提取</strong>：</p>
+<ul>
+<li>使用TfidfVectorizer类来将文本内容转换为TF-IDF向量表示。</li>
+<li>尝试了三种不同的TF-IDF参数设置：<ul>
+<li>第1种参数：token_pattern&#x3D;r’\w{1}’，max_features&#x3D;2000。token_pattern指定了用于提取词语的正则表达式，r’\w{1}’表示提取长度为1的单词。max_features设置为2000表示最多选择2000个最重要的特征词。</li>
+<li>第2种参数：token_pattern&#x3D;r’\w{1}’，max_features&#x3D;5000。max_features设置为5000表示最多选择5000个最重要的特征词。</li>
+<li>第3种参数：token_pattern&#x3D;r’\w{1}’，max_features&#x3D;5000，ngram_range&#x3D;(1,2)。ngram_range&#x3D;(1,2)表示同时提取单个词和二元（两个词）的组合作为特征。</li>
+</ul>
+</li>
+<li>对于每种参数设置，分别将训练集和测试集的文本内容转换为TF-IDF向量表示。</li>
+</ul>
+</li>
+<li><p><strong>模型训练和评估</strong>：</p>
+<ul>
+<li>对于每种TF-IDF参数设置，使用交叉验证（cross_val_predict）对逻辑回归模型进行评估，以得到更稳定的性能评估结果。</li>
+<li>使用<code>cross_val_predict</code>方法对训练集的TF-IDF向量和对应的标签进行交叉验证预测，然后通过classification_report函数输出分类结果的评估报告，包括精确度、召回率、F1-score等指标。</li>
+</ul>
+</li>
+<li><p><strong>模型训练和预测</strong>：</p>
+<ul>
+<li>选择其中一种TF-IDF参数设置（这里使用第3种参数）来训练逻辑回归模型。</li>
+<li>使用训练好的模型对测试集的TF-IDF向量进行预测，并将预测结果保存在’test_data’的’label’列中。</li>
+</ul>
+</li>
+<li><p><strong>保存结果为CSV文件</strong>：</p>
+<ul>
+<li>将测试集的’name’和’label’列保存为名为’tfidf.csv’的CSV文件，用于后续的提交或分析。</li>
+</ul>
+</li>
+</ol>
+<p>总体来说，使用TF-IDF特征提取方法和逻辑回归模型进行文本分类任务，并通过交叉验证来评估模型的性能。通过尝试不同的TF-IDF参数设置，可以找到最佳的特征提取策略，以获得更好的分类结果。</p>
+<p>对于upper，冲榜的分数能够达到0.91+，但是这还不够，可以考虑之前使用过的BERT模型进行分类</p>
+<p>详细代码见附录</p>
+<p>后续尝试方向：</p>
+<ul>
+<li>调用BERT模型进行鉴别</li>
+<li>调用大模型进行鉴别</li>
+</ul>
+<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><h3 id="baseline-py"><a href="#baseline-py" class="headerlink" title="baseline.py"></a>baseline.py</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>linear_model <span class="token keyword">import</span> LogisticRegression
 
-    while (i &lt;&#x3D; j) &#123;
-        while (arr[i] &gt; pivot) &#123;
-            i++;
-        &#125;
-            
-        while (arr[j] &lt; pivot) &#123;
-            j--;
-        &#125;
-        if (i &lt;&#x3D; j) &#123;
-            tmp &#x3D; arr[i];
-            arr[i] &#x3D; arr[j];
-            arr[j] &#x3D; tmp;
-            i++;
-            j--;
-        &#125;
-    &#125;;
-    
-    if (left &lt; j) &#123;
-        quickSort(arr, left, j);
-    &#125;
-    if (i &lt; right) &#123;
-        quickSort(arr, i, right);
-    &#125;
-        
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment"># Load data</span>
+train_data <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'train.csv'</span><span class="token punctuation">)</span>
+test_data <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'test.csv'</span><span class="token punctuation">)</span>
 
-<p>方法二采用堆的数据结构，采用先进先出的策略，建立一个最小堆存取最大的k个元素，对整个序列进行遍历，将序列中的前k个元素压入堆中，从第k+1个元素开始进行队首元素进行判定，若当前元素大于队首元素，将队首弹出，将当前元素加入队列中；否则不进行任何操作。遍历结束后，反转顺序，打印输出。以下是堆排序的实现</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void MaxKElements(int arr[], int n, int k) &#123;
-    priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; MinHeap;
-    for (int i &#x3D; 0; i &lt; n; i++) &#123;
-        if (i &lt; k) &#123;
-            MinHeap.push(arr[i]);
-        &#125;
-        else &#123;
-            if (arr[i] &gt; MinHeap.top()) &#123;
-                MinHeap.pop();
-                MinHeap.push(arr[i]);
-            &#125;
-        &#125;
-    &#125;
-    vector&lt;int&gt; res;
-    while (!MinHeap.empty()) &#123;
-        res.push_back(MinHeap.top());
-        MinHeap.pop();
-    &#125;
-    reverse(res.begin(), res.end());
-    for (int i &#x3D; 0; i &lt; k; i++) &#123;
-        cout &lt;&lt; res[i] &lt;&lt; &quot; &quot;;
-    &#125;
-    cout &lt;&lt; endl;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+train_data<span class="token punctuation">[</span><span class="token string">'content'</span><span class="token punctuation">]</span> <span class="token operator">=</span> train_data<span class="token punctuation">[</span><span class="token string">'content'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">apply</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> x<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+test_data<span class="token punctuation">[</span><span class="token string">'content'</span><span class="token punctuation">]</span> <span class="token operator">=</span> test_data<span class="token punctuation">[</span><span class="token string">'content'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">apply</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> x<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 
-<p>方法三是对方法一的改进，将快速排序改成快速选择算法，找到第k大的元素，然后对整个序列进行遍历，筛选出大于第k大元素的元素组成数组，到这里为止，时间复杂度是$O(n)$，但是还要进行降序输出，因此进行排序，在下列实现中，调用了sort函数，但是排序消耗的时间是$O(klogk)$。</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">int QuickSelect(vector&lt;int&gt;&amp; nums, int left, int right, int k) &#123;
-    int pivot &#x3D; nums[left];
-    int i &#x3D; left, j &#x3D; right;
-    while (i &lt; j) &#123;
-        while (i &lt; j &amp;&amp; nums[j] &lt;&#x3D; pivot) &#123;
-            j--;
-        &#125;
-        nums[i] &#x3D; nums[j];
-        while (i &lt; j &amp;&amp; nums[i] &gt;&#x3D; pivot) &#123;
-            i++;
-        &#125;
-        nums[j] &#x3D; nums[i];
-    &#125;
-    nums[i] &#x3D; pivot;
-    if (i &#x3D;&#x3D; k - 1) &#123;
-        return pivot;
-    &#125;
-    else if (i &lt; k - 1) &#123;
-        return QuickSelect(nums, i + 1, right, k);
-    &#125;
-    else &#123;
-        return QuickSelect(nums, left, i - 1, k);
-    &#125;
-&#125;
 
-void MaxKElements(vector&lt;int&gt;&amp; nums, int k) &#123;
-    int kth &#x3D; QuickSelect(nums, 0, nums.size() - 1, k);
-    vector&lt;int&gt; res;
-    for (int i &#x3D; 0; i &lt; nums.size(); ++i) &#123;
-        if (nums[i] &gt;&#x3D; kth) &#123;
-            res.push_back(nums[i]);
-        &#125;
-    &#125;
-    sort(res.begin(), res.end(), greater&lt;int&gt;()); &#x2F;&#x2F; 降序排序
-    res.resize(k); &#x2F;&#x2F; 取前k个元素
-    for (int i &#x3D; 0; i &lt; k; i++) &#123;
-        cout &lt;&lt; res[i] &lt;&lt; &quot; &quot;;
-    &#125;
-    cout &lt;&lt; endl;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment"># Get the feature</span>
+<span class="token keyword">def</span> <span class="token function">simple_feature</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        s <span class="token operator">=</span> <span class="token string">'123 123'</span>
 
-<h3 id="算法实现与分析"><a href="#算法实现与分析" class="headerlink" title="算法实现与分析"></a>算法实现与分析</h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;iostream&gt;
-#include&lt;queue&gt;
-#include&lt;vector&gt;
-using namespace std;
+    w <span class="token operator">=</span> s<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-void QuickSort(int arr[], int left, int right) &#123;
-    int i &#x3D; left, j &#x3D; right;
-    int tmp;
-    int pivot &#x3D; arr[(left + right) &gt;&gt; 1];
+    <span class="token comment"># 统计字符出现次数</span>
+    w_count <span class="token operator">=</span> np<span class="token punctuation">.</span>bincount<span class="token punctuation">(</span>w<span class="token punctuation">)</span>
+    w_count <span class="token operator">=</span> w_count<span class="token punctuation">[</span>w_count <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">]</span>
 
-    while (i &lt;&#x3D; j) &#123;
-        while (arr[i] &gt; pivot) &#123;
-            i++;
-        &#125;
-            
-        while (arr[j] &lt; pivot) &#123;
-            j--;
-        &#125;
-        if (i &lt;&#x3D; j) &#123;
-            tmp &#x3D; arr[i];
-            arr[i] &#x3D; arr[j];
-            arr[j] &#x3D; tmp;
-            i++;
-            j--;
-        &#125;
-    &#125;;
-    
-    if (left &lt; j) &#123;
-        QuickSort(arr, left, j);
-    &#125;
-    if (i &lt; right) &#123;
-        QuickSort(arr, i, right);
-    &#125;
-        
-&#125;
+    <span class="token keyword">return</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span>
 
-void MaxKElements(int arr[], int n, int k) &#123;
-    priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; MinHeap;
-    for (int i &#x3D; 0; i &lt; n; i++) &#123;
-        if (i &lt; k) &#123;
-            MinHeap.push(arr[i]);
-        &#125;
-        else &#123;
-            if (arr[i] &gt; MinHeap.top()) &#123;
-                MinHeap.pop();
-                MinHeap.push(arr[i]);
-            &#125;
-        &#125;
-    &#125;
-    vector&lt;int&gt; res;
-    while (!MinHeap.empty()) &#123;
-        res.push_back(MinHeap.top());
-        MinHeap.pop();
-    &#125;
-    reverse(res.begin(), res.end());
-    for (int i &#x3D; 0; i &lt; k; i++) &#123;
-        cout &lt;&lt; res[i] &lt;&lt; &quot; &quot;;
-    &#125;
-    cout &lt;&lt; endl;
-&#125;
+        <span class="token builtin">len</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">,</span>  <span class="token comment"># 原始字符长度</span>
+        <span class="token builtin">len</span><span class="token punctuation">(</span>w<span class="token punctuation">)</span><span class="token punctuation">,</span>  <span class="token comment"># 字符个数</span>
+        <span class="token builtin">len</span><span class="token punctuation">(</span><span class="token builtin">set</span><span class="token punctuation">(</span>w<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>  <span class="token comment"># 不重复字符个数</span>
+        <span class="token builtin">len</span><span class="token punctuation">(</span>w<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token builtin">len</span><span class="token punctuation">(</span><span class="token builtin">set</span><span class="token punctuation">(</span>w<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>  <span class="token comment"># 字符个数 - 不重复字符个数</span>
+        <span class="token builtin">len</span><span class="token punctuation">(</span><span class="token builtin">set</span><span class="token punctuation">(</span>w<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>w<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>  <span class="token comment"># 不重复字符个数占比</span>
 
-int QuickSelect(vector&lt;int&gt;&amp; nums, int left, int right, int k) &#123;
-    int pivot &#x3D; nums[left];
-    int i &#x3D; left, j &#x3D; right;
-    while (i &lt; j) &#123;
-        while (i &lt; j &amp;&amp; nums[j] &lt;&#x3D; pivot) &#123;
-            j--;
-        &#125;
-        nums[i] &#x3D; nums[j];
-        while (i &lt; j &amp;&amp; nums[i] &gt;&#x3D; pivot) &#123;
-            i++;
-        &#125;
-        nums[j] &#x3D; nums[i];
-    &#125;
-    nums[i] &#x3D; pivot;
-    if (i &#x3D;&#x3D; k - 1) &#123;
-        return pivot;
-    &#125;
-    else if (i &lt; k - 1) &#123;
-        return QuickSelect(nums, i + 1, right, k);
-    &#125;
-    else &#123;
-        return QuickSelect(nums, left, i - 1, k);
-    &#125;
-&#125;
+        np<span class="token punctuation">.</span><span class="token builtin">max</span><span class="token punctuation">(</span>w_count<span class="token punctuation">)</span><span class="token punctuation">,</span>  <span class="token comment"># 字符的频率的最大值</span>
+        np<span class="token punctuation">.</span><span class="token builtin">min</span><span class="token punctuation">(</span>w_count<span class="token punctuation">)</span><span class="token punctuation">,</span>  <span class="token comment"># 字符的频率的最小值</span>
+        np<span class="token punctuation">.</span>mean<span class="token punctuation">(</span>w_count<span class="token punctuation">)</span><span class="token punctuation">,</span>  <span class="token comment"># 字符的频率的平均值</span>
+        np<span class="token punctuation">.</span>std<span class="token punctuation">(</span>w_count<span class="token punctuation">)</span><span class="token punctuation">,</span>  <span class="token comment"># 字符的频率的方差</span>
+        np<span class="token punctuation">.</span>ptp<span class="token punctuation">(</span>w_count<span class="token punctuation">)</span><span class="token punctuation">,</span>  <span class="token comment"># 字符的频率的极差</span>
+    <span class="token punctuation">]</span><span class="token punctuation">)</span>
 
-void MaxKElements(vector&lt;int&gt;&amp; nums, int k) &#123;
-    int kth &#x3D; QuickSelect(nums, 0, nums.size() - 1, k);
-    vector&lt;int&gt; res;
-    for (int i &#x3D; 0; i &lt; nums.size(); ++i) &#123;
-        if (nums[i] &gt;&#x3D; kth) &#123;
-            res.push_back(nums[i]);
-        &#125;
-    &#125;
-    sort(res.begin(), res.end(), greater&lt;int&gt;()); &#x2F;&#x2F; 降序排序
-    res.resize(k); &#x2F;&#x2F; 取前k个元素
-    for (int i &#x3D; 0; i &lt; k; i++) &#123;
-        cout &lt;&lt; res[i] &lt;&lt; &quot; &quot;;
-    &#125;
-    cout &lt;&lt; endl;
-&#125;
 
-int main() &#123;
+train_feature <span class="token operator">=</span> train_data<span class="token punctuation">[</span><span class="token string">'content'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">apply</span><span class="token punctuation">(</span>simple_feature<span class="token punctuation">)</span>
+test_feature <span class="token operator">=</span> test_data<span class="token punctuation">[</span><span class="token string">'content'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">apply</span><span class="token punctuation">(</span>simple_feature<span class="token punctuation">)</span>
 
-    int arr[] &#x3D; &#123; 5, 3, 8, 4, 2 &#125;;
-    int n &#x3D; sizeof(arr) &#x2F; sizeof(arr[0]);
-    QuickSort(arr, 0, n - 1);
-    cout &lt;&lt; &quot;前2个元素是&quot;;
-    for (int i &#x3D; 0; i &lt; 2; i++) &#123;
-        cout &lt;&lt; arr[i] &lt;&lt; &quot; &quot;;
-    &#125;
-    cout &lt;&lt; endl;
+train_feature <span class="token operator">=</span> np<span class="token punctuation">.</span>vstack<span class="token punctuation">(</span>train_feature<span class="token punctuation">.</span>values<span class="token punctuation">)</span>
+test_feature <span class="token operator">=</span> np<span class="token punctuation">.</span>vstack<span class="token punctuation">(</span>test_feature<span class="token punctuation">.</span>values<span class="token punctuation">)</span>
 
-    int arr1[] &#x3D; &#123; 5, 3, 8, 4, 2 &#125;;
-    MaxKElements(arr1, 5, 2);
+<span class="token comment"># 模型训练</span>
+m <span class="token operator">=</span> LogisticRegression<span class="token punctuation">(</span><span class="token punctuation">)</span>
+m<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_feature<span class="token punctuation">,</span> train_data<span class="token punctuation">[</span><span class="token string">'label'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 
-    vector&lt;int&gt; arr2 &#x3D; &#123; 5, 3, 8, 4, 2 &#125;;
-    MaxKElements(arr2, 2);
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment"># 生成测试集提交结果</span>
+test_data<span class="token punctuation">[</span><span class="token string">'label'</span><span class="token punctuation">]</span> <span class="token operator">=</span> m<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>test_feature<span class="token punctuation">)</span>
+test_data<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">,</span> <span class="token string">'label'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">.</span>to_csv<span class="token punctuation">(</span><span class="token string">'simple.csv'</span><span class="token punctuation">,</span> index<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>实现：</p>
-<p><img src="/imgs/sikao5/1.png" alt="image-20230319213101105"></p>
-<p>方法一的时间复杂度是$O(nlogn)$</p>
-<p>方法二的时间复杂度是$O(nlogk)$</p>
-<p>方法三的时间复杂度是$O(n+klogk)$</p>
-<h2 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h2><h3 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h3><p>请用递归方式实现堆排序，并进行性能分析</p>
-<h3 id="算法实现与分析-1"><a href="#算法实现与分析-1" class="headerlink" title="算法实现与分析"></a>算法实现与分析</h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;iostream&gt;
-#include&lt;vector&gt;
-using namespace std;
+<h3 id="upper-py"><a href="#upper-py" class="headerlink" title="upper.py"></a>upper.py</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>linear_model <span class="token keyword">import</span> LogisticRegression
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>feature_extraction<span class="token punctuation">.</span>text <span class="token keyword">import</span> TfidfVectorizer
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword">import</span> cross_val_predict
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>metrics <span class="token keyword">import</span> classification_report
 
-void heapify(vector&lt;int&gt;&amp; arr, int n, int i) &#123;
-	int largest &#x3D; i;
-	int l &#x3D; 2 * i + 1;
-	int r &#x3D; 2 * i + 2;
-	if (l&lt;n &amp;&amp; arr[l]&gt;arr[largest]) &#123;
-		largest &#x3D; l;
-	&#125;
-	if (r&lt;n &amp;&amp; arr[r]&gt;arr[largest]) &#123;
-		largest &#x3D; r;
-	&#125;
-	if (largest !&#x3D; i) &#123;
-		int temp &#x3D; arr[i];
-		arr[i] &#x3D; arr[largest];
-		arr[largest] &#x3D; temp;
-		heapify(arr, n, largest);
-	&#125;
-&#125;
+train_data <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'train.csv'</span><span class="token punctuation">)</span>
+test_data <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'test.csv'</span><span class="token punctuation">)</span>
 
-void HeapSort(vector&lt;int&gt;&amp; arr, int n) &#123;
-	for (int i &#x3D; (n &gt;&gt; 1) - 1; i &gt;&#x3D; 0; i--) &#123;
-		heapify(arr, n, i);
-	&#125;
-	for (int i &#x3D; n - 1; i &gt;&#x3D; 0; i--) &#123;
-		int temp &#x3D; arr[i];
-		arr[i] &#x3D; arr[0];
-		arr[0] &#x3D; temp;
-		heapify(arr, i, 0);
-	&#125;
-&#125;
+train_data<span class="token punctuation">[</span><span class="token string">'content'</span><span class="token punctuation">]</span> <span class="token operator">=</span> train_data<span class="token punctuation">[</span><span class="token string">'content'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">apply</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> x<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+test_data<span class="token punctuation">[</span><span class="token string">'content'</span><span class="token punctuation">]</span> <span class="token operator">=</span> test_data<span class="token punctuation">[</span><span class="token string">'content'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">apply</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> x<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 
-int main() &#123;
-	vector&lt;int&gt; arr &#x3D; &#123; 5,3,8,4,2 &#125;;
-	HeapSort(arr, 5);
-	for (int i &#x3D; 0; i &lt; 5; i++) &#123;
-		cout &lt;&lt; arr[i] &lt;&lt; &quot; &quot;;
-	&#125;
-	cout &lt;&lt; endl;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment"># 第1种tfidf参数</span>
+tfidf <span class="token operator">=</span> TfidfVectorizer<span class="token punctuation">(</span>token_pattern<span class="token operator">=</span><span class="token string">r'\w&#123;1&#125;'</span><span class="token punctuation">,</span> max_features<span class="token operator">=</span><span class="token number">2000</span><span class="token punctuation">)</span>
+train_tfidf <span class="token operator">=</span> tfidf<span class="token punctuation">.</span>fit_transform<span class="token punctuation">(</span>train_data<span class="token punctuation">[</span><span class="token string">'content'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+test_tfidf <span class="token operator">=</span> tfidf<span class="token punctuation">.</span>fit_transform<span class="token punctuation">(</span>test_data<span class="token punctuation">[</span><span class="token string">'content'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>classification_report<span class="token punctuation">(</span>
+    cross_val_predict<span class="token punctuation">(</span>
+        LogisticRegression<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        train_tfidf<span class="token punctuation">,</span>
+        train_data<span class="token punctuation">[</span><span class="token string">'label'</span><span class="token punctuation">]</span>
+    <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    train_data<span class="token punctuation">[</span><span class="token string">'label'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    digits<span class="token operator">=</span><span class="token number">4</span>
+<span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-<p>实现：</p>
-<p><img src="/imgs/sikao5/2.png" alt="image-20230319222526781"></p>
-<p>对于递归方式的堆排序，每次对子树进行heapify操作的时间复杂度是$O(logn)$，对于每一棵包含n个结点的完全二叉树，高度为$logn$，因此堆排序的时间复杂度是$O(nlogn)$。</p>
-<p>递归方式的堆排序使用了函数递归调用，每次递归都会将一部分数据压入栈中，栈的深度等于堆的高度，最坏情况下堆的高度是$logn$，空间复杂度是$O(logn)$。</p>
+<span class="token comment"># 第2种tfidf参数</span>
+tfidf <span class="token operator">=</span> TfidfVectorizer<span class="token punctuation">(</span>token_pattern<span class="token operator">=</span><span class="token string">r'\w&#123;1&#125;'</span><span class="token punctuation">,</span> max_features<span class="token operator">=</span><span class="token number">5000</span><span class="token punctuation">)</span>
+train_tfidf <span class="token operator">=</span> tfidf<span class="token punctuation">.</span>fit_transform<span class="token punctuation">(</span>train_data<span class="token punctuation">[</span><span class="token string">'content'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+test_tfidf <span class="token operator">=</span> tfidf<span class="token punctuation">.</span>fit_transform<span class="token punctuation">(</span>test_data<span class="token punctuation">[</span><span class="token string">'content'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>classification_report<span class="token punctuation">(</span>
+    cross_val_predict<span class="token punctuation">(</span>
+        LogisticRegression<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        train_tfidf<span class="token punctuation">,</span>
+        train_data<span class="token punctuation">[</span><span class="token string">'label'</span><span class="token punctuation">]</span>
+    <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    train_data<span class="token punctuation">[</span><span class="token string">'label'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    digits<span class="token operator">=</span><span class="token number">4</span>
+<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 第3种tfidf参数</span>
+tfidf <span class="token operator">=</span> TfidfVectorizer<span class="token punctuation">(</span>token_pattern<span class="token operator">=</span><span class="token string">r'\w&#123;1&#125;'</span><span class="token punctuation">,</span> max_features<span class="token operator">=</span><span class="token number">5000</span><span class="token punctuation">,</span> ngram_range<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+train_tfidf <span class="token operator">=</span> tfidf<span class="token punctuation">.</span>fit_transform<span class="token punctuation">(</span>train_data<span class="token punctuation">[</span><span class="token string">'content'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+test_tfidf <span class="token operator">=</span> tfidf<span class="token punctuation">.</span>fit_transform<span class="token punctuation">(</span>test_data<span class="token punctuation">[</span><span class="token string">'content'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>classification_report<span class="token punctuation">(</span>
+    cross_val_predict<span class="token punctuation">(</span>
+        LogisticRegression<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        train_tfidf<span class="token punctuation">,</span>
+        train_data<span class="token punctuation">[</span><span class="token string">'label'</span><span class="token punctuation">]</span>
+    <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    train_data<span class="token punctuation">[</span><span class="token string">'label'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    digits<span class="token operator">=</span><span class="token number">4</span>
+<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+
+m <span class="token operator">=</span> LogisticRegression<span class="token punctuation">(</span><span class="token punctuation">)</span>
+m<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>
+    train_tfidf<span class="token punctuation">,</span>
+    train_data<span class="token punctuation">[</span><span class="token string">'label'</span><span class="token punctuation">]</span>
+<span class="token punctuation">)</span>
+
+test_data<span class="token punctuation">[</span><span class="token string">'label'</span><span class="token punctuation">]</span> <span class="token operator">=</span> m<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>test_tfidf<span class="token punctuation">)</span>
+test_data<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">,</span> <span class="token string">'label'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">.</span>to_csv<span class="token punctuation">(</span><span class="token string">'tfidf.csv'</span><span class="token punctuation">,</span> index<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h2><p>2023年8月4日：跑通baseline并进行微调，收效甚微甚至不如baseline，仅提交了baseline，获得分数0.85+</p>
+<p>2023年8月5日：跑通upper，获得分数0.91+</p>
+<p>2023年8月6日：尝试使用BERT模型进行鉴别，效果比较好，获得分数0.93+</p>
+<blockquote>
+<p>To Be Continued</p>
+</blockquote>
 
                 
             </div>
@@ -724,7 +664,7 @@ int main() &#123;
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jiang-wu-19.github.io/2023/07/07/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E4%BA%94/">https://jiang-wu-19.github.io/2023/07/07/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E4%BA%94/</a>
+                    <a href="https://jiang-wu-19.github.io/2023/08/06/ChatGPT%E7%94%9F%E6%88%90%E5%86%85%E5%AE%B9%E9%89%B4%E5%88%AB%E7%9A%84%E5%AE%9E%E7%8E%B0/">https://jiang-wu-19.github.io/2023/08/06/ChatGPT%E7%94%9F%E6%88%90%E5%86%85%E5%AE%B9%E9%89%B4%E5%88%AB%E7%9A%84%E5%AE%9E%E7%8E%B0/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -762,16 +702,12 @@ int main() &#123;
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">算法</span>
+                                <a href="/tags/NLP/">
+                                    <span class="chip bg-color">NLP</span>
                                 </a>
                             
-                                <a href="/tags/top-k/">
-                                    <span class="chip bg-color">top-k</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%A0%86%E6%8E%92%E5%BA%8F/">
-                                    <span class="chip bg-color">堆排序</span>
+                                <a href="/tags/Python/">
+                                    <span class="chip bg-color">Python</span>
                                 </a>
                             
                         </div>
@@ -1204,54 +1140,52 @@ int main() &#123;
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/07/10/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E5%85%AD/">
+                <a href="/2023/08/06/ChatGPT%E7%94%9F%E6%88%90%E5%86%85%E5%AE%B9%E9%89%B4%E5%88%AB%E7%9A%84%E5%AE%9E%E7%8E%B0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="算法课外思考题六">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="ChatGPT生成内容鉴别的实现">
                         
-                        <span class="card-title">算法课外思考题六</span>
+                        <span class="card-title">ChatGPT生成内容鉴别的实现</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            求众数和两序列最大和插值
+                            NLP实践之GPT生成内容鉴别
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-07-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-06
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%AE%97%E6%B3%95%E6%80%9D%E8%80%83%E9%A2%98/" class="post-category">
-                                    算法思考题
+                            <a href="/categories/%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0/" class="post-category">
+                                    暑期实习
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
+                    <a href="/tags/NLP/">
+                        <span class="chip bg-color">NLP</span>
                     </a>
                     
-                    <a href="/tags/%E6%91%A9%E5%B0%94%E6%8A%95%E7%A5%A8%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">摩尔投票算法</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
-                        <span class="chip bg-color">动态规划</span>
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
                     </a>
                     
                 </div>
@@ -1265,31 +1199,31 @@ int main() &#123;
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/07/06/Python%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/">
+                <a href="/2023/07/30/upper%E7%9A%84%E5%AE%9E%E7%8E%B0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Python数据处理">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="upper的实现">
                         
-                        <span class="card-title">Python数据处理</span>
+                        <span class="card-title">upper的实现</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Python学习笔记
+                            使用BERT模型提高准确率
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-06
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-30
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
-                                    笔记
+                            <a href="/categories/%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0/" class="post-category">
+                                    暑期实习
                                 </a>
                             
                             
@@ -1299,12 +1233,12 @@ int main() &#123;
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Python/">
-                        <span class="chip bg-color">Python</span>
+                    <a href="/tags/NLP/">
+                        <span class="chip bg-color">NLP</span>
                     </a>
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/">
-                        <span class="chip bg-color">数据处理</span>
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
                     </a>
                     
                 </div>
@@ -1472,13 +1406,6 @@ int main() &#123;
 
 </main>
 
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
 
 
 
