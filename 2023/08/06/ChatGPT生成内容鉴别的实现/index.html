@@ -535,7 +535,7 @@
 </li>
 </ol>
 <p>BERT模型的核心思想是通过大规模的无监督预训练，学习到通用的句子表示，然后通过微调的方式在具体任务上进行训练。预训练过程使得BERT模型具备了更好的语义理解能力和句子关系建模能力，从而在各种自然语言处理任务中取得了显著的性能提升。</p>
-<h3 id="BERT的思路"><a href="#BERT的思路" class="headerlink" title="BERT的思路"></a>BERT的思路</h3><p>关于使用BERT模型，之前的[项目]([NLP_project&#x2F;Text classification and keyword extraction based on abstracts at master · JIANG-Wu-19&#x2F;NLP_project (github.com)](<a target="_blank" rel="noopener" href="https://github.com/JIANG-Wu-19/NLP_project/tree/master/Text">https://github.com/JIANG-Wu-19/NLP_project/tree/master/Text</a> classification and keyword extraction based on abstracts))已经实现过，基于BERT模型判断文本是否属于医学论文，也就是说可以依靠原有代码，在原有代码的基础上进行相关改动就可以实现了，关于BERT模型进行文本分类脚本的实现，可以在《<a href="https://jiang-wu-19.github.io/2023/07/30/upper%E7%9A%84%E5%AE%9E%E7%8E%B0/">upper的实现 | J&amp;Ocean BLOG</a>》这篇blog中进一步了解</p>
+<h3 id="BERT的思路"><a href="#BERT的思路" class="headerlink" title="BERT的思路"></a>BERT的思路</h3><p>关于使用BERT模型，之前的[项目](<a target="_blank" rel="noopener" href="https://github.com/JIANG-Wu-19/NLP_project/tree/master/Text">https://github.com/JIANG-Wu-19/NLP_project/tree/master/Text</a> classification and keyword extraction based on abstracts)已经实现过，基于BERT模型判断文本是否属于医学论文，也就是说可以依靠原有代码，在原有代码的基础上进行相关改动就可以实现了，关于BERT模型进行文本分类脚本的实现，可以在《<a href="https://jiang-wu-19.github.io/2023/07/30/upper%E7%9A%84%E5%AE%9E%E7%8E%B0/">upper的实现 | J&amp;Ocean BLOG</a>》这篇blog中进一步了解</p>
 <p>BERT模型的训练可以在本地实现，考虑到笔者的配置有限，将batch_size设置为10，运行时只需要使用3.8G的显存。</p>
 <p>BERT跑出来的结果还不错，高于原有的进阶分数，达到0.93+</p>
 <h2 id="不死心，仍要使用大模型的API"><a href="#不死心，仍要使用大模型的API" class="headerlink" title="不死心，仍要使用大模型的API"></a>不死心，仍要使用大模型的API</h2><p>事实证明，API最多只能回答一些生成式的问题，也许是API背后的模型是综合类型的，并没有经过二分类的fine-tune，代码确实写好了，但是由于鉴别的文本相当冗长，每进行一次request耗费大量的tokens还有时间</p>
