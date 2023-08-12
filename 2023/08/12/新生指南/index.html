@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="算法课外思考题四, J&amp;Ocean BLOG">
+    <meta name="keywords" content="新生指南, J&amp;Ocean BLOG">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>算法课外思考题四 | J&amp;Ocean BLOG</title>
+    <title>新生指南 | J&amp;Ocean BLOG</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -235,12 +235,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">算法课外思考题四</h1>
+                    <h1 class="description center-align post-title">新生指南</h1>
                 </div>
             </div>
         </div>
@@ -356,16 +356,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">算法</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%9F%A5%E6%89%BE%E6%95%88%E7%8E%87/">
-                                <span class="chip bg-color">查找效率</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84/">
-                                <span class="chip bg-color">旋转数组</span>
+                            <a href="/tags/%E6%96%B0%E7%94%9F%E5%BB%BA%E8%AE%AE/">
+                                <span class="chip bg-color">新生建议</span>
                             </a>
                         
                     </div>
@@ -376,8 +368,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%AE%97%E6%B3%95%E6%80%9D%E8%80%83%E9%A2%98/" class="post-category">
-                                算法思考题
+                            <a href="/categories/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB%E7%9A%84%E4%B8%9C%E8%A5%BF/" class="post-category">
+                                杂七杂八的东西
                             </a>
                         
                     </div>
@@ -389,7 +381,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-07-06
+                    2023-08-12
                 </div>
                 
 
@@ -398,14 +390,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    3.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    12 分
                 </div>
                 
 
@@ -423,118 +415,139 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>对于一个序列可以采用二分查找或顺序查找，请结合实施查找的次数，确定在什么情况下使用二分查找效率更高？</p>
-<h3 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h3><p>顺序查找是按照序列原有顺序对数组进行遍历比较查询的基本查找算法，时间复杂度是$O(n)$，在最坏的情况下，查询值在数组末尾或没有该查询值，需要遍历完整个数组；</p>
-<p>二分查找是在顺序存储结构、元素有序排列中，从表中间开始查找，若不相等，则将表分成前后两个字表，根据中间元素的查询结果在对应表中进行第二次查找，时间复杂度是$O(log_2n)$，在最坏的情况下，没有该查询值，则至少需要查询$\lfloor log_2n \rfloor$次；查询成功时，最多查询$\lceil log_2n \rceil$次。</p>
-<p>本题通过记录查找次数来进行比较</p>
-<h3 id="算法实现与分析"><a href="#算法实现与分析" class="headerlink" title="算法实现与分析"></a>算法实现与分析</h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;iostream&gt;
-#include&lt;vector&gt;
-using namespace std;
-
-&#x2F;&#x2F;顺序查找
-int SequentialSearch(vector&lt;int&gt;&amp; arr, int target) &#123;
-	int n &#x3D; arr.size();
-	int num &#x3D; 0;
-	for (int i &#x3D; 0; i &lt; n; i++) &#123;
-		num++;
-		if (arr[i] &#x3D;&#x3D; target) &#123;
-			cout &lt;&lt; &quot;Search for &quot; &lt;&lt; num &lt;&lt; &quot; times&quot; &lt;&lt; endl;
-			return i;
-		&#125;
-	&#125;
-	cout &lt;&lt; &quot;Search for &quot; &lt;&lt; num &lt;&lt; &quot; times&quot; &lt;&lt; endl;
-	return -1;
-&#125;
-
-&#x2F;&#x2F;二分查找
-int BinarySearch(vector&lt;int&gt;&amp; arr, int target) &#123;
-	int n &#x3D; arr.size();
-	int left &#x3D; 0, right &#x3D; n - 1, middle;
-	int num &#x3D; 0;
-	while (left &lt;&#x3D; right) &#123;
-		num++;
-		middle &#x3D; left + ((right - left) &gt;&gt; 2);
-		if (arr[middle] &#x3D;&#x3D; target) &#123;
-			cout &lt;&lt; &quot;Search for &quot; &lt;&lt; num &lt;&lt; &quot; times&quot; &lt;&lt; endl;
-			return middle;
-		&#125;
-		else if (arr[middle] &lt; target) &#123;
-			left &#x3D; middle + 1;
-		&#125;
-		else &#123;
-			right &#x3D; middle - 1;
-		&#125;
-	&#125;
-	cout &lt;&lt; &quot;Search for &quot; &lt;&lt; num &lt;&lt; &quot; times&quot; &lt;&lt; endl;
-	return -1;
-&#125;
-
-int main() &#123;
-	vector&lt;int&gt; arr &#x3D; &#123; 1,2,3,4,5,6,7,8,9,10 &#125;;
-	int target &#x3D; 7;
-	int a &#x3D; SequentialSearch(arr, target);
-	cout &lt;&lt; a &lt;&lt; endl;
-	int b &#x3D; BinarySearch(arr, target);
-	cout &lt;&lt; b &lt;&lt; endl;
-
-	return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>实验结果：</p>
-<p><img src="/imgs/sikao4/1.png" alt="image-20230316143509778"></p>
-<p>从上述实验中，查询元素7的值，顺序查找的次数为7次，而二分查找的次数为4次，最终查询结果都正确，但是在本序列中，元素数量并不是很多，因此查询次数在数量级上并没有显著差距。</p>
-<p>下面对两查找效率进行比较：</p>
-<ol>
-<li>以升序序列为例，在最小值片进行查询的时候，顺序查找的次数会小于二分查找，因此使用顺序查找查询较小的值即查询值下标$&lt; \lfloor log_2n \rfloor$时，效率更高、次数更小；</li>
-<li>对于升序序列，在查询相对较大的值的时候，二分查找的次数就会小于顺序查找，因此使用二分查找查询较大的值即查询值下标$&gt; \lfloor log_2n \rfloor$，效率更高、次数更少；</li>
-<li>对于查询值个数不止一个的操作来说，使用二分查找的效率比顺序查找要高得多，二分查找只需要在初始状态进行一次排序，之后的每次查找都可以利用有序性，而顺序查找则需要每次查询都进行一次数组遍历。</li>
+                <h2 id="入学の准备"><a href="#入学の准备" class="headerlink" title="入学の准备"></a>入学の准备</h2><p>计算机学院的同学要在南校区度过三年，大四搬到校本部</p>
+<h3 id="杂物篇"><a href="#杂物篇" class="headerlink" title="杂物篇"></a>杂物篇</h3><ol>
+<li>携带录取通知书及告知需要的各项资料，可以直接装在通知书邮件信封里；</li>
+<li>准备专用文件袋（卡包）装各种证件、银行卡；</li>
+<li>各底色的证件照纸质版和电子版；</li>
+<li>防晒霜（21级的学长学姐军训时长沙位于全国气温前列）和雨伞（笔者建议大伞和小伞都可以准备，小伞随身携带应急，大伞固定公寓预备）及常备药物；</li>
+<li>尽量准备能够装入电脑的大背包（笔者是身背游戏本的勇士）以及只能装基本书籍的小背包，能够根据学习需求切换，毕竟中南的通勤时间有目共睹。</li>
 </ol>
-<h2 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h2><h3 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h3><p>现有一个序列，它是由一个有序系列绕着某个元素旋转得到的。请给出一个在此序列实施查找的有效算法，并对你的算法进行分析</p>
-<h3 id="问题分析-1"><a href="#问题分析-1" class="headerlink" title="问题分析"></a>问题分析</h3><p>有序序列绕着某个元素旋转得到旋转数组可以使用改进后的二分查找进行查询，在循环中进行有序性判断</p>
-<p>如果左端元素小于中间元素，则左半部分为有序数组，如果目标值在左半部分，则继续在左半部分进行查找，否则在右半部分查找；若左端元素大于中间元素，那么右半部分为有序数组，若目标值在右半部分，则继续在右半部分进行查找，否则在左半部分进行查找。</p>
-<p>另一种办法就是将旋转序列恢复后在进行二分查找，但是恢复旋转序列存在很多问题，一是<strong>旋转序列恢复的时间复杂度是$O(n)$，恢复后排序增加操作时间</strong>；二是<strong>查找得到的值并不是旋转序列的下标</strong>，在实际应用中不会使用。</p>
-<p>使用顺序查找的办法，时间复杂度是$O(n)$，简单易懂，但是需要遍历整个序列，大规模数据呈现劣势</p>
-<h3 id="算法实现与分析-1"><a href="#算法实现与分析-1" class="headerlink" title="算法实现与分析"></a>算法实现与分析</h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;iostream&gt;
-#include&lt;vector&gt;
-using namespace std;
-
-int BinarySearch(vector&lt;int&gt;&amp; arr, int target) &#123;
-	int left &#x3D; 0, right &#x3D; arr.size() - 1;
-	while (left &lt;&#x3D; right) &#123;
-		int middle &#x3D; left + ((right - left) &gt;&gt; 1);
-		if (arr[middle] &#x3D;&#x3D; target) &#123;
-			return middle;
-		&#125;
-		if (arr[left] &lt;&#x3D; arr[middle]) &#123;
-			if (target &gt;&#x3D; arr[left] &amp;&amp; target &lt; arr[middle]) &#123;
-				right &#x3D; middle - 1;
-			&#125;
-			else &#123;
-				left &#x3D; middle + 1;
-			&#125;
-		&#125;
-		else &#123;
-			if (target &gt; arr[middle] &amp;&amp; target &lt;&#x3D; arr[right]) &#123;
-				left &#x3D; middle + 1;
-			&#125;
-			else &#123;
-				right &#x3D; middle - 1;
-			&#125;
-		&#125;
-	&#125;
-	return -1;
-&#125;
-
-int main() &#123;
-	vector&lt;int&gt; arr &#x3D; &#123; 4,5,6,7,1,2,3 &#125;;
-	int target &#x3D; 1;
-	cout &lt;&lt; BinarySearch(arr, target) &lt;&lt; endl;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>实验结果：</p>
-<p><img src="/imgs/sikao4/2.png" alt="image-20230316144631569"></p>
-<p>改进二分法的时间复杂度是$O(log_2n)$，是一种高效的查找方法，在大规模数据下呈现优势</p>
-
+<h3 id="军训篇"><a href="#军训篇" class="headerlink" title="军训篇"></a>军训篇</h3><p>军训原则上来说是国庆过完开始军训，时长为三周，国庆过完之后气温已经不会很高了，但是还是需要做好防晒。</p>
+<p>军训期间听从教官（教官是部队退役或自训营的<strong>学长学姐</strong>）指令，一般来说教官不会为难同学，但是<strong>出现出格行为不要因为成绩而忍耐，及时向辅导员反映</strong>！</p>
+<p><del>听说隔壁兄弟学校曾经曝光过教官打人，涉事教官被处分</del></p>
+<p><strong>军训也是算在加权成绩内的</strong>，所以军训也要好好表现，军训中间会有一次理论考试（区别于正常上课时的军事理论）需要好好准备；</p>
+<blockquote>
+<p>此外，军训成绩的方式不再是等级制 (即优、良等)，而是以具体成绩呈现，一般不会出现满分。<a href="%E3%80%8A%E6%96%B0%E7%94%9F%E5%BB%BA%E8%AE%AE%EF%BC%882023%E7%BA%A7%E5%AD%A6%E7%94%9F%E8%87%AA%E7%BC%96%E7%89%88%EF%BC%89%E3%80%8B%EF%BC%8C%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E5%8D%8F%E4%BC%9A%E5%B9%B2%E4%BA%8B%E5%9B%A2%E9%98%9F">^1</a></p>
+</blockquote>
+<p>由于军训在开学一个月以后，班委集体已经建立起来了，不出意外，军训负责人应该就是班长和团支书了。</p>
+<h2 id="日常生活"><a href="#日常生活" class="headerlink" title="日常生活"></a>日常生活</h2><h3 id="衣"><a href="#衣" class="headerlink" title="衣"></a>衣</h3><p>行李中装上较多的夏装，由于长沙的春秋比较短，不用装过多的秋装，冬装准备应急用的就可以了，即将入冬的时候从老家邮寄过去就行了（快递点将在后文进行介绍），以上操作不会造成衣物占据行李箱的较大容积的情况（仅为笔者建议，笔者的开学行李包括一大一小两只行李箱+一个包，以上建议依据个人需求选择）；</p>
+<p>到了冬天一定要<strong>备足过冬衣物</strong>，长沙的冬天在体感上会比气温冷亿点点</p>
+<p>此外如果有帽子记得带上（长沙的阳光格外的灿烂），要把运动鞋（体育课及课外跑步打卡）休闲鞋带上，拖鞋视情况而定（长沙阴晴不定，笔者已经在通勤路上湿身多次了），根据个人的需求及行李箱空间选配；</p>
+<p>当然，长沙的天气较潮湿，所以笔者的建议是<strong>到校后买衣架将衣服挂起来，然后在横杆上挂上除湿袋，</strong>笔者亲测：衣柜里的除湿袋在两周左右就会失去吸湿效果。</p>
+<h3 id="食"><a href="#食" class="headerlink" title="食"></a>食</h3><p>来到星城，少不了的是美食，整个长沙市的美食在此就不过多赘述，等待自己去探索。</p>
+<p>本文基于中南大学及整个岳麓大学城周边进行描述。</p>
+<p>中南大学的食堂是挺多的，在南校区就有三座食堂：二食堂、七食堂和八食堂。</p>
+<ul>
+<li><p>二食堂共有四层，一楼为小吃层，二楼三楼就是基本的饭菜，四楼有自选餐厅和清真餐厅，还有几个笔者不曾尝试、很少有人问津的小餐厅。至于七食堂和八食堂，笔者探访的比较少，大概知道八食堂的选择可能更加丰富，七食堂也是基本的饭菜。此外，还有校本部的三五食堂、教工食堂（均比较远），味道尚可，可以尝试。总的来说<strong>不会太辣，但是挺油</strong>。</p>
+</li>
+<li><p>中南大学的教学区与生活区较远，所以在平时上课期间，有可能会来不及赶回南校吃饭，就在新校区对付对付，选择有 B座架空层食堂、BC座之间盒饭售卖点、图书馆侧方盒饭售卖点，以及在图书馆背侧的二十四食餐厅，<strong>感觉一般</strong></p>
+<p><del>据说新校已经在修新食堂了，但是不知道什么时候能够吃上新食堂的饭菜</del></p>
+</li>
+<li><p>以上部分皆是学校后勤部门提供的餐食，其二选择就是<strong>后湖小区</strong>（从新校A座大门出门左转）。后湖小区的店在广大中南学子的检验下卫生能够保证，价格公道。后湖小区里的店还挺多的，后湖的店等着各位自己去探！</p>
+</li>
+</ul>
+<h3 id="住"><a href="#住" class="headerlink" title="住"></a>住</h3><p>不出意外，大一新生应该都是住在南校区（升华学生公寓）</p>
+<p><img src="/imgs/xinshengjianyi/2.jpg" alt="img"></p>
+<p> 升华的配置是四人一间，两寝共用一个阳台，上床下桌，独卫（无热水），每层有大淋浴间（独立单间，热水，<strong>17：30-24：00供应</strong>），24小时水电网（但是可能不定时停水，及时关注宿舍群），有空调（需要另外租赁)，宿舍门有校园卡刷卡门锁，宿舍大门有门禁，23：30准时关门。需要注意的是宿舍电费需要宿舍四人承担，及时充值，线上充值时间为<strong>5：00-23：00</strong></p>
+<p><img src="/imgs/xinshengjianyi/1.jpg" alt="img"></p>
+<p>床位的分配应当是先到先得。床铺尺寸2*0.9（单位：米)，笔者建议<strong>自备寝具</strong>，学校售卖的寝具质量不佳。</p>
+<p>图为笔者选择的床位（②）</p>
+<p>床上建议配上<strong>带有床帘的蚊帐</strong>，一方面能够遮挡外部光源（有一部分同学喜欢熬大夜学习或者…），另一方面能够给自己创造一部分隐私空间。</p>
+<p>在与天南海北的室友见面后，要及时地建立寝室公约：</p>
+<ol>
+<li><strong>约定一个DDL，到了那个时间一定要关掉所有灯光，准备休息</strong>（尽量不晚于24：00，笔者认为深夜学习效率不高，充足的休息能够提高学习效率）；</li>
+<li><strong>及时打扫寝室卫生</strong>（这点非常重要！！！笔者大一的宿舍卫生状况极好，但是在分流搬宿舍之后，搬到的那个寝室简直是…俄乌战场都没那惨烈，我们四个同学都还爱干净，搞了两天卫生才清理干净）；</li>
+<li><strong>注意个人卫生，及时清洗个人衣物</strong>（宿舍一楼有公共洗衣机，但是不推荐使用，尤其是私人直接接触皮肤衣物，一定使用建议<strong>加入消毒液一起清洗</strong>；另宿舍条约规定<em><strong>禁止使用大功率电器</strong></em>，21级开始查洗衣机比较严，所以四人合购洗衣机的事情还要开学后再观望观望）</li>
+</ol>
+<h3 id="行"><a href="#行" class="headerlink" title="行"></a>行</h3><p>新生出站应该就有中南大学志愿者手持引导牌接站，只需跟着他们就可以做中南大学的班车抵达中南大学新校区报道点，然后就有相应公寓楼栋志愿者分流引导新生到各自宿舍。</p>
+<p>生活区与教学区相去甚远，因此需要代步工具（除非有强身健体的需求），具体有以下选择：</p>
+<ol>
+<li><strong>电瓶车</strong>，速度快，但是行车风险较大，且外出<strong>骑车必须佩戴头盔</strong>，路上会有交警叔叔检查，同时充电不方便，学校有效充电桩数量较少（切记：<strong>禁止携带电瓶车电瓶进入宿舍充电</strong>，在2021学年春季学期曾经有一位同学将电池带入宿舍充电，然后电瓶起火了，所以<strong>如果看到有同学将电瓶带入宿舍，及时点点举报</strong>）；</li>
+<li><strong>自行车</strong>，这个为笔者的选择，节能环保，速度不慢且安全性更高，是性价比较高的选择；</li>
+<li><strong>共享单车</strong>，学校共享电瓶车较少，自行车居多，而且需要拼手速抢车，建议月卡；</li>
+<li><strong>公交车或学校班车</strong>；</li>
+</ol>
+<p><strong>学校原则上是禁摩的</strong>，22学年春季学期在新校区就出过事故，有一位优秀的学长不幸去世，所以防护措施要做好</p>
+<p>平时出去游玩可以靠导航，在此就不作赘述。</p>
+<h3 id="快递点"><a href="#快递点" class="headerlink" title="快递点"></a>快递点</h3><ol>
+<li>南校区菜鸟驿站（分东西两区）分别位于十二栋底层东侧和西侧；</li>
+<li>南校区顺丰收件处位于十二栋底层东侧（东菜鸟背面）；</li>
+<li>南校区京东代收点位于教工16栋小蜜蜂智慧服务中心；</li>
+<li>南校区中国邮政驿站位于七栋底层南侧；</li>
+</ol>
+<p>南校区寄件地址：<strong>湖南省长沙市岳麓区清水路中南大学升华学生公寓XX栋。</strong></p>
+<h3 id="校园网"><a href="#校园网" class="headerlink" title="校园网"></a>校园网</h3><ol>
+<li>南校区升华学生公寓内WiFi信号全网全覆盖，同一学工号最多同时在线3台设备，但是需要绑定校园网电话卡号（？存疑），属于长沙号码，校园电话卡移动电信联通各有优劣，可以联系同院学长学姐了解（<em><strong>敲门进入公寓推销电话卡的一定要提高警惕，可能会是诈骗，会存在学长学姐代理电话卡业务的现象，并且相比于营业厅会有一定优惠，但一定要仔细鉴别，若想认购一定要知根知底，并保存好聊天证据</strong></em>）</li>
+<li>新校区教室、图书馆覆盖名为CSU-WiFi、CSU-Student的无线网络用学工号和信息门户登录密码登录即可，免费使用，同一学工号最多同时在线两台设备，在该IP（包括宿舍无线网）下能够通过校内登录使用“中国知网”“万方”“维普”等期刊论文数据库（亦可通过校外登录）</li>
+</ol>
+<h2 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h2><h3 id="学习前的准备"><a href="#学习前的准备" class="headerlink" title="学习前的准备"></a>学习前的准备</h3><p>关于设备方面的配置我不做推荐，需要自己衡量利弊</p>
+<p>但是需要一些有用的链接：</p>
+<ol>
+<li><p><a target="_blank" rel="noopener" href="http://libdb.csu.edu.cn/reslist">中南大学图书馆-数据库导航系统 (csu.edu.cn)</a></p>
+<p>中南大学购买过相关的文献库，登陆账号是用内网就可以进行使用</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="http://csujwc.its.csu.edu.cn/">中南大学教务系统 (csu.edu.cn)</a></p>
+<p>这个不必多说</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://ms.csu.edu.cn/">中南大学正版软件管理与服务平台 (csu.edu.cn)</a></p>
+</li>
+</ol>
+<h3 id="课内学习"><a href="#课内学习" class="headerlink" title="课内学习"></a>课内学习</h3><p>声明：本文将不会对具体课程给出相关建议</p>
+<p>大学一门课最终修读成绩与高中完全不一样，其包括<strong>期末成绩和平时成绩</strong>，在大学生圈子里流传很广的“老师 菜菜 捞捞”中的“捞”基本上就是老师在平时成绩上拉你一把。大学的计分方式要求<strong>大学生不仅要认真准备期末考试，还要注重平时的考勤、上课表现、作业提交</strong>。关于平时分的具体问题，将在后文展开讲解。</p>
+<p>与一些高校的绩点制不同，中南大学直接采用加权制体现学生成绩：</p>
+<blockquote>
+<ol>
+<li><strong>加权平均分&#x3D;$\Sigma$(课程成绩X课程学分)$&#x2F;\Sigma$课程学分</strong><a href="%E3%80%8A%E5%85%B3%E4%BA%8E%E6%95%99%E5%8A%A1%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E5%8A%A0%E6%9D%83%E5%B9%B3%E5%9D%87%E6%88%90%E7%BB%A9%E8%AE%A1%E7%AE%97%E7%9A%84%E8%AF%B4%E6%98%8E%E3%80%8B">^2</a></li>
+<li>课程初修成绩合格，取初修成绩计算（不同课目期末成绩和平时成绩占比不同）；</li>
+<li>课程初修成绩不合格，有效成绩&gt;&#x3D;60，按60分计算；</li>
+<li>课程初修成绩不合格，有效成绩不合格，取最高成绩计算；</li>
+<li>各种政策加分不计算；</li>
+<li>课程初修缓考，后一学期无成绩该课程比计算，录入成绩按初修计算；</li>
+<li>课程考核成绩采用五级制的折算办法：</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="center">五级制</th>
+<th align="center">优秀</th>
+<th align="center">良好</th>
+<th align="center">中等</th>
+<th align="center">及格</th>
+<th align="center">不及格</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">折算分</td>
+<td align="center">95</td>
+<td align="center">85</td>
+<td align="center">75</td>
+<td align="center">65</td>
+<td align="center">0</td>
+</tr>
+</tbody></table>
+</blockquote>
+<p>不同课目的不同标准要求学生不仅要争取更高的期末成绩，还要在平时与老师搞好关系，尽量<strong>给老师留下深刻（良好）的印象</strong>，不然老师只会给你一个平庸的平时分，对于一些有更高追求的同学这显然是不够的。当然对于一些能在期末拿到满分的课目来说，这一点不一定，只要在期末拿到相当高的分数，老师就会拉满平时分。</p>
+<p>此外，不能把希望完全寄托在平时分上，关于总评还有一条不成文规定：存在一条斩杀线（<strong>比及格线低</strong>），如果期末成绩未达到，那么老师也不会“海底捞”，如高等数学、大学英语的“斩杀线”就是45分。</p>
+<h3 id="自习场所"><a href="#自习场所" class="headerlink" title="自习场所"></a>自习场所</h3><p>众所周知，所谓大学（<del>大不了自学</del>），其精髓在于“自学”。</p>
+<ol>
+<li><p>图书馆；</p>
+<p>从22年春季学期开始，图书馆恢复疫情之前的双排座椅，因此图书馆的座位变多了，但是变得拥挤了，同时学习的时候对面还有人（社恐犯了）</p>
+</li>
+<li><p>教学楼；</p>
+<p>教学楼教室只要在没有课的情况下就可以自习，当然在教学楼也会有每日的自习教室公布在黑板上；不推荐D座教室，因为D座比较偏僻，又靠近情人坡人比较少，所以<del>在那边自习可能会遇见一些奇奇怪怪的事情</del>；A座东侧教室基本上都是工程制图教室，一般在里面画图；教室自习的缺点是有人可能会不太守规矩讲话，会有情侣放飞自我，而且在没有课的时间空调是不开放的，所以夏天的教室就像蒸笼一样，学习效率不高；</p>
+</li>
+<li><p>知新馆</p>
+<p>这一自习场所笔者基本没有去过，笔者不太了解，据笔者所知，该馆的座位是先到先得，且位置不多，但环境尚可；</p>
+</li>
+<li><p>校外自习室</p>
+<p>校外自习室好像是可以通宵学习（？），但是<em><strong>夜不归宿一定要向寝室长报备且报告辅导员</strong></em>，而且笔者不推荐通宵学习，笔者认为该种学习方式效率低下，充足的睡眠能够更专注的学习（仅为个人观点，不喜勿喷）；</p>
+</li>
+<li><p>宿舍</p>
+<p>此为笔者最不推荐的自习场所，因为宿舍环境过于安逸，目光可及之处就有分心之物，不利于专注学习。</p>
+</li>
+</ol>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2>
                 
             </div>
             <hr/>
@@ -560,7 +573,7 @@ int main() &#123;
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jiang-wu-19.github.io/2023/07/06/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E5%9B%9B/">https://jiang-wu-19.github.io/2023/07/06/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E5%9B%9B/</a>
+                    <a href="https://jiang-wu-19.github.io/2023/08/12/%E6%96%B0%E7%94%9F%E6%8C%87%E5%8D%97/">https://jiang-wu-19.github.io/2023/08/12/%E6%96%B0%E7%94%9F%E6%8C%87%E5%8D%97/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -598,16 +611,8 @@ int main() &#123;
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">算法</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%9F%A5%E6%89%BE%E6%95%88%E7%8E%87/">
-                                    <span class="chip bg-color">查找效率</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84/">
-                                    <span class="chip bg-color">旋转数组</span>
+                                <a href="/tags/%E6%96%B0%E7%94%9F%E5%BB%BA%E8%AE%AE/">
+                                    <span class="chip bg-color">新生建议</span>
                                 </a>
                             
                         </div>
@@ -1040,50 +1045,48 @@ int main() &#123;
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/07/06/Python%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/">
+                <a href="/2023/08/12/%E6%96%B0%E7%94%9F%E6%8C%87%E5%8D%97/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Python数据处理">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="新生指南">
                         
-                        <span class="card-title">Python数据处理</span>
+                        <span class="card-title">新生指南</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Python学习笔记
+                            新生建议
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-07-06
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
-                                    笔记
+                            <a href="/categories/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB%E7%9A%84%E4%B8%9C%E8%A5%BF/" class="post-category">
+                                    杂七杂八的东西
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Python/">
-                        <span class="chip bg-color">Python</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/">
-                        <span class="chip bg-color">数据处理</span>
+                    <a href="/tags/%E6%96%B0%E7%94%9F%E5%BB%BA%E8%AE%AE/">
+                        <span class="chip bg-color">新生建议</span>
                     </a>
                     
                 </div>
@@ -1097,31 +1100,31 @@ int main() &#123;
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/07/06/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E4%B8%89/">
+                <a href="/2023/08/06/ChatGPT%E7%94%9F%E6%88%90%E5%86%85%E5%AE%B9%E9%89%B4%E5%88%AB%E7%9A%84%E5%AE%9E%E7%8E%B0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="算法课外思考题三">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="ChatGPT生成内容鉴别的实现">
                         
-                        <span class="card-title">算法课外思考题三</span>
+                        <span class="card-title">ChatGPT生成内容鉴别的实现</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            求子集和相似度指标调研
+                            NLP实践之GPT生成内容鉴别
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-06
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-06
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%AE%97%E6%B3%95%E6%80%9D%E8%80%83%E9%A2%98/" class="post-category">
-                                    算法思考题
+                            <a href="/categories/%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0/" class="post-category">
+                                    暑期实习
                                 </a>
                             
                             
@@ -1131,16 +1134,12 @@ int main() &#123;
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
+                    <a href="/tags/NLP/">
+                        <span class="chip bg-color">NLP</span>
                     </a>
                     
-                    <a href="/tags/%E9%9B%86%E5%90%88/">
-                        <span class="chip bg-color">集合</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%9B%B8%E4%BC%BC%E5%BA%A6/">
-                        <span class="chip bg-color">相似度</span>
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
                     </a>
                     
                 </div>
@@ -1308,13 +1307,6 @@ int main() &#123;
 
 </main>
 
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
 
 
 
