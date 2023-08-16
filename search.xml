@@ -118,6 +118,37 @@
     
     
     <entry>
+      <title>算法课外思考题九</title>
+      <link href="/2023/08/16/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E4%B9%9D/"/>
+      <url>/2023/08/16/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E4%B9%9D/</url>
+      
+        <content type="html"><![CDATA[<h2 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>对比分析折半查找与斐波那契查找的性能与应用场景</p><h3 id="折半查找"><a href="#折半查找" class="headerlink" title="折半查找"></a>折半查找</h3><h4 id="折半查找介绍"><a href="#折半查找介绍" class="headerlink" title="折半查找介绍"></a>折半查找介绍</h4><p>本算法使用前提是静态查找表中的数据必须是有序的，定义两个指针low和high指向查找表的第一个元素和最后一个元素，指针mid指向处于low和high指针中间位置的元素，在查找过程中，每次都同mid指向的元素进行比较，在比较之后确定下一次比较的区间，重置low和high其中一个指针，在下一区间进行比较。</p><h4 id="折半查找算法的实现"><a href="#折半查找算法的实现" class="headerlink" title="折半查找算法的实现"></a>折半查找算法的实现</h4><h5 id="循环实现"><a href="#循环实现" class="headerlink" title="循环实现"></a>循环实现</h5><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">int BinarySearch_c(int array[], int n, int key) &#123;int low &#x3D; 0, high &#x3D; n;int mid;while (low &lt;&#x3D; high) &#123;mid &#x3D; (low + high) &gt;&gt; 1;if (key &lt; array[mid]) &#123;high &#x3D; mid - 1;&#125;else if (key &gt; array[mid]) &#123;low &#x3D; mid + 1;&#125;else &#123;return mid;&#125;&#125;return -1;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="递归实现"><a href="#递归实现" class="headerlink" title="递归实现"></a>递归实现</h5><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">int BinarySearch_r(int array[], int low, int high,int key) &#123;int mid &#x3D; (low + high) &gt;&gt; 1;if (key &lt; array[mid]) &#123;return BinarySearch_r(array, low, mid - 1, key);&#125;else if (key &gt; array[mid]) &#123;return BinarySearch_r(array, mid + 1, high, key);&#125;else &#123;return mid;&#125;return -1;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h4 id="折半查找的性能及应用场景"><a href="#折半查找的性能及应用场景" class="headerlink" title="折半查找的性能及应用场景"></a>折半查找的性能及应用场景</h4><p>在有序表中，折半查找的效率比较高，折半查找每进行依次比较就能拍出表长度的一半，时间复杂度是$O(log_2n)$，如果查找表是无序的，先要将表进行排序，排序本身耗费的时间会比查找时间多，因此二分查找适用于一经建立就很少改动的线性表或者是静态有序数据集，二分查找不适合数据量太大或者太小的场景，数据量太大消耗太多的连续内存，数据量太小，其表现不如顺序查找。</p><h3 id="斐波那契查找"><a href="#斐波那契查找" class="headerlink" title="斐波那契查找"></a>斐波那契查找</h3><h4 id="斐波那契查找介绍"><a href="#斐波那契查找介绍" class="headerlink" title="斐波那契查找介绍"></a>斐波那契查找介绍</h4><p>斐波那契查找原理和二分查找相似，仅仅改变了中间结点的位置，在斐波那契查找算法中，mid位于黄金分割点附近，在斐波那契数列($F(k)&#x3D;F(k-1)+F(k-2),F(1)&#x3D;1,F(2)&#x3D;1$)中有结论：<br>$$<br>\lim\limits_{k\rightarrow\infty}F(k-1)&#x2F;F(k)&#x3D;\frac{\sqrt{5}-1}{2}<br>$$<br>本查找算法关键是找到mid的位置，在n&#x3D;F(k)情况下，mid&#x3D;low+F(k-1)-1，进行完一次查找后，排除其中一个区间，确定新的low和high区间。</p><h4 id="斐波那契查找算法实现"><a href="#斐波那契查找算法实现" class="headerlink" title="斐波那契查找算法实现"></a>斐波那契查找算法实现</h4><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">int FibSearch(int arr[], int key,int n) &#123;int low &#x3D; 0, high &#x3D; n - 1;int mid;int k &#x3D; 0;while (n &gt; Fibonacci(k) - 1)k++;while (low &lt;&#x3D; high) &#123;mid &#x3D; low + Fibonacci(k - 1) - 1;if (key &lt; arr[mid]) &#123;high &#x3D; mid - 1;k--;&#125;else if (key &gt; arr[mid]) &#123;low &#x3D; mid + 1;k -&#x3D; 2;&#125;else &#123;if (mid &lt;&#x3D; n - 1)return mid;elsereturn n - 1;&#125;&#125;return -1;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h4 id="斐波那契查找算法性能及应用场景"><a href="#斐波那契查找算法性能及应用场景" class="headerlink" title="斐波那契查找算法性能及应用场景"></a>斐波那契查找算法性能及应用场景</h4><p>斐波那契查找算法是二分查找的一种改进算法，运用黄金比例的概念提高查询速率，但同样也是一种有序表查找算法，它的平均性能比折半查找好，但最坏情况下查找时间比折半查找长，虽然时间复杂度仍是$O(log~n)$，但是在斐波那契查找中，分割只需要用到加减法而不需要用到除法，虽然折半查找的除2可以用移位运算代替，对于大样本查找效率更高。</p><h2 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h2><h3 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h3><p>调研学习Bloom过滤器的原理</p><h3 id="Bloom过滤器"><a href="#Bloom过滤器" class="headerlink" title="Bloom过滤器"></a>Bloom过滤器</h3><h4 id="Bloom-Filter介绍"><a href="#Bloom-Filter介绍" class="headerlink" title="Bloom Filter介绍"></a>Bloom Filter介绍</h4><p>Bloom Filter是1970年Bloom提出的一种数据结构，实际上是一个很长的二进制向量和一系列随机映射函数。Bloom过滤器可以用于检索一个元素是否在一个集合中。</p><h5 id="Bloom-Filter优点"><a href="#Bloom-Filter优点" class="headerlink" title="Bloom Filter优点"></a>Bloom Filter优点</h5><ul><li>时间复杂度低，增加、查询元素的时间复杂度为$O(N)$(N为哈希函数的个数)</li><li>保密性强，过滤器不存储元素本身</li><li>存储空间小</li></ul><h5 id="Bloom-Filter缺点"><a href="#Bloom-Filter缺点" class="headerlink" title="Bloom Filter缺点"></a>Bloom Filter缺点</h5><ul><li>存在一定的误判率</li><li>无法获取元素本身</li><li>很难删除元素</li></ul><h4 id="Bloom-Filter的使用场景"><a href="#Bloom-Filter的使用场景" class="headerlink" title="Bloom Filter的使用场景"></a>Bloom Filter的使用场景</h4><p>过滤器可以告知<strong>元素一定不存在或者可能存在</strong>，也就是说如果过滤器告知某元素可能存在，实际会有两种可能性，通过查阅资料查找到过滤器的使用场景</p><ul><li>解决Redis缓存穿透问题</li><li>邮件过滤</li><li>对爬虫网址进行过滤</li><li>解决重复出现元素问题</li></ul><h4 id="Bloom-Filter过滤器的原理"><a href="#Bloom-Filter过滤器的原理" class="headerlink" title="Bloom Filter过滤器的原理"></a>Bloom Filter过滤器的原理</h4><h5 id="Data-Structure"><a href="#Data-Structure" class="headerlink" title="Data Structure"></a>Data Structure</h5><p>一个很长的二进制向量+一系列随机映射函数</p><p>以Redis中的布隆过滤器实现为例：</p><p>一个大型位数组+多个无偏hash函数</p><h5 id="空间计算"><a href="#空间计算" class="headerlink" title="空间计算"></a>空间计算</h5><p>在布隆过滤器增加元素之前，首先需要初始化布隆过滤器的空间，也就是上面说的二进制数组，除此之外还需要计算无偏hash函数的个数。布隆过滤器提供了两个参数，分别是预计加入元素的大小n，运行的错误率f。布隆过滤器中有算法根据这两个参数会计算出二进制数组的大小l，以及无偏hash函数的个数k。<br>它们之间的关系比较简单：</p><ul><li>错误率越低，位数组越长，控件占用较大</li><li>错误率越低，无偏hash函数越多，计算耗时较长</li></ul><h5 id="增加元素"><a href="#增加元素" class="headerlink" title="增加元素"></a>增加元素</h5><p>往布隆过滤器增加元素，添加的key需要根据k个无偏hash函数计算得到多个hash值，然后对数组长度进行取模得到数组下标的位置，然后将对应数组下标的位置的值置为1</p><ul><li>通过k个无偏hash函数计算得到k个hash值</li><li>依次取模数组长度，得到数组索引</li><li>将计算得到的数组索引下标位置数据修改为1</li></ul><h5 id="查询元素"><a href="#查询元素" class="headerlink" title="查询元素"></a>查询元素</h5><p>布隆过滤器最大的用处就在于判断某样东西一定不存在或者可能存在，而这个就是查询元素的结果。其查询元素的过程如下：</p><ul><li>通过k个无偏hash函数计算得到k个hash值</li><li>依次取模数组长度，得到数组索引</li><li>判断索引处的值是否全部为1，如果全部为1则存在（这种存在可能是误判），如果存在一个0则必定不存在</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法思考题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 算法 </tag>
+            
+            <tag> 折半查找 </tag>
+            
+            <tag> 斐波那契查找 </tag>
+            
+            <tag> 布隆过滤器 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>新生指南</title>
       <link href="/2023/08/12/%E6%96%B0%E7%94%9F%E6%8C%87%E5%8D%97/"/>
       <url>/2023/08/12/%E6%96%B0%E7%94%9F%E6%8C%87%E5%8D%97/</url>

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="算法课外思考题七, J&amp;Ocean BLOG">
+    <meta name="keywords" content="算法课外思考题九, J&amp;Ocean BLOG">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>算法课外思考题七 | J&amp;Ocean BLOG</title>
+    <title>算法课外思考题九 | J&amp;Ocean BLOG</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -235,12 +235,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">算法课外思考题七</h1>
+                    <h1 class="description center-align post-title">算法课外思考题九</h1>
                 </div>
             </div>
         </div>
@@ -360,12 +360,16 @@
                                 <span class="chip bg-color">算法</span>
                             </a>
                         
-                            <a href="/tags/Voronoi%E5%9B%BE/">
-                                <span class="chip bg-color">Voronoi图</span>
+                            <a href="/tags/%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE/">
+                                <span class="chip bg-color">折半查找</span>
                             </a>
                         
-                            <a href="/tags/%E4%BA%8C%E7%BB%B4%E7%9F%A9%E9%98%B5%E6%9F%A5%E6%89%BE/">
-                                <span class="chip bg-color">二维矩阵查找</span>
+                            <a href="/tags/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%9F%A5%E6%89%BE/">
+                                <span class="chip bg-color">斐波那契查找</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8/">
+                                <span class="chip bg-color">布隆过滤器</span>
                             </a>
                         
                     </div>
@@ -389,7 +393,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-07-10
+                    2023-08-16
                 </div>
                 
 
@@ -405,7 +409,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    6 分
                 </div>
                 
 
@@ -423,163 +427,108 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="问题一-Voronoi图及相关算法的调研报告"><a href="#问题一-Voronoi图及相关算法的调研报告" class="headerlink" title="问题一 Voronoi图及相关算法的调研报告"></a>问题一 Voronoi图及相关算法的调研报告</h2><h3 id="Voronoi图的定义和相关性质"><a href="#Voronoi图的定义和相关性质" class="headerlink" title="Voronoi图的定义和相关性质"></a>Voronoi图的定义和相关性质</h3><p>Voronoi Diagram又称Thiessen Polygon，其数学描述如下：</p>
-<p>设平面区域B上有一组离散点$\left(X_i, Y_j\right)(\mathrm{i}&#x3D;1,2,3, \ldots, \mathrm{k} ; \mathrm{j}&#x3D;1,2,3, \ldots, \mathrm{k}, \mathrm{k}$ 为离散点点数) ，将区域B用一组直线段分成k个互相邻接的多边形，使得：</p>
-<ol>
-<li>每个多边形内含有且仅含有一个离散点；</li>
-<li>若区域B上任意一点$\left(x^1, y^1\right)$位于含离散点$\left(x_i, y_j\right)$的多边形内，不等式$\sqrt{\left(x^1-x_i\right)^2+\left(y^1-y_j\right)^2}&lt;\sqrt{\left(x^1-x_j\right)^2+\left(y^1-y_i\right)^2}$在$i\neq j$时恒成立；</li>
-<li>若点$\left(x^1, y^1\right)$位于含离散点$\left(x_i, y_j\right)$的两个多边形的公共边上，则等式$\sqrt{\left(x^1-x_i\right)^2+\left(y^1-y_j\right)^2}&#x3D;\sqrt{\left(x^1-x_j\right)^2+\left(y^1-y_i\right)^2}$成立</li>
-</ol>
-<p>Voronoi图的特征如下：</p>
-<ol>
-<li>每个泰森多边形内仅含有一个离散点数据</li>
-<li>泰森多边形的点到相应离散点的距离最近</li>
-<li>位于泰森多边形边上的点到其两边的离散点的距离相等</li>
-</ol>
-<h3 id="Voronoi图生成算法"><a href="#Voronoi图生成算法" class="headerlink" title="Voronoi图生成算法"></a>Voronoi图生成算法</h3><h4 id="使用分治法"><a href="#使用分治法" class="headerlink" title="使用分治法"></a>使用分治法</h4><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">VoronoiDiagram* partition(vector&lt;point&gt;&amp; origin,int left,int right)
-&#123;
-    if(right-left&lt;3)
-    &#123;
-        VoronoiDiagram* result&#x3D;smallVD(origin,left,right);
-        return result;
-    &#125;else&#123;
-        VoronoiDiagram* leftresult&#x3D;partition(origin,left,(left+right)&#x2F;2);
-        VoronoiDiagram* rightresult&#x3D;partition(origin,(left+right)&#x2F;2+1,right);
-        return mergeVD(leftresult,rightresult);
-    &#125;
-&#125;
-VoronoiDiagram* mergeVD(VoronoiDiagram* left,VoronoiDiagram* right)
-&#123;
-    VoronoiDiagram* result&#x3D;new VoronoiDiagram();
-    vector&lt;Devidechain&gt; devidechain;
-    left-&gt;convex hull&#x3D;getConvexHull(left-&gt;sites);    
-    right-&gt;convex hull&#x3D;getConvexHull(right-&gt;sites);
-    tangentline(left-&gt;convex,right-&gt;convex hull,*leftMax,*leftMin,*rightMax,*rightMin);
-    bool tobottom&#x3D;false;
-    do
-    &#123;
-        chain&#x3D;bisector(leftMax,rightMax);
-        leftpoint&#x3D;IntersectionPoint(leftMax,chain);
-        rightpoint&#x3D;IntersectionPoint(rightMax,chain);
-        if(leftpoint.y&gt;rightpoint.y)&#123;
-            updateLeftSite();
-        &#125;else if(leftpoint.y&lt;rightpoint.y)&#123;
-            updateRightSite();
-        &#125;else&#123;
-            break;
-        &#125;
-    &#125;while(!tobottom);
-    connectchain();
-    result&#x3D;(*right)+(*left);
-    return result;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="Lawson算法"><a href="#Lawson算法" class="headerlink" title="Lawson算法"></a>Lawson算法</h4><ol>
-<li>建立一个大三角形，将所有数据点包围起来</li>
-<li>向三角形中插入一点，将该点与三角形三个顶点项链，形成三个新的三角形</li>
-<li>逐个对三角形进行空外接圆测试，用Lawson的局部优化过程进行优化（交换对角线保证Delaunay三角网的形成）</li>
-</ol>
-<h4 id="Bowyer-Watson算法"><a href="#Bowyer-Watson算法" class="headerlink" title="Bowyer-Watson算法"></a>Bowyer-Watson算法</h4><ol>
-<li>构造一个超级三角形，包含所有散点，放入三角形链表</li>
-<li>将散点依次插入，在三角形链表中找出外接圆包含插入点的三角形，删除三角形的公共边，将插入点同三角形的顶点全部连接起来，完成一个点在Delaunay三角形链表中的插入</li>
-<li>对新三角形进行优化，将形成的三角形放入Delaunay三角形链表</li>
-<li>循环2.至所有散点插入完毕</li>
-</ol>
-<h3 id="Voronoi图的应用"><a href="#Voronoi图的应用" class="headerlink" title="Voronoi图的应用"></a>Voronoi图的应用</h3><p>计算最近邻问题</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
-#include &lt;vector&gt;
-#include &lt;CGAL&#x2F;Exact_predicates_exact_constructions_kernel.h&gt;
-#include &lt;CGAL&#x2F;Voronoi_diagram_2.h&gt;
-
-using namespace std;
-
-typedef CGAL::Exact_predicates_exact_constructions_kernel Kernel;
-typedef Kernel::Point_2 Point;
-typedef CGAL::Voronoi_diagram_2&lt;Kernel&gt; Voronoi_diagram;
-
-int main() &#123;
-  vector&lt;Point&gt; points &#x3D; &#123;&#123;1, 2&#125;, &#123;3, 4&#125;, &#123;5, 6&#125;, &#123;7, 8&#125;&#125;;
-  Voronoi_diagram voronoi;
-  voronoi.insert(points.begin(), points.end());
-
-  Point query_point(2, 3);
-  Voronoi_diagram::Locate_result locate_result &#x3D; voronoi.locate(query_point);
-  if (Voronoi_diagram::Face_handle fh &#x3D; boost::get&lt;Voronoi_diagram::Face_handle&gt;(&amp;*locate_result)) &#123;
-    Point closest_point &#x3D; fh-&gt;dual()-&gt;point();
-    cout &lt;&lt; &quot;Closest point: (&quot; &lt;&lt; closest_point.x() &lt;&lt; &quot;, &quot; &lt;&lt; closest_point.y() &lt;&lt; &quot;)&quot; &lt;&lt; endl;
-  &#125;
-
-  return 0;
-&#125;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>调用了CGAL库（计算几何算法库）</p>
-<h2 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>前面已经学习在一维序列中某元素的查找算法，现若查找是在一个二维矩阵中进行，并且矩阵中行列均为升序排列，请给出相应查找算法并进行分析。</p>
-<h3 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h3><h4 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h4><p>采用逐行逐列的搜索方式，从矩阵的左下角开始搜索，直到找到元素或返回未找到</p>
-<h4 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h4><p>采用减治算法，也就是说采用二维的二分查找算法，找到矩阵的中心位置的元素，执行大小判断，然后在排除掉的剩余矩阵中继续进行查找</p>
-<h3 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;iostream&gt;
-#include&lt;vector&gt;
-using namespace std;
-
-void searchMatrix1(vector&lt;vector&lt;int&gt;&gt;&amp; matrix, int target) &#123;
-	if (matrix.size() &#x3D;&#x3D; 0 || matrix[0].size() &#x3D;&#x3D; 0) &#123;
-		cout &lt;&lt; &quot;error&quot; &lt;&lt; endl;
-		return;
-	&#125;
-	int r &#x3D; matrix.size();
-	int c &#x3D; matrix[0].size();
-	int x &#x3D; r - 1, y &#x3D; 0;
-	while (x &gt;&#x3D; 0 &amp;&amp; y &lt; c) &#123;
-		if (matrix[x][y] &#x3D;&#x3D; target) &#123;
-			cout &lt;&lt; &quot;matrix[&quot; &lt;&lt; x+1 &lt;&lt; &quot;][&quot; &lt;&lt; y+1 &lt;&lt; &quot;]&quot; &lt;&lt; endl;
-			return;
+                <h2 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>对比分析折半查找与斐波那契查找的性能与应用场景</p>
+<h3 id="折半查找"><a href="#折半查找" class="headerlink" title="折半查找"></a>折半查找</h3><h4 id="折半查找介绍"><a href="#折半查找介绍" class="headerlink" title="折半查找介绍"></a>折半查找介绍</h4><p>本算法使用前提是静态查找表中的数据必须是有序的，定义两个指针low和high指向查找表的第一个元素和最后一个元素，指针mid指向处于low和high指针中间位置的元素，在查找过程中，每次都同mid指向的元素进行比较，在比较之后确定下一次比较的区间，重置low和high其中一个指针，在下一区间进行比较。</p>
+<h4 id="折半查找算法的实现"><a href="#折半查找算法的实现" class="headerlink" title="折半查找算法的实现"></a>折半查找算法的实现</h4><h5 id="循环实现"><a href="#循环实现" class="headerlink" title="循环实现"></a>循环实现</h5><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">int BinarySearch_c(int array[], int n, int key) &#123;
+	int low &#x3D; 0, high &#x3D; n;
+	int mid;
+	while (low &lt;&#x3D; high) &#123;
+		mid &#x3D; (low + high) &gt;&gt; 1;
+		if (key &lt; array[mid]) &#123;
+			high &#x3D; mid - 1;
 		&#125;
-		else if (matrix[x][y] &lt; target) &#123;
-			y++;
+		else if (key &gt; array[mid]) &#123;
+			low &#x3D; mid + 1;
 		&#125;
 		else &#123;
-			x--;
+			return mid;
 		&#125;
 	&#125;
-	cout &lt;&lt; &quot;error&quot; &lt;&lt; endl;
-&#125;
-void search(vector&lt;vector&lt;int&gt;&gt;&amp; matrix, int target, int x1, int x2, int y1, int y2) &#123;
-	int mx &#x3D; x1 + (x2 - x1) &gt;&gt; 1;
-	int my &#x3D; y1 + (y2 - y1) &gt;&gt; 1;
-	if (matrix[mx][my] &#x3D;&#x3D; target) &#123;
-		cout &lt;&lt; &quot;matrix[&quot; &lt;&lt; mx + 1 &lt;&lt; &quot;][&quot; &lt;&lt; my + 1 &lt;&lt; &quot;]&quot; &lt;&lt; endl;
-		return;
+	return -1;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="递归实现"><a href="#递归实现" class="headerlink" title="递归实现"></a>递归实现</h5><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">int BinarySearch_r(int array[], int low, int high,int key) &#123;
+	int mid &#x3D; (low + high) &gt;&gt; 1;
+	if (key &lt; array[mid]) &#123;
+		return BinarySearch_r(array, low, mid - 1, key);
 	&#125;
-	else if (matrix[mx][my] &lt; target) &#123;
-		search(matrix, target, mx + 1, x2, y1, my);
-		search(matrix, target, x1, mx, my + 1, y2);
-		search(matrix, target, mx + 1, x2, my + 1, y2);
+	else if (key &gt; array[mid]) &#123;
+		return BinarySearch_r(array, mid + 1, high, key);
 	&#125;
 	else &#123;
-		search(matrix, target, x1, mx - 1, my, y2);
-		search(matrix, target, mx, x2, y1, my - 1);
-		search(matrix, target, x1, mx - 1, y1, my - 1);
+		return mid;
 	&#125;
-	cout &lt;&lt; &quot;error&quot; &lt;&lt; endl;
-&#125;
-void searchMatrix2(vector&lt;vector&lt;int&gt;&gt;&amp; matrix, int target) &#123;
-	int r &#x3D; matrix.size();
-	int c &#x3D; matrix[0].size();
-	int x1 &#x3D; 0, y1 &#x3D; 0, x2 &#x3D; r - 1, y2 &#x3D; c - 1;
-	search(matrix,target,x1,x2,y1,y2);
-&#125;
+	return -1;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-int main() &#123;
-	vector&lt;vector&lt;int&gt;&gt; matrix &#x3D; &#123; &#123;1,4,7,11,15&#125;,&#123;2,5,8,12,19&#125;,&#123;3,6,9,16,22&#125;,&#123;10,13,14,17,24&#125;,&#123;18,21,23,26,30&#125; &#125;;
-	searchMatrix1(matrix, 9);
-	searchMatrix2(matrix, 9);
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="折半查找的性能及应用场景"><a href="#折半查找的性能及应用场景" class="headerlink" title="折半查找的性能及应用场景"></a>折半查找的性能及应用场景</h4><p>在有序表中，折半查找的效率比较高，折半查找每进行依次比较就能拍出表长度的一半，时间复杂度是$O(log_2n)$，如果查找表是无序的，先要将表进行排序，排序本身耗费的时间会比查找时间多，因此二分查找适用于一经建立就很少改动的线性表或者是静态有序数据集，二分查找不适合数据量太大或者太小的场景，数据量太大消耗太多的连续内存，数据量太小，其表现不如顺序查找。</p>
+<h3 id="斐波那契查找"><a href="#斐波那契查找" class="headerlink" title="斐波那契查找"></a>斐波那契查找</h3><h4 id="斐波那契查找介绍"><a href="#斐波那契查找介绍" class="headerlink" title="斐波那契查找介绍"></a>斐波那契查找介绍</h4><p>斐波那契查找原理和二分查找相似，仅仅改变了中间结点的位置，在斐波那契查找算法中，mid位于黄金分割点附近，在斐波那契数列($F(k)&#x3D;F(k-1)+F(k-2),F(1)&#x3D;1,F(2)&#x3D;1$)中有结论：<br>$$<br>\lim\limits_{k\rightarrow\infty}F(k-1)&#x2F;F(k)&#x3D;\frac{\sqrt{5}-1}{2}<br>$$<br>本查找算法关键是找到mid的位置，在n&#x3D;F(k)情况下，mid&#x3D;low+F(k-1)-1，进行完一次查找后，排除其中一个区间，确定新的low和high区间。</p>
+<h4 id="斐波那契查找算法实现"><a href="#斐波那契查找算法实现" class="headerlink" title="斐波那契查找算法实现"></a>斐波那契查找算法实现</h4><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">int FibSearch(int arr[], int key,int n) &#123;
+	int low &#x3D; 0, high &#x3D; n - 1;
+	int mid;
+	int k &#x3D; 0;
+	while (n &gt; Fibonacci(k) - 1)
+		k++;
+	while (low &lt;&#x3D; high) &#123;
+		mid &#x3D; low + Fibonacci(k - 1) - 1;
+		if (key &lt; arr[mid]) &#123;
+			high &#x3D; mid - 1;
+			k--;
+		&#125;
+		else if (key &gt; arr[mid]) &#123;
+			low &#x3D; mid + 1;
+			k -&#x3D; 2;
+		&#125;
+		else &#123;
+			if (mid &lt;&#x3D; n - 1)
+				return mid;
+			else
+				return n - 1;
+		&#125;
+	&#125;
+	return -1;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>实现：</p>
-<p><img src="/imgs/sikao7/1.png" alt="image-20230409165251520"></p>
-<p>方法一的时间复杂度是$O(m+n)$，m、n分别为矩阵的行数和列数</p>
-<p>方法二的时间复杂度是$O(mn^{log_43})$</p>
-<p>针对方法二，还有一定的改进空间，如果该矩阵是方阵，则在方阵的主对角线先进行比较，找到大于target的主对角线上的元素，再对该元素所在行和列进行两次二分查找，则该算法的时间复杂度为$O(n)$</p>
+<h4 id="斐波那契查找算法性能及应用场景"><a href="#斐波那契查找算法性能及应用场景" class="headerlink" title="斐波那契查找算法性能及应用场景"></a>斐波那契查找算法性能及应用场景</h4><p>斐波那契查找算法是二分查找的一种改进算法，运用黄金比例的概念提高查询速率，但同样也是一种有序表查找算法，它的平均性能比折半查找好，但最坏情况下查找时间比折半查找长，虽然时间复杂度仍是$O(log~n)$，但是在斐波那契查找中，分割只需要用到加减法而不需要用到除法，虽然折半查找的除2可以用移位运算代替，对于大样本查找效率更高。</p>
+<h2 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h2><h3 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h3><p>调研学习Bloom过滤器的原理</p>
+<h3 id="Bloom过滤器"><a href="#Bloom过滤器" class="headerlink" title="Bloom过滤器"></a>Bloom过滤器</h3><h4 id="Bloom-Filter介绍"><a href="#Bloom-Filter介绍" class="headerlink" title="Bloom Filter介绍"></a>Bloom Filter介绍</h4><p>Bloom Filter是1970年Bloom提出的一种数据结构，实际上是一个很长的二进制向量和一系列随机映射函数。Bloom过滤器可以用于检索一个元素是否在一个集合中。</p>
+<h5 id="Bloom-Filter优点"><a href="#Bloom-Filter优点" class="headerlink" title="Bloom Filter优点"></a>Bloom Filter优点</h5><ul>
+<li>时间复杂度低，增加、查询元素的时间复杂度为$O(N)$(N为哈希函数的个数)</li>
+<li>保密性强，过滤器不存储元素本身</li>
+<li>存储空间小</li>
+</ul>
+<h5 id="Bloom-Filter缺点"><a href="#Bloom-Filter缺点" class="headerlink" title="Bloom Filter缺点"></a>Bloom Filter缺点</h5><ul>
+<li>存在一定的误判率</li>
+<li>无法获取元素本身</li>
+<li>很难删除元素</li>
+</ul>
+<h4 id="Bloom-Filter的使用场景"><a href="#Bloom-Filter的使用场景" class="headerlink" title="Bloom Filter的使用场景"></a>Bloom Filter的使用场景</h4><p>过滤器可以告知<strong>元素一定不存在或者可能存在</strong>，也就是说如果过滤器告知某元素可能存在，实际会有两种可能性，通过查阅资料查找到过滤器的使用场景</p>
+<ul>
+<li>解决Redis缓存穿透问题</li>
+<li>邮件过滤</li>
+<li>对爬虫网址进行过滤</li>
+<li>解决重复出现元素问题</li>
+</ul>
+<h4 id="Bloom-Filter过滤器的原理"><a href="#Bloom-Filter过滤器的原理" class="headerlink" title="Bloom Filter过滤器的原理"></a>Bloom Filter过滤器的原理</h4><h5 id="Data-Structure"><a href="#Data-Structure" class="headerlink" title="Data Structure"></a>Data Structure</h5><p>一个很长的二进制向量+一系列随机映射函数</p>
+<p>以Redis中的布隆过滤器实现为例：</p>
+<p>一个大型位数组+多个无偏hash函数</p>
+<h5 id="空间计算"><a href="#空间计算" class="headerlink" title="空间计算"></a>空间计算</h5><p>在布隆过滤器增加元素之前，首先需要初始化布隆过滤器的空间，也就是上面说的二进制数组，除此之外还需要计算无偏hash函数的个数。布隆过滤器提供了两个参数，分别是预计加入元素的大小n，运行的错误率f。布隆过滤器中有算法根据这两个参数会计算出二进制数组的大小l，以及无偏hash函数的个数k。<br>它们之间的关系比较简单：</p>
+<ul>
+<li>错误率越低，位数组越长，控件占用较大</li>
+<li>错误率越低，无偏hash函数越多，计算耗时较长</li>
+</ul>
+<h5 id="增加元素"><a href="#增加元素" class="headerlink" title="增加元素"></a>增加元素</h5><p>往布隆过滤器增加元素，添加的key需要根据k个无偏hash函数计算得到多个hash值，然后对数组长度进行取模得到数组下标的位置，然后将对应数组下标的位置的值置为1</p>
+<ul>
+<li>通过k个无偏hash函数计算得到k个hash值</li>
+<li>依次取模数组长度，得到数组索引</li>
+<li>将计算得到的数组索引下标位置数据修改为1</li>
+</ul>
+<h5 id="查询元素"><a href="#查询元素" class="headerlink" title="查询元素"></a>查询元素</h5><p>布隆过滤器最大的用处就在于判断某样东西一定不存在或者可能存在，而这个就是查询元素的结果。其查询元素的过程如下：</p>
+<ul>
+<li>通过k个无偏hash函数计算得到k个hash值</li>
+<li>依次取模数组长度，得到数组索引</li>
+<li>判断索引处的值是否全部为1，如果全部为1则存在（这种存在可能是误判），如果存在一个0则必定不存在</li>
+</ul>
 
                 
             </div>
@@ -606,7 +555,7 @@ int main() &#123;
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jiang-wu-19.github.io/2023/07/10/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E4%B8%83/">https://jiang-wu-19.github.io/2023/07/10/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E4%B8%83/</a>
+                    <a href="https://jiang-wu-19.github.io/2023/08/16/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E4%B9%9D/">https://jiang-wu-19.github.io/2023/08/16/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E4%B9%9D/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -648,12 +597,16 @@ int main() &#123;
                                     <span class="chip bg-color">算法</span>
                                 </a>
                             
-                                <a href="/tags/Voronoi%E5%9B%BE/">
-                                    <span class="chip bg-color">Voronoi图</span>
+                                <a href="/tags/%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE/">
+                                    <span class="chip bg-color">折半查找</span>
                                 </a>
                             
-                                <a href="/tags/%E4%BA%8C%E7%BB%B4%E7%9F%A9%E9%98%B5%E6%9F%A5%E6%89%BE/">
-                                    <span class="chip bg-color">二维矩阵查找</span>
+                                <a href="/tags/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%9F%A5%E6%89%BE/">
+                                    <span class="chip bg-color">斐波那契查找</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8/">
+                                    <span class="chip bg-color">布隆过滤器</span>
                                 </a>
                             
                         </div>
@@ -1090,74 +1043,25 @@ int main() &#123;
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/07/22/%E7%AE%97%E6%B3%95%E5%AE%9E%E9%AA%8C/">
+                <a href="/2023/08/16/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E5%8D%81/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="算法实验">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="算法课外思考题十">
                         
-                        <span class="card-title">算法实验</span>
+                        <span class="card-title">算法课外思考题十</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            课内的算法实验
+                            矩阵LU分解和求矩阵的逆
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-07-22
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-08-16
                         </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E8%AF%BE%E5%86%85%E5%AE%9E%E9%AA%8C/" class="post-category">
-                                    课内实验
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2023/07/10/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E5%85%AD/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="算法课外思考题六">
-                        
-                        <span class="card-title">算法课外思考题六</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            求众数和两序列最大和插值
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-10
-                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1177,12 +1081,61 @@ int main() &#123;
                         <span class="chip bg-color">算法</span>
                     </a>
                     
-                    <a href="/tags/%E6%91%A9%E5%B0%94%E6%8A%95%E7%A5%A8%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">摩尔投票算法</span>
+                    <a href="/tags/%E7%9F%A9%E9%98%B5LU%E5%88%86%E8%A7%A3/">
+                        <span class="chip bg-color">矩阵LU分解</span>
                     </a>
                     
-                    <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
-                        <span class="chip bg-color">动态规划</span>
+                    <a href="/tags/%E7%9F%A9%E9%98%B5%E7%9A%84%E9%80%86/">
+                        <span class="chip bg-color">矩阵的逆</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/08/12/%E6%96%B0%E7%94%9F%E6%8C%87%E5%8D%97/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="新生指南">
+                        
+                        <span class="card-title">新生指南</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            新生建议
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-12
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB%E7%9A%84%E4%B8%9C%E8%A5%BF/" class="post-category">
+                                    杂七杂八的东西
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%96%B0%E7%94%9F%E5%BB%BA%E8%AE%AE/">
+                        <span class="chip bg-color">新生建议</span>
                     </a>
                     
                 </div>
