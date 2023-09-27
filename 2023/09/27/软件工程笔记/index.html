@@ -1,0 +1,1795 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="软件工程笔记, J&amp;Ocean BLOG">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>软件工程笔记 | J&amp;Ocean BLOG</title>
+    <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+
+   <style>
+    body{
+       background-image: url(https://github.com/JIANG-Wu-19/JIANG-Wu-19/blob/master/99759389_p0.png?raw=true);
+       background-repeat:no-repeat;
+       background-size:cover;
+       background-attachment:fixed;
+    }
+</style>
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.ico" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">J&amp;Ocean BLOG</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.ico" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">J&amp;Ocean BLOG</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">软件工程笔记</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/">
+                                <span class="chip bg-color">软件工程</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                笔记
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-09-27
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.6k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    9 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>《软件工程原理》沈备军</p>
+<p>项目实践：软件逆向工程</p>
+<h2 id="软件危机与软件工程"><a href="#软件危机与软件工程" class="headerlink" title="软件危机与软件工程"></a>软件危机与软件工程</h2><h3 id="软件危机"><a href="#软件危机" class="headerlink" title="软件危机"></a>软件危机</h3><p>问题</p>
+<ul>
+<li>如何开发软件以满足不断增长</li>
+<li>如何维护数量不断膨胀的软件产品</li>
+</ul>
+<p>表现</p>
+<ul>
+<li>成本超预算，上线拖延</li>
+<li>偏离用户需求</li>
+<li>质量不够</li>
+<li>可维护度低</li>
+<li>没有适当文档</li>
+<li>成本提高</li>
+<li>供不应求</li>
+</ul>
+<p>原因</p>
+<ul>
+<li>软件本身特点</li>
+<li>软件开发错误认识做法</li>
+<li>开发维护的不正确</li>
+</ul>
+<h2 id="软件过程"><a href="#软件过程" class="headerlink" title="软件过程"></a>软件过程</h2><p>软件生存周期过程</p>
+<h3 id="软件过程七大元素"><a href="#软件过程七大元素" class="headerlink" title="软件过程七大元素"></a>软件过程七大元素</h3><ul>
+<li><p>活动</p>
+<p>开发、维护、管理</p>
+</li>
+<li><p>任务</p>
+<p>活动细分，确定、安排任务</p>
+</li>
+<li><p>工件</p>
+<p>软件过程的工作产品，分输入与输出工作</p>
+</li>
+<li><p>角色</p>
+<p>定义软件过程中的个人或小组的行为与职责</p>
+</li>
+<li><p>资源</p>
+<p>最佳实践、工具、技术、机器、场地等</p>
+</li>
+<li><p>目标</p>
+<p>每个过程有明确目标</p>
+</li>
+<li><p>度量指标</p>
+<p>目标的具体度量与分析：进度、成本、质量、返工率</p>
+</li>
+</ul>
+<h3 id="软件生存周期模型"><a href="#软件生存周期模型" class="headerlink" title="软件生存周期模型"></a>软件生存周期模型</h3><ul>
+<li><p>线性顺序模型</p>
+<p>瀑布模型</p>
+<p>特点：</p>
+<ul>
+<li>强调阶段的划分顺序与依赖；</li>
+<li>强调各阶段工作文档的完备性，即文档驱动静态描述；</li>
+<li>每个阶段从技术和管理进行严格的审查，即质量保证的<br>观点；</li>
+<li>是一种线性的、顺序的、逐步细化的开发模式；</li>
+<li>推迟实现的观点；</li>
+</ul>
+<p>适用时机：</p>
+<ul>
+<li>所有功能、性能等要求能一次理解和描述时</li>
+<li>所有的系统功能一次交付时</li>
+<li>必须同时淘汰全部老系统时</li>
+</ul>
+<p>实际的瀑布模型具有<strong>反馈环</strong></p>
+<p>风险缺点：</p>
+<ul>
+<li>获得完善的需求规约是非常困难的；</li>
+<li>难以适应快速变化需求；</li>
+<li>系统太大时,难以一次做完；</li>
+<li>反馈信息慢；</li>
+<li>极可能引起开发后期的大量返工，如返工到需求、设计等早<br>期活动；</li>
+</ul>
+<p>建议不适用的情况：</p>
+<p><img src="/imgs/se/1.png" alt="image-20230914085603259"></p>
+</li>
+<li><p>增量式模型</p>
+<p>软件被分解成许多增量构件，逐个提交</p>
+<p>构造中间版本</p>
+<p><img src="/imgs/se/2.png" alt="image-20230914085943130"></p>
+<p>适用实际：</p>
+<ul>
+<li>需要早期获得功能；</li>
+<li>中间产品可以提供使用；</li>
+<li>系统被自然地分割成增量；</li>
+<li>工作人员&#x2F;资金可以逐步增加。</li>
+</ul>
+<p>考虑风险：</p>
+<ul>
+<li>需求未被很好地理解</li>
+<li>一次要求所有功能</li>
+<li>需求迅速发生变化</li>
+<li>事先打算采用的技术迅速发生变化</li>
+<li>长时期内仅有有限的资源（人员&#x2F;资金）</li>
+</ul>
+</li>
+<li><p>演化模型</p>
+<p>只要核心需求能够被很好地理解，就可以进行渐进式开发，其余需求可以在后续的迭代中进一步定义和实现。这种过程模型称为演化模型，它能很好地适应随时间演化的产品的开发。</p>
+<p>特点：</p>
+<ul>
+<li><p>迭代的开发方法，渐进地开发各个可执行版本，逐步完善软件产品。每个版本在开发时，开发过程中的活动和任务顺序地或部分重叠平行地被采用。</p>
+</li>
+<li><p>与增量模型的区别是：需求在开发早期不能被完全了解和确定，在一部分被定义后开发就开始了，然后在每个相继的版本中逐步完善。</p>
+<p><img src="/imgs/se/3.png" alt="image-20230921080755595"></p>
+</li>
+<li><p>现代软件工程采用演化模型</p>
+<ul>
+<li>统一软件过程RUP</li>
+<li>敏捷过程</li>
+<li>净室软件过程</li>
+</ul>
+</li>
+<li><p>演化模型的子类</p>
+<ul>
+<li>原型</li>
+<li>螺旋模型</li>
+<li>并发开发模型</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="演化模型"><a href="#演化模型" class="headerlink" title="演化模型"></a>演化模型</h3><h4 id="迭代化开发"><a href="#迭代化开发" class="headerlink" title="迭代化开发"></a>迭代化开发</h4><p>特点： 尽可能降低风险，适用处理不确定的复杂系统。<br>原则:</p>
+<ol>
+<li>每次迭代产生一个可执行的版本；</li>
+<li>要求有计划地迭代。</li>
+</ol>
+<p><img src="/imgs/se/4.png" alt="image-20230921081712692"></p>
+<h5 id="快速原型模型"><a href="#快速原型模型" class="headerlink" title="快速原型模型"></a>快速原型模型</h5><p>特点：定义出总体目标或初步需求就开发原型，通过原型与用户交互识别进一步的需求.</p>
+<ol>
+<li>抛弃式原型</li>
+<li>演化式原型</li>
+</ol>
+<p><img src="/imgs/se/5.png" alt="image-20230921081842792"></p>
+<h5 id="螺旋模型"><a href="#螺旋模型" class="headerlink" title="螺旋模型"></a>螺旋模型</h5><p><img src="/imgs/se/6.png" alt="image-20230921081928140"></p>
+<h4 id="RUP统一软件过程"><a href="#RUP统一软件过程" class="headerlink" title="RUP统一软件过程"></a>RUP统一软件过程</h4><ol>
+<li>迭代式开发</li>
+<li>管理需求</li>
+<li>使用基于构件的体系结构</li>
+<li>可视化建模</li>
+<li>贯穿于开发过程的软件质量验证</li>
+<li>控制软件变更</li>
+</ol>
+<p><img src="/imgs/se/7.png" alt="image-20230921082152709"></p>
+<p>Best Practices<br>Process Made Practical<br>Develop Iteratively<br>Manage Requirements<br>Use Component Architectures<br>Model Visually (UML)<br>Continuously Verify Quality<br>Manage Change</p>
+<h5 id="RUP软件开发生命周期"><a href="#RUP软件开发生命周期" class="headerlink" title="RUP软件开发生命周期"></a>RUP软件开发生命周期</h5><p><img src="/imgs/se/8.png" alt="image-20230921082504263"></p>
+<p>RUP是一个风险驱动的、基于UML和构件式架构的迭代、递增型开发过程</p>
+<h5 id="阶段和迭代"><a href="#阶段和迭代" class="headerlink" title="阶段和迭代"></a>阶段和迭代</h5><p><img src="/imgs/se/9.png" alt="image-20230921082630957"></p>
+<h5 id="6个核心规范和3个支持规范"><a href="#6个核心规范和3个支持规范" class="headerlink" title="6个核心规范和3个支持规范"></a>6个核心规范和3个支持规范</h5><p>RUP把软件开发生命周期分成6个核心规范和3个支持规范</p>
+<h6 id="6个核心规范"><a href="#6个核心规范" class="headerlink" title="6个核心规范"></a>6个核心规范</h6><ul>
+<li>业务建模(系统目标达成共识)</li>
+<li>需求(系统范围达成共识)</li>
+<li>设计</li>
+<li>实现</li>
+<li>测试</li>
+<li>部署</li>
+</ul>
+<h6 id="3个支持规范"><a href="#3个支持规范" class="headerlink" title="3个支持规范"></a>3个支持规范</h6><ul>
+<li>配置与变更管理</li>
+<li>项目管理(风险,计划,进度等)</li>
+<li>环境</li>
+</ul>
+<h4 id="敏捷过程与极限编程"><a href="#敏捷过程与极限编程" class="headerlink" title="敏捷过程与极限编程"></a>敏捷过程与极限编程</h4><h5 id="敏捷过程"><a href="#敏捷过程" class="headerlink" title="敏捷过程"></a>敏捷过程</h5><p>具有高效、快速响应变化的开发过程</p>
+<p><img src="/imgs/se/10.png" alt="image-20230921083304665"></p>
+<p>动机：快速的市场进入时间、快速变化的需求、快速发展的技术</p>
+<p><strong>敏捷宣言</strong></p>
+<ol>
+<li>个体和交互胜过过程和工具；</li>
+<li>可以工作的软件胜过面面俱到的文档；</li>
+<li>客户合作胜过合同谈判；</li>
+<li>响应变化胜过遵循计划。</li>
+</ol>
+<p>敏捷过程的原则</p>
+<ul>
+<li>优先目标是尽早持续交付高价值的软件来满足客户需求；</li>
+<li>通过驾驭变化帮助客户赢得竞争；</li>
+<li>经常交付可用软件；</li>
+<li>业务员和开发人员必须每天一起工作；</li>
+<li>以积极主动地人为核心建立项目团队；</li>
+<li>可用软件是最主要的项目进展目标；</li>
+<li>团队内外最有效的交流是面对面交流；</li>
+<li>提倡可持续开发，保持稳定的工作步调；</li>
+<li>用精益求精和优良设计增强敏捷性；</li>
+<li>简约—工作最小化；</li>
+<li>最优的架构、需求和设计来自自组织的团队；</li>
+<li>团队不断开展工作反思，校正自身行为。</li>
+</ul>
+<p>实践做法</p>
+<ul>
+<li>敏捷过程很容易适应变化并迅速做出自我调整，在保证质量的前提下，实现企业效益的最大化</li>
+<li>敏捷过程在保证软件开发有成功产出的前提下，尽量减少开发过程中的活动和制品，Just enough</li>
+</ul>
+<p>适用范围</p>
+<ul>
+<li>需求不确定、易挥发</li>
+<li>有责任感和积极向上的开发人员</li>
+<li>用户容易沟通并能参与</li>
+<li>小于10个人的项目团队</li>
+</ul>
+<h5 id="极限编程XP-敏捷软件工程实践"><a href="#极限编程XP-敏捷软件工程实践" class="headerlink" title="极限编程XP-敏捷软件工程实践"></a>极限编程XP-敏捷软件工程实践</h5><p>价值观</p>
+<p>沟通、反馈、简化、勇气</p>
+<p>特点</p>
+<p>测试成为开发的核心;</p>
+<p>纪律性与灵活性巧妙结合.</p>
+<p>XP项目的整体开发过程</p>
+<p><img src="/imgs/se/11.png" alt="image-20230921090250148"></p>
+<p><img src="/imgs/se/12.png" alt="image-20230921090334703"></p>
+<p>XP迭代开发过程</p>
+<p><img src="/imgs/se/13.png" alt="image-20230921090521198"></p>
+<p><img src="/imgs/se/14.png" alt="image-20230921090600558"></p>
+<p>XP关键做法</p>
+<ul>
+<li>现场客户（On-site Customer）</li>
+<li>计划博弈（Planning Game）</li>
+<li>系统隐喻（System Metaphor）</li>
+<li>简化设计（Simple Design）</li>
+<li>集体拥有代码（Collective Code Ownership）</li>
+<li>结对编程（Pair Programming）</li>
+<li>测试驱动（Test-driven）</li>
+<li>小型发布（Small Releases）</li>
+<li>重构（Refactoring）</li>
+<li>持续集成（Continuousintegration）</li>
+<li>每周40小时工作制（40-hour Weeks）</li>
+<li>代码规范（Coding Standards）</li>
+</ul>
+<h5 id="RUP与XP共性"><a href="#RUP与XP共性" class="headerlink" title="RUP与XP共性"></a>RUP与XP共性</h5><ul>
+<li>基础都是面向对象方法（取代传统的结构化方法）</li>
+<li>都重视代码、文档的最小化和设计的简化</li>
+<li>采用动态适应变化的演进式迭代周期（取代传统的瀑布型生命周期）</li>
+<li>需求和测试驱动</li>
+<li>鼓励用户积极参与</li>
+</ul>
+<h5 id="RUP与XP的区别"><a href="#RUP与XP的区别" class="headerlink" title="RUP与XP的区别"></a>RUP与XP的区别</h5><ul>
+<li>XP以代码为中心，编码和设计活动融为一体，弱化了架构的概念。</li>
+<li>RUP过程通常以架构为中心，细化阶段的主要目的就是构造出一个可运行的架构原型，作为将来添加需求功能的稳固基础。</li>
+<li>XP不包含业务建模、部署、过程管理等概念。</li>
+<li>RUP适合各种规模的项目，XP只适用于小团队。</li>
+</ul>
+<h4 id="微软过程"><a href="#微软过程" class="headerlink" title="微软过程"></a>微软过程</h4><h5 id="微软过程准则"><a href="#微软过程准则" class="headerlink" title="微软过程准则"></a>微软过程准则</h5><ul>
+<li>项目计划应该兼顾未来的不确定因素;</li>
+<li>用有效的风险管理来减少不确定因素的影响;</li>
+<li>经常生成并快速的地测试软件的过渡版本，提高稳定性和可预测性;</li>
+<li>采用快速循环，递进的开发过程;</li>
+<li>用创造性的工作来平衡产品特性和产品成本;</li>
+<li>项目进度表应该具有较高稳定性和权威性;</li>
+<li>使用小型项目组并发的完成开发工作;</li>
+<li>在项目早期把软件配置项基线化，项目后期则冻结产品;</li>
+<li>使用原型验证概念，对项目进行早期论证;</li>
+<li>把零缺陷作为追求的目标;</li>
+<li>里程碑评审会的目的是改进工作，切忌相互指责.</li>
+</ul>
+<h5 id="微软软件生命周期"><a href="#微软软件生命周期" class="headerlink" title="微软软件生命周期"></a>微软软件生命周期</h5><p><img src="/imgs/se/15.png" alt="image-20230921092829901"></p>
+<h5 id="微软过程模型"><a href="#微软过程模型" class="headerlink" title="微软过程模型"></a>微软过程模型</h5><p><img src="/imgs/se/16.png" alt="image-20230921093011743"></p>
+<h4 id="Scrum过程"><a href="#Scrum过程" class="headerlink" title="Scrum过程"></a>Scrum过程</h4><ul>
+<li>强调经验性过程而不是确定性过程</li>
+<li>演化型的迭代开发过程</li>
+</ul>
+<p><img src="/imgs/se/17.png" alt="image-20230921093118096"></p>
+<h3 id="软件过程的选择与裁切"><a href="#软件过程的选择与裁切" class="headerlink" title="软件过程的选择与裁切"></a>软件过程的选择与裁切</h3><h4 id="软件过程的选择"><a href="#软件过程的选择" class="headerlink" title="软件过程的选择"></a>软件过程的选择</h4><ol>
+<li>产品&#x2F;项目自身的特点</li>
+<li>团队的实际情况和企业文化</li>
+<li>客户的影响</li>
+</ol>
+<h4 id="软件过程进行裁剪"><a href="#软件过程进行裁剪" class="headerlink" title="软件过程进行裁剪"></a>软件过程进行裁剪</h4><ol>
+<li>流程归并与裁剪</li>
+<li>角色的筛选与定制</li>
+<li>工件的裁剪和定制</li>
+</ol>
+<h3 id="软件过程的评估与改进"><a href="#软件过程的评估与改进" class="headerlink" title="软件过程的评估与改进"></a>软件过程的评估与改进</h3><h4 id="参考模型"><a href="#参考模型" class="headerlink" title="参考模型"></a>参考模型</h4><ol>
+<li><p>CMM&#x2F;CMMI</p>
+<p>过程能力成熟度模型</p>
+<p>CMMI是一个标准簇</p>
+<ul>
+<li>CMMI4Development</li>
+<li>CMMI4Svervice</li>
+<li>CMMI4Acquisition</li>
+</ul>
+<p>CMMI模型不同的改进方法：</p>
+<ul>
+<li>组织成熟度方法（阶梯式模型）</li>
+<li>过程能力方法（连续式模型）</li>
+</ul>
+<p><img src="/imgs/se/18.png" alt="image-20230921100418465"></p>
+<p><img src="/imgs/se/19.png" alt="image-20230921100537595"></p>
+</li>
+<li><p>ISO&#x2F;IEC 15504</p>
+<p>信息技术-软件过程评价标准，又称为SPICE</p>
+<p><img src="/imgs/se/20.png" alt="image-20230921100651886"></p>
+</li>
+<li><p>ISO&#x2F;IEC 20000</p>
+<p>用于评估和认证IT运维服务管理过程的能力</p>
+</li>
+</ol>
+<h4 id="软件过程的改进"><a href="#软件过程的改进" class="headerlink" title="软件过程的改进"></a>软件过程的改进</h4><p><img src="/imgs/se/21.png" alt="image-20230921100821461"></p>
+<h2 id="软件建模"><a href="#软件建模" class="headerlink" title="软件建模"></a>软件建模</h2><h2 id="需求工程"><a href="#需求工程" class="headerlink" title="需求工程"></a>需求工程</h2><h3 id="软件需求面临的挑战"><a href="#软件需求面临的挑战" class="headerlink" title="软件需求面临的挑战"></a>软件需求面临的挑战</h3><ol>
+<li>用户说不清需求；</li>
+<li>需求表达的二义性问题；</li>
+<li>需求经常变化, 项目没有时限；</li>
+<li>因误解或二义性的需求直到开发后期才发现；</li>
+<li>测试者没有明白产品要做什么；</li>
+<li>产品性能低、使用不方便等用户不满意；</li>
+<li>许多增强性需求未在需求获取阶段提出。</li>
+</ol>
+<h3 id="需求工程的概念"><a href="#需求工程的概念" class="headerlink" title="需求工程的概念"></a>需求工程的概念</h3><h4 id="软件需求-FURPS-and-FURPS"><a href="#软件需求-FURPS-and-FURPS" class="headerlink" title="软件需求 FURPS and FURPS+"></a>软件需求 FURPS and FURPS+</h4><p>功能性需求（F）与非功能性需求（URPS）</p>
+<table>
+<thead>
+<tr>
+<th align="center">需求</th>
+<th align="center">能力</th>
+<th align="center">具体要求</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Functionality</td>
+<td align="center">Feature Set,Capabilities</td>
+<td align="center">Generality,Security</td>
+</tr>
+<tr>
+<td align="center">Usability</td>
+<td align="center">Human Factors,Aesthetics</td>
+<td align="center">Consistency,Documentation</td>
+</tr>
+<tr>
+<td align="center">Reliability</td>
+<td align="center">Frequency&#x2F;Severity,of Failure,Recoverability</td>
+<td align="center">Predictability,Accuracy,MTBF</td>
+</tr>
+<tr>
+<td align="center">Performance</td>
+<td align="center">Speed,Efficiency,&gt;Resource Usage</td>
+<td align="center">Throughput,Response Time</td>
+</tr>
+<tr>
+<td align="center">Supportability</td>
+<td align="center">Testability,Extensibility,Adaptability,Maintainability,Compatibility</td>
+<td align="center">Configurability,Serviceability,Installability,Localizability,Robustness</td>
+</tr>
+</tbody></table>
+<h4 id="Functionality需求"><a href="#Functionality需求" class="headerlink" title="Functionality需求"></a>Functionality需求</h4><p>功能、特性和安全性</p>
+<ul>
+<li>概要功能需求</li>
+<li>详细功能需求</li>
+</ul>
+<h4 id="Usablity需求"><a href="#Usablity需求" class="headerlink" title="Usablity需求"></a>Usablity需求</h4><p>可用性</p>
+<p>The ease with which software can be learned and<br>operated by the intended users</p>
+<blockquote>
+<p>To Be Continued</p>
+</blockquote>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">J&Ocean</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://jiang-wu-19.github.io/2023/09/27/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%AC%94%E8%AE%B0/">https://jiang-wu-19.github.io/2023/09/27/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%AC%94%E8%AE%B0/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">J&Ocean</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/">
+                                    <span class="chip bg-color">软件工程</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">请我喝杯奶茶吧~</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'Nv6Wx6PAYH30bfcx7u0eDWHy-gzGzoHsz',
+        appKey: 'IhPcpC3fDP8Ro7eaPakG2vSt',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2023/09/27/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="数字图像处理笔记">
+                        
+                        <span class="card-title">数字图像处理笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            2023秋-数字图像处理
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-09-27
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/">
+                        <span class="chip bg-color">数字图像处理</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/09/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="计算机体系结构笔记">
+                        
+                        <span class="card-title">计算机体系结构笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            2023秋-计算机体系结构
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-09-27
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">计算机体系结构</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: J&amp;Ocean BLOG<br />'
+            + '文章作者: J&amp;Ocean<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2023</span>
+            
+            <span id="year">2023</span>
+            <a href="/about" target="_blank">J&Ocean</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">130k</span>&nbsp;字
+            
+            
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2023";
+                    var startMonth = "7";
+                    var startDate = "2";
+                    var startHour = "12";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+    <a href="https://github.com/JIANG-Wu-19" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:wujiang0319@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=870027163" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 870027163" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+    <a href="https://www.zhihu.com/people/bei-wei-xiao-wu-32" class="tooltipped" target="_blank" data-tooltip="关注我的知乎: https://www.zhihu.com/people/bei-wei-xiao-wu-32" data-position="top" data-delay="50">
+        <i class="fab fa-zhihu1">知</i>
+    </a>
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

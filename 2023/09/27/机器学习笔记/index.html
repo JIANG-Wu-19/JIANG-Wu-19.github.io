@@ -474,7 +474,8 @@
 <ul>
 <li><p><strong>梯度</strong>：<br>$$<br>\nabla_\theta f(\theta) \in \mathbb{R}^n&#x3D;\left[\begin{array}{c}<br>\frac{\partial f(\theta)}{\partial \theta_1} \<br>\frac{\partial f(\theta)}{\partial \theta_2} \<br>\vdots \<br>\frac{\partial f(\theta)}{\partial \theta_n}<br>\end{array}\right]<br>$$<br>梯度下降算法的另一种表述：<br>$$<br>Repeat:~\theta&#x3D;\theta-\alpha \nabla_{\theta}f(\theta)<br>$$</p>
 </li>
-<li><p>单变量线性回归模型的梯度下降<br>$$<br>repeat<del>until</del>convergence:\<br>\theta_0&#x3D;\theta_0-\alpha \frac{1}{m} \sum_{i&#x3D;1}^{m}(h_\theta(x^{(i)})-y^{(i)})\<br>\theta_1&#x3D;\theta_1-\alpha \frac{1}{m} \sum_{i&#x3D;1}^{m}(h_\theta(x^{(i)})-y^{(i)}) \cdot x^{(i)}<br>$$</p>
+<li><p>单变量线性回归模型的梯度下降</p>
+<p>repeat until convergence:<br>$$<br>\theta_0&#x3D;\theta_0-\alpha \frac{1}{m} \sum_{i&#x3D;1}^{m}(h_\theta(x^{(i)})-y^{(i)})\<br>\theta_1&#x3D;\theta_1-\alpha \frac{1}{m} \sum_{i&#x3D;1}^{m}(h_\theta(x^{(i)})-y^{(i)}) \cdot x^{(i)}<br>$$</p>
 </li>
 </ul>
 <h3 id="多特征（变量）"><a href="#多特征（变量）" class="headerlink" title="多特征（变量）"></a>多特征（变量）</h3><h4 id="三要素-1"><a href="#三要素-1" class="headerlink" title="三要素"></a>三要素</h4><ul>
@@ -482,7 +483,7 @@
 <li>参数：$\theta_0,\theta_1,\dots,\theta_n$</li>
 <li>目标函数：$J\left(\theta_0, \theta_1, \cdots, \theta_n\right)&#x3D;\frac{1}{2 m} \sum_{i&#x3D;1}^m \ell\left(h_\theta\left(x^{(i)}\right), y^{(i)}\right)&#x3D;\frac{1}{2 m} \sum_{i&#x3D;1}^m\left(h_\theta\left(x^{(i)}\right)-y^{(i)}\right)^2$</li>
 </ul>
-<h4 id="梯度下降-1"><a href="#梯度下降-1" class="headerlink" title="梯度下降"></a>梯度下降</h4><p>$$<br>repeat<del>until</del>convergence:\<br>\theta_j:&#x3D;\theta_j-\alpha \frac{\partial}{\partial \theta_j} J\left(\theta_0, \theta_1,\dots,\theta_n\right)~~j&#x3D;0,1,\dots,n<br>$$</p>
+<h4 id="梯度下降-1"><a href="#梯度下降-1" class="headerlink" title="梯度下降"></a>梯度下降</h4><p>repeat until convergence:<br>$$<br>\theta_j:&#x3D;\theta_j-\alpha \frac{\partial}{\partial \theta_j} J\left(\theta_0, \theta_1,\dots,\theta_n\right)~~j&#x3D;0,1,\dots,n<br>$$</p>
 <h4 id="特征尺度归一化"><a href="#特征尺度归一化" class="headerlink" title="特征尺度归一化"></a>特征尺度归一化</h4><ul>
 <li><p>范围归一化：使得每个特征尽量接近某个范围，如$0 \le x_i \le 1$</p>
 </li>
@@ -532,6 +533,9 @@
 <h4 id="概率解释"><a href="#概率解释" class="headerlink" title="概率解释"></a>概率解释</h4><p>$$<br>h_\theta(x)&#x3D;g(\theta^Tx)&#x3D;\frac{1}{1+e^{-\theta^Tx}}<br>$$</p>
 <p>$h_\theta(x)$对于输入x，输出y&#x3D;1的可能性</p>
 <p>给出x，估计y&#x3D;1的可能性，$\theta$为参数<br>$$<br>P(y&#x3D;0|x;\theta)+P(y&#x3D;1|x;\theta)&#x3D;1<br>$$</p>
+<blockquote>
+<p>To Be Continued</p>
+</blockquote>
 
                 
             </div>
@@ -1030,30 +1034,29 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/09/27/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                <a href="/2023/09/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="机器学习笔记">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="计算机体系结构笔记">
                         
-                        <span class="card-title">机器学习笔记</span>
+                        <span class="card-title">计算机体系结构笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            2023秋-机器学习
+                            2023秋-计算机体系结构
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-09-27
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-09-27
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1066,12 +1069,11 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
-                        <span class="chip bg-color">机器学习</span>
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">计算机体系结构</span>
                     </a>
                     
                 </div>
@@ -1321,7 +1323,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">125.1k</span>&nbsp;字
+                class="white-color">130k</span>&nbsp;字
             
             
             
