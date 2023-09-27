@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="算法课外思考题七, J&amp;Ocean BLOG">
+    <meta name="keywords" content="机器学习笔记, J&amp;Ocean BLOG">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>算法课外思考题七 | J&amp;Ocean BLOG</title>
+    <title>机器学习笔记 | J&amp;Ocean BLOG</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -235,12 +235,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">算法课外思考题七</h1>
+                    <h1 class="description center-align post-title">机器学习笔记</h1>
                 </div>
             </div>
         </div>
@@ -356,16 +356,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">算法</span>
-                            </a>
-                        
-                            <a href="/tags/Voronoi%E5%9B%BE/">
-                                <span class="chip bg-color">Voronoi图</span>
-                            </a>
-                        
-                            <a href="/tags/%E4%BA%8C%E7%BB%B4%E7%9F%A9%E9%98%B5%E6%9F%A5%E6%89%BE/">
-                                <span class="chip bg-color">二维矩阵查找</span>
+                            <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">机器学习</span>
                             </a>
                         
                     </div>
@@ -376,8 +368,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%AE%97%E6%B3%95%E6%80%9D%E8%80%83%E9%A2%98/" class="post-category">
-                                算法思考题
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                笔记
                             </a>
                         
                     </div>
@@ -389,7 +381,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-07-10
+                    2023-09-27
                 </div>
                 
 
@@ -398,14 +390,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    5 分
                 </div>
                 
 
@@ -423,163 +415,123 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="问题一-Voronoi图及相关算法的调研报告"><a href="#问题一-Voronoi图及相关算法的调研报告" class="headerlink" title="问题一 Voronoi图及相关算法的调研报告"></a>问题一 Voronoi图及相关算法的调研报告</h2><h3 id="Voronoi图的定义和相关性质"><a href="#Voronoi图的定义和相关性质" class="headerlink" title="Voronoi图的定义和相关性质"></a>Voronoi图的定义和相关性质</h3><p>Voronoi Diagram又称Thiessen Polygon，其数学描述如下：</p>
-<p>设平面区域B上有一组离散点$\left(X_i, Y_j\right)(\mathrm{i}&#x3D;1,2,3, \ldots, \mathrm{k} ; \mathrm{j}&#x3D;1,2,3, \ldots, \mathrm{k}, \mathrm{k}$ 为离散点点数) ，将区域B用一组直线段分成k个互相邻接的多边形，使得：</p>
-<ol>
-<li>每个多边形内含有且仅含有一个离散点；</li>
-<li>若区域B上任意一点$\left(x^1, y^1\right)$位于含离散点$\left(x_i, y_j\right)$的多边形内，不等式$\sqrt{\left(x^1-x_i\right)^2+\left(y^1-y_j\right)^2}&lt;\sqrt{\left(x^1-x_j\right)^2+\left(y^1-y_i\right)^2}$在$i\neq j$时恒成立；</li>
-<li>若点$\left(x^1, y^1\right)$位于含离散点$\left(x_i, y_j\right)$的两个多边形的公共边上，则等式$\sqrt{\left(x^1-x_i\right)^2+\left(y^1-y_j\right)^2}&#x3D;\sqrt{\left(x^1-x_j\right)^2+\left(y^1-y_i\right)^2}$成立</li>
-</ol>
-<p>Voronoi图的特征如下：</p>
-<ol>
-<li>每个泰森多边形内仅含有一个离散点数据</li>
-<li>泰森多边形的点到相应离散点的距离最近</li>
-<li>位于泰森多边形边上的点到其两边的离散点的距离相等</li>
-</ol>
-<h3 id="Voronoi图生成算法"><a href="#Voronoi图生成算法" class="headerlink" title="Voronoi图生成算法"></a>Voronoi图生成算法</h3><h4 id="使用分治法"><a href="#使用分治法" class="headerlink" title="使用分治法"></a>使用分治法</h4><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">VoronoiDiagram* partition(vector&lt;point&gt;&amp; origin,int left,int right)
-&#123;
-    if(right-left&lt;3)
-    &#123;
-        VoronoiDiagram* result&#x3D;smallVD(origin,left,right);
-        return result;
-    &#125;else&#123;
-        VoronoiDiagram* leftresult&#x3D;partition(origin,left,(left+right)&#x2F;2);
-        VoronoiDiagram* rightresult&#x3D;partition(origin,(left+right)&#x2F;2+1,right);
-        return mergeVD(leftresult,rightresult);
-    &#125;
-&#125;
-VoronoiDiagram* mergeVD(VoronoiDiagram* left,VoronoiDiagram* right)
-&#123;
-    VoronoiDiagram* result&#x3D;new VoronoiDiagram();
-    vector&lt;Devidechain&gt; devidechain;
-    left-&gt;convex hull&#x3D;getConvexHull(left-&gt;sites);    
-    right-&gt;convex hull&#x3D;getConvexHull(right-&gt;sites);
-    tangentline(left-&gt;convex,right-&gt;convex hull,*leftMax,*leftMin,*rightMax,*rightMin);
-    bool tobottom&#x3D;false;
-    do
-    &#123;
-        chain&#x3D;bisector(leftMax,rightMax);
-        leftpoint&#x3D;IntersectionPoint(leftMax,chain);
-        rightpoint&#x3D;IntersectionPoint(rightMax,chain);
-        if(leftpoint.y&gt;rightpoint.y)&#123;
-            updateLeftSite();
-        &#125;else if(leftpoint.y&lt;rightpoint.y)&#123;
-            updateRightSite();
-        &#125;else&#123;
-            break;
-        &#125;
-    &#125;while(!tobottom);
-    connectchain();
-    result&#x3D;(*right)+(*left);
-    return result;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="Lawson算法"><a href="#Lawson算法" class="headerlink" title="Lawson算法"></a>Lawson算法</h4><ol>
-<li>建立一个大三角形，将所有数据点包围起来</li>
-<li>向三角形中插入一点，将该点与三角形三个顶点项链，形成三个新的三角形</li>
-<li>逐个对三角形进行空外接圆测试，用Lawson的局部优化过程进行优化（交换对角线保证Delaunay三角网的形成）</li>
-</ol>
-<h4 id="Bowyer-Watson算法"><a href="#Bowyer-Watson算法" class="headerlink" title="Bowyer-Watson算法"></a>Bowyer-Watson算法</h4><ol>
-<li>构造一个超级三角形，包含所有散点，放入三角形链表</li>
-<li>将散点依次插入，在三角形链表中找出外接圆包含插入点的三角形，删除三角形的公共边，将插入点同三角形的顶点全部连接起来，完成一个点在Delaunay三角形链表中的插入</li>
-<li>对新三角形进行优化，将形成的三角形放入Delaunay三角形链表</li>
-<li>循环2.至所有散点插入完毕</li>
-</ol>
-<h3 id="Voronoi图的应用"><a href="#Voronoi图的应用" class="headerlink" title="Voronoi图的应用"></a>Voronoi图的应用</h3><p>计算最近邻问题</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
-#include &lt;vector&gt;
-#include &lt;CGAL&#x2F;Exact_predicates_exact_constructions_kernel.h&gt;
-#include &lt;CGAL&#x2F;Voronoi_diagram_2.h&gt;
-
-using namespace std;
-
-typedef CGAL::Exact_predicates_exact_constructions_kernel Kernel;
-typedef Kernel::Point_2 Point;
-typedef CGAL::Voronoi_diagram_2&lt;Kernel&gt; Voronoi_diagram;
-
-int main() &#123;
-  vector&lt;Point&gt; points &#x3D; &#123;&#123;1, 2&#125;, &#123;3, 4&#125;, &#123;5, 6&#125;, &#123;7, 8&#125;&#125;;
-  Voronoi_diagram voronoi;
-  voronoi.insert(points.begin(), points.end());
-
-  Point query_point(2, 3);
-  Voronoi_diagram::Locate_result locate_result &#x3D; voronoi.locate(query_point);
-  if (Voronoi_diagram::Face_handle fh &#x3D; boost::get&lt;Voronoi_diagram::Face_handle&gt;(&amp;*locate_result)) &#123;
-    Point closest_point &#x3D; fh-&gt;dual()-&gt;point();
-    cout &lt;&lt; &quot;Closest point: (&quot; &lt;&lt; closest_point.x() &lt;&lt; &quot;, &quot; &lt;&lt; closest_point.y() &lt;&lt; &quot;)&quot; &lt;&lt; endl;
-  &#125;
-
-  return 0;
-&#125;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>调用了CGAL库（计算几何算法库）</p>
-<h2 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>前面已经学习在一维序列中某元素的查找算法，现若查找是在一个二维矩阵中进行，并且矩阵中行列均为升序排列，请给出相应查找算法并进行分析。</p>
-<h3 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h3><h4 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h4><p>采用逐行逐列的搜索方式，从矩阵的左下角开始搜索，直到找到元素或返回未找到</p>
-<h4 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h4><p>采用减治算法，也就是说采用二维的二分查找算法，找到矩阵的中心位置的元素，执行大小判断，然后在排除掉的剩余矩阵中继续进行查找</p>
-<h3 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;iostream&gt;
-#include&lt;vector&gt;
-using namespace std;
-
-void searchMatrix1(vector&lt;vector&lt;int&gt;&gt;&amp; matrix, int target) &#123;
-	if (matrix.size() &#x3D;&#x3D; 0 || matrix[0].size() &#x3D;&#x3D; 0) &#123;
-		cout &lt;&lt; &quot;error&quot; &lt;&lt; endl;
-		return;
-	&#125;
-	int r &#x3D; matrix.size();
-	int c &#x3D; matrix[0].size();
-	int x &#x3D; r - 1, y &#x3D; 0;
-	while (x &gt;&#x3D; 0 &amp;&amp; y &lt; c) &#123;
-		if (matrix[x][y] &#x3D;&#x3D; target) &#123;
-			cout &lt;&lt; &quot;matrix[&quot; &lt;&lt; x+1 &lt;&lt; &quot;][&quot; &lt;&lt; y+1 &lt;&lt; &quot;]&quot; &lt;&lt; endl;
-			return;
-		&#125;
-		else if (matrix[x][y] &lt; target) &#123;
-			y++;
-		&#125;
-		else &#123;
-			x--;
-		&#125;
-	&#125;
-	cout &lt;&lt; &quot;error&quot; &lt;&lt; endl;
-&#125;
-void search(vector&lt;vector&lt;int&gt;&gt;&amp; matrix, int target, int x1, int x2, int y1, int y2) &#123;
-	int mx &#x3D; x1 + (x2 - x1) &gt;&gt; 1;
-	int my &#x3D; y1 + (y2 - y1) &gt;&gt; 1;
-	if (matrix[mx][my] &#x3D;&#x3D; target) &#123;
-		cout &lt;&lt; &quot;matrix[&quot; &lt;&lt; mx + 1 &lt;&lt; &quot;][&quot; &lt;&lt; my + 1 &lt;&lt; &quot;]&quot; &lt;&lt; endl;
-		return;
-	&#125;
-	else if (matrix[mx][my] &lt; target) &#123;
-		search(matrix, target, mx + 1, x2, y1, my);
-		search(matrix, target, x1, mx, my + 1, y2);
-		search(matrix, target, mx + 1, x2, my + 1, y2);
-	&#125;
-	else &#123;
-		search(matrix, target, x1, mx - 1, my, y2);
-		search(matrix, target, mx, x2, y1, my - 1);
-		search(matrix, target, x1, mx - 1, y1, my - 1);
-	&#125;
-	cout &lt;&lt; &quot;error&quot; &lt;&lt; endl;
-&#125;
-void searchMatrix2(vector&lt;vector&lt;int&gt;&gt;&amp; matrix, int target) &#123;
-	int r &#x3D; matrix.size();
-	int c &#x3D; matrix[0].size();
-	int x1 &#x3D; 0, y1 &#x3D; 0, x2 &#x3D; r - 1, y2 &#x3D; c - 1;
-	search(matrix,target,x1,x2,y1,y2);
-&#125;
-
-int main() &#123;
-	vector&lt;vector&lt;int&gt;&gt; matrix &#x3D; &#123; &#123;1,4,7,11,15&#125;,&#123;2,5,8,12,19&#125;,&#123;3,6,9,16,22&#125;,&#123;10,13,14,17,24&#125;,&#123;18,21,23,26,30&#125; &#125;;
-	searchMatrix1(matrix, 9);
-	searchMatrix2(matrix, 9);
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>实现：</p>
-<p><img src="/imgs/sikao7/1.png" alt="image-20230409165251520"></p>
-<p>方法一的时间复杂度是$O(m+n)$，m、n分别为矩阵的行数和列数</p>
-<p>方法二的时间复杂度是$O(mn^{log_43})$</p>
-<p>针对方法二，还有一定的改进空间，如果该矩阵是方阵，则在方阵的主对角线先进行比较，找到大于target的主对角线上的元素，再对该元素所在行和列进行两次二分查找，则该算法的时间复杂度为$O(n)$</p>
+                <h2 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h2><h3 id="ML框架"><a href="#ML框架" class="headerlink" title="ML框架"></a>ML框架</h3><p><img src="/imgs/ml/1.png" alt="image-20230913084005731"></p>
+<h3 id="types-of-learning-problems"><a href="#types-of-learning-problems" class="headerlink" title="types of learning problems"></a>types of learning problems</h3><ul>
+<li>监督学习</li>
+<li>无监督学习<ul>
+<li>自监督学习</li>
+</ul>
+</li>
+<li>半监督学习</li>
+<li>迁移学习</li>
+<li>主动学习</li>
+<li>强化学习</li>
+<li>元学习</li>
+</ul>
+<h2 id="Regression"><a href="#Regression" class="headerlink" title="Regression"></a>Regression</h2><h3 id="单变量线性回归"><a href="#单变量线性回归" class="headerlink" title="单变量线性回归"></a>单变量线性回归</h3><ul>
+<li><p><strong>输入特征</strong></p>
+<p>$x^{(i)} \in R^{n+1},i&#x3D;1,2,···,m$</p>
+</li>
+<li><p><strong>输出</strong></p>
+<p>$y^{(i)} \in R$</p>
+</li>
+<li><p><strong>参数</strong></p>
+<p>$\theta &#x3D; R^{n+1}$</p>
+</li>
+<li><p>假设$h_{\theta}(x):R^{n+1} \to R$</p>
+</li>
+<li><p><strong>损失函数</strong></p>
+<p>$\ell :R \times R \to R_+$</p>
+<p>满足</p>
+<ul>
+<li>非负：不存在负损失</li>
+<li>如果预测结果$h_{\theta}(x)$与给定的y差别小，则损失小，反之则损失大</li>
+</ul>
+<p>平方损失：</p>
+<p>$\ell(h_{\theta}(x),y)&#x3D;(h_{\theta}(x)-y)^2$</p>
+</li>
+</ul>
+<h4 id="三要素"><a href="#三要素" class="headerlink" title="三要素"></a><strong>三要素</strong></h4><ul>
+<li><p>假设：$h_{\theta}(x)&#x3D; \theta_0+\theta_1x$，其中参数为$\theta_0,\theta_1$</p>
+</li>
+<li><p>目标函数：</p>
+<p>$J\left(\theta_0, \theta_1\right)&#x3D;\frac{1}{2 m} \sum_{i&#x3D;1}^m \ell\left(h_\theta\left(x^{(i)}\right), y^{(i)}\right)&#x3D;\frac{1}{2 m} \sum_{i&#x3D;1}^m\left(h_\theta\left(x^{(i)}\right)-y^{(i)}\right)^2$</p>
+</li>
+<li><p>优化算法：给定训练集，如何找到最优的参数$\theta$使得<br>$$<br>\min _{\theta_0, \theta_1} J\left(\theta_0, \theta_1\right)<br>$$</p>
+</li>
+<li><p><strong>参数优化</strong></p>
+<p>找到最优的参数$\theta^*&#x3D;arg~ \min_{\theta} J(\theta)$</p>
+<ul>
+<li>穷举所有$\theta$</li>
+<li>随机搜索</li>
+<li>梯度下降</li>
+</ul>
+</li>
+</ul>
+<h4 id="梯度下降"><a href="#梯度下降" class="headerlink" title="梯度下降"></a><strong>梯度下降</strong></h4><p>  repeat until convergence{</p>
+<p>  $\theta_j:&#x3D;\theta_j-\alpha \frac{\partial}{\partial \theta_j} J\left(\theta_0, \theta_1\right) \quad($ for $j&#x3D;0$ and $j&#x3D;1)$</p>
+<p>  }</p>
+<ul>
+<li><p><strong>梯度</strong>：<br>$$<br>\nabla_\theta f(\theta) \in \mathbb{R}^n&#x3D;\left[\begin{array}{c}<br>\frac{\partial f(\theta)}{\partial \theta_1} \<br>\frac{\partial f(\theta)}{\partial \theta_2} \<br>\vdots \<br>\frac{\partial f(\theta)}{\partial \theta_n}<br>\end{array}\right]<br>$$<br>梯度下降算法的另一种表述：<br>$$<br>Repeat:~\theta&#x3D;\theta-\alpha \nabla_{\theta}f(\theta)<br>$$</p>
+</li>
+<li><p>单变量线性回归模型的梯度下降<br>$$<br>repeat<del>until</del>convergence:\<br>\theta_0&#x3D;\theta_0-\alpha \frac{1}{m} \sum_{i&#x3D;1}^{m}(h_\theta(x^{(i)})-y^{(i)})\<br>\theta_1&#x3D;\theta_1-\alpha \frac{1}{m} \sum_{i&#x3D;1}^{m}(h_\theta(x^{(i)})-y^{(i)}) \cdot x^{(i)}<br>$$</p>
+</li>
+</ul>
+<h3 id="多特征（变量）"><a href="#多特征（变量）" class="headerlink" title="多特征（变量）"></a>多特征（变量）</h3><h4 id="三要素-1"><a href="#三要素-1" class="headerlink" title="三要素"></a>三要素</h4><ul>
+<li>假设：$h_\theta(x)&#x3D;\theta_0 x_0+\theta_1 x_1+\theta_2 x_2+\cdots+\theta_n x_n, x_0&#x3D;1$</li>
+<li>参数：$\theta_0,\theta_1,\dots,\theta_n$</li>
+<li>目标函数：$J\left(\theta_0, \theta_1, \cdots, \theta_n\right)&#x3D;\frac{1}{2 m} \sum_{i&#x3D;1}^m \ell\left(h_\theta\left(x^{(i)}\right), y^{(i)}\right)&#x3D;\frac{1}{2 m} \sum_{i&#x3D;1}^m\left(h_\theta\left(x^{(i)}\right)-y^{(i)}\right)^2$</li>
+</ul>
+<h4 id="梯度下降-1"><a href="#梯度下降-1" class="headerlink" title="梯度下降"></a>梯度下降</h4><p>$$<br>repeat<del>until</del>convergence:\<br>\theta_j:&#x3D;\theta_j-\alpha \frac{\partial}{\partial \theta_j} J\left(\theta_0, \theta_1,\dots,\theta_n\right)~~j&#x3D;0,1,\dots,n<br>$$</p>
+<h4 id="特征尺度归一化"><a href="#特征尺度归一化" class="headerlink" title="特征尺度归一化"></a>特征尺度归一化</h4><ul>
+<li><p>范围归一化：使得每个特征尽量接近某个范围，如$0 \le x_i \le 1$</p>
+</li>
+<li><p>零均值归一化：用$x_i-\mu_i$替代$x_i$，即$x_i- \mu_i \to x_i$，其中$\mu_i&#x3D;\frac{1}{m} \sum_{i&#x3D;1}^{m} x_i$为均值</p>
+</li>
+<li><p>零均值+范围归一化</p>
+</li>
+<li><p>零均值单位方差归一化：<br>$$<br>\frac{x_i- \mu_i}{\sigma_i} \to x_i<br>$$</p>
+</li>
+</ul>
+<h4 id="学习率"><a href="#学习率" class="headerlink" title="学习率"></a>学习率</h4><p>梯度下降$\theta_j:&#x3D;\theta_j-\alpha \frac{\partial}{\partial \theta_j} J\left(\theta \right)$</p>
+<p>收敛条件$\Delta J(\theta) \le 10^{-3}$</p>
+<p>自动收敛测试</p>
+<ul>
+<li>对于足够小的$\alpha,J(\theta)$应该在每一次迭代中减小</li>
+<li>如果$\alpha$太小，梯度下降算法收敛速度慢</li>
+<li>反之，梯度下降算法不会收敛、发散或者震荡</li>
+</ul>
+<h4 id="正规方程"><a href="#正规方程" class="headerlink" title="正规方程"></a>正规方程</h4><ul>
+<li>对于求函数极小值问题，除了迭代方法之外，可以<strong>令函数的微分为零，然后求解方程</strong></li>
+</ul>
+<p>$$<br>\theta \in \mathbb{R}^{n+1},\<br>J\left(\theta_0, \theta_1, \cdots, \theta_n\right)&#x3D;\frac{1}{2 m} \sum_{i&#x3D;1}^m\left(h_\theta\left(x^{(i)}\right)-y^{(i)}\right)^2\<br>\nabla_\theta J(\theta)&#x3D;0<br>$$</p>
+<p>解出$\theta_0,\theta_1,\dots,\theta_n$</p>
+<p>考虑到求和需要进行循环，使用矩阵运算会有更小的时间复杂度</p>
+<p>得到$J(\theta)&#x3D;\frac{1}{2m}(X\theta-y)^T(X\theta-y)$</p>
+<p>则$\nabla_\theta J(\theta)&#x3D;\frac{1}{m}(X^TX\theta-X^Ty)&#x3D;0$</p>
+<p>解出$\theta&#x3D;(X^TX)^{-1}X^Ty$</p>
+<h4 id="梯度下降和正规方程的比较"><a href="#梯度下降和正规方程的比较" class="headerlink" title="梯度下降和正规方程的比较"></a>梯度下降和正规方程的比较</h4><p>m训练样本，n个特征</p>
+<ul>
+<li>梯度下降<ul>
+<li>需要选择合适的$\alpha$</li>
+<li>需要多次迭代</li>
+<li>即使n很大效果也很好</li>
+</ul>
+</li>
+<li>正规方程<ul>
+<li>不需要选择$\alpha$</li>
+<li>不需要迭代</li>
+<li>需要计算$(X^TX)^{-1}$</li>
+<li>n很大会导致求解很慢</li>
+<li>矩阵不可逆时需要删减一些特征，或者进行正则化</li>
+</ul>
+</li>
+</ul>
+<h2 id="classification"><a href="#classification" class="headerlink" title="classification"></a>classification</h2><h3 id="Logistic-Regression"><a href="#Logistic-Regression" class="headerlink" title="Logistic Regression"></a>Logistic Regression</h3><p>目标：$0 \le h_\theta(x) \le 1$<br>$$<br>h_\theta(x)&#x3D;g(\theta^Tx)&#x3D;\frac{1}{1+e^{-\theta^Tx}}<br>$$</p>
+<h4 id="Sigmoid函数"><a href="#Sigmoid函数" class="headerlink" title="Sigmoid函数"></a>Sigmoid函数</h4><p><img src="/imgs/ml/2.png" alt="image-20230927092917418"></p>
+<h4 id="概率解释"><a href="#概率解释" class="headerlink" title="概率解释"></a>概率解释</h4><p>$$<br>h_\theta(x)&#x3D;g(\theta^Tx)&#x3D;\frac{1}{1+e^{-\theta^Tx}}<br>$$</p>
+<p>$h_\theta(x)$对于输入x，输出y&#x3D;1的可能性</p>
+<p>给出x，估计y&#x3D;1的可能性，$\theta$为参数<br>$$<br>P(y&#x3D;0|x;\theta)+P(y&#x3D;1|x;\theta)&#x3D;1<br>$$</p>
 
                 
             </div>
@@ -606,7 +558,7 @@ int main() &#123;
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jiang-wu-19.github.io/2023/07/10/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E4%B8%83/">https://jiang-wu-19.github.io/2023/07/10/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E4%B8%83/</a>
+                    <a href="https://jiang-wu-19.github.io/2023/09/27/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">https://jiang-wu-19.github.io/2023/09/27/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -644,16 +596,8 @@ int main() &#123;
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">算法</span>
-                                </a>
-                            
-                                <a href="/tags/Voronoi%E5%9B%BE/">
-                                    <span class="chip bg-color">Voronoi图</span>
-                                </a>
-                            
-                                <a href="/tags/%E4%BA%8C%E7%BB%B4%E7%9F%A9%E9%98%B5%E6%9F%A5%E6%89%BE/">
-                                    <span class="chip bg-color">二维矩阵查找</span>
+                                <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">机器学习</span>
                                 </a>
                             
                         </div>
@@ -1086,46 +1030,48 @@ int main() &#123;
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/07/22/%E7%AE%97%E6%B3%95%E5%AE%9E%E9%AA%8C/">
+                <a href="/2023/09/27/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="算法实验">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="机器学习笔记">
                         
-                        <span class="card-title">算法实验</span>
+                        <span class="card-title">机器学习笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            课内的算法实验
+                            2023秋-机器学习
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-07-22
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-09-27
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AF%BE%E5%86%85%E5%AE%9E%E9%AA%8C/" class="post-category">
-                                    课内实验
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    笔记
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
+                    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">机器学习</span>
                     </a>
                     
                 </div>
@@ -1139,31 +1085,31 @@ int main() &#123;
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/07/10/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E5%85%AD/">
+                <a href="/2023/09/07/%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%980905/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="算法课外思考题六">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="体系结构课外思考题0905">
                         
-                        <span class="card-title">算法课外思考题六</span>
+                        <span class="card-title">体系结构课外思考题0905</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            求众数和两序列最大和插值
+                            体系结构中的一些“墙”
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-09-07
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%AE%97%E6%B3%95%E6%80%9D%E8%80%83%E9%A2%98/" class="post-category">
-                                    算法思考题
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E6%80%9D%E8%80%83%E9%A2%98/" class="post-category">
+                                    计算机体系结构思考题
                                 </a>
                             
                             
@@ -1173,16 +1119,16 @@ int main() &#123;
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
+                    <a href="/tags/%E5%86%85%E5%AD%98%E5%A2%99/">
+                        <span class="chip bg-color">内存墙</span>
                     </a>
                     
-                    <a href="/tags/%E6%91%A9%E5%B0%94%E6%8A%95%E7%A5%A8%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">摩尔投票算法</span>
+                    <a href="/tags/%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%A2%99/">
+                        <span class="chip bg-color">可靠性墙</span>
                     </a>
                     
-                    <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
-                        <span class="chip bg-color">动态规划</span>
+                    <a href="/tags/%E5%8F%AF%E7%BC%96%E7%A8%8B%E6%80%A7%E5%A2%99/">
+                        <span class="chip bg-color">可编程性墙</span>
                     </a>
                     
                 </div>
