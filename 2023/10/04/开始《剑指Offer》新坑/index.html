@@ -390,14 +390,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.5k
+                    2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    9 分
                 </div>
                 
 
@@ -685,6 +685,73 @@ public:
         return res-&gt;next;
     &#125;
 &#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="JZ52-两个链表的第一个公共结点"><a href="#JZ52-两个链表的第一个公共结点" class="headerlink" title="JZ52 两个链表的第一个公共结点"></a>JZ52 两个链表的第一个公共结点</h2><h3 id="描述-3"><a href="#描述-3" class="headerlink" title="描述"></a>描述</h3><p>输入两个无环的单向链表，找出它们的第一个公共结点，如果没有公共节点则返回空。（注意因为传入数据是链表，所以错误测试数据的提示是用其他方式显示的，保证传入数据是正确的）</p>
+<p>数据范围： $n \le 1000$</p>
+<p>要求：空间复杂度$O(1)$，时间复杂度$O(n)$</p>
+<p>例如，输入{1,2,3},{4,5},{6,7}时，两个无环的单向链表的结构如下图所示：</p>
+<p><img src="/imgs/jzoffer/4.png" alt="img"></p>
+<h3 id="题解-3"><a href="#题解-3" class="headerlink" title="题解"></a>题解</h3><h4 id="双结点"><a href="#双结点" class="headerlink" title="双结点"></a>双结点</h4><p>第一个结点从第一个链表头开始遍历，遍历完后切换到第二个链表头；第二个结点反之。</p>
+<p>两个结点遍历最终一定能够找到公共结点</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;*
+struct ListNode &#123;
+	int val;
+	struct ListNode *next;
+	ListNode(int x) :
+			val(x), next(NULL) &#123;
+	&#125;
+&#125;;*&#x2F;
+class Solution &#123;
+public:
+    ListNode* FindFirstCommonNode( ListNode* pHead1, ListNode* pHead2) &#123;
+        ListNode* l1&#x3D;pHead1,* l2&#x3D;pHead2;
+		while(l1!&#x3D;l2)&#123;
+			l1&#x3D;(l1&#x3D;&#x3D;NULL)?pHead2:l1-&gt;next;
+			l2&#x3D;(l2&#x3D;&#x3D;NULL)?pHead1:l2-&gt;next;
+		&#125;
+		return l1;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="删减结点法"><a href="#删减结点法" class="headerlink" title="删减结点法"></a>删减结点法</h4><p>获取两链表的长度，将较长的链表删至与较短的链表长度一样，然后开始遍历至公共结点。</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;*
+struct ListNode &#123;
+	int val;
+	struct ListNode *next;
+	ListNode(int x) :
+			val(x), next(NULL) &#123;
+	&#125;
+&#125;;*&#x2F;
+class Solution &#123;
+public:
+    ListNode* FindFirstCommonNode( ListNode* pHead1, ListNode* pHead2) &#123;
+        ListNode* l1&#x3D;pHead1,* l2&#x3D;pHead2;
+		int len1&#x3D;length(pHead1),len2&#x3D;length(pHead2);
+		while(len1!&#x3D;len2)&#123;
+			if(len1&gt;len2)&#123;
+				l1&#x3D;l1-&gt;next;
+				len1--;
+			&#125;else&#123;
+				l2&#x3D;l2-&gt;next;
+				len2--;
+			&#125;
+		&#125;
+		while(l1!&#x3D;l2)&#123;
+			l1&#x3D;l1-&gt;next;
+			l2&#x3D;l2-&gt;next;
+		&#125;
+		return l1;
+    &#125;
+	int length(ListNode* head)&#123;
+		int length&#x3D;0;
+		ListNode* cur&#x3D;head;
+		while(cur)&#123;
+			length++;
+			cur&#x3D;cur-&gt;next;
+		&#125;
+		return length;
+	&#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -1484,7 +1551,7 @@ public:
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">132.5k</span>&nbsp;字
+                class="white-color">133k</span>&nbsp;字
             
             
             
