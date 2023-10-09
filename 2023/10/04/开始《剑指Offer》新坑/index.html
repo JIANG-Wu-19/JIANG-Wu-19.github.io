@@ -390,14 +390,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2k
+                    3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    9 分
+                    14 分
                 </div>
                 
 
@@ -753,7 +753,185 @@ public:
 	&#125;
 &#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h2 id="JZ22-链表中倒数最后k个结点"><a href="#JZ22-链表中倒数最后k个结点" class="headerlink" title="JZ22 链表中倒数最后k个结点"></a>JZ22 链表中倒数最后k个结点</h2><h3 id="描述-4"><a href="#描述-4" class="headerlink" title="描述"></a>描述</h3><p>给一个长度为n链表，若其中包含环，请找出该链表的环的入口结点，否则，返回null。</p>
+<p>数据范围： $n \le 10000$，1&lt;&#x3D;结点值&lt;&#x3D;10000</p>
+<p>要求：空间复杂度 $O(1)$，时间复杂度 $O(n)$</p>
+<p>例如，输入{1,2},{3,4,5}时，对应的环形链表如下图所示：</p>
+<p><img src="/imgs/jzoffer/5.png" alt="img"></p>
+<p>可以看到环的入口结点的结点值为3，所以返回结点值为3的结点。</p>
+<h3 id="题解-4"><a href="#题解-4" class="headerlink" title="题解"></a>题解</h3><h4 id="hash"><a href="#hash" class="headerlink" title="hash"></a>hash</h4><p>使用hash键值对一一对应，不允许有重复，重复点为环的起点</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;*
+struct ListNode &#123;
+    int val;
+    struct ListNode *next;
+    ListNode(int x) :
+        val(x), next(NULL) &#123;
+    &#125;
+&#125;;
+*&#x2F;
+#include &lt;unordered_set&gt;
+class Solution &#123;
+public:
+    ListNode* EntryNodeOfLoop(ListNode* pHead) &#123;
+        if(pHead&#x3D;&#x3D;NULL) return NULL;
+        unordered_set&lt;ListNode*&gt; set;
+        while(pHead)&#123;
+            if(set.find(pHead)!&#x3D;set.end())&#123;
+                return pHead;
+            &#125;
+            set.insert(pHead);
+            pHead&#x3D;pHead-&gt;next;
+        &#125;
+        return NULL;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h4 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h4><p>使用快慢指针，快指针走两步，慢指针走一步，如果有环最终肯定会相遇，从相遇处到入口结点的距离与头结点与入口结点的距离相同</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;*
+struct ListNode &#123;
+    int val;
+    struct ListNode *next;
+    ListNode(int x) :
+        val(x), next(NULL) &#123;
+    &#125;
+&#125;;
+*&#x2F;
+class Solution &#123;
+public:
+    ListNode* EntryNodeOfLoop(ListNode* pHead) &#123;
+        if(pHead&#x3D;&#x3D;NULL) return NULL;
+        ListNode* l1&#x3D;pHead,* l2&#x3D;pHead;
+        while(l1!&#x3D;NULL&amp;&amp;l1-&gt;next!&#x3D;NULL)&#123;
+            l1&#x3D;l1-&gt;next-&gt;next;
+            l2&#x3D;l2-&gt;next;
+            if(l1&#x3D;&#x3D;l2) break;
+        &#125;
+
+        if(l1&#x3D;&#x3D;NULL||l1-&gt;next&#x3D;&#x3D;NULL) return NULL;
+        l1&#x3D;pHead;
+
+        while(l1!&#x3D;l2)&#123;
+            l1&#x3D;l1-&gt;next;
+            l2&#x3D;l2-&gt;next;
+        &#125;
+
+        return l1;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="JZ22-链表中倒数最后k个结点-1"><a href="#JZ22-链表中倒数最后k个结点-1" class="headerlink" title="JZ22 链表中倒数最后k个结点"></a>JZ22 链表中倒数最后k个结点</h2><h3 id="描述-5"><a href="#描述-5" class="headerlink" title="描述"></a>描述</h3><p>输入一个长度为n的链表，设链表中的元素的值为$a_i$ ，返回该链表中倒数第k个节点。</p>
+<p>如果该链表长度小于k，请返回一个长度为0的链表。</p>
+<p>例如输入{1,2,3,4,5},2时，对应的链表结构如下图所示：</p>
+<p><img src="/imgs/jzoffer/6.png" alt="img"></p>
+<p>其中蓝色部分为该链表的最后2个结点，所以返回倒数第2个结点（也即结点值为4的结点）即可，系统会打印后面所有的节点来比较。</p>
+<h3 id="题解-5"><a href="#题解-5" class="headerlink" title="题解"></a>题解</h3><h4 id="长度法"><a href="#长度法" class="headerlink" title="长度法"></a>长度法</h4><p>疯狂遍历，先遍历出长度，然后将倒数改为正数</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;**
+ * struct ListNode &#123;
+ *	int val;
+ *	struct ListNode *next;
+ *	ListNode(int x) : val(x), next(nullptr) &#123;&#125;
+ * &#125;;
+ *&#x2F;
+class Solution &#123;
+public:
+    &#x2F;**
+     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+     *
+     * 
+     * @param pHead ListNode类 
+     * @param k int整型 
+     * @return ListNode类
+     *&#x2F;
+    int len(ListNode* pHead)&#123;
+        ListNode* l&#x3D;pHead;
+        int len&#x3D;0;
+        while(l)&#123;
+            len++;
+            l&#x3D;l-&gt;next;
+        &#125;
+        return len;
+    &#125;
+    ListNode* FindKthToTail(ListNode* pHead, int k) &#123;
+        &#x2F;&#x2F; write code here
+        int length&#x3D;len(pHead);
+        if(length&lt;k || k&#x3D;&#x3D;0) return NULL;
+        int n&#x3D;length-k;
+        while(n--)&#123;
+            pHead&#x3D;pHead-&gt;next;
+        &#125;
+        return pHead;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="栈-2"><a href="#栈-2" class="headerlink" title="栈"></a>栈</h4><p>用栈很好想到，就是空间比较浪费</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;**
+ * struct ListNode &#123;
+ *	int val;
+ *	struct ListNode *next;
+ *	ListNode(int x) : val(x), next(nullptr) &#123;&#125;
+ * &#125;;
+ *&#x2F;
+#include &lt;stack&gt;
+class Solution &#123;
+public:
+    &#x2F;**
+     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+     *
+     * 
+     * @param pHead ListNode类 
+     * @param k int整型 
+     * @return ListNode类
+     *&#x2F;
+    ListNode* FindKthToTail(ListNode* pHead, int k) &#123;
+        &#x2F;&#x2F; write code here
+        stack&lt;ListNode*&gt; s;
+        while(pHead)&#123;
+            s.push(pHead);
+            pHead&#x3D;pHead-&gt;next;
+        &#125;
+        ListNode* res&#x3D;NULL;
+        while(k--)&#123;
+            if(s.empty()) return NULL;
+            res&#x3D;s.top();
+            s.pop();
+        &#125;
+        return res;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="快慢指针"><a href="#快慢指针" class="headerlink" title="快慢指针"></a>快慢指针</h4><p>连续两道用到快慢指针，这里的快慢指针有点类似于前面的长度法</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;**
+ * struct ListNode &#123;
+ *	int val;
+ *	struct ListNode *next;
+ *	ListNode(int x) : val(x), next(nullptr) &#123;&#125;
+ * &#125;;
+ *&#x2F;
+class Solution &#123;
+public:
+    &#x2F;**
+     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+     *
+     * 
+     * @param pHead ListNode类 
+     * @param k int整型 
+     * @return ListNode类
+     *&#x2F;
+    ListNode* FindKthToTail(ListNode* pHead, int k) &#123;
+        &#x2F;&#x2F; write code here
+        ListNode* fast&#x3D;pHead,* slow&#x3D;pHead;
+        if(k&#x3D;&#x3D;0) return NULL;
+        while(k--)&#123;
+            if(fast&#x3D;&#x3D;NULL) return NULL;
+            fast&#x3D;fast-&gt;next;
+        &#125;
+        while(fast)&#123;
+            slow&#x3D;slow-&gt;next;
+            fast&#x3D;fast-&gt;next;
+        &#125;
+        return slow;
+    &#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -1551,7 +1729,7 @@ public:
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">133k</span>&nbsp;字
+                class="white-color">134k</span>&nbsp;字
             
             
             
