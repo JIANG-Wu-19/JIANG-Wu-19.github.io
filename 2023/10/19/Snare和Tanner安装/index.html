@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="矩阵计算, J&amp;Ocean BLOG">
+    <meta name="keywords" content="Snare和Tanner安装, J&amp;Ocean BLOG">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>矩阵计算 | J&amp;Ocean BLOG</title>
+    <title>Snare和Tanner安装 | J&amp;Ocean BLOG</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -235,12 +235,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">矩阵计算</h1>
+                    <h1 class="description center-align post-title">Snare和Tanner安装</h1>
                 </div>
             </div>
         </div>
@@ -356,12 +356,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%9F%A9%E9%98%B5%E8%AE%A1%E7%AE%97/">
-                                <span class="chip bg-color">矩阵计算</span>
+                            <a href="/tags/%E8%9C%9C%E7%BD%90/">
+                                <span class="chip bg-color">蜜罐</span>
                             </a>
                         
-                            <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
-                                <span class="chip bg-color">深度学习</span>
+                            <a href="/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/">
+                                <span class="chip bg-color">信息安全</span>
                             </a>
                         
                     </div>
@@ -372,8 +372,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                动手学深度学习
+                            <a href="/categories/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB%E7%9A%84%E4%B8%9C%E8%A5%BF/" class="post-category">
+                                杂七杂八的东西
                             </a>
                         
                     </div>
@@ -385,7 +385,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-10-05
+                    2023-10-19
                 </div>
                 
 
@@ -394,14 +394,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    405
+                    855
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    4 分
                 </div>
                 
 
@@ -419,17 +419,114 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>以下内容在浏览器中显示有一点小问题，建议直接访问仓库<br>仓库地址：<a target="_blank" rel="noopener" href="https://github.com/JIANG-Wu-19/myNote/blob/master/machineLearning/%E5%90%91%E9%87%8F%E6%B1%82%E5%AF%BC.md">向量求导</a></p>
-<p>矩阵的求导等运算无论在高等数学还是线性代数的学习中都没有进行详细讲述，所以在学习DL还有ML之前都先进行相关运算的学习。</p>
-<p>首先用一张直观的图像展示向量导数的形状：</p>
-<p><img src="/imgs/dl/1.jpg" alt="img"></p>
-<p>下面进行详细的解释</p>
-<h2 id="标量对向量求导"><a href="#标量对向量求导" class="headerlink" title="标量对向量求导"></a>标量对向量求导</h2><p>$$<br>\mathbf{x}&#x3D;\left[\begin{array}{c}<br>x_1\<br>x_2\<br>\vdots\<br>x_n<br>\end{array}<br>\right]<br>,<br>\frac{\partial y}{\partial \mathbf{x}}&#x3D;\left[\frac{\partial y}{\partial x_1},\frac{\partial y}{\partial x_2},\ldots,\frac{\partial y}{\partial x_n}\right]<br>$$</p>
-<h2 id="向量对标量求导"><a href="#向量对标量求导" class="headerlink" title="向量对标量求导"></a>向量对标量求导</h2><p>$$<br>\mathbf{y}&#x3D;\left[\begin{array}{c}<br>y_1\<br>y_2\<br>\vdots\<br>y_m<br>\end{array}<br>\right]<br>,<br>\frac{\partial \mathbf{y}}{\partial x}&#x3D;\left[\begin{array}{c}<br>\frac{\partial y_1}{\partial x}\<br>\frac{\partial y_2}{\partial x}\<br>\vdots\<br>\frac{\partial y_m}{\partial x}<br>\end{array}<br>\right]<br>$$</p>
-<h2 id="向量对向量求导"><a href="#向量对向量求导" class="headerlink" title="向量对向量求导"></a>向量对向量求导</h2><p>$$<br>\mathbf{x}&#x3D;\left[\begin{array}{c}<br>x_1\<br>x_2\<br>\vdots\<br>x_n<br>\end{array}<br>\right]<br>$$</p>
-<p>$$<br>\mathbf{y}&#x3D;\left[\begin{array}{c}<br>y_1\<br>y_2\<br>\vdots\<br>y_m<br>\end{array}<br>\right]<br>$$</p>
-<p>$$<br>\frac{\partial \mathbf{y}}{\partial \mathbf{x}}&#x3D;\left[\begin{array}{c}<br>\frac{\partial y_1}{\partial \mathbf{x}}\<br>\frac{\partial y_2}{\partial \mathbf{x}}\<br>\vdots\<br>\frac{\partial y_m}{\partial \mathbf{x}}<br>\end{array}\right]&#x3D;\left[\begin{array}{c}\frac{\partial y_1}{\partial x_1},\frac{\partial y_1}{\partial x_2},\ldots,\frac{\partial y_1}{\partial x_n}\<br>\frac{\partial y_2}{\partial x_1},\frac{\partial y_2}{\partial x_2},\ldots,\frac{\partial y_2}{\partial x_n}\<br>\vdots\<br>\frac{\partial y_m}{\partial x_1},\frac{\partial y_m}{\partial x_2},\ldots,\frac{\partial y_m}{\partial x_n}\end{array}\right]<br>$$</p>
-<h2 id="向量链式法则"><a href="#向量链式法则" class="headerlink" title="向量链式法则"></a>向量链式法则</h2><p>$$<br>\frac{\partial y}{\partial \mathbf{x}}&#x3D;\frac{\partial y}{\partial u}\frac{\partial u}{\partial \mathbf{x}}\<br>\frac{\partial y}{\partial \mathbf{x}}&#x3D;\frac{\partial y}{\partial \mathbf{u}}\frac{\partial \mathbf{u}}{\partial \mathbf{x}}\<br>\frac{\partial \mathbf{y}}{\partial \mathbf{x}}&#x3D;\frac{\partial \mathbf{y}}{\partial \mathbf{u}}\frac{\partial \mathbf{u}}{\partial \mathbf{x}}\<br>$$</p>
+                <p>Resource</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/mushorg/snare">mushorg&#x2F;snare: Super Next generation Advanced Reactive honEypot (github.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/mushorg/tanner">mushorg&#x2F;tanner: He who flays the hide (github.com)</a></p>
+<p>Document</p>
+<p><a target="_blank" rel="noopener" href="https://snare.readthedocs.io/en/latest/">Welcome to SNARE’s documentation! — SNARE v0.3 documentation</a></p>
+<p><a target="_blank" rel="noopener" href="https://tanner.readthedocs.io/en/latest/">Welcome to TANNER’s documentation! — tanner 1.0 documentation</a></p>
+<blockquote>
+<p>snare：<em><strong>Super Next generation Advanced Reactive honEypot</strong></em></p>
+<ul>
+<li>SNARE is a web application honeypot sensor attracting all sort of maliciousness from the Internet.</li>
+<li>TANNER is a remote data analysis and classification service to evaluate HTTP requests and composing the response then served by <a target="_blank" rel="noopener" href="https://github.com/mushorg/snare">SNARE</a>. TANNER uses multiple application vulnerability type emulation techniques when providing responses for SNARE. In addition, TANNER provides Dorks for SNARE powering its luring capabilities.</li>
+</ul>
+</blockquote>
+<h2 id="操作环境"><a href="#操作环境" class="headerlink" title="操作环境"></a>操作环境</h2><ul>
+<li><p>操作系统:Ubuntu20.04.2</p>
+<pre class="line-numbers language-none"><code class="language-none">Linux version 5.15.0-86-generic (buildd@lcy02-amd64-062) (gcc (Ubuntu 9.4.0-1ubuntu1~20.04.2) 9.4.0, GNU ld (GNU Binutils for Ubuntu) 2.34) #96~20.04.1-Ubuntu SMP Thu Sep 21 13:23:37 UTC 2023<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>预安装Python3.8.0,将pip3升级到最新版本</p>
+<p>同时将pip进行换源,方便后续下载</p>
+<pre class="line-numbers language-none"><code class="language-none">pip install --upgrade pip
+pip install pip -U
+pip config set global.index-url https:&#x2F;&#x2F;pypi.tuna.tsinghua.edu.cn&#x2F;simple<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h2 id="snare安装"><a href="#snare安装" class="headerlink" title="snare安装"></a>snare安装</h2><ol>
+<li><p>在指定好的路径(自由指定)clone源码</p>
+<pre class="line-numbers language-none"><code class="language-none">git clone https:&#x2F;&#x2F;github.com&#x2F;mushorg&#x2F;snare.git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>进入源码文件夹,安装软件依赖</p>
+<pre class="line-numbers language-none"><code class="language-none">cd sare
+sudo pip3 install -r requirements.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+<li><p>安装snare</p>
+<pre class="line-numbers language-none"><code class="language-none">sudo python3 setup.py install<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>查看到当前目录结构为</p>
+<pre class="line-numbers language-none"><code class="language-none">bin          docker-compose.yml  .github     readthedocs.yml   Snare.egg-info
+build        Dockerfile          .gitignore  requirements.txt
+.coveragerc  docs                LICENSE     setup.py
+dist         .git                README.md   snare<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>则为安装成功</p>
+</li>
+</ol>
+<h2 id="tanner安装"><a href="#tanner安装" class="headerlink" title="tanner安装"></a>tanner安装</h2><ol>
+<li><p>安装redis</p>
+<pre class="line-numbers language-none"><code class="language-none">sudo apt-get install redis-server
+redis-server <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+<li><p>创建PHP沙箱</p>
+<p>参考<a target="_blank" rel="noopener" href="https://github.com/mushorg/phpox">mushorg&#x2F;phpox: PHP Sandbox (github.com)</a></p>
+<p>其中BFR笔者未能成功安装,但是也能成功运行</p>
+</li>
+<li><p>安装docker</p>
+<p>参考<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/651148141">最详细的ubuntu 安装 docker教程 - 知乎 (zhihu.com)</a></p>
+<p>对于其中的<strong>添加Docker官方GPG key失败</strong>问题,<a target="_blank" rel="noopener" href="https://blog.csdn.net/sunchaoyiA/article/details/81231000">添加Docker官方GPG key失败解决方案</a>这篇文章解决了问题</p>
+<p>具体做法:</p>
+<ul>
+<li><p>把官方GPG key下载到本地,下载下来是一个gpg文件,<a target="_blank" rel="noopener" href="https://download.docker.com/linux/ubuntu/gpg">下载地址</a></p>
+</li>
+<li><p>下载到本地后，采用如下命令，安装官方GPG key</p>
+<pre class="line-numbers language-none"><code class="language-none">sudo apt-key add &lt;gpg path&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+</li>
+<li><p>在指定好的路径(自由指定)clone源码</p>
+<pre class="line-numbers language-none"><code class="language-none">git clone https:&#x2F;&#x2F;github.com&#x2F;mushorg&#x2F;tanner.git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>进入源码文件夹,安装软件依赖</p>
+<pre class="line-numbers language-none"><code class="language-none">cd tanner
+sudo pip3 install -r requirements.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+<li><p>安装tanner</p>
+<pre class="line-numbers language-none"><code class="language-none">sudo python3 setup.py install<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>在tanner目录下运行<code>sudo tanner</code>,出现</p>
+<pre class="line-numbers language-none"><code class="language-none">      _________    _   ___   ____________
+     &#x2F;_  __&#x2F;   |  &#x2F; | &#x2F; &#x2F; | &#x2F; &#x2F; ____&#x2F; __ \
+      &#x2F; &#x2F; &#x2F; &#x2F;| | &#x2F;  |&#x2F; &#x2F;  |&#x2F; &#x2F; __&#x2F; &#x2F; &#x2F;_&#x2F; &#x2F;
+     &#x2F; &#x2F; &#x2F; ___ |&#x2F; &#x2F;|  &#x2F; &#x2F;|  &#x2F; &#x2F;___&#x2F; _, _&#x2F;
+    &#x2F;_&#x2F; &#x2F;_&#x2F;  |_&#x2F;_&#x2F; |_&#x2F;_&#x2F; |_&#x2F;_____&#x2F;_&#x2F; |_|
+
+    
+Debug logs will be stored in &#x2F;opt&#x2F;tanner&#x2F;tanner.log
+Error logs will be stored in &#x2F;opt&#x2F;tanner&#x2F;tanner.err
+&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; Running on http:&#x2F;&#x2F;0.0.0.0:8090 &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
+(Press CTRL+C to quit)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>以及<code>curl http://localhost:8090</code>返回<code>Tanner server</code>说明安装成功</p>
+</li>
+</ol>
+<h2 id="snare搭配tanner的example"><a href="#snare搭配tanner的example" class="headerlink" title="snare搭配tanner的example"></a>snare搭配tanner的example</h2><h3 id="使用Snare克隆页面"><a href="#使用Snare克隆页面" class="headerlink" title="使用Snare克隆页面"></a>使用Snare克隆页面</h3><pre class="line-numbers language-none"><code class="language-none">sudo clone --target http:&#x2F;&#x2F;example.com --path &lt;path&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="启动Snare并在后台挂载Tanner"><a href="#启动Snare并在后台挂载Tanner" class="headerlink" title="启动Snare并在后台挂载Tanner"></a>启动Snare并在后台挂载Tanner</h3><pre class="line-numbers language-none"><code class="language-none">sudo snare --port 8080 --page-dir example.com --path &lt;tanner-ip&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>输出</p>
+<pre class="line-numbers language-none"><code class="language-none">   _____ _   _____    ____  ______
+  &#x2F; ___&#x2F;&#x2F; | &#x2F; &#x2F;   |  &#x2F; __ \&#x2F; ____&#x2F;
+  \__ \&#x2F;  |&#x2F; &#x2F; &#x2F;| | &#x2F; &#x2F;_&#x2F; &#x2F; __&#x2F;
+ ___&#x2F; &#x2F; &#x2F;|  &#x2F; ___ |&#x2F; _, _&#x2F; &#x2F;___
+&#x2F;____&#x2F;_&#x2F; |_&#x2F;_&#x2F;  |_&#x2F;_&#x2F; |_&#x2F;_____&#x2F;
+    
+serving with uuid ea504261-df23-4e4c-a2e1-72a19725dc17
+Debug logs will be stored in &#x2F;snare&#x2F;snare&#x2F;snare.log
+Error logs will be stored in &#x2F;snare&#x2F;snare&#x2F;snare.err
+&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; Running on http:&#x2F;&#x2F;127.0.0.1:8080 &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
+(Press CTRL+C to quit)
+privileges dropped, running as &quot;nobody:nogroup&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>连接成功</p>
 
                 
             </div>
@@ -456,7 +553,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jiang-wu-19.github.io/2023/10/05/%E7%9F%A9%E9%98%B5%E8%AE%A1%E7%AE%97/">https://jiang-wu-19.github.io/2023/10/05/%E7%9F%A9%E9%98%B5%E8%AE%A1%E7%AE%97/</a>
+                    <a href="https://jiang-wu-19.github.io/2023/10/19/Snare%E5%92%8CTanner%E5%AE%89%E8%A3%85/">https://jiang-wu-19.github.io/2023/10/19/Snare%E5%92%8CTanner%E5%AE%89%E8%A3%85/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -494,12 +591,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%9F%A9%E9%98%B5%E8%AE%A1%E7%AE%97/">
-                                    <span class="chip bg-color">矩阵计算</span>
+                                <a href="/tags/%E8%9C%9C%E7%BD%90/">
+                                    <span class="chip bg-color">蜜罐</span>
                                 </a>
                             
-                                <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
-                                    <span class="chip bg-color">深度学习</span>
+                                <a href="/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/">
+                                    <span class="chip bg-color">信息安全</span>
                                 </a>
                             
                         </div>
@@ -932,9 +1029,64 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2023/10/19/Snare%E5%92%8CTanner%E5%AE%89%E8%A3%85/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Snare和Tanner安装">
+                        
+                        <span class="card-title">Snare和Tanner安装</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            snare和tanner软件安装
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-19
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB%E7%9A%84%E4%B8%9C%E8%A5%BF/" class="post-category">
+                                    杂七杂八的东西
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%9C%9C%E7%BD%90/">
+                        <span class="chip bg-color">蜜罐</span>
+                    </a>
+                    
+                    <a href="/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/">
+                        <span class="chip bg-color">信息安全</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2023/10/09/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0HW1-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/">
                     <div class="card-image">
@@ -952,9 +1104,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-10-09
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-09
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -972,55 +1124,6 @@
                     
                     <a href="/tags/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/">
                         <span class="chip bg-color">线性回归</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2023/10/04/%E5%BC%80%E5%A7%8B%E3%80%8A%E5%89%91%E6%8C%87Offer%E3%80%8B%E6%96%B0%E5%9D%91/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="开始《剑指Offer》新坑">
-                        
-                        <span class="card-title">开始《剑指Offer》新坑</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            剑指Offer开刷
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-04
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%88%B7%E9%A2%98/" class="post-category">
-                                    刷题
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%89%91%E6%8C%87Offer/">
-                        <span class="chip bg-color">剑指Offer</span>
                     </a>
                     
                 </div>
