@@ -1,0 +1,1916 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="信息与网络安全笔记, J&amp;Ocean BLOG">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>信息与网络安全笔记 | J&amp;Ocean BLOG</title>
+    <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+
+   <style>
+    body{
+       background-image: url(https://github.com/JIANG-Wu-19/JIANG-Wu-19/blob/master/99759389_p0.png?raw=true);
+       background-repeat:no-repeat;
+       background-size:cover;
+       background-attachment:fixed;
+    }
+</style>
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.ico" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">J&amp;Ocean BLOG</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.ico" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">J&amp;Ocean BLOG</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">信息与网络安全笔记</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/">
+                                <span class="chip bg-color">信息安全</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                笔记
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-10-21
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4.9k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    18 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="概论"><a href="#概论" class="headerlink" title="概论"></a>概论</h2><h3 id="网络安全威胁"><a href="#网络安全威胁" class="headerlink" title="网络安全威胁"></a>网络安全威胁</h3><ul>
+<li>恶意软件</li>
+<li>安全性破坏</li>
+<li>DoS攻击</li>
+</ul>
+<h3 id="信息与网络安全目标"><a href="#信息与网络安全目标" class="headerlink" title="信息与网络安全目标"></a>信息与网络安全目标</h3><p>三个关键目标：</p>
+<ul>
+<li>机密性<ul>
+<li>数据机密性</li>
+<li>隐私性</li>
+</ul>
+</li>
+<li>完整性<ul>
+<li>数据完整性</li>
+<li>系统完整性</li>
+</ul>
+</li>
+<li>可用性</li>
+</ul>
+<h3 id="TCP-x2F-IP安全服务模型"><a href="#TCP-x2F-IP安全服务模型" class="headerlink" title="TCP&#x2F;IP安全服务模型"></a>TCP&#x2F;IP安全服务模型</h3><p><img src="/imgs/iis/1.png" alt="image-20230915101220938"></p>
+<h3 id="网络攻击"><a href="#网络攻击" class="headerlink" title="网络攻击"></a>网络攻击</h3><ul>
+<li>主动攻击<ul>
+<li>伪装</li>
+<li>重放</li>
+<li>篡改</li>
+<li>拒绝服务</li>
+</ul>
+</li>
+<li>被动攻击<ul>
+<li>窃听攻击</li>
+<li>流量分析</li>
+</ul>
+</li>
+</ul>
+<h3 id="五类安全服务"><a href="#五类安全服务" class="headerlink" title="五类安全服务"></a>五类安全服务</h3><ul>
+<li>认证</li>
+<li>访问控制</li>
+<li>保密</li>
+<li>完整性</li>
+<li>不可否认</li>
+</ul>
+<h3 id="八类安全机制"><a href="#八类安全机制" class="headerlink" title="八类安全机制"></a>八类安全机制</h3><p><img src="/imgs/iis/2.png" alt="image-20230915102412545"></p>
+<h2 id="数据加密技术"><a href="#数据加密技术" class="headerlink" title="数据加密技术"></a>数据加密技术</h2><h3 id="数据加密技术概述"><a href="#数据加密技术概述" class="headerlink" title="数据加密技术概述"></a>数据加密技术概述</h3><ul>
+<li>密码学</li>
+<li>加密系统</li>
+<li>密码分析</li>
+<li>加密</li>
+<li>明文</li>
+<li>密文</li>
+<li>密钥</li>
+</ul>
+<h4 id="对称密码和公钥密码"><a href="#对称密码和公钥密码" class="headerlink" title="对称密码和公钥密码"></a>对称密码和公钥密码</h4><ul>
+<li>对称密码<ul>
+<li>密钥：加密和解密密钥相同或可相互推导</li>
+<li>优点：加密速度快</li>
+<li>缺点：密钥管理复杂</li>
+</ul>
+</li>
+<li>公钥密码<ul>
+<li>密钥：公钥与私钥不同且难以用私钥推导公钥</li>
+<li>优点：密钥管理简单</li>
+<li>缺点：加密速度慢</li>
+</ul>
+</li>
+</ul>
+<h4 id="对称密钥"><a href="#对称密钥" class="headerlink" title="对称密钥"></a>对称密钥</h4><p>加密和解密使用的是同样的密钥</p>
+<h4 id="公开密钥"><a href="#公开密钥" class="headerlink" title="公开密钥"></a>公开密钥</h4><ul>
+<li>加密和解密的密钥不同</li>
+<li>密钥分为公钥、私钥</li>
+</ul>
+<h4 id="密码学基本原则之一"><a href="#密码学基本原则之一" class="headerlink" title="密码学基本原则之一"></a>密码学基本原则之一</h4><ul>
+<li>Kerckhoffs原则：密码系统是安全的，表明可以公开除了密钥之外的整个密码系统的一切内容</li>
+<li>密码系统的内部工作原理对于攻击者完全公开，唯一秘密是密钥</li>
+</ul>
+<p>维护密钥成本低于维护密码算法</p>
+<h3 id="经典加密"><a href="#经典加密" class="headerlink" title="经典加密"></a>经典加密</h3><h4 id="简单替换密码"><a href="#简单替换密码" class="headerlink" title="简单替换密码"></a>简单替换密码</h4><p>改进：非常规字母表替换</p>
+<p>破解方法一：穷举式密钥检索</p>
+<p>破解方法二：统计字母频率</p>
+<h4 id="双换位密码"><a href="#双换位密码" class="headerlink" title="双换位密码"></a>双换位密码</h4><h4 id="一次性密码本"><a href="#一次性密码本" class="headerlink" title="一次性密码本"></a>一次性密码本</h4><p>$明文 \oplus 密钥&#x3D;密文$</p>
+<h3 id="对称密钥加密"><a href="#对称密钥加密" class="headerlink" title="对称密钥加密"></a>对称密钥加密</h3><h4 id="对称密钥加密的分类"><a href="#对称密钥加密的分类" class="headerlink" title="对称密钥加密的分类"></a>对称密钥加密的分类</h4><ul>
+<li>流密码加密—类似于一次性密码本<ul>
+<li>密钥较短</li>
+<li>密钥延展成长二进制码流</li>
+<li>类似一次性密码本</li>
+</ul>
+</li>
+<li>分组密码加密—类似于电报密码本<ul>
+<li>密钥决定密码本的选择</li>
+<li>电报密码本的电子版本</li>
+<li>扰乱和扩散的两个原则</li>
+</ul>
+</li>
+</ul>
+<h4 id="流密码加密"><a href="#流密码加密" class="headerlink" title="流密码加密"></a>流密码加密</h4><p><img src="/imgs/iis/3.png" alt="image-20231008111905960"></p>
+<p>用n位长度的密钥K，并将其延展成长长的密钥流，然后该密钥流与明文P进行异或运算，生成密文C。接收方再用同样的方法解密</p>
+<ul>
+<li>A5&#x2F;1算法<ul>
+<li>A5 &#x2F; 1是用于在GSM蜂窝电话标准中提供无线通信隐私的流密码算法。</li>
+<li>A5 &#x2F; 1算法使用三个线性反馈移位寄存器：<ul>
+<li>X: 19 bits (x0,x1,x2, …,x18)</li>
+<li>Y: 22 bits (y0,y1,y2, …,y21)</li>
+<li>Z: 23 bits (z0,z1,z2, …,z22)</li>
+</ul>
+</li>
+<li>A5&#x2F;1算法的密钥K共64位，用于三个线性反馈移位寄存器的初始填充，充当三个寄存器的初始值</li>
+<li>三个寄存器用密钥填充之后，就可以开始滚动生成密钥流了。每个回合可以拆分为三个步骤：<ul>
+<li>反馈多项式（Feedback Polynomial）<ul>
+<li>这里使用的是择多原则，三个寄存器中各选择一个钟控信号，19位寄存器中为第8位，22位、23位寄存器中皆为第10位。</li>
+<li>根据这三个钟控信号的取值，必定有0或1数量居多，居多的寄存器需要进行位移操作。</li>
+</ul>
+</li>
+<li>位移<ul>
+<li>$m&#x3D;maj(x_8,y_{10},z_{10})$</li>
+<li>需要移位的寄存器向右移位，将t填入空出来的第0位</li>
+<li>if $x_8&#x3D;m$，X右移，$t&#x3D;x_{13} \oplus x_{16} \oplus x_{17} \oplus x_{18}$</li>
+<li>if $y_{10}&#x3D;m$，Y右移，$t&#x3D;y_{20} \oplus y_{21}$</li>
+<li>if $z_{10}&#x3D;m$，Z右移，$t&#x3D;z_7 \oplus z_{20} \oplus z_{21} \oplus z_{22}$</li>
+</ul>
+</li>
+<li>取KEY<ul>
+<li>取三个寄存器的最后一位，也就是19位、22位、23位，进行异或操作，得到的结果为这一轮密钥流的一位:$Keystream bit&#x3D;x_{18} \oplus y_{21} \oplus z_{22}$</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="分组密码加密"><a href="#分组密码加密" class="headerlink" title="分组密码加密"></a>分组密码加密</h4><ul>
+<li>将明文分割成<strong>固定长度</strong>的分组，并生成固定长度的密文分组；</li>
+<li>密文都是通过“用函数F对明文进行若干轮的<strong>迭代</strong>计算”得到的；</li>
+<li>函数F：依赖于前一轮计算的输出和密钥K，称为<strong>轮函数</strong>；</li>
+<li>一般用<strong>软件</strong>实现</li>
+</ul>
+<h5 id="Feistel密码"><a href="#Feistel密码" class="headerlink" title="Feistel密码"></a>Feistel密码</h5><ul>
+<li>明文分组P被分割成左右两部分，$P&#x3D;(L_0,R_0)$</li>
+<li>对于每一轮i，i&#x3D;1,2,3,…,n<ul>
+<li>$L_i&#x3D;R_{i-1}$</li>
+<li>$R_i&#x3D;L_{i-1} \oplus F(R_{i-1},K_i)$</li>
+</ul>
+</li>
+<li>密文：$C&#x3D;(L_n,R_n)$</li>
+<li>解密<ul>
+<li>$C&#x3D;(L_n,R_n)$</li>
+<li>$R_{i-1}&#x3D;L_i$</li>
+<li>$L_{i-1}&#x3D;R_i \oplus F(R_{i-1},K_i)$</li>
+<li>$P&#x3D;(L_0,R_0)$</li>
+</ul>
+</li>
+</ul>
+<p><img src="/imgs/iis/4.png" alt="image-20231016194440635"></p>
+<h5 id="DES"><a href="#DES" class="headerlink" title="DES"></a>DES</h5><ul>
+<li><p>1970年代</p>
+</li>
+<li><p>基于IBM的Lucifer 密码</p>
+</li>
+<li><p>其争议性</p>
+<ul>
+<li><p>NSA密码参与；</p>
+</li>
+<li><p>设计过程保密；</p>
+</li>
+<li><p>密钥长度从128位降到56位；</p>
+</li>
+<li><p>对Lucifer 进行了一些修改。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>原理</p>
+<ul>
+<li>使用一个56 位的密钥以及附加的8 位奇偶校验位，产生最大64 位的分组大小；</li>
+<li>使用Feistel技术，将加密的文本块分成两半;</li>
+<li>用子密钥对其中一半应用循环功能，然后将输出与另一半进行“异或”运算；</li>
+<li>接着交换这两半，这一过程会继续下去，但最后一个循环不交换。</li>
+<li>DES 使用16 个循环，使用异或，置换，代换，移位操作四种基本运算。</li>
+<li>S-box起到重要作用，每一个S-box将6个二进制位映射到4个二进制位。</li>
+</ul>
+<p><img src="/imgs/iis/5.png" alt="image-20231016194723854"></p>
+<p><img src="/imgs/iis/6.png" alt="image-20231016195055394"></p>
+<p><img src="/imgs/iis/7.png" alt="image-20231016195201337"></p>
+<p><img src="/imgs/iis/8.png" alt="image-20231016195247933"></p>
+<h5 id="AES"><a href="#AES" class="headerlink" title="AES"></a>AES</h5><ul>
+<li>替代DES;</li>
+<li>迭代式分组加密;</li>
+<li>没有采用Feistel结构;</li>
+<li>分组大小为128位;</li>
+<li>三种密钥长度：128，192，256</li>
+<li>依照密钥长度不同，运算轮次从10轮至14轮不等</li>
+<li>每轮包含4个函数，分为3个层次<ul>
+<li>ByteSub(非线性层)</li>
+<li>ShiftRow(线性混合层)</li>
+<li>MixColumn(非线性层)</li>
+<li>AddRoundKey(密钥添加层)</li>
+</ul>
+</li>
+</ul>
+<p><img src="/imgs/iis/9.png" alt="image-20231016201355735"></p>
+<ul>
+<li>行移位</li>
+</ul>
+<p><img src="/imgs/iis/10.png" alt="image-20231016201510542"></p>
+<p><img src="/imgs/iis/11.png" alt="image-20231016201604209"></p>
+<ul>
+<li>轮密钥合并</li>
+</ul>
+<p><img src="/imgs/iis/12.png" alt="image-20231016201635295"></p>
+<h3 id="公开密钥加密"><a href="#公开密钥加密" class="headerlink" title="公开密钥加密"></a>公开密钥加密</h3><p>对称密钥带来的问题：</p>
+<ul>
+<li>密钥不能公开；</li>
+<li>如何安全地交换密钥</li>
+<li>如何确认发送者身份</li>
+</ul>
+<p>需要解决：</p>
+<ul>
+<li>可靠密钥的传输通道问题</li>
+<li>如何提供与手写签名等效的认证体系</li>
+</ul>
+<h4 id="公钥加密算法"><a href="#公钥加密算法" class="headerlink" title="公钥加密算法"></a>公钥加密算法</h4><ul>
+<li>公钥加密算法使用两把完全不同但又是完全匹配的一对钥匙—公钥和私钥。</li>
+<li>加密明文时采用公钥加密。</li>
+<li>解密密文时使用私钥才能完成，只有使用匹配的一对公钥和私钥，才能完成加密和解密过程。</li>
+</ul>
+<p><strong>公开的密钥为公钥</strong></p>
+<p><strong>不公开的密钥为私钥</strong></p>
+<p><img src="/imgs/iis/13.png" alt="image-20231016202349985"></p>
+<h5 id="公钥加密"><a href="#公钥加密" class="headerlink" title="公钥加密"></a>公钥加密</h5><ul>
+<li>两个密钥：<ul>
+<li>公钥：可为任何人知道，用来加密消息或者验证签名;</li>
+<li>私钥：只有接收者本人知道，用来解密消息和签名。</li>
+</ul>
+</li>
+<li>不对称性：<ul>
+<li>用来加密消息的密钥不能用来解密消息</li>
+</ul>
+</li>
+</ul>
+<p><img src="/imgs/iis/14.png" alt="image-20231016202822051"></p>
+<h5 id="公钥密码系统的加密原理"><a href="#公钥密码系统的加密原理" class="headerlink" title="公钥密码系统的加密原理"></a>公钥密码系统的加密原理</h5><ul>
+<li>每个通信实体有一对密钥（公钥，私钥）。公钥公开，用于加密和验证签名，私钥保密，用作解密和签名</li>
+<li>A向B 发送消息，用B的公钥加密</li>
+<li>B收到密文后，用自己的私钥解密</li>
+<li>任何人向B发送信息都可以使用同一个密钥（B的公钥）加密,没有其他人可以得到B的私钥，所以只有B可以解密</li>
+</ul>
+<p><img src="/imgs/iis/15.png" alt="image-20231016210442978"></p>
+<h4 id="通讯方式"><a href="#通讯方式" class="headerlink" title="通讯方式"></a>通讯方式</h4><h5 id="第一回合"><a href="#第一回合" class="headerlink" title="第一回合"></a>第一回合</h5><ul>
+<li>正常情况<ul>
+<li>“客户”-&gt;“服务器”：你好；</li>
+<li>“服务器”-&gt;“客户”：你好，我是服务器；</li>
+<li>“客户”-&gt;“服务器”：我的密码是……</li>
+</ul>
+</li>
+<li>黑客入侵<ul>
+<li>“客户”-&gt;“服务器”：你好；</li>
+<li>黑客在“客户”和“服务器”之间的某个路由器上截获“客户”发给服务器的信息，然后自己冒充“服务器”；</li>
+<li>“黑客”-&gt;“客户”：你好，我是服务器；</li>
+<li>“客户”-&gt;“黑客”：我的密码是……</li>
+</ul>
+</li>
+</ul>
+<h5 id="第二回合"><a href="#第二回合" class="headerlink" title="第二回合"></a>第二回合</h5><ul>
+<li>“客户”-&gt;“服务器”：你好；</li>
+<li>“黑客”-&gt;“客户”：你好，我是服务器；</li>
+<li>“客户”-&gt;“黑客”：向我证明你就是服务器；</li>
+<li>“黑客”-&gt;“客户”：你好，我是服务器{你好，我是服务器}[？？？|RSA]。</li>
+<li>黑客无法冒充，因为他不知道服务器的私钥，无法加密某个字符串后发送给客户去验证。</li>
+<li>“客户”：有内鬼，终止交易！</li>
+</ul>
+<h5 id="第三回合"><a href="#第三回合" class="headerlink" title="第三回合"></a>第三回合</h5><ul>
+<li>“客户”-&gt;“服务器”：你好</li>
+<li>“服务器”-&gt;“客户”：你好，我是服务器</li>
+<li>“客户”-&gt;“服务器”：向我证明你就是服务器</li>
+<li>“服务器”-&gt;“客户”：你好，我是服务器{你好，我是服务器}[私钥|RSA]</li>
+<li>“客户”-&gt;“服务器”：{我的帐号是aaa，密码是123，把我的余额的信息发给我看看}[公钥|RSA]</li>
+<li>“服务器”-&gt;“客户”：{你的余额是100元}[私钥|RSA]</li>
+</ul>
+<h5 id="第四回合"><a href="#第四回合" class="headerlink" title="第四回合"></a>第四回合</h5><ul>
+<li>“客户”-&gt;“服务器”：你好</li>
+<li>“服务器”-&gt;“客户”：你好，我是服务器</li>
+<li>“客户”-&gt;“服务器”：向我证明你就是服务器</li>
+<li>“服务器”-&gt;“客户”：你好，我是服务器{你好，我是服务器}[私钥|RSA]</li>
+<li>“客户”-&gt;“服务器”：{我们后面的通信过程，用对称加密来进行，这里是对称加密算法和密钥}[公钥|RSA]</li>
+<li>&#x2F;&#x2F;红色字体的部分是对称加密的算法和密钥的具体内容，客户把它们发送给服务器。</li>
+<li>“服务器”-&gt;“客户”：{OK，收到！}[密钥|对称加密算法]</li>
+<li>“客户”-&gt;“服务器”：{我的帐号是aaa，密码是123，把我的余额的信息发给我看看}[密钥|对称加密算法]</li>
+<li>“服务器”-&gt;“客户”：{你的余额是100元}[密钥|对称加密算法]</li>
+</ul>
+<h4 id="补充数学概念"><a href="#补充数学概念" class="headerlink" title="补充数学概念"></a>补充数学概念</h4><h5 id="同余式"><a href="#同余式" class="headerlink" title="同余式"></a>同余式</h5><p>同余式是数论的基本概念之一，设m是给定的一个正整数，a、b是整数，若满足$m|(a-b)$，则称a与b对模m同余，记为$a \equiv b(\mod m)$，这个式子称为模m的同余式。</p>
+<p>$m|(a-b)$表示m能够整除(a-b)，即$a \mod m&#x3D;b \mod m$</p>
+<h5 id="欧拉函数"><a href="#欧拉函数" class="headerlink" title="欧拉函数"></a>欧拉函数</h5><p>欧拉函数$\varphi (n)$是小于等于n的正整数中与n互质的数的个数</p>
+<p>对于任意互质的a和n，有$a^{\varphi (n)}\equiv 1(\mod n)$，即$a^{\varphi (n)} \mod n &#x3D;1$</p>
+<p>如果n是质数，则$\varphi (n) &#x3D;n-1$，因为质数与小于它的每一个正整数都互质</p>
+<p>如果$n&#x3D;p*q$，而p和q互质，则：</p>
+<p>$\varphi (n)&#x3D;\varphi(p*q)&#x3D;\varphi(p)*\varphi(q)&#x3D;(p-1)(q-1)$</p>
+<h4 id="RSA"><a href="#RSA" class="headerlink" title="RSA"></a>RSA</h4><ul>
+<li><p>生成公钥&#x2F;私钥对</p>
+<ol>
+<li>取两个大素数p, q ($p \neq q$), 保密;</li>
+<li>计算$n&#x3D;p*q$，公开n;</li>
+<li>计算欧拉函数$\varphi (n)&#x3D;(p-1)(q-1)$；</li>
+<li>随机选择整数e($1 \lt e \lt \varphi(n)$)，使得e和$\varphi(n)$互质即两个数的最大公约数为1；</li>
+<li>计算d,使得$ed&#x3D; 1(\mod \varphi(n))$，也就是$ed&#x3D;k\varphi(n)+1$；</li>
+<li>公开$(e,n)&#x3D;(5,119)$；</li>
+<li>将d保密，丢弃p,q</li>
+</ol>
+<p>$$<br>m^{k(p-1)(q-1)+1} \equiv m(\mod n)<br>$$</p>
+<p>$$<br>m^{ed} \equiv m(\mod n)<br>$$</p>
+</li>
+<li><p>加密消息$m$</p>
+<ul>
+<li>获取接收者的公钥：$K_u&#x3D;\lbrace e,n \rbrace$</li>
+<li>计算：$c&#x3D;m^e \mod n(0 \le m \le n)$</li>
+</ul>
+</li>
+<li><p>解密密文$c$</p>
+<ul>
+<li>使用自己的私钥：$K_R&#x3D;\lbrace d,n \rbrace$</li>
+<li>计算：$m&#x3D;c^d \mod n$</li>
+</ul>
+</li>
+</ul>
+<h4 id="Diffie-Hellman密钥交换方案"><a href="#Diffie-Hellman密钥交换方案" class="headerlink" title="Diffie Hellman密钥交换方案"></a>Diffie Hellman密钥交换方案</h4><p>使两个用户安全地交换一个密钥以便用于以后的报文加密，这个算法本身限于<strong>密钥交换</strong>的用途</p>
+<p>在Diffie-Hellman密钥交换算法中单项函数是模指数运算。它的逆过程是离散对数问题，其Diffie-Hellman算法的保密性基于求mod P解离散对数问题的困难</p>
+<h5 id="本原元"><a href="#本原元" class="headerlink" title="本原元"></a>本原元</h5><p>定义素数g的本原元（primitive root）为其乘方能够产生从1到g-1的所有整数的数。也就是说，如果n是素数g的本原元，那么有下列数字：<br>$$<br>n \mod g,n^2 \mod g,n^{g-1} \mod g<br>$$<br>这g−1个数字互不相同，而且包含了从1到g−1的所有整数</p>
+<h5 id="离散对数"><a href="#离散对数" class="headerlink" title="离散对数"></a>离散对数</h5><p>对于任何小于g的整数a和素数g的本原元n来说，能够找到唯一的指数i满足：<br>$$<br>a&#x3D;b^i \mod g ,0 \le i \le (g-1)<br>$$<br>称指数i为a对于基数n和运算mod g 的离散对数</p>
+<h5 id="密钥原理"><a href="#密钥原理" class="headerlink" title="密钥原理"></a>密钥原理</h5><p>设$g$是一个质数，$n$是$g$的本原元，要求$n$和$g$是公开的，则网络中的某一用户可以任选一个小于$g$的整数$a$作为秘密密钥</p>
+<p><img src="/imgs/iis/16.png" alt="image-20231020104322307"></p>
+<h4 id="椭圆曲线加密ECC"><a href="#椭圆曲线加密ECC" class="headerlink" title="椭圆曲线加密ECC"></a>椭圆曲线加密ECC</h4><h5 id="椭圆曲线"><a href="#椭圆曲线" class="headerlink" title="椭圆曲线"></a>椭圆曲线</h5><p>已知椭圆曲线群<br>$$<br>E_p(a,b):y^2&#x3D;x^3+ax+b,4a^3+27b^2 \neq 0<br>$$<br><strong>加法</strong></p>
+<p>过曲线上的两点A、B画一条直线，找到直线与椭圆曲线的交点，交点关于x轴对称位置的点，定义为A+B，即为加法。</p>
+<p><img src="/imgs/iis/17.png" alt="image-20231020110318344"></p>
+<p><strong>取反</strong></p>
+<p>将A关于x轴对称位置的点定义为-A，即椭圆曲线的正负取反运算</p>
+<p><img src="/imgs/iis/18.png" alt="image-20231020110352306"></p>
+<p><strong>二倍运算</strong></p>
+<p>将过椭圆曲线在A点的切线，与椭圆曲线的交点，交点关于x轴对称位置的点，定义为A + A，即2A，即为二倍运算。</p>
+<p><img src="/imgs/iis/19.png" alt="image-20231020110617599"></p>
+<p><strong>无穷远点</strong></p>
+<p>如果将A与-A相加，过A与-A的直线平行于y轴，可以认为直线与椭圆曲线相交于无穷远点</p>
+<p><strong>有限域上的椭圆曲线</strong></p>
+<p>已知有限域$GF(p)(p&#x3D;q^n,q&gt;3)$上的椭圆曲线群：<br>$$<br>E_p(a,b):y^2&#x3D;x^3+ax+b(\mod p)<br>$$<br>有限域GF(p)指给定某个质数p，由0、1、2……p-1共p个元素组成的整数集合中定义的加减乘除运算</p>
+<p><strong>有限域$GF(p)$</strong></p>
+<p>Fp中有p（p为质数）个元素0,1,2,…, p-2,p-1</p>
+<p>加法：$a+b \equiv c(\mod p)$</p>
+<p>乘法：$a \times b \equiv c(\mod p)$</p>
+<p>除法：$a&#x2F;b \equiv c(\mod p)$</p>
+<p>Fp单位元是1，零元是0</p>
+<p>满足交换律、结合律、分配律</p>
+<h5 id="加密原理"><a href="#加密原理" class="headerlink" title="加密原理"></a>加密原理</h5><p>在定义了这一系列运算之后，我们可以很容易的计算出给定的G点对应的2G，3G等点。即：当给定G点时，已知x，求xG点并不困难。反之，已知xG点，求x则非常困难。此即为椭圆曲线加密算法背后的数学原理。</p>
+<h5 id="计算及求解"><a href="#计算及求解" class="headerlink" title="计算及求解"></a>计算及求解</h5><p>计算椭圆曲线$y^2&#x3D;x^3+ax+b(\mod p)$两点P，Q的和<br>$$<br>\left{\begin{array}{c}<br>\mathrm{y}^2&#x3D;\mathrm{x}^3+\mathrm{ax}+\mathrm{b}(\bmod \mathrm{p}) \<br>\mathrm{y}-\mathrm{y}<em>{\mathrm{p}}&#x3D;k\left(x-x_p\right) \<br>k&#x3D;\frac{y_q-y_p}{x_q-x_p}<br>\end{array}\right.<br>$$<br>计算过椭圆曲线点P的二倍点R<br>$$<br>\left{\begin{array}{c}<br>x_r&#x3D;\left(\frac{3 \mathrm{x}</em>{\mathrm{p}}^2+\mathrm{a}}{2 \mathrm{y}<em>{\mathrm{p}}}\right)^2-2 x_p \<br>y_r&#x3D;\left(\frac{3 \mathrm{x}</em>{\mathrm{p}}^2+\mathrm{a}}{2 \mathrm{y}_{\mathrm{p}}}\right)\left(x_p-x_r\right)-y_p<br>\end{array}\right.<br>$$</p>
+<h5 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h5><ul>
+<li>约定：选取$E_p(a,b)$和生成元$G$，公开</li>
+<li>密钥的生成：选取私钥d,公钥为$e&#x3D;dG$</li>
+</ul>
+<h5 id="加密过程"><a href="#加密过程" class="headerlink" title="加密过程"></a>加密过程</h5><ul>
+<li>将明文消息m通过编码嵌入到曲线上的点Pm</li>
+<li>随机选取数字k，将密文$C_m&#x3D;\lbrace kG,Pm+ke \rbrace$发送</li>
+</ul>
+<h5 id="解密过程"><a href="#解密过程" class="headerlink" title="解密过程"></a>解密过程</h5><ul>
+<li>收到密文$C_m&#x3D;\lbrace kG,Pm+ke \rbrace$</li>
+<li>利用自己的密钥d，计算$(Pm+ke)-dkG&#x3D;Pm$</li>
+</ul>
+<p><img src="/imgs/iis/20.png" alt="image-20231020112343650"></p>
+<h2 id="消息认证及数字签名"><a href="#消息认证及数字签名" class="headerlink" title="消息认证及数字签名"></a>消息认证及数字签名</h2><p>消息认证是一种允许通信者验证所收消息是否可信的措施，用于确认：</p>
+<ul>
+<li>内容是否篡改</li>
+<li>来源是否可信</li>
+</ul>
+<h3 id="消息认证方法"><a href="#消息认证方法" class="headerlink" title="消息认证方法"></a>消息认证方法</h3><h4 id="散列函数"><a href="#散列函数" class="headerlink" title="散列函数"></a>散列函数</h4><ul>
+<li>散列函数是一种创建数字“指纹”的方法。它把消息或数据压缩成摘要，使得数据量变小，将数据的格式固定下来</li>
+<li>与消息认证码（MAC）不同的是散列函数不需要密钥输入</li>
+</ul>
+<p><strong>变长消息-&gt;散列函数-&gt;定长摘要</strong></p>
+<h5 id="单向散列函数消息认证的三种方式"><a href="#单向散列函数消息认证的三种方式" class="headerlink" title="单向散列函数消息认证的三种方式"></a>单向散列函数消息认证的三种方式</h5><h6 id="使用传统加密"><a href="#使用传统加密" class="headerlink" title="使用传统加密"></a>使用传统加密</h6><p><img src="/imgs/iis/21.png" alt="image-20231020113334053"></p>
+<h6 id="使用公钥加密"><a href="#使用公钥加密" class="headerlink" title="使用公钥加密"></a>使用公钥加密</h6><p><img src="/imgs/iis/22.png" alt="image-20231020113407576"></p>
+<h6 id="使用秘密值"><a href="#使用秘密值" class="headerlink" title="使用秘密值"></a>使用秘密值</h6><p><img src="/imgs/iis/23.png" alt="image-20231020113609124"></p>
+<ul>
+<li><p>加密的散列函数，满足以下所有条件</p>
+<ul>
+<li>抗弱碰撞性：给定x和h(x)，要想找到任意y，满足$y \neq x$，并且h(y)&#x3D;h(x)，这是不可能的</li>
+<li>抗强碰撞性：要想找到任意的x和y，使得$x \neq y$，并且h(y)&#x3D;h(x)，这是不可能的</li>
+</ul>
+</li>
+<li><p>散列函数的工作模式</p>
+<p><img src="/imgs/iis/24.png" alt="image-20231021171814550"></p>
+</li>
+<li><p>主流算法：MD5,SHA-1,SHA-2,Tiger Hash</p>
+</li>
+</ul>
+<h5 id="MD5算法"><a href="#MD5算法" class="headerlink" title="MD5算法"></a>MD5算法</h5><p><img src="/imgs/iis/25.png" alt="image-20231021171938372"></p>
+<p>MD5算法以一个任意长度的消息（M）作为输入，生成128位（16字节）的消息摘要作为输出，输入消息是按512位的分组处理的</p>
+<p><img src="/imgs/iis/26.png" alt="image-20231021172013971"></p>
+<h4 id="消息认证码"><a href="#消息认证码" class="headerlink" title="消息认证码"></a>消息认证码</h4><p>消息验证码是利用私钥产生的一小块数据，将其附到消息上，用来进行消息验证</p>
+<p>消息认证码和散列函数区别：散列函数不需要加密，而<strong>消息认证码是需要加密的</strong></p>
+<p>假设两个通信实体（如A和B）共享一个公共密钥Kab</p>
+<ul>
+<li>当A发消息M给B时，A计算消息认证码$MAC&#x3D;F(K_{ab},M)$，并将MAC和消息一起传送给B。</li>
+<li>B对接收到的消息使用密钥Kab做相同运算，生成新的MAC。比较收到的MAC和计算得到的MAC</li>
+</ul>
+<p><img src="/imgs/iis/27.png" alt="image-20231021174421706"></p>
+<p>假设只有接收者和发送者知道密钥，若收到的认证码与计算得到的认证码相吻合，则可得出下列结论：</p>
+<ol>
+<li>接收者能够确认消息没有被篡改</li>
+<li>接收者能够确保消息来自合法的发送者</li>
+<li>如果消息中包含序列号，而攻击者不能成功地修改序列号，那么接收者就可以确认消息的正确序列</li>
+</ol>
+<h5 id="基于散列函数消息认证码-HMAC"><a href="#基于散列函数消息认证码-HMAC" class="headerlink" title="基于散列函数消息认证码-HMAC"></a>基于散列函数消息认证码-HMAC</h5><ul>
+<li>不改动就可以使用散列函数</li>
+<li>嵌入式散列函数要有很好的可移植性</li>
+<li>保持散列函数原有性能，不发生显著退化</li>
+<li>使用和处理密钥简单</li>
+</ul>
+<p><img src="/imgs/iis/29.png" alt="image-20231021184403747"><br>$$<br>HMAC(K,M)&#x3D;H[(K^+ \oplus opad)||H[(K^+ \oplus opad)||M]]<br>$$<br>算法：</p>
+<ol>
+<li>在K的左端追加0，构成b比特的字符串$K^+$；</li>
+<li>Ipad与$K^+$进行XOR生成b比特的分组$S_i$；</li>
+<li>将M追加在$S_i$；</li>
+<li>将H应用于步骤(3)所产生的数据流；</li>
+<li>opad与$K^+$进行XOR生成b比特的分组$S_o$；</li>
+<li>将步骤(4)产生的散列结果追加在$S_o$上；</li>
+<li>将H应用于步骤6产生的数据流，输出结果；</li>
+</ol>
+<h5 id="基于分组密码的MAC—CMAC"><a href="#基于分组密码的MAC—CMAC" class="headerlink" title="基于分组密码的MAC—CMAC"></a>基于分组密码的MAC—CMAC</h5><ul>
+<li><p>当消息长度是分组长度的整数倍时</p>
+<p><img src="/imgs/iis/30.png" alt="image-20231021185226675"></p>
+</li>
+<li><p>当消息长度不是分组长度的整数倍时</p>
+<p><img src="/imgs/iis/31.png" alt="image-20231021185259659"></p>
+</li>
+</ul>
+<p><img src="/imgs/iis/32.png" alt="image-20231021185416402"></p>
+<h3 id="数字签名技术"><a href="#数字签名技术" class="headerlink" title="数字签名技术"></a>数字签名技术</h3><p>数字签名是<strong>只有信息的发送者才能产生的别人无法伪造的一段数字串</strong>，这段数字串同时也是对信息的发送者发送信息真实性的一个有效证明。它是一种类似写在纸上的普通的物理签名，但是在使用了公钥加密领域的技术来实现的，用于鉴别数字信息的方法</p>
+<p>要求：</p>
+<ul>
+<li>发方发出签名后的消息，就不能否认所签消息</li>
+<li>收方能确认或证实发方的签字，但不能伪造</li>
+<li>收方对已收到的消息不能否认</li>
+<li>第三者可以确认收发双方之间的消息传送，但不能伪造这一过程</li>
+</ul>
+<p>应具有：</p>
+<ul>
+<li>必须能够验证签名者及其签名的日期时间</li>
+<li>必须能够认证被签名消息的内容</li>
+<li>签名必须能够由第三方验证，以解决争议</li>
+</ul>
+<p>两类数字签名函数</p>
+<ul>
+<li>直接数字签名<ul>
+<li>仅涉及通信双方</li>
+<li>有效性依赖发方密钥的安全性</li>
+</ul>
+</li>
+<li>仲裁数字签名<ul>
+<li>使用第三方认证</li>
+</ul>
+</li>
+</ul>
+<p>两种加密方法：</p>
+<p><strong>利用发送方的私钥加密</strong></p>
+<p><img src="/imgs/iis/33.png" alt="image-20231021190603255"></p>
+<p><img src="/imgs/iis/35.png" alt="image-20231021190751442"></p>
+<p><strong>利用发送方的私钥报文散列码加密</strong></p>
+<p><img src="/imgs/iis/34.png" alt="image-20231021190653079"></p>
+<p><img src="/imgs/iis/36.png" alt="image-20231021190822679"></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">J&Ocean</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://jiang-wu-19.github.io/2023/10/21/%E4%BF%A1%E6%81%AF%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%AC%94%E8%AE%B0/">https://jiang-wu-19.github.io/2023/10/21/%E4%BF%A1%E6%81%AF%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%AC%94%E8%AE%B0/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">J&Ocean</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/">
+                                    <span class="chip bg-color">信息安全</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">请我喝杯奶茶吧~</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'Nv6Wx6PAYH30bfcx7u0eDWHy-gzGzoHsz',
+        appKey: 'IhPcpC3fDP8Ro7eaPakG2vSt',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2023/10/21/%E4%BF%A1%E6%81%AF%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%AC%94%E8%AE%B0/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="信息与网络安全笔记">
+                        
+                        <span class="card-title">信息与网络安全笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            2023秋-信息与网络安全
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-21
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/">
+                        <span class="chip bg-color">信息安全</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/10/19/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="论文阅读">
+                        
+                        <span class="card-title">论文阅读</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            如何读，如何写
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-19
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%A7%91%E7%A0%94/" class="post-category">
+                                    科研
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/">
+                        <span class="chip bg-color">论文阅读</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%B7%A5%E4%BD%9C%E6%B1%87%E6%8A%A5/">
+                        <span class="chip bg-color">工作汇报</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: J&amp;Ocean BLOG<br />'
+            + '文章作者: J&amp;Ocean<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2023</span>
+            
+            <span id="year">2023</span>
+            <a href="/about" target="_blank">J&Ocean</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">149.4k</span>&nbsp;字
+            
+            
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2023";
+                    var startMonth = "7";
+                    var startDate = "2";
+                    var startHour = "12";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+    <a href="https://github.com/JIANG-Wu-19" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:wujiang0319@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=870027163" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 870027163" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+    <a href="https://www.zhihu.com/people/bei-wei-xiao-wu-32" class="tooltipped" target="_blank" data-tooltip="关注我的知乎: https://www.zhihu.com/people/bei-wei-xiao-wu-32" data-position="top" data-delay="50">
+        <i class="fab fa-zhihu1">知</i>
+    </a>
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
