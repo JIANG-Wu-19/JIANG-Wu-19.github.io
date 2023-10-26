@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="算法课外思考题十一, J&amp;Ocean BLOG">
+    <meta name="keywords" content="ELBO, J&amp;Ocean BLOG">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>算法课外思考题十一 | J&amp;Ocean BLOG</title>
+    <title>ELBO | J&amp;Ocean BLOG</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -235,12 +235,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">算法课外思考题十一</h1>
+                    <h1 class="description center-align post-title">ELBO</h1>
                 </div>
             </div>
         </div>
@@ -356,12 +356,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">算法</span>
+                            <a href="/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/">
+                                <span class="chip bg-color">论文阅读</span>
                             </a>
                         
-                            <a href="/tags/%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5/">
-                                <span class="chip bg-color">邻接矩阵</span>
+                            <a href="/tags/ELBO/">
+                                <span class="chip bg-color">ELBO</span>
                             </a>
                         
                     </div>
@@ -372,8 +372,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%80%9D%E8%80%83%E9%A2%98/" class="post-category">
-                                思考题
+                            <a href="/categories/%E7%A7%91%E7%A0%94/" class="post-category">
+                                科研
                             </a>
                         
                     </div>
@@ -385,7 +385,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-08-16
+                    2023-10-26
                 </div>
                 
 
@@ -394,14 +394,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    327
+                    476
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -419,13 +419,34 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>证明：图G中顶点$v_i$到顶点$v_j$之间长度为k的路径数量等于$A^k$的第(i,j)个元素，其中A是图G的邻接矩阵。</p>
-<h2 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h2><h3 id="证明k-x3D-1时成立"><a href="#证明k-x3D-1时成立" class="headerlink" title="证明k&#x3D;1时成立"></a>证明k&#x3D;1时成立</h3><p>取k&#x3D;1，显然图G中顶点$v_i$到顶点$v_j$之间长度为1的路径数量等于$A$的第(i,j)个元素，A为邻接矩阵</p>
-<h3 id="假设k-x3D-m的时候成立"><a href="#假设k-x3D-m的时候成立" class="headerlink" title="假设k&#x3D;m的时候成立"></a>假设k&#x3D;m的时候成立</h3><p>假设k&#x3D;m时成立，即<br>$$<br>A^m&#x3D;(a^{m}<em>{ij})</em>{n*n}(i&#x3D;1-n,j&#x3D;1-n)<br>$$<br>矩阵中$a^{m}_{ij}$值等于图G中顶点$v_i$到顶点$v_j$之间长度为m的路径数量成立</p>
-<h3 id="证明k-x3D-m-1时成立"><a href="#证明k-x3D-m-1时成立" class="headerlink" title="证明k&#x3D;m+1时成立"></a>证明k&#x3D;m+1时成立</h3><p>$$<br>A^{m+1}&#x3D;(a^{m+1}<em>{ij})</em>{n*n}(i&#x3D;1-n,j&#x3D;1-n)<br>$$</p>
-<p>其中$a^{m+1}<em>{ij}&#x3D;\sum</em>{p&#x3D;1}^n(a^{m}<em>{ip}*a</em>{pj})$</p>
-<p>已知$a^{m}<em>{ip}$数值等于顶点$v_i$到顶点$v_p$之间长度为m的路径数量，$a</em>{pj}$为顶点$v_p$到顶点$v_j$之间长度为1的路径数量，两者乘积为顶点$v_i$经顶点$v_p$到顶点$v_j$长度为m+1的路径数量，求和即为顶点$v_i$到顶点$v_j$之间长度为m+1的所有路径数量，因此k&#x3D;m+1时结论成立</p>
-<p>至此，结论得证</p>
+                <h2 id="The-Evidence-Lower-Bound"><a href="#The-Evidence-Lower-Bound" class="headerlink" title="The Evidence Lower Bound"></a>The Evidence Lower Bound</h2><p>ELBO是证据下界的简称，证据指数据或可观测变量的概率密度</p>
+<h3 id="preliminaries"><a href="#preliminaries" class="headerlink" title="preliminaries"></a>preliminaries</h3><blockquote>
+<p>Let $\mathbf{x}&#x3D;\mathrm x_{1:n}$ be a set of observed variables and $\mathbf{z}&#x3D;\mathrm z_{1:m}$ be a set of latent variables, with joint density $\mathrm{p(z,x)}$. </p>
+</blockquote>
+<p>the <strong>conditional density</strong> is<br>$$<br>\mathrm{p(z|x)&#x3D;\frac{p(z,x)}{p(x)}}<br>$$</p>
+<blockquote>
+<p>The denominator contains the marginal density of the observations, also called the <em>evidence</em>.We calculate it by marginalizing out the latent variables from the joint density</p>
+</blockquote>
+<p>$$<br>\mathrm{p(x)&#x3D;\int p(\mathbf{z,x})}d\mathbf{z}<br>$$</p>
+<p>计算上述$\mathrm{p(x)}$很困难</p>
+<h3 id="变分推断variational-inference"><a href="#变分推断variational-inference" class="headerlink" title="变分推断variational inference"></a>变分推断variational inference</h3><p>变分推断是为了近似难以计算的潜在变量在观测变量下的条件概率</p>
+<blockquote>
+<p>Rather than use sampling, the main idea behind variational inference is to <strong>use optimization.</strong></p>
+</blockquote>
+<blockquote>
+<p> we specify a family $\mathscr{Q}$ of densities over the latent variables. Each $q(\mathbf{z}) \in \mathscr{Q}$ is a candidate approximation to the exact conditional. Our goal is to find the best candidate, the one closest in KL divergence to the exact conditional.</p>
+</blockquote>
+<p>也就是说，变分推断的任务就是优化$q(\mathbf{z})$，使得$q(\mathbf{z})$与$\mathrm{p(z|x)}$的KL散度最小<br>$$<br>q^*(\mathbf{z})&#x3D;\arg \min_{q(\mathbf{z}) \in \mathscr{Q}} kl(q(\mathbf{z})||\mathrm{p(z|x)})<br>$$</p>
+<h4 id="KL散度"><a href="#KL散度" class="headerlink" title="KL散度"></a>KL散度</h4><p>$$<br>kl(q(\mathbf{z})||\mathrm{p(z|x)})&#x3D;\mathbb{E}[\log q(\mathbf{z})]-\mathbb{E}[\log \mathrm{p(z|x)}]<br>$$</p>
+<p>根据上面的式子可以改写为<br>$$<br>kl(q(\mathbf{z})||\mathrm{p(\mathbf{z|x})})&#x3D;\mathbb{E}[\log q(\mathbf{z})]-\mathbb{E}[\log \mathrm{p(\mathbf{z,x})}]+\log\mathrm{p(\mathbf{x})}<br>$$<br>由于无法直接计算KL，而KL散度需要大于0，因此设置elbo<br>$$<br>elbo(q)&#x3D;\mathbb{E}[\log \mathrm{p(\mathbf{z,x})}-\mathbb{E}[\log q(\mathbf{z})]<br>$$</p>
+<p>$$<br>&#x3D;\mathbb{E}[\log \mathrm{p(\mathbf{z})}]+\mathbb{E}[\log \mathrm{p(\mathbf{x|z})}]-\mathbb{E}[\log q(\mathbf{z})]<br>$$</p>
+<p>$$<br>&#x3D;\mathbb{E}[\log \mathrm{p(\mathbf{x|z})}]-kl(q(\mathbf{z})||p(\mathbf{z}))<br>$$</p>
+<p>$$<br>elbo&#x3D;-kl+\log\mathrm{p(\mathbf{x})}<br>$$</p>
+<p>$$<br>elbo&#x3D;kl(q(\mathbf{z})||\mathrm{p(z|x)})+elbo(q)<br>$$</p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a target="_blank" rel="noopener" href="https://www.tandfonline.com/doi/full/10.1080/01621459.2017.1285773">Variational Inference: A Review for Statisticians</a></p>
+<p><a target="_blank" rel="noopener" href="https://staff.fnwi.uva.nl/m.welling/wp-content/uploads/papers/cvdp-v6.pdf">Collapsed variational Dirichlet process mixture models</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qy20115549/article/details/93074519">变分推断中的ELBO(证据下界)</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/385341342">变分推断之傻瓜式推导ELBO</a></p>
 
                 
             </div>
@@ -452,7 +473,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jiang-wu-19.github.io/2023/08/16/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E5%8D%81%E4%B8%80/">https://jiang-wu-19.github.io/2023/08/16/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E5%8D%81%E4%B8%80/</a>
+                    <a href="https://jiang-wu-19.github.io/2023/10/26/ELBO/">https://jiang-wu-19.github.io/2023/10/26/ELBO/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -490,12 +511,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">算法</span>
+                                <a href="/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/">
+                                    <span class="chip bg-color">论文阅读</span>
                                 </a>
                             
-                                <a href="/tags/%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5/">
-                                    <span class="chip bg-color">邻接矩阵</span>
+                                <a href="/tags/ELBO/">
+                                    <span class="chip bg-color">ELBO</span>
                                 </a>
                             
                         </div>
@@ -928,54 +949,52 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/08/16/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E5%8D%81%E4%BA%8C/">
+                <a href="/2023/10/26/ELBO/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="算法课外思考题十二">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="ELBO">
                         
-                        <span class="card-title">算法课外思考题十二</span>
+                        <span class="card-title">ELBO</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            求树的最大独立集和工作集最短完成时间
+                            变分推断中的Evidence Lower Bound
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-08-16
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-26
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%80%9D%E8%80%83%E9%A2%98/" class="post-category">
-                                    思考题
+                            <a href="/categories/%E7%A7%91%E7%A0%94/" class="post-category">
+                                    科研
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
+                    <a href="/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/">
+                        <span class="chip bg-color">论文阅读</span>
                     </a>
                     
-                    <a href="/tags/%E6%9C%80%E5%A4%A7%E7%8B%AC%E7%AB%8B%E9%9B%86/">
-                        <span class="chip bg-color">最大独立集</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%9C%80%E7%9F%AD%E5%AE%8C%E6%88%90%E6%97%B6%E9%97%B4/">
-                        <span class="chip bg-color">最短完成时间</span>
+                    <a href="/tags/ELBO/">
+                        <span class="chip bg-color">ELBO</span>
                     </a>
                     
                 </div>
@@ -989,31 +1008,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/08/16/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E5%8D%81/">
+                <a href="/2023/10/21/%E4%BF%A1%E6%81%AF%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%AC%94%E8%AE%B0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="算法课外思考题十">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="信息与网络安全笔记">
                         
-                        <span class="card-title">算法课外思考题十</span>
+                        <span class="card-title">信息与网络安全笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            矩阵LU分解和求矩阵的逆
+                            2023秋-信息与网络安全
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-21
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%80%9D%E8%80%83%E9%A2%98/" class="post-category">
-                                    思考题
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    笔记
                                 </a>
                             
                             
@@ -1023,16 +1042,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%9F%A9%E9%98%B5LU%E5%88%86%E8%A7%A3/">
-                        <span class="chip bg-color">矩阵LU分解</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%9F%A9%E9%98%B5%E7%9A%84%E9%80%86/">
-                        <span class="chip bg-color">矩阵的逆</span>
+                    <a href="/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/">
+                        <span class="chip bg-color">信息安全</span>
                     </a>
                     
                 </div>
