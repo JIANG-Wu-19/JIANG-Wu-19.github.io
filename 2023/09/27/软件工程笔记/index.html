@@ -390,14 +390,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.6k
+                    8.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    9 分
+                    28 分
                 </div>
                 
 
@@ -760,6 +760,570 @@
 </ul>
 <h4 id="Usablity需求"><a href="#Usablity需求" class="headerlink" title="Usablity需求"></a>Usablity需求</h4><p>可用性</p>
 <p>The ease with which software can be learned and<br>operated by the intended users</p>
+<h4 id="Reliability需求"><a href="#Reliability需求" class="headerlink" title="Reliability需求"></a>Reliability需求</h4><p>软件在给定时间间隔内成功运行的概率</p>
+<ul>
+<li>可靠性需求<ul>
+<li>故障的频率</li>
+<li>可恢复性</li>
+<li>可预见性</li>
+<li>准确性</li>
+<li>平均失效间隔时间&#x2F;平均无故障时间，MTBF</li>
+</ul>
+</li>
+</ul>
+<h4 id="Performance需求"><a href="#Performance需求" class="headerlink" title="Performance需求"></a>Performance需求</h4><ul>
+<li>性能需求<ul>
+<li>速度</li>
+<li>效率</li>
+<li>吞吐量</li>
+<li>响应时间</li>
+<li>容量</li>
+<li>资源利用情况</li>
+</ul>
+</li>
+</ul>
+<h4 id="Supportability需求"><a href="#Supportability需求" class="headerlink" title="Supportability需求"></a>Supportability需求</h4><p>支持性需求</p>
+<ul>
+<li>可测试性</li>
+<li>可扩展性</li>
+<li>可适应性</li>
+<li>可维护性</li>
+<li>兼容性</li>
+<li>可配置性</li>
+<li>可服务性</li>
+<li>可安装性</li>
+<li>可本地化&#x2F;国际化</li>
+</ul>
+<h4 id="FURPS"><a href="#FURPS" class="headerlink" title="FURPS+"></a>FURPS+</h4><ul>
+<li>设计约束（design constraints）：规定或约束了系统的设计的需求；</li>
+<li>实现需求（implementation requirements） ：规定或约束了系统的编码或构建，如所需标准、编程语言、数据库完整性策略、资源限制和操作环境；</li>
+<li>接口需求（interface requirements）：规定了系统必须与之交互操作的外部软件或硬件，以及对这种交互操作所使用的格式、时间或其他因素的约束；</li>
+<li>物理需求（physical requirements.）：规定了系统必须具备的物理特征，可用来代表硬件要求，如物理网络配置需求。</li>
+</ul>
+<h4 id="软件需求的三个层次"><a href="#软件需求的三个层次" class="headerlink" title="软件需求的三个层次"></a>软件需求的三个层次</h4><ul>
+<li>系统需求：业务&#x2F;产品需求</li>
+<li>项目干系人需求：原始需求</li>
+<li>项目前景文档：概要需求</li>
+<li>软件需求规约：详细需求</li>
+</ul>
+<p><img src="/imgs/se/22.png" alt="image-20230928085813446"></p>
+<h3 id="需求获取"><a href="#需求获取" class="headerlink" title="需求获取"></a>需求获取</h3><p>业务分析-〉确定系统边界-〉项目干系人交流-〉竞争产品观察-〉定义系统高层输入-〉形成前景文档</p>
+<h4 id="前景文档–产品范围文档"><a href="#前景文档–产品范围文档" class="headerlink" title="前景文档–产品范围文档"></a>前景文档–产品范围文档</h4><ol>
+<li>简介</li>
+<li>定位<ul>
+<li>商机</li>
+<li>问题说明</li>
+<li>产品定位</li>
+</ul>
+</li>
+<li>项目干系人和用户描述</li>
+<li>产品概述</li>
+<li>产品特性</li>
+<li>约束</li>
+<li>质量范围</li>
+<li>优先级</li>
+<li>其他产品需求</li>
+<li>文档需求</li>
+</ol>
+<h5 id="分析问题及根源"><a href="#分析问题及根源" class="headerlink" title="分析问题及根源"></a>分析问题及根源</h5><h5 id="识别项目干系人"><a href="#识别项目干系人" class="headerlink" title="识别项目干系人"></a>识别项目干系人</h5><h5 id="识别项目的约束"><a href="#识别项目的约束" class="headerlink" title="识别项目的约束"></a>识别项目的约束</h5><h5 id="获取常用术语"><a href="#获取常用术语" class="headerlink" title="获取常用术语"></a>获取常用术语</h5><h5 id="识别需求的来源"><a href="#识别需求的来源" class="headerlink" title="识别需求的来源"></a>识别需求的来源</h5><h5 id="收集需求"><a href="#收集需求" class="headerlink" title="收集需求"></a>收集需求</h5><h5 id="产品定位"><a href="#产品定位" class="headerlink" title="产品定位"></a>产品定位</h5><h5 id="撰写产品特性"><a href="#撰写产品特性" class="headerlink" title="撰写产品特性"></a>撰写产品特性</h5><h5 id="定义质量范围"><a href="#定义质量范围" class="headerlink" title="定义质量范围"></a>定义质量范围</h5><h5 id="定义文档需求"><a href="#定义文档需求" class="headerlink" title="定义文档需求"></a>定义文档需求</h5><h5 id="建立项目范围"><a href="#建立项目范围" class="headerlink" title="建立项目范围"></a>建立项目范围</h5><h5 id="划分特性优先级"><a href="#划分特性优先级" class="headerlink" title="划分特性优先级"></a>划分特性优先级</h5><h3 id="需求分析建模"><a href="#需求分析建模" class="headerlink" title="需求分析建模"></a>需求分析建模</h3><h4 id="分析模型"><a href="#分析模型" class="headerlink" title="分析模型"></a>分析模型</h4><p>需求分析的结果</p>
+<p>与平台无关模型PIM</p>
+<ul>
+<li>描述客户需求</li>
+<li>建立软件设计基础</li>
+<li>定义软件完成后可以被确认</li>
+</ul>
+<h5 id="结构化分析模型"><a href="#结构化分析模型" class="headerlink" title="结构化分析模型"></a>结构化分析模型</h5><ul>
+<li>数据流图（DFD）</li>
+<li>控制流图（CFD）</li>
+<li>数据字典（DD）</li>
+<li>实体—关系图（ERD）</li>
+<li>状态转换图（STD）</li>
+<li>加工说明（PSPEC）</li>
+</ul>
+<h5 id="面向对象分析模型"><a href="#面向对象分析模型" class="headerlink" title="面向对象分析模型"></a>面向对象分析模型</h5><ul>
+<li>用例图</li>
+<li>活动图</li>
+<li>类图</li>
+<li>时序图、通信图</li>
+<li>状态机图</li>
+</ul>
+<h4 id="分析建模准则"><a href="#分析建模准则" class="headerlink" title="分析建模准则"></a>分析建模准则</h4><ul>
+<li>必须描述并理解问题的信息域<ul>
+<li>输入输出数据、永久性数据对象</li>
+</ul>
+</li>
+<li>必须确定软件所需要的功能</li>
+<li>必须描述软件的行为<ul>
+<li>受外部事件驱动的结果</li>
+</ul>
+</li>
+<li>模型必须能提以一种能提示层次化方式的分解</li>
+<li>分析任务应该从本质信息向实现细节转移</li>
+</ul>
+<h3 id="需求定义和验证"><a href="#需求定义和验证" class="headerlink" title="需求定义和验证"></a>需求定义和验证</h3><p>定义需求、撰写需求文档（前景文档和详细的软件需求规约）</p>
+<h4 id="软件前景文档"><a href="#软件前景文档" class="headerlink" title="软件前景文档"></a>软件前景文档</h4><p>软件需求规约</p>
+<p>作用：</p>
+<p>作用：</p>
+<ul>
+<li>项目管理的依据；</li>
+<li>设计与实现的输入；</li>
+<li>测试与质量保证的输入；</li>
+</ul>
+<p>组成：</p>
+<ul>
+<li>功能需求；</li>
+<li>非功能性需求；</li>
+<li>约束；</li>
+</ul>
+<p>软件需求规约SRS定义了系统的外在行为和属性</p>
+<p>统一软件过程UP提供的两个SRS需求模板</p>
+<p><img src="/imgs/se/23.png" alt="image-20230928103723819"></p>
+<p><img src="/imgs/se/24.png" alt="image-20230928103815246"></p>
+<p><img src="/imgs/se/25.png" alt="image-20230928103906107"></p>
+<h4 id="细化需求"><a href="#细化需求" class="headerlink" title="细化需求"></a>细化需求</h4><ul>
+<li>细化功能需求<ul>
+<li>引入分析模型</li>
+</ul>
+</li>
+<li>细化非功能需求</li>
+<li>细化约束条件</li>
+</ul>
+<h4 id="用户界面原型"><a href="#用户界面原型" class="headerlink" title="用户界面原型"></a>用户界面原型</h4><ul>
+<li>也称“行为模型”，用来描述软件产品的行为，达到明确与细化需求的目的。</li>
+<li>如果和用户交互，则需简要设计用户界面<ul>
+<li>图纸（在纸上）</li>
+<li>位图（采用绘图工具），或可执行代码（交互式的电子界面原型）</li>
+</ul>
+</li>
+</ul>
+<h4 id="需求验证"><a href="#需求验证" class="headerlink" title="需求验证"></a>需求验证</h4><h5 id="验证方面"><a href="#验证方面" class="headerlink" title="验证方面"></a>验证方面</h5><ol>
+<li><p>一致性</p>
+<p>所有需求必须是一致的，任何一条需求不能和其他需求互相矛盾</p>
+</li>
+<li><p>完整性</p>
+<p>需求必须是完整的，规格说明书应该包括用户需要的每一个功能或性能</p>
+</li>
+<li><p>现实性</p>
+<p>指定的需求应该是用现有的硬件技术和软件技术基本上可以实现的</p>
+</li>
+<li><p>有效性</p>
+<p>必须证明需求是正确有效的，确实能解决用户面对的问题</p>
+</li>
+</ol>
+<h5 id="需求验证方法"><a href="#需求验证方法" class="headerlink" title="需求验证方法"></a>需求验证方法</h5><ul>
+<li><p>原型确认</p>
+<ul>
+<li>抛弃型</li>
+<li>演进型</li>
+</ul>
+</li>
+<li><p>需求评审</p>
+<ul>
+<li><p>评审需求文档（Vision和SRS等），及时发现缺陷，寻找改进的契机，同时从评审反馈中获得知识，补充了正规的交流和培训机制，帮助团队建立对产品的共同理解</p>
+</li>
+<li><p>评审过程</p>
+<p>准备计划-〉实施评审-〉返工-〉定稿签字</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>需求评审方法</p>
+<ul>
+<li>审查</li>
+<li>小组评审</li>
+<li>走查</li>
+<li>结对编程</li>
+<li>同级桌查</li>
+<li>轮查</li>
+<li>临时评审</li>
+</ul>
+<p>需求评审的输入输出</p>
+<ul>
+<li>输入<ul>
+<li>待评审的需求文档</li>
+<li>Check list</li>
+</ul>
+</li>
+<li>输出<ul>
+<li>评审结论<ul>
+<li>通过</li>
+<li>有条件通过</li>
+<li>不通过</li>
+</ul>
+</li>
+<li>缺陷清单</li>
+</ul>
+</li>
+</ul>
+<h4 id="需求管理"><a href="#需求管理" class="headerlink" title="需求管理"></a>需求管理</h4><ul>
+<li>定义需求基线</li>
+<li>需求跟踪</li>
+<li>需求变更控制（建立新的需求基线）</li>
+</ul>
+<h5 id="建立需求基线"><a href="#建立需求基线" class="headerlink" title="建立需求基线"></a>建立需求基线</h5><p>通过对软件产品的特性和需求划分优先级来定义需求基线</p>
+<h5 id="需求变更控制和版本控制"><a href="#需求变更控制和版本控制" class="headerlink" title="需求变更控制和版本控制"></a>需求变更控制和版本控制</h5><ul>
+<li>需求&#x2F;范围变化的原因<ul>
+<li>初期的认识不足导致错误或不完整的需求&#x2F;范围</li>
+<li>需求&#x2F;范围本身存在不一致</li>
+<li>业务变化导致的刚性需求&#x2F;范围变更</li>
+<li>外部经济、市场环境的变化</li>
+<li>客户和项目组对已确认的需求&#x2F;范围理解不一致</li>
+<li>技术制约或多目标权衡带来的需求&#x2F;范围变更</li>
+</ul>
+</li>
+<li>需求变更策略<ul>
+<li>以基线为核心统一变更控制过程</li>
+<li>建立项目变更管理小组</li>
+<li>未获批准不得擅自实施变更</li>
+<li>干系人和项目组成员应即时了解变更</li>
+<li>开发计划、设计测试代码的文档应及时更新</li>
+<li>采用需求变更控制工具</li>
+</ul>
+</li>
+</ul>
+<h5 id="需求跟踪"><a href="#需求跟踪" class="headerlink" title="需求跟踪"></a>需求跟踪</h5><p><img src="/imgs/se/26.png" alt="image-20230928105944712"></p>
+<h2 id="结构化分析"><a href="#结构化分析" class="headerlink" title="结构化分析"></a>结构化分析</h2><h3 id="结构化方法概述"><a href="#结构化方法概述" class="headerlink" title="结构化方法概述"></a>结构化方法概述</h3><p>一种面向数据流的传统软件开发方法</p>
+<p>以数据流为中心构建软件的分析模型、设计模型和实现模型</p>
+<ul>
+<li>结构化分析(Structured Analysis，简称SA)</li>
+<li>结构化设计(Structured Design，简称SD)</li>
+<li>结构化编程(Structured Programming，简称SP)</li>
+</ul>
+<h4 id="结构化分析方法中的抽象与分解"><a href="#结构化分析方法中的抽象与分解" class="headerlink" title="结构化分析方法中的抽象与分解"></a>结构化分析方法中的抽象与分解</h4><p>随着分解层次的增加，抽象的级别越来越低，也越接近问题的解(算法和数据结构)</p>
+<p><img src="/imgs/se/27.png" alt="image-20231007092853653"></p>
+<h4 id="结构化分析模型-1"><a href="#结构化分析模型-1" class="headerlink" title="结构化分析模型"></a>结构化分析模型</h4><p><img src="/imgs/se/28.png" alt="image-20231007092941126"></p>
+<ul>
+<li>数据字典是模型的核心，它包含了软件使用和产生所有数据的描述</li>
+<li>数据流图：用于功能建模，描述系统的输入数据流如何经过一系列的加工变换逐步变换成系统的输出数据流</li>
+<li>实体—关系图：用于数据建模，描述数据字典中数据之间的关系</li>
+<li>状态转换图：用于行为建模，描述系统接收哪些外部事件，以及在外部事件的作用下的状态迁移情况</li>
+</ul>
+<h3 id="面向数据流的软件建模"><a href="#面向数据流的软件建模" class="headerlink" title="面向数据流的软件建模"></a>面向数据流的软件建模</h3><h4 id="系统流程图"><a href="#系统流程图" class="headerlink" title="系统流程图"></a>系统流程图</h4><p>描绘物理系统的工具，其基本思想是用图形符号以黑盒子形式描绘系统里面的每个部件（程序、文件、数据库、表格、人工过程等）,表达的是信息在系统各部件之间流动的情况。</p>
+<p><strong>常用符号</strong></p>
+<p><img src="/imgs/se/29.png" alt="image-20231024161127649"></p>
+<h4 id="数据流图"><a href="#数据流图" class="headerlink" title="数据流图"></a>数据流图</h4><p>系统逻辑模型描述分为三个方面：</p>
+<ul>
+<li>数据流图 DFD</li>
+<li>数据字典 DD</li>
+<li>加工&#x2F;处理说明 IPO</li>
+</ul>
+<p><strong>数据流图的定义</strong></p>
+<p>描述输入数据流到输出数据流的变换(即加工)过程，用于对系统的功能建模，基本元素包括：</p>
+<p><img src="/imgs/se/30.png" alt="image-20231024161430439"></p>
+<p>e.g. 图书订购系统DFD</p>
+<p><img src="/imgs/se/31.png" alt="image-20231024161742480"></p>
+<p><strong>数据流图的扩充符号</strong></p>
+<p>描述一个加工的多个数据流之间的关系</p>
+<p><img src="/imgs/se/32.png" alt="image-20231024161918825"></p>
+<p><strong>绘制方法</strong></p>
+<ul>
+<li>基本方法：自顶向下逐层分解。</li>
+<li>分解原则：上层是下层的抽象，下层是上层的分解。</li>
+<li>直到所有的处理都足够简单，不必再分解为止。通常把这种不能再分解的加工称为“基本处理”</li>
+</ul>
+<p><strong>分层数据流图</strong></p>
+<p><img src="/imgs/se/33.png" alt="image-20231024162201836"></p>
+<ul>
+<li>在多层数据流图中，顶层流图仅包含一个处理，它代表被开发系统。它的输入流是该系统的输入数据，输出流是系统所输出数据</li>
+<li>底层流图是指其处理不需再做分解的数据流图，它处在最底层</li>
+<li>中间层流图则表示对其上层父图的细化，它的每一处理可能继续细化，形成子<br>图。</li>
+</ul>
+<p><strong>DFD细化</strong></p>
+<ul>
+<li>确定加工</li>
+<li>确定数据流</li>
+<li>确定文件</li>
+</ul>
+<p><strong>画分层数据流图的步骤</strong></p>
+<ol>
+<li>画系统的输入和输出</li>
+<li>画系统内部</li>
+<li>画加工内部</li>
+<li>重复第3步，直至每个尚未分解的加工都足够简单(即不必再分解)</li>
+</ol>
+<p><strong>分层数据流图的审查</strong></p>
+<ul>
+<li>检查图中是否存在错误或不合理(不理想)的部分<ul>
+<li>一致性</li>
+<li>完整性</li>
+</ul>
+</li>
+<li>父图和子图平衡</li>
+<li>数据守恒</li>
+</ul>
+<h4 id="数据字典"><a href="#数据字典" class="headerlink" title="数据字典"></a>数据字典</h4><p>数据字典由字典条目组成，每个条目描述DFD中的一个元素</p>
+<p>数据字典条目包括：数据流、文件、加工、源或宿</p>
+<h5 id="数据字典描述符号"><a href="#数据字典描述符号" class="headerlink" title="数据字典描述符号"></a>数据字典描述符号</h5><p><img src="/imgs/se/34.png" alt="image-20231024164033623"></p>
+<h5 id="数据流条目的描述内容"><a href="#数据流条目的描述内容" class="headerlink" title="数据流条目的描述内容"></a>数据流条目的描述内容</h5><ul>
+<li>名称：数据流名(可以是中文名或英文名)</li>
+<li>别名：名称的另一个名字</li>
+<li>简述：对数据流的简单说明</li>
+<li>数据流组成：描述数据流由哪些数据项组成</li>
+<li>数据流来源：描述数据流从哪个加工或源流出</li>
+<li>数据流去向：描述数据流流入哪个加工或宿</li>
+<li>数据量：系统中该数据流的总量<ul>
+<li>如考务处理系统中“报名单”的总量是100000张</li>
+<li>或者单位时间处理的数据流数量，如80000张&#x2F;天</li>
+</ul>
+</li>
+<li>峰值：某时段处理的最大数量<ul>
+<li>如每天上午9：00至11：00处理60000张表单</li>
+</ul>
+</li>
+<li>注解：对该数据流的其它补充说明</li>
+</ul>
+<p><strong>数据流组成</strong></p>
+<p>是数据流条目的核心</p>
+<h5 id="文件条目的描述内容"><a href="#文件条目的描述内容" class="headerlink" title="文件条目的描述内容"></a>文件条目的描述内容</h5><ul>
+<li>名称：文件名</li>
+<li>别名：同数据流条目</li>
+<li>简述：对文件的简单说明</li>
+<li>文件组成：描述文件的记录由哪些数据项组成(与数据流条目中的文件组成描述方法相同)</li>
+<li>写文件的加工：描述哪些加工写文件</li>
+<li>读文件的加工：描述哪些加工读文件</li>
+<li>文件组织：描述文件的存储方式(顺序、索引)，排序的关键字</li>
+<li>使用权限：描述各类用户对文件读、写、修改的使用权限</li>
+<li>数据量：文件的最大记录个数</li>
+<li>存取频率：描述对该文件的读写频率</li>
+<li>注解：对该文件的其它补充说明</li>
+</ul>
+<h5 id="加工条目的描述内容"><a href="#加工条目的描述内容" class="headerlink" title="加工条目的描述内容"></a>加工条目的描述内容</h5><ul>
+<li>名称：加工名</li>
+<li>别名：同数据流条目</li>
+<li>加工号: 加工在DFD中的编号</li>
+<li>简述：对加工的功能的简要说明</li>
+<li>输入数据流：描述加工的输入数据流，包括读哪些文件名</li>
+<li>输出数据流：描述加工的输出数据流，包括写哪些文件名</li>
+<li>加工逻辑：简要描述加工逻辑，或者对加工规约的索引<ul>
+<li>基本加工的加工逻辑用小说明描述，在加工条目中可填写对加工规约的索引</li>
+<li>非基本加工分解而成的DFD子图已反映了它的加工逻辑，不必书写小说明</li>
+</ul>
+</li>
+<li>异常处理：描述加工处理过程中可能出现的异常情况，及其处理方式</li>
+<li>加工激发条件：描述执行加工的条件，如“身份认证正确”，“收到报名单”</li>
+<li>执行频率：描述加工的执行频率，如，每月执行一次，每天0点执行</li>
+<li>注解：对加工的其它补充说明</li>
+</ul>
+<h5 id="源或宿条目的描述内容"><a href="#源或宿条目的描述内容" class="headerlink" title="源或宿条目的描述内容"></a>源或宿条目的描述内容</h5><ul>
+<li>名称：源或宿的名(外部实体名)</li>
+<li>别名：同数据流条目</li>
+<li>简要描述：对源或宿的简要描述(包括指明该外部实体在DFD中是用作“源”，还是“宿”，还是“既是源又是宿”)</li>
+<li>输入数据流：描述源向系统提供哪些输入数据流</li>
+<li>输出数据流：描述系统向宿提供哪些输出数据流</li>
+<li>注解：对源或宿的其它补充说明</li>
+</ul>
+<h4 id="加工逻辑的描述方法"><a href="#加工逻辑的描述方法" class="headerlink" title="加工逻辑的描述方法"></a>加工逻辑的描述方法</h4><ul>
+<li><p>结构化语言：介于自然语言和形式语言之间的一种半形式语言</p>
+</li>
+<li><p>判定表：适用于加工逻辑包含多个条件，而不同的条件组合需做不同的动作</p>
+<ul>
+<li>条件桩(Condition Stub)：列出各种条件的对象，如发货单金额，赊欠天数等，每行写一个条件对象</li>
+<li>条件条目(Condition entry)：列出各条件对象的取值，条件条目的每一列表示了一个可能的条件组合</li>
+<li>动作桩(action stub)：列出所有可能采取的动作，如发出发货单等，每行写一个动作</li>
+<li>动作条目(action entry)：列出各种条件组合下应采取的动作</li>
+</ul>
+<p>e.g.<img src="/imgs/se/35.png" alt="image-20231024170051741"></p>
+</li>
+<li><p>判定树：判定表的变种，它本质上与判定表是相同的，只是表示形式不同</p>
+<p>e.g.<img src="/imgs/se/36.png" alt="image-20231024170119698"></p>
+</li>
+</ul>
+<h4 id="实体-关系图"><a href="#实体-关系图" class="headerlink" title="实体-关系图"></a>实体-关系图</h4><p>描述数据字典中数据之间的关系</p>
+<p><img src="/imgs/se/37.png" alt="image-20231024170312798"></p>
+<p><img src="/imgs/se/38.png" alt="image-20231024170337998"></p>
+<h3 id="面向数据流的需求分析过程"><a href="#面向数据流的需求分析过程" class="headerlink" title="面向数据流的需求分析过程"></a>面向数据流的需求分析过程</h3><p>面向数据流自顶向下逐步求精进行需求分析</p>
+<ol>
+<li><p>确定系统的综合需求</p>
+<p>功能需求、性能需求、可靠性和可用性需求、出错处理需求、接口需求、约束、逆向需求、将来可能的需求</p>
+</li>
+<li><p>分析系统的数据要求</p>
+<p>ER模型</p>
+</li>
+<li><p>导出系统的逻辑模型</p>
+</li>
+<li><p>修正系统开发计划</p>
+</li>
+<li><p>开发原型系统</p>
+</li>
+<li><p>写需求规格说明书</p>
+</li>
+</ol>
+<h2 id="结构化设计"><a href="#结构化设计" class="headerlink" title="结构化设计"></a>结构化设计</h2><h3 id="结构化设计概述"><a href="#结构化设计概述" class="headerlink" title="结构化设计概述"></a>结构化设计概述</h3><h4 id="面向数据流的软件设计过程"><a href="#面向数据流的软件设计过程" class="headerlink" title="面向数据流的软件设计过程"></a>面向数据流的软件设计过程</h4><p><img src="/imgs/se/39.png" alt="image-20231024170813083"></p>
+<h3 id="结构设计-概要设计"><a href="#结构设计-概要设计" class="headerlink" title="结构设计-概要设计"></a>结构设计-概要设计</h3><h4 id="结构设计工具-结构图"><a href="#结构设计工具-结构图" class="headerlink" title="结构设计工具-结构图"></a>结构设计工具-结构图</h4><h4 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h4><p>一个模块具有其外部特征和内部特征</p>
+<ul>
+<li>外部特征包括：模块的接口(模块名、输入&#x2F;输出参数、返回值等)和模块的功能</li>
+<li>内部特征包括：模块的内部数据和完成其功能的程序代码</li>
+</ul>
+<h4 id="调用和数据"><a href="#调用和数据" class="headerlink" title="调用和数据"></a>调用和数据</h4><ul>
+<li>调用(call)：用从一个模块指向另一个模块的箭头来表示，其含义是前者调用了后者<ul>
+<li>为了方便，有时常用直线替代箭头，此时，表示位于上方的模块调用位于下方的模块</li>
+</ul>
+</li>
+<li>数据(data)：模块调用时需传递的参数可通过在调用箭头旁附加一个小箭头和数据名来表示</li>
+</ul>
+<p><img src="/imgs/se/40.png" alt="image-20231024171808595"></p>
+<h4 id="结构图中的辅助符号"><a href="#结构图中的辅助符号" class="headerlink" title="结构图中的辅助符号"></a>结构图中的辅助符号</h4><p><img src="/imgs/se/41.png" alt="image-20231024171852610"></p>
+<h4 id="数据流图到结构图的映射"><a href="#数据流图到结构图的映射" class="headerlink" title="数据流图到结构图的映射"></a>数据流图到结构图的映射</h4><p>结构化设计是将结构化分析的结果(数据流图)映射成软件的体系结构(结构图)</p>
+<p>将数据流图分为<strong>变换型数据流图</strong>和<strong>事务型数据流图</strong>，对应的映射分别称为<strong>变换分析</strong>和<strong>事务分析</strong></p>
+<h5 id="变换流"><a href="#变换流" class="headerlink" title="变换流"></a>变换流</h5><p>特征：数据流图可明显地分成三部分</p>
+<ul>
+<li>输入：信息沿着输入路径进入系统，并将输入信息的外部形式经过编辑、格式转换、合法性检查、预处理等辅助性加工后变成内部形式</li>
+<li>变换：内部形式的信息由变换中心进行处理</li>
+<li>输出：然后沿着输出路径经过格式转换、组成物理块、缓冲处理等辅助性加工后变成输出信息送到系统外</li>
+</ul>
+<p><img src="/imgs/se/42.png" alt="image-20231024172335556"></p>
+<h5 id="变换分析"><a href="#变换分析" class="headerlink" title="变换分析"></a>变换分析</h5><p>变换分析的任务是将变换型的DFD映射成初始的结构图，步骤如下：</p>
+<ol>
+<li><p>划定输入流和输出流的边界，确定变换中心</p>
+<p><img src="/imgs/se/44.png" alt="image-20231024172611179"></p>
+</li>
+<li><p>进行第一级分解：将DFD映射成变换型的程序结构</p>
+<ul>
+<li>将DFD映射成变换型的程序结构</li>
+<li>大型的软件系统第一级分解时可多分解几个模块，<br>以减少最终结构图的层次数<ul>
+<li>例如，每条输入或输出路径画一个模块，每个主要变换功<br>能各画一个模块</li>
+</ul>
+</li>
+</ul>
+<p>e.g.<img src="/imgs/se/45.png" alt="image-20231024172820255"></p>
+</li>
+<li><p>进行第二级分解：将DFD中的加工映射成结构图中的一个适当的模块</p>
+<p><img src="/imgs/se/46.png" alt="image-20231024172947192"></p>
+</li>
+<li><p>标注输入输出信息：根据DFD，在初始结构图上标注模块之间传递的输入信息和输出信息</p>
+</li>
+</ol>
+<h5 id="事务流"><a href="#事务流" class="headerlink" title="事务流"></a>事务流</h5><p>特征：数据流沿着输入路径到达一个事务中心，事务中心根据输入数据的类型在若干条动作路径中选择一条来执行</p>
+<p>事务中心的任务是：接收输入数据(即事务)；分析每个事务的类型；根据事务类型选择执行一条动作路径</p>
+<p><img src="/imgs/se/43.png" alt="image-20231024172437805"></p>
+<h5 id="事务分析"><a href="#事务分析" class="headerlink" title="事务分析"></a>事务分析</h5><p>将事务型DFD映射成初始的结构图</p>
+<p>事务型的结构图包括：</p>
+<ul>
+<li>主控模块：完成整个系统的功能</li>
+<li>接收模块：接收输入数据(事务)</li>
+<li>发送模块：根据输入事务的类型，选择一个动作路径控制模块</li>
+<li>动作路径控制模块：完成相应的动作路径所执行的子功能</li>
+</ul>
+<p><img src="/imgs/se/47.png" alt="image-20231024173107440"></p>
+<p><strong>分析步骤</strong></p>
+<ol>
+<li><p>在DFD图上确定边界</p>
+<ul>
+<li>事务中心</li>
+<li>接受部分（包括接受路径）</li>
+<li>发送部分（包括全部动作路径）</li>
+</ul>
+<p><img src="/imgs/se/48.png" alt="image-20231024173230136"></p>
+</li>
+<li><p>画出SC图框架</p>
+<ul>
+<li>DFD图的三个部分分别映射为事务控制模块，接受模块和动作发送模块</li>
+</ul>
+<p><img src="/imgs/se/49.png" alt="image-20231024173259040"></p>
+</li>
+<li><p>分解和细化接受分支和发送分支</p>
+</li>
+</ol>
+<h4 id="优化结构图"><a href="#优化结构图" class="headerlink" title="优化结构图"></a>优化结构图</h4><p>启发式设计策略</p>
+<ol>
+<li>降低耦合度，提高内聚度</li>
+</ol>
+<ol start="2">
+<li>避免高扇出，并随着深度的增加，力求高扇入</li>
+<li>模块的影响范围应限制在该模块的控制范围内</li>
+</ol>
+<p>改进技巧</p>
+<ul>
+<li>减少模块间的耦合度</li>
+<li>消除重复功能</li>
+<li>消除“管道”模块</li>
+<li>模块的大小适中</li>
+<li>避免高扇出</li>
+<li>应尽可能研究整张结构图，而不是只考虑其中的一部分</li>
+</ul>
+<h3 id="过程设计-详细设计"><a href="#过程设计-详细设计" class="headerlink" title="过程设计-详细设计"></a>过程设计-详细设计</h3><p>确定应该怎样具体地实现所要求的系统</p>
+<ul>
+<li>流程图</li>
+<li>N-S图</li>
+<li>PAD图</li>
+<li>PDL语言</li>
+</ul>
+<h4 id="将非结构化程序转换成结构化程序"><a href="#将非结构化程序转换成结构化程序" class="headerlink" title="将非结构化程序转换成结构化程序"></a>将非结构化程序转换成结构化程序</h4><h5 id="重复编码技术"><a href="#重复编码技术" class="headerlink" title="重复编码技术"></a>重复编码技术</h5><p><img src="/imgs/se/50.png" alt="image-20231024174115266"></p>
+<h5 id="设标志量技术"><a href="#设标志量技术" class="headerlink" title="设标志量技术"></a>设标志量技术</h5><p><img src="/imgs/se/51.png" alt="image-20231024174158786"></p>
+<h5 id="状态变量法"><a href="#状态变量法" class="headerlink" title="状态变量法"></a>状态变量法</h5><p><img src="/imgs/se/52.png" alt="image-20231024174238351"></p>
+<h4 id="程序流程图"><a href="#程序流程图" class="headerlink" title="程序流程图"></a>程序流程图</h4><p><img src="/imgs/se/53.png" alt="image-20231024174310179"></p>
+<p><strong>常用符号</strong></p>
+<p><img src="/imgs/se/54.png" alt="image-20231024174342914"></p>
+<h4 id="盒图（N-S图）"><a href="#盒图（N-S图）" class="headerlink" title="盒图（N-S图）"></a>盒图（N-S图）</h4><p><img src="/imgs/se/55.png" alt="image-20231024174450499"></p>
+<h4 id="PAD图"><a href="#PAD图" class="headerlink" title="PAD图"></a>PAD图</h4><p><img src="/imgs/se/56.png" alt="image-20231024174525729"></p>
+<p><img src="/imgs/se/57.png" alt="image-20231024174558977"></p>
+<h4 id="PDL"><a href="#PDL" class="headerlink" title="PDL"></a>PDL</h4><ul>
+<li>PDL是一种用于描述功能模块的算法设计和加工细节的语言。称为设计程序用语言。它是一种伪码。</li>
+<li>伪码的语法规则分为“外语法”和“内语法”。</li>
+<li>PDL具有严格的关键字外语法，用于定义控制结构和数据结构，同时它的表示实际操作和条件的内语法可使用自然语言的词汇。</li>
+</ul>
+<h2 id="面向对象分析"><a href="#面向对象分析" class="headerlink" title="面向对象分析"></a>面向对象分析</h2><h3 id="面向对象方法概述"><a href="#面向对象方法概述" class="headerlink" title="面向对象方法概述"></a>面向对象方法概述</h3><ul>
+<li><p>抽象</p>
+<p>最核心的抽象内容的对象</p>
+<p>对象是一个具有明确边界和唯一标识，且封装了行为和状态的实体。</p>
+<p>主要抽取事务的结构特征和行为特征，并组成一个有机整体</p>
+</li>
+<li><p>封装</p>
+<p>将对象特征的实现方式隐藏在一个公共接口后面的黑盒子中</p>
+</li>
+<li><p>模块化</p>
+<p>Breaks up something complex into manageable pieces.</p>
+</li>
+<li><p>层次</p>
+<p>高度抽象</p>
+<p>​     ^</p>
+<p>​      |</p>
+<p>​      |</p>
+<p>​      |</p>
+<p>低度抽象</p>
+</li>
+</ul>
+<h4 id="出发点和基本原则"><a href="#出发点和基本原则" class="headerlink" title="出发点和基本原则"></a>出发点和基本原则</h4><p>尽可能模拟人类习惯的思维方式，使描述问题的问题空间(也称为问题域)与实现解法的解空间(也称为求解域)在结构上尽可能一致。</p>
+<ul>
+<li>客观世界的问题都是由实体及关系构成的</li>
+<li>把客观世界中的实体抽象为问题域中的对象(object)</li>
+</ul>
+<h4 id="面向对象方法"><a href="#面向对象方法" class="headerlink" title="面向对象方法"></a>面向对象方法</h4><ol>
+<li>认为客观世界是由各种对象组成的</li>
+<li>把所有对象都划分成各种对象类(简称为类，class)，每个对象类都定义了一组数据和一组方法</li>
+<li>按照子类(或称为派生类subclass)与父类(或称为基类superclass)的关系，把若干个对象类组成一个层次结构的系统(也称为类等级)</li>
+<li>对象彼此之间仅能通过传递消息互相联系</li>
+</ol>
+<p>$$<br>OO&#x3D;objects+classes+inheritance+communication\ with\ messages<br>$$</p>
+<h4 id="面向对象方法的优点"><a href="#面向对象方法的优点" class="headerlink" title="面向对象方法的优点"></a>面向对象方法的优点</h4><ol>
+<li>与人类习惯的思维方法一致</li>
+<li>稳定性好</li>
+<li>可重用性好</li>
+<li>较易开发大型软件产品</li>
+<li>可维护性好</li>
+</ol>
+<h3 id="面向对象的概念"><a href="#面向对象的概念" class="headerlink" title="面向对象的概念"></a>面向对象的概念</h3><h4 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h4><p><img src="E:\myNote\softwareEngineering\img\58.png" alt="image-20231026084209729"></p>
+<p>对象是具有相同状态（属性）的一组操作的集合<br>$$<br>对象&#x3D;&lt;ID,MS,DS,MI&gt;<br>$$</p>
+<ul>
+<li>以数据为中心</li>
+<li>对象是主动的</li>
+<li>实现了数据封装</li>
+<li>本质上具有并行性</li>
+<li>模块独立性好</li>
+</ul>
+<h4 id="类"><a href="#类" class="headerlink" title="类"></a>类</h4><p>类是对具有相同属性和行为的一个或多个对象的描述。类是支持继承的抽象数据类型，而对象就是类的实例</p>
+<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><p>实例就是由某个特定的类所描述的一个具体的对象</p>
+<h4 id="消息"><a href="#消息" class="headerlink" title="消息"></a>消息</h4><p>消息就是要求某个对象执行它的某个操作的规格说明</p>
+<h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><p>方法就是对象所能执行的操作，也就是类中所定义的服务。方法描述了对象执行操作的算法，响应消息的方法。在C++语言中把方法称为成员函数。</p>
+<h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><p>属性就是类中所定义的数据，类的每个实例都有自己特有的属性值</p>
+<h4 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h4><p>所谓封装就是把某个事物包起来，使外界不知道该事物的具体内容</p>
+<h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><p>继承是指能够直接获得已有的性质和特征，而不必重复定义它们。继承是子类自动地共享基类中定义的数据和方法的机制。<br>当类等级为树形结构时，类的继承是单继承；当允许一个类有多个父类时，类的继承是多重继承。但是，使用多重继承时要注意避免二义性</p>
+<p><img src="E:\myNote\softwareEngineering\img\59.png" alt="image-20231026085952380"></p>
+<h4 id="多态性"><a href="#多态性" class="headerlink" title="多态性"></a>多态性</h4><p>多态性是指子类对象可以像父类对象那样使用，同样的消息既可以发送给父类对象也可以发送给子类对象。根据该对象所属于的类动态选用在该类中定义的实现算法</p>
+<h4 id="重载"><a href="#重载" class="headerlink" title="重载"></a>重载</h4><ul>
+<li>函数重载是指在同一作用域内的若干个参数特征不同的函数可以使用相同的函数名字</li>
+<li>运算符重载是指同一个运算符可以施加于不同类型的操作数上面</li>
+</ul>
 <blockquote>
 <p>To Be Continued</p>
 </blockquote>
@@ -1542,7 +2106,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">150k</span>&nbsp;字
+                class="white-color">155.7k</span>&nbsp;字
             
             
             
