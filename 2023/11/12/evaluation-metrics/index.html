@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="算法课外思考题十二, J&amp;Ocean BLOG">
+    <meta name="keywords" content="evaluation-metrics, J&amp;Ocean BLOG">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>算法课外思考题十二 | J&amp;Ocean BLOG</title>
+    <title>evaluation-metrics | J&amp;Ocean BLOG</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -235,12 +235,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">算法课外思考题十二</h1>
+                    <h1 class="description center-align post-title">evaluation-metrics</h1>
                 </div>
             </div>
         </div>
@@ -356,16 +356,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">算法</span>
+                            <a href="/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/">
+                                <span class="chip bg-color">论文阅读</span>
                             </a>
                         
-                            <a href="/tags/%E6%9C%80%E5%A4%A7%E7%8B%AC%E7%AB%8B%E9%9B%86/">
-                                <span class="chip bg-color">最大独立集</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%9C%80%E7%9F%AD%E5%AE%8C%E6%88%90%E6%97%B6%E9%97%B4/">
-                                <span class="chip bg-color">最短完成时间</span>
+                            <a href="/tags/evaluation-metrics/">
+                                <span class="chip bg-color">evaluation metrics</span>
                             </a>
                         
                     </div>
@@ -376,8 +372,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%80%9D%E8%80%83%E9%A2%98/" class="post-category">
-                                思考题
+                            <a href="/categories/%E7%A7%91%E7%A0%94/" class="post-category">
+                                科研
                             </a>
                         
                     </div>
@@ -389,7 +385,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-08-16
+                    2023-11-12
                 </div>
                 
 
@@ -398,14 +394,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.8k
+                    358
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    1 分
                 </div>
                 
 
@@ -423,184 +419,15 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>Given a tree T &#x3D; (V,E), find the maximum independent set of the tree. For example, maximum independent set of the tree of following tree has size 7.</p>
-<p><img src="/imgs/sikao12/1.png"></p>
-<p>The green vertices shows that the maximum indpendent set of thetree has size 7.</p>
-<p>(1) Design an efficient greedy algorithm to solve the problem. </p>
-<p>(2) If each vertex has a weight such as benefit,whether can you use a Greedy algorithm to get a maximum benefit where if one vertex has been selected then its adjacent verticex can not be selected.</p>
-<h3 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h3><p>这道思考题考察的是求树中的最大独立集的问题</p>
-<p>独立集概念：</p>
-<p>对于树$T&#x3D;(V,E)$，若$V^{‘} \subseteq V$且$V^{‘}$中任意两点都不相邻，则$V^{‘}$是树T的一个独立集</p>
-<p>在这个问题中，可以采用贪心算法求取树中的最大独立集</p>
-<p>贪心算法通过一系列的局部选择来得到一个问题的解，每一次贪心选择都将所有问题简化为规模更小的子问题。</p>
-<h3 id="算法设计"><a href="#算法设计" class="headerlink" title="算法设计"></a>算法设计</h3><ol>
-<li>初始化一个空的最大独立集</li>
-<li>从树的叶子节点出发，逐层向上处理。对于每个节点，有两种情况：<ul>
-<li>如果该节点的父结点已经被选中作为最大独立集的一部分，则跳过该节点</li>
-<li>如果该节点的父结点没有被选中作为最大独立集的一部分，则将该节点添加到最大独立集中，并将其所有子节点标记为已访问</li>
-</ul>
-</li>
-<li>当该节点处理完后，向上处理，直到处理完所有节点</li>
-</ol>
-<p>使用深度优先搜索遍历树的节点</p>
-<h3 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
-#include &lt;vector&gt;
-#include &lt;unordered_set&gt;
-
-using namespace std;
-
-struct TreeNode &#123;
-    int val;
-    vector&lt;TreeNode*&gt; children;
-    TreeNode* parent &#x3D; nullptr;
-
-    TreeNode(int value) : val(value) &#123;&#125;
-&#125;;
-
-unordered_set&lt;TreeNode*&gt; max_independent_set;
-unordered_set&lt;TreeNode*&gt; visited;
-
-void dfs(TreeNode* node) &#123;
-
-    for (TreeNode* child : node-&gt;children) &#123;
-            dfs(child);
-    &#125;
-
-    if (node-&gt;parent &amp;&amp; max_independent_set.find(node-&gt;parent) &#x3D;&#x3D; max_independent_set.end() &amp;&amp; visited.find(node) &#x3D;&#x3D; visited.end()) &#123;
-        max_independent_set.insert(node);
-        visited.insert(node);
-        visited.insert(node-&gt;parent);
-    &#125;
-&#125;
-
-unordered_set&lt;TreeNode*&gt; findMaxIndependentSet(TreeNode* root) &#123;
-    max_independent_set.clear();
-    visited.clear();
-    dfs(root);
-    return max_independent_set;
-&#125;
-
-int main() &#123;
-    &#x2F;&#x2F; 构建树的示例
-    TreeNode* root &#x3D; new TreeNode(1);
-    TreeNode* node2 &#x3D; new TreeNode(2);
-    TreeNode* node3 &#x3D; new TreeNode(3);
-    TreeNode* node4 &#x3D; new TreeNode(4);
-    TreeNode* node5 &#x3D; new TreeNode(5);
-    TreeNode* node6 &#x3D; new TreeNode(6);
-    TreeNode* node7 &#x3D; new TreeNode(7);
-    TreeNode* node8 &#x3D; new TreeNode(8);
-    TreeNode* node9 &#x3D; new TreeNode(9);
-
-    root-&gt;children.push_back(node2);
-    root-&gt;children.push_back(node3);
-    root-&gt;children.push_back(node4);
-    node2-&gt;parent &#x3D; root;
-    node3-&gt;parent &#x3D; root;
-    node4-&gt;parent &#x3D; root;
-
-    node2-&gt;children.push_back(node5);
-    node2-&gt;children.push_back(node6);
-    node5-&gt;parent &#x3D; node2;
-    node6-&gt;parent &#x3D; node2;
-
-    node4-&gt;children.push_back(node7);
-    node4-&gt;children.push_back(node8);
-    node4-&gt;children.push_back(node9);
-    node7-&gt;parent &#x3D; node4;
-    node8-&gt;parent &#x3D; node4;
-    node9-&gt;parent &#x3D; node4;
-
-    unordered_set&lt;TreeNode*&gt; result &#x3D; findMaxIndependentSet(root);
-
-    &#x2F;&#x2F; 输出最大独立集中的节点值
-    for (TreeNode* node : result) &#123;
-        cout &lt;&lt; node-&gt;val &lt;&lt; &quot; &quot;;
-    &#125;
-    cout &lt;&lt; endl;
-
-    return 0;
-&#125;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>使用深度优先搜索（DFS）来遍历树的节点。首先，找到所有叶子节点，并从它们的父节点开始逐层向上处理。对于每个节点，如果它的父节点已经被选择，则跳过该节点；否则，将该节点添加到最大独立集中，并将其所有子节点标记为已访问。</p>
-<p>这是一个基于贪心算法的近似解法，不一定能够得到最优解。但是，在树结构中，这种贪心算法通常能够得到较好的结果。</p>
-<p>算法遍历了整棵树，因此时间复杂度是$O(n)$。</p>
-<p>如果在每个顶点都有一个权重时，贪心算法无法保证通过选择顶点使得相邻顶点不能被选择的方式获得最大的收益</p>
-<p>贪心算法在每一步都做出局部最优的选择，但是在MWIS问题中，局部最优的选择未必能够得到全局最优解。选择一个顶点意味着排除其相邻的顶点，这种依赖关系使得设计一个能够保证最大收益的贪心算法变得困难。</p>
-<p>为了在不能选择相邻顶点的情况下找到最大收益，通常需要其他方法，如动态规划或分支界限算法，这些方法可以探索所有可能的顶点组合以确定最优解。</p>
-<h2 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h2><h3 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h3><p>Scheduling to Minimize Weighted Completion Time</p>
-<p>Input: A set of n jobs [n] :&#x3D; {1, 2, 3, · · · , n}, each job j has a weight wj and processing time $t_j$</p>
-<p>Output: an ordering of jobs so as to minimize the total weighted completion time of jobs</p>
-<p><img src="/imgs/sikao12/2.png"></p>
-<h3 id="问题分析-1"><a href="#问题分析-1" class="headerlink" title="问题分析"></a>问题分析</h3><p>解决这道题目可以使用贪心算法，依照某种原则确定执行顺序，在规划工作集的最小权重完成时间时，采用单位时间权重确定优先级</p>
-<h3 id="算法设计-1"><a href="#算法设计-1" class="headerlink" title="算法设计"></a>算法设计</h3><p>要使用贪心算法规划工作集的最小权重完成时间，可以按照以下步骤进行：</p>
-<ol>
-<li><p>定义工作集：给定一组工作，每个工作有一个处理时间和一个权重</p>
-</li>
-<li><p>排序工作：根据贪心原则，按照某种标准对工作进行排序。一种常见的排序方式是按照权重除以处理时间的比值进行非递增排序（即权重-处理时间比值越大，优先级越高）</p>
-</li>
-<li><p>创建工作计划：按照排序后的顺序，依次将工作分配给可用的时间槽或机器。可以使用一个变量来记录每个时间槽或机器的当前时间</p>
-</li>
-<li><p>计算加权完成时间：对于每个已安排的工作，计算其加权完成时间，即该工作的处理时间乘以其权重</p>
-</li>
-<li><p>计算总加权完成时间：将所有工作的加权完成时间相加，得到最终的总加权完成时间</p>
-</li>
-</ol>
-<p>贪心算法的关键在于选择适当的排序标准，以便每次选择具有最高优先级的工作。然而，需要注意的是，贪心算法并不能保证获得最优解，但可以提供较好的近似解。对于更精确的解，可能需要使用其他算法，如动态规划或整数规划。</p>
-<h3 id="算法实现-1"><a href="#算法实现-1" class="headerlink" title="算法实现"></a>算法实现</h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;*
-Scheduling to Minimize Weighted Completion Time
-Input: A set of n jobs [n] :&#x3D; &#123;1, 2, 3, · · · , n&#125;, each job j has a weight wj and processing time tj
-Output: an ordering of jobs so as to minimize the total weighted completion time of jobs
-*&#x2F;
-
-#include&lt;iostream&gt;
-#include&lt;vector&gt;
-
-using namespace std;
-
-struct Job &#123;
-    int id;
-    int weight;
-    int time;
-&#125;;
-
-void swap(Job&amp; a, Job&amp; b) &#123;
-    Job temp &#x3D; a;
-    a &#x3D; b;
-    b &#x3D; temp;
-&#125;
-
-void printjobs(vector&lt;Job&gt;&amp; jobs) &#123;
-    for (int i &#x3D; 0; i &lt; jobs.size(); i++) &#123;
-        cout &lt;&lt; jobs[i].id &lt;&lt; &quot; &quot; &lt;&lt; jobs[i].weight &lt;&lt; &quot; &quot; &lt;&lt; jobs[i].time &lt;&lt; endl;
-    &#125;
-&#125;
-
-void sortjobs(vector&lt;Job&gt;&amp; jobs) &#123;
-    for (int i &#x3D; 0; i &lt; jobs.size(); i++) &#123;
-        for (int j &#x3D; i + 1; j &lt; jobs.size(); j++) &#123;
-            if (jobs[i].weight &#x2F; jobs[i].time &lt; jobs[j].weight &#x2F; jobs[j].time) &#123;
-                swap(jobs[i], jobs[j]);
-            &#125;
-        &#125;
-    &#125;
-&#125;
-
-int main() &#123;
-    int n;
-    cin &gt;&gt; n;
-    vector&lt;Job&gt; jobs(n);
-    for (int i &#x3D; 0; i &lt; n; i++) &#123;
-        cin &gt;&gt; jobs[i].weight &gt;&gt; jobs[i].time;
-        jobs[i].id &#x3D; i + 1;
-    &#125;
-    sortjobs(jobs);
-    printjobs(jobs);
-    return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>本算法的时间复杂度是$O(n^2)$，改进优先级排序可以做到$O(nlog~n)$的时间复杂度</p>
+                <h2 id="平均绝对误差-MAE"><a href="#平均绝对误差-MAE" class="headerlink" title="平均绝对误差 MAE"></a>平均绝对误差 MAE</h2><p>平均绝对误差指的就是模型预测值$\hat y$与样本真实值$y$之间距离的平均值<br>$$<br>MAE&#x3D;\frac{1}{n}\sum_{i&#x3D;1}^{n}|\hat y_i-y_i|<br>$$</p>
+<h2 id="均方误差-MSE"><a href="#均方误差-MSE" class="headerlink" title="均方误差 MSE"></a>均方误差 MSE</h2><p>$$<br>\mathrm{MSE}&#x3D;\frac1{\mathrm{n}}\mathrm{~\sum_{i&#x3D;1}^n(\hat{y}_i-y_i)^2}<br>$$</p>
+<p>范围$[0,+\infin)$，当预测值与真实值完全吻合时等于0，即完美模型；误差越大，该值越大。</p>
+<h2 id="均方根误差-RMSE"><a href="#均方根误差-RMSE" class="headerlink" title="均方根误差 RMSE"></a>均方根误差 RMSE</h2><p>MSE加了个根号，这样数量级上比较直观，比如RMSE&#x3D;10，可以认为回归效果相比真实值平均相差10<br>$$<br>\mathrm{RMSE}&#x3D;\sqrt{\frac1{\mathrm{n}}\mathrm{~\sum_{i&#x3D;1}^n(\hat{y}_i-y_i)^2}}<br>$$<br>范围$[0,+\infin)$，当预测值与真实值完全吻合时等于0，即完美模型；误差越大，该值越大。</p>
+<h2 id="平均绝对百分比误差-MAPE"><a href="#平均绝对百分比误差-MAPE" class="headerlink" title="平均绝对百分比误差 MAPE"></a>平均绝对百分比误差 MAPE</h2><p>$$<br>\mathrm{MAPE&#x3D;\frac{100%}{n}\sum_{i&#x3D;1}^n\left|\frac{\hat{y}_i-y_i}{y_i}\right|}<br>$$</p>
+<p>范围$[0,+\infin)$，MAPE为0%表示完美模型，MAPE大于 100 %则表示劣质模型</p>
+<p>当真实值有数据等于0时，存在分母0除问题，该公式不可用</p>
+<h2 id="对称平均绝对百分比误差-SMAPE"><a href="#对称平均绝对百分比误差-SMAPE" class="headerlink" title="对称平均绝对百分比误差 SMAPE"></a>对称平均绝对百分比误差 SMAPE</h2><p>$$<br>\mathrm{SMAPE&#x3D;\frac{100%}{n}\sum_{i&#x3D;1}^\mathrm{n}\frac{|\hat{y}_\mathrm{i}-y_\mathrm{i}|}{(|\hat{y}_\mathrm{i}|+|y_\mathrm{i}|)&#x2F;2}}<br>$$</p>
+<p>注意点：当真实值有数据等于0，而预测值也等于0时，存在分母0除问题，该公式不可用</p>
 
                 
             </div>
@@ -627,7 +454,7 @@ int main() &#123;
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jiang-wu-19.github.io/2023/08/16/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E5%8D%81%E4%BA%8C/">https://jiang-wu-19.github.io/2023/08/16/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E5%8D%81%E4%BA%8C/</a>
+                    <a href="https://jiang-wu-19.github.io/2023/11/12/evaluation-metrics/">https://jiang-wu-19.github.io/2023/11/12/evaluation-metrics/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -665,16 +492,12 @@ int main() &#123;
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">算法</span>
+                                <a href="/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/">
+                                    <span class="chip bg-color">论文阅读</span>
                                 </a>
                             
-                                <a href="/tags/%E6%9C%80%E5%A4%A7%E7%8B%AC%E7%AB%8B%E9%9B%86/">
-                                    <span class="chip bg-color">最大独立集</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%9C%80%E7%9F%AD%E5%AE%8C%E6%88%90%E6%97%B6%E9%97%B4/">
-                                    <span class="chip bg-color">最短完成时间</span>
+                                <a href="/tags/evaluation-metrics/">
+                                    <span class="chip bg-color">evaluation metrics</span>
                                 </a>
                             
                         </div>
@@ -1107,54 +930,52 @@ int main() &#123;
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/08/16/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E5%8D%81%E4%B8%89/">
+                <a href="/2023/11/12/evaluation-metrics/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="算法课外思考题十三">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="evaluation-metrics">
                         
-                        <span class="card-title">算法课外思考题十三</span>
+                        <span class="card-title">evaluation-metrics</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            最短路径和二部图最大不交叉匹配
+                            一些用得到的评价指标
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-08-16
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%80%9D%E8%80%83%E9%A2%98/" class="post-category">
-                                    思考题
+                            <a href="/categories/%E7%A7%91%E7%A0%94/" class="post-category">
+                                    科研
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
+                    <a href="/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/">
+                        <span class="chip bg-color">论文阅读</span>
                     </a>
                     
-                    <a href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/">
-                        <span class="chip bg-color">最短路径</span>
-                    </a>
-                    
-                    <a href="/tags/%E4%BA%8C%E9%83%A8%E5%9B%BE/">
-                        <span class="chip bg-color">二部图</span>
+                    <a href="/tags/evaluation-metrics/">
+                        <span class="chip bg-color">evaluation metrics</span>
                     </a>
                     
                 </div>
@@ -1168,31 +989,31 @@ int main() &#123;
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/08/16/%E7%AE%97%E6%B3%95%E8%AF%BE%E5%A4%96%E6%80%9D%E8%80%83%E9%A2%98%E5%8D%81%E4%B8%80/">
+                <a href="/2023/11/07/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="算法课外思考题十一">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="经验分享">
                         
-                        <span class="card-title">算法课外思考题十一</span>
+                        <span class="card-title">经验分享</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            邻接矩阵的阶数的含义
+                            数学建模闲聊
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-07
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%80%9D%E8%80%83%E9%A2%98/" class="post-category">
-                                    思考题
+                            <a href="/categories/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB%E7%9A%84%E4%B8%9C%E8%A5%BF/" class="post-category">
+                                    杂七杂八的东西
                                 </a>
                             
                             
@@ -1202,12 +1023,8 @@ int main() &#123;
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
-                    </a>
-                    
-                    <a href="/tags/%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5/">
-                        <span class="chip bg-color">邻接矩阵</span>
+                    <a href="/tags/%E5%88%86%E4%BA%AB/">
+                        <span class="chip bg-color">分享</span>
                     </a>
                     
                 </div>

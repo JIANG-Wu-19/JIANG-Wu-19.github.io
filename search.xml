@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>evaluation-metrics</title>
+      <link href="/2023/11/12/evaluation-metrics/"/>
+      <url>/2023/11/12/evaluation-metrics/</url>
+      
+        <content type="html"><![CDATA[<h2 id="平均绝对误差-MAE"><a href="#平均绝对误差-MAE" class="headerlink" title="平均绝对误差 MAE"></a>平均绝对误差 MAE</h2><p>平均绝对误差指的就是模型预测值$\hat y$与样本真实值$y$之间距离的平均值<br>$$<br>MAE&#x3D;\frac{1}{n}\sum_{i&#x3D;1}^{n}|\hat y_i-y_i|<br>$$</p><h2 id="均方误差-MSE"><a href="#均方误差-MSE" class="headerlink" title="均方误差 MSE"></a>均方误差 MSE</h2><p>$$<br>\mathrm{MSE}&#x3D;\frac1{\mathrm{n}}\mathrm{~\sum_{i&#x3D;1}^n(\hat{y}_i-y_i)^2}<br>$$</p><p>范围$[0,+\infin)$，当预测值与真实值完全吻合时等于0，即完美模型；误差越大，该值越大。</p><h2 id="均方根误差-RMSE"><a href="#均方根误差-RMSE" class="headerlink" title="均方根误差 RMSE"></a>均方根误差 RMSE</h2><p>MSE加了个根号，这样数量级上比较直观，比如RMSE&#x3D;10，可以认为回归效果相比真实值平均相差10<br>$$<br>\mathrm{RMSE}&#x3D;\sqrt{\frac1{\mathrm{n}}\mathrm{~\sum_{i&#x3D;1}^n(\hat{y}_i-y_i)^2}}<br>$$<br>范围$[0,+\infin)$，当预测值与真实值完全吻合时等于0，即完美模型；误差越大，该值越大。</p><h2 id="平均绝对百分比误差-MAPE"><a href="#平均绝对百分比误差-MAPE" class="headerlink" title="平均绝对百分比误差 MAPE"></a>平均绝对百分比误差 MAPE</h2><p>$$<br>\mathrm{MAPE&#x3D;\frac{100%}{n}\sum_{i&#x3D;1}^n\left|\frac{\hat{y}_i-y_i}{y_i}\right|}<br>$$</p><p>范围$[0,+\infin)$，MAPE为0%表示完美模型，MAPE大于 100 %则表示劣质模型</p><p>当真实值有数据等于0时，存在分母0除问题，该公式不可用</p><h2 id="对称平均绝对百分比误差-SMAPE"><a href="#对称平均绝对百分比误差-SMAPE" class="headerlink" title="对称平均绝对百分比误差 SMAPE"></a>对称平均绝对百分比误差 SMAPE</h2><p>$$<br>\mathrm{SMAPE&#x3D;\frac{100%}{n}\sum_{i&#x3D;1}^\mathrm{n}\frac{|\hat{y}_\mathrm{i}-y_\mathrm{i}|}{(|\hat{y}_\mathrm{i}|+|y_\mathrm{i}|)&#x2F;2}}<br>$$</p><p>注意点：当真实值有数据等于0，而预测值也等于0时，存在分母0除问题，该公式不可用</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 科研 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 论文阅读 </tag>
+            
+            <tag> evaluation metrics </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>经验分享</title>
       <link href="/2023/11/07/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/"/>
       <url>/2023/11/07/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/</url>
