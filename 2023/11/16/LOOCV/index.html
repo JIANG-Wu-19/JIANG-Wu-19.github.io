@@ -394,7 +394,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    698
+                    696
                 </div>
                 
 
@@ -421,9 +421,9 @@
             <div id="articleContent">
                 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/dpengwang/article/details/84934197">LOOCV - Leave-One-Out-Cross-Validation 留一交叉验证_留一法交叉验证均方差计算公式-CSDN博客</a></p>
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/156657195">模型比较中的留一法交叉验证（Leave-One-Out Cross-Validation） - 知乎 (zhihu.com)</a></p>
-<h2 id="Leave-One-Out-Cross-Validation"><a href="#Leave-One-Out-Cross-Validation" class="headerlink" title="Leave One Out Cross Validation"></a>Leave One Out Cross Validation</h2><p>正常训练都会划分训练集和验证集，训练集用来训练模型，而验证集用来评估模型的泛化能力。留一交叉验证是一个极端的例子，如果数据集D的大小为N,那么用N-1条数据进行训练，用剩下的一条数据作为验证，用一条数据作为验证的坏处就是可能$E_{val}$和$E_{out}$相差很大，所以在留一交叉验证里，每次从D中取一组作为验证集，直到所有样本都作过验证集，共计算N次，最后对验证误差求平均，得到$E_{loocv}(H,A)$，这种方法称之为留一法交叉验证。<br>$$<br>\mathrm{CV}<em>{(n)}&#x3D;\frac1n\sum</em>{i&#x3D;1}^n\mathrm{MSE}_i.<br>$$</p>
+<h2 id="Leave-One-Out-Cross-Validation"><a href="#Leave-One-Out-Cross-Validation" class="headerlink" title="Leave One Out Cross Validation"></a>Leave One Out Cross Validation</h2><p>正常训练都会划分训练集和验证集，训练集用来训练模型，而验证集用来评估模型的泛化能力。留一交叉验证是一个极端的例子，如果数据集D的大小为N,那么用N-1条数据进行训练，用剩下的一条数据作为验证，用一条数据作为验证的坏处就是可能$E_{val}$和$E_{out}$相差很大，所以在留一交叉验证里，每次从D中取一组作为验证集，直到所有样本都作过验证集，共计算N次，最后对验证误差求平均，得到$E_{loocv}(H,A)$，这种方法称之为留一法交叉验证。<br>$$<br>\mathrm{CV}<em>{(n)}&#x3D;\frac1n\sum</em>{i&#x3D;1}^n\mathrm{MSE}_i<br>$$</p>
 <p>$$<br>\frac1N\sum_{n&#x3D;1}^Ne_n&#x3D;\frac1N\sum_{n&#x3D;1}^Nerr(g_n^-(x_n),y_n)<br>$$</p>
-<p>LOOCV改进<br>$$<br>\mathrm{CV}<em>{(n)}&#x3D;\frac{1}{n}\sum</em>{i&#x3D;1}^{n}\left(\frac{y_i-\hat{y}_i}{1-h_i}\right)^2<br>$$</p>
+<p>LOOCV改进<br>$$<br>\mathrm{CV}<em>{(n)}&#x3D;\frac{1}{n}\sum</em>{i&#x3D;1}^{n}(\frac{y_i-\hat{y}_i}{1-h_i})^2<br>$$</p>
 <h2 id="为什么使用LOOCV"><a href="#为什么使用LOOCV" class="headerlink" title="为什么使用LOOCV"></a>为什么使用LOOCV</h2><blockquote>
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/24825503">【机器学习】Cross-Validation（交叉验证）详解 - 知乎 (zhihu.com)</a></p>
 </blockquote>
