@@ -4,6 +4,60 @@
   
     
     <entry>
+      <title>LaTex报告模板</title>
+      <link href="/2023/11/28/LaTex%E6%8A%A5%E5%91%8A%E6%A8%A1%E6%9D%BF/"/>
+      <url>/2023/11/28/LaTex%E6%8A%A5%E5%91%8A%E6%A8%A1%E6%9D%BF/</url>
+      
+        <content type="html"><![CDATA[<pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token function selector">\documentclass</span><span class="token punctuation">[</span>UTF8,12pt<span class="token punctuation">]</span><span class="token punctuation">&#123;</span><span class="token keyword">article</span><span class="token punctuation">&#125;</span><span class="token function selector">\usepackage</span><span class="token punctuation">&#123;</span><span class="token keyword">ctex</span><span class="token punctuation">&#125;</span><span class="token function selector">\usepackage</span><span class="token punctuation">&#123;</span><span class="token keyword">indentfirst</span><span class="token punctuation">&#125;</span><span class="token function selector">\usepackage</span><span class="token punctuation">&#123;</span><span class="token keyword">color</span><span class="token punctuation">&#125;</span><span class="token function selector">\usepackage</span><span class="token punctuation">&#123;</span><span class="token keyword">hyperref</span><span class="token punctuation">&#125;</span><span class="token function selector">\usepackage</span><span class="token punctuation">&#123;</span><span class="token keyword">graphicx</span><span class="token punctuation">&#125;</span><span class="token function selector">\usepackage</span><span class="token punctuation">&#123;</span><span class="token keyword">subfigure</span><span class="token punctuation">&#125;</span><span class="token function selector">\usepackage</span><span class="token punctuation">&#123;</span><span class="token keyword">pdfpages</span><span class="token punctuation">&#125;</span><span class="token function selector">\usepackage</span><span class="token punctuation">&#123;</span><span class="token keyword">listings</span><span class="token punctuation">&#125;</span><span class="token function selector">\hypersetup</span><span class="token punctuation">&#123;</span>    hidelinks,colorlinks=true,allcolors=black,pdfstartview=Fit,breaklinks=true<span class="token punctuation">&#125;</span><span class="token function selector">\definecolor</span><span class="token punctuation">&#123;</span>dkgreen<span class="token punctuation">&#125;</span><span class="token punctuation">&#123;</span>rgb<span class="token punctuation">&#125;</span><span class="token punctuation">&#123;</span>0,0.6,0<span class="token punctuation">&#125;</span><span class="token function selector">\definecolor</span><span class="token punctuation">&#123;</span>gray<span class="token punctuation">&#125;</span><span class="token punctuation">&#123;</span>rgb<span class="token punctuation">&#125;</span><span class="token punctuation">&#123;</span>0.5,0.5,0.5<span class="token punctuation">&#125;</span><span class="token function selector">\definecolor</span><span class="token punctuation">&#123;</span>mauve<span class="token punctuation">&#125;</span><span class="token punctuation">&#123;</span>rgb<span class="token punctuation">&#125;</span><span class="token punctuation">&#123;</span>0.58,0,0.82<span class="token punctuation">&#125;</span><span class="token function selector">\lstset</span><span class="token punctuation">&#123;</span> <span class="token comment">%</span>  language=Octave,                <span class="token comment">% the language of the code</span>  basicstyle=<span class="token function selector">\footnotesize</span>,           <span class="token comment">% the size of the fonts that are used for the code</span>  numbers=left,                   <span class="token comment">% where to put the line-numbers</span>  numberstyle=<span class="token function selector">\tiny</span><span class="token function selector">\color</span><span class="token punctuation">&#123;</span>gray<span class="token punctuation">&#125;</span>,  <span class="token comment">% the style that is used for the line-numbers</span>  stepnumber=2,                   <span class="token comment">% the step between two line-numbers. If it's 1, each line </span>                                  <span class="token comment">% will be numbered</span>  numbersep=5pt,                  <span class="token comment">% how far the line-numbers are from the code</span>  backgroundcolor=<span class="token function selector">\color</span><span class="token punctuation">&#123;</span>white<span class="token punctuation">&#125;</span>,      <span class="token comment">% choose the background color. You must add \usepackage&#123;color&#125;</span>  showspaces=false,               <span class="token comment">% show spaces adding particular underscores</span>  showstringspaces=false,         <span class="token comment">% underline spaces within strings</span>  showtabs=false,                 <span class="token comment">% show tabs within strings adding particular underscores</span>  frame=single,                   <span class="token comment">% adds a frame around the code</span>  rulecolor=<span class="token function selector">\color</span><span class="token punctuation">&#123;</span>black<span class="token punctuation">&#125;</span>,        <span class="token comment">% if not set, the frame-color may be changed on line-breaks within not-black text (e.g. commens (green here))</span>  tabsize=2,                      <span class="token comment">% sets default tabsize to 2 spaces</span>  captionpos=b,                   <span class="token comment">% sets the caption-position to bottom</span>  breaklines=true,                <span class="token comment">% sets automatic line breaking</span>  breakatwhitespace=false,        <span class="token comment">% sets if automatic breaks should only happen at whitespace</span>  title=<span class="token function selector">\lstname</span>,                   <span class="token comment">% show the filename of files included with \lstinputlisting;</span>                                  <span class="token comment">% also try caption instead of title</span>  keywordstyle=<span class="token function selector">\color</span><span class="token punctuation">&#123;</span>blue<span class="token punctuation">&#125;</span>,          <span class="token comment">% keyword style</span>  commentstyle=<span class="token function selector">\color</span><span class="token punctuation">&#123;</span>dkgreen<span class="token punctuation">&#125;</span>,       <span class="token comment">% comment style</span>  stringstyle=<span class="token function selector">\color</span><span class="token punctuation">&#123;</span>mauve<span class="token punctuation">&#125;</span>,         <span class="token comment">% string literal style</span>  escapeinside=<span class="token punctuation">&#123;</span>\<span class="token comment">%*&#125;&#123;*)&#125;,            % if you want to add LaTeX within your code</span>  morekeywords=<span class="token punctuation">&#123;</span>*,...<span class="token punctuation">&#125;</span>               <span class="token comment">% if you want to add more keywords to the set</span><span class="token punctuation">&#125;</span><span class="token function selector">\setlength</span><span class="token punctuation">&#123;</span><span class="token function selector">\parindent</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#123;</span>2em<span class="token punctuation">&#125;</span><span class="token function selector">\begin</span><span class="token punctuation">&#123;</span><span class="token keyword">document</span><span class="token punctuation">&#125;</span><span class="token function selector">\begin</span><span class="token punctuation">&#123;</span><span class="token keyword">titlepage</span><span class="token punctuation">&#125;</span>    <span class="token function selector">\includepdf</span><span class="token punctuation">[</span>pages=<span class="token punctuation">&#123;</span>1<span class="token punctuation">&#125;</span><span class="token punctuation">]</span><span class="token punctuation">&#123;</span>cover.pdf<span class="token punctuation">&#125;</span><span class="token function selector">\end</span><span class="token punctuation">&#123;</span><span class="token keyword">titlepage</span><span class="token punctuation">&#125;</span><span class="token function selector">\begin</span><span class="token punctuation">&#123;</span><span class="token keyword">center</span><span class="token punctuation">&#125;</span>    <span class="token function selector">\tableofcontents</span><span class="token function selector">\end</span><span class="token punctuation">&#123;</span><span class="token keyword">center</span><span class="token punctuation">&#125;</span><span class="token function selector">\newpage</span><span class="token function selector">\end</span><span class="token punctuation">&#123;</span><span class="token keyword">document</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 杂七杂八的东西 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 模板 </tag>
+            
+            <tag> Tex </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Tomcat安装</title>
+      <link href="/2023/11/26/Tomcat%E5%AE%89%E8%A3%85/"/>
+      <url>/2023/11/26/Tomcat%E5%AE%89%E8%A3%85/</url>
+      
+        <content type="html"><![CDATA[<p>课设需要用到JSP技术，所以主机安装一下Tomcat</p><blockquote><p>Tomcat 服务器是一个免费的开放源代码的Web 应用服务器，属于轻量级应用服务器，在中小型系统和并发访问用户不是很多的场合下被普遍使用，是开发和调试JSP 程序的首选。</p><p>实际上Tomcat是Apache 服务器的扩展，但运行时它是独立运行的，所以当你运行tomcat 时，它实际上作为一个与Apache 独立的进程单独运行的。</p></blockquote><ul><li><code>Tomcat</code>版本：<code>v9.0.55</code></li></ul><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Tomcat是开源的，直接在官网上下载就可以了</p><blockquote><p>To Be Continued</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 杂七杂八的东西 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 分享 </tag>
+            
+            <tag> Tomcat </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>LOOCV</title>
       <link href="/2023/11/16/LOOCV/"/>
       <url>/2023/11/16/LOOCV/</url>
