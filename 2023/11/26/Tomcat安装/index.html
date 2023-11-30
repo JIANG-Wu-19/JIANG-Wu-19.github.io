@@ -394,14 +394,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    166
+                    512
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -419,18 +419,45 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>课设需要用到JSP技术，所以主机安装一下Tomcat</p>
+                <p>课设需要用到JSP技术，所以主机安装一下Tomcat，并把Tomcat调试正确。</p>
 <blockquote>
-<p>Tomcat 服务器是一个免费的开放源代码的Web 应用服务器，属于轻量级应用服务器，在中小型系统和并发访问用户不是很多的场合下被普遍使用，是开发和调试JSP 程序的首选。</p>
-<p>实际上Tomcat是Apache 服务器的扩展，但运行时它是独立运行的，所以当你运行tomcat 时，它实际上作为一个与Apache 独立的进程单独运行的。</p>
+<p>Tomcat服务器是一个免费的开放源代码的Web 应用服务器，属于轻量级应用服务器，在中小型系统和并发访问用户不是很多的场合下被普遍使用，是开发和调试JSP 程序的首选。</p>
+<p>实际上Tomcat是Apache服务器的扩展，但运行时它是独立运行的，所以当你运行tomcat时，它实际上作为一个与Apache独立的进程单独运行的。</p>
 </blockquote>
 <ul>
 <li><code>Tomcat</code>版本：<code>v9.0.55</code></li>
 </ul>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Tomcat是开源的，直接在官网上下载就可以了</p>
-<blockquote>
-<p>To Be Continued</p>
-</blockquote>
+<p>这里需要的是<code>v9.0.55</code>，因此在<a target="_blank" rel="noopener" href="https://archive.apache.org/dist/tomcat/">archives</a>里面寻找，直接给出<a target="_blank" rel="noopener" href="https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.55/src/apache-tomcat-9.0.55-src.zip">v9.0.55</a>的下载地址，然后解压在目标地址就可以了，<code>.zip</code>免安装，解压并配置环境变量即可使用</p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>配置Tomcat环境变量的前置条件是配置好java的环境变量，即<code>JAVA_HOME</code></p>
+<p>以下环境变量均在系统环境变量中设置</p>
+<ol>
+<li>新建<code>CATALINA_HOME</code>，值为Tomcat的文件夹地址</li>
+<li>建立Path，添加<code>%CATALINA_HOME%\lib</code>，<code>%CATALINA_HOME%\bin</code>，<code>%CATALINA_HOME%\lib\servlet-api.jar</code></li>
+</ol>
+<h2 id="测试Tomcat"><a href="#测试Tomcat" class="headerlink" title="测试Tomcat"></a>测试Tomcat</h2><h3 id="启动Tomcat"><a href="#启动Tomcat" class="headerlink" title="启动Tomcat"></a>启动Tomcat</h3><h4 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h4><p>在<code>.\apache-tomcat-9.0.55\bin</code>目录下，双击<code>startup.bat</code>打开窗口，双击<code>shutdown.bat</code>关闭窗口</p>
+<p>在启动界面，会出现这种界面</p>
+<p><img src="/imgs/tomcat/1.png" alt="image-20231130090736810"></p>
+<p>解决方案是：</p>
+<p>在<code>.\apache-tomcat-9.0.55\conf\</code>将</p>
+<pre class="line-numbers language-none"><code class="language-none">java.util.logging.ConsoleHandler.encoding &#x3D; UTF-8<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>替换成</p>
+<pre class="line-numbers language-none"><code class="language-none">java.util.logging.ConsoleHandler.encoding &#x3D; GBK<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/imgs/tomcat/2.png" alt="image-20231130091214307"></p>
+<h4 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h4><p>通过命令行打开，在<code>.\apache-tomcat-9.0.55\bin</code>打开cmd，输入startup</p>
+<p>出现</p>
+<pre class="line-numbers language-none"><code class="language-none">Using CATALINA_BASE:   &quot;E:\apache-tomcat-9.0.55&quot;
+Using CATALINA_HOME:   &quot;E:\apache-tomcat-9.0.55&quot;
+Using CATALINA_TMPDIR: &quot;E:\apache-tomcat-9.0.55\temp&quot;
+Using JRE_HOME:        &quot;E:\java&quot;
+Using CLASSPATH:       &quot;E:\apache-tomcat-9.0.55\bin\bootstrap.jar;E:\apache-tomcat-9.0.55\bin\tomcat-juli.jar&quot;
+Using CATALINA_OPTS:   &quot;&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>并弹出Tomcat启动界面（如上），表明启动成功</p>
+<h3 id="访问Tomcat"><a href="#访问Tomcat" class="headerlink" title="访问Tomcat"></a>访问Tomcat</h3><p>在启动Tomcat后，打开浏览器，输入地址<code>http://localhost:8080</code>，弹出Tomcat自带的JSP界面，说明JDK和Tomcat搭建成功</p>
+<p><img src="/imgs/tomcat/3.png" alt="image-20231130091747516"></p>
 
                 
             </div>
@@ -1215,7 +1242,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">163k</span>&nbsp;字
+                class="white-color">163.3k</span>&nbsp;字
             
             
             
