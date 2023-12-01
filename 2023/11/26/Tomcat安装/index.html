@@ -394,7 +394,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    512
+                    514
                 </div>
                 
 
@@ -439,7 +439,7 @@
 <p>在启动界面，会出现这种界面</p>
 <p><img src="/imgs/tomcat/1.png" alt="image-20231130090736810"></p>
 <p>解决方案是：</p>
-<p>在<code>.\apache-tomcat-9.0.55\conf\</code>将</p>
+<p>在<code>.\apache-tomcat-9.0.55\conf\logging.properties</code>将</p>
 <pre class="line-numbers language-none"><code class="language-none">java.util.logging.ConsoleHandler.encoding &#x3D; UTF-8<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>替换成</p>
