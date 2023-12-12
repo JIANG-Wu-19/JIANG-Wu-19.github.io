@@ -432,7 +432,7 @@
 <span class="token keyword">from</span> collections <span class="token keyword">import</span> OrderedDict<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="2-加载数据并可视化"><a href="#2-加载数据并可视化" class="headerlink" title="2 加载数据并可视化"></a>2 加载数据并可视化</h2><p>在这个实验中用到的数据集是MNIST。MNIST数据集是一个手写体数据集，包含训练集<strong>60000</strong>张图片和测试集<strong>10000</strong>张图片，其中每张图片是一张<strong>28×28</strong>的灰度图片，图片内容为一个<strong>0-9</strong>表示的手写数字。<br>一张灰度图片读取后是二维张量的，但是我们使用的神经网络中的全连接层的输入是一维张量。所以我们需要将一张二维灰度图片转换成一个一维张量（即向量），如图1：</p>
-<p><img src="/imgs/mlhw3/2d_to_1d.jpg" alt="展开二维图片成向量"></p>
+<p><img src="/imgs/mlhw4/2d_to_1d.jpg" alt="展开二维图片成向量"></p>
 <p>在此之后每一个样本都是一个长度为<strong>784</strong>（28*28）的向量。 </p>
 <p>手写数字识别任务是一个多分类任务，共包含有10类，分别用0-9表示，为了用一个向量表示一个类别，通常使用<strong>one-hot</strong>编码，比如在手写数字识别中，类别0和1对应的one-hot向量分别为：<br>$$\mathrm{one-hot}(0)&#x3D;\begin{bmatrix}1 \ 0\ 0\ 0\ 0\ 0\ 0\ 0\ 0\ 0\ \end{bmatrix},\mathrm{one-hot}(1)&#x3D;\begin{bmatrix}0 \ 1\ 0\ 0\ 0\ 0\ 0\ 0\ 0\ 0\ \end{bmatrix}$$ </p>
 <div align=center>
