@@ -559,15 +559,6 @@ leakyRelu<span class="token punctuation">.</span>forward<span class="token punct
 </code></pre>
 <h4 id="3-2-2-Affine层"><a href="#3-2-2-Affine层" class="headerlink" title="3.2.2 Affine层"></a>3.2.2 Affine层</h4><p>神经网络的正向传播中，为了计算加权信号的总和，使用了矩阵的乘积运算，回顾一下公式：<br>$$<br>Y &#x3D; XW + B<br>$$<br>即<code>Y = np.dot(X, W) + B</code>。假设X，W，B的shape分别为(2,)、(2,3)、(3,)如图4，现在将这里进行的求矩阵的乘积与偏置的和的运算用计算图表示出来。将乘积运算用“dot”节点表示的话，则np.dot(X, W) + B的运算如图5：</p>
 <p><img src="/imgs/mlhw4/Affine1.png" alt="单向量正向传播"></p>
-<div align=center>
-<img src="./images/Affine1.png"><br>
-图4. 单向量正向传播
-</div>
-<div align=center>
-<img src="./images/Affine2.png"><br>
-图5. Affine
-</div>
-
 <p><img src="/imgs/mlhw4/Affine2.png" alt="Affine"></p>
 <p>以矩阵为对象的反向传播，按矩阵的各个元素进行计算时，步骤和以标量为对象的计算图相同。用公式表示：<br>$$<br>\frac{\partial L}{\partial X} &#x3D; \frac{\partial L}{\partial Y} \cdot W^T<br>$$</p>
 <p>$$<br>\frac{\partial L}{\partial W} &#x3D; X^T \cdot \frac{\partial L}{\partial Y}<br>$$</p>
@@ -622,12 +613,6 @@ l<span class="token punctuation">,</span> affine<span class="token punctuation">
 <pre><code>(9.0, array([[3., 3.]]))
 </code></pre>
 <h4 id="3-2-3-Softmax-with-Loss层"><a href="#3-2-3-Softmax-with-Loss层" class="headerlink" title="3.2.3 Softmax-with-Loss层"></a>3.2.3 Softmax-with-Loss层</h4><p>softmax函数会将输入值正规化后输出，如图所示：</p>
-<div align=center>
-<img src="./images/softmax.png">
-<br>
-图8. Softmax层
-</div>
-
 <p><img src="/imgs/mlhw4/softmax.png" alt="Softmax层"></p>
 <p>用$x_i$表示向量$x$的第$i$个分量。具体公式为<br>$$softmax(x_i)&#x3D;\frac{e^{x_i}}{\sum_{j&#x3D;1}^{C}{e^{x_j}}}$$ </p>
 <p>当最后一层为softmax时，使用的损失函数一般为交叉熵函数（$C$是类别的数量，在本次实验中即为10）：<br>$$L(\hat{y},y)&#x3D;-\sum_{j&#x3D;1}^{C}{y_jlog\hat{y_j}}$$<br>成本函数为（$m$是mini-batch的大小）：<br>$$J(W^{[1]},b^{[1]},…)&#x3D;\frac{1}{m}\sum_{i&#x3D;1}^{m}{L(\hat{y}^{(i)},y^{(i)})}$$<br><strong>mini-batch</strong>：训练集共有60000个图片，我们不能把$(60000,784)$的张量直接放入神经网络计算。因此，每次正向传播从中选取m个图像来进行前向传播，所以输入的张量大小为$(m,784)$.</p>
