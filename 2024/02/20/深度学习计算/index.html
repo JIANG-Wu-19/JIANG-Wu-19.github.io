@@ -888,7 +888,7 @@ net<span class="token operator">=</span>get_net<span class="token punctuation">(
 <span class="token keyword">print</span><span class="token punctuation">(</span>net<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>将数据通过网络，最终使框架初始化参数</p>
-<h3 id="自定义层"><a href="#自定义层" class="headerlink" title="自定义层"></a>自定义层</h3><h4 id="不带参数的层"><a href="#不带参数的层" class="headerlink" title="不带参数的层"></a>不带参数的层</h4><p>构造一个没有任何参数的自定义层，只需继承基础层类并实现前向传播功能</p>
+<h2 id="自定义层"><a href="#自定义层" class="headerlink" title="自定义层"></a>自定义层</h2><h4 id="不带参数的层"><a href="#不带参数的层" class="headerlink" title="不带参数的层"></a>不带参数的层</h4><p>构造一个没有任何参数的自定义层，只需继承基础层类并实现前向传播功能</p>
 <p><em>吃个栗子</em></p>
 <p>实现一个数据中心化层</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> torch
@@ -934,7 +934,7 @@ tensor([[ 1.2648, -1.2138, -0.6748],
         [ 2.1399, -1.3201, -0.5928],
         [-1.7694,  1.3518,  1.9013]], requires_grad&#x3D;True)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="读写文件"><a href="#读写文件" class="headerlink" title="读写文件"></a>读写文件</h3><p>定期保存中间结果</p>
+<h2 id="读写文件"><a href="#读写文件" class="headerlink" title="读写文件"></a>读写文件</h2><p>定期保存中间结果</p>
 <p>加载和存储权重向量和整个模型</p>
 <h4 id="加载和保存张量"><a href="#加载和保存张量" class="headerlink" title="加载和保存张量"></a>加载和保存张量</h4><p>对于单个张量，可以直接调用load和save函数分别读写它们</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> torch
@@ -1016,7 +1016,7 @@ Y_clone<span class="token operator">==</span>net<span class="token punctuation">
         [True, True, True, True, True, True, True, True, True, True]])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>保存架构必须在代码中完成，而不是在参数中完成</p>
-<h3 id="GPU"><a href="#GPU" class="headerlink" title="GPU"></a>GPU</h3><pre class="line-numbers language-none"><code class="language-none">!nvidia-smi<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="GPU"><a href="#GPU" class="headerlink" title="GPU"></a>GPU</h2><pre class="line-numbers language-none"><code class="language-none">!nvidia-smi<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <pre class="line-numbers language-none"><code class="language-none">Mon Feb 26 19:20:29 2024       
 +---------------------------------------------------------------------------------------+
