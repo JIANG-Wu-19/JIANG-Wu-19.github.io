@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>打标工具doccano的安装启动</title>
+      <link href="/2024/03/29/%E6%89%93%E6%A0%87%E5%B7%A5%E5%85%B7doccano%E7%9A%84%E5%AE%89%E8%A3%85%E5%90%AF%E5%8A%A8/"/>
+      <url>/2024/03/29/%E6%89%93%E6%A0%87%E5%B7%A5%E5%85%B7doccano%E7%9A%84%E5%AE%89%E8%A3%85%E5%90%AF%E5%8A%A8/</url>
+      
+        <content type="html"><![CDATA[<p>doccano是documment anotation的缩写，是一个开源的文本标注工具，我们可以用它为NLP任务的语料库进行打标。它支持情感分析，命名实体识别，文本摘要等任务。当然最新版本的doccano还可以对CV任务的数据进行打标，<del>果然CV、NLP不分家</del></p><p>主要就是<strong>汉化</strong>一下doccano的安装流程（使用anaconda虚拟环境、pip），然后再苦逼地进行打标任务</p><p>贴一个项目地址，英文好的可以直接去这篇了，项目的readme已经非常完善了：</p><p><a href="https://github.com/doccano/doccano">doccano&#x2F;doccano: Open source annotation tool for machine learning practitioners. (github.com)</a></p><ul><li>本文的前置条件是<strong>电脑已安装anaconda&#x2F;miniconda</strong></li></ul><h2 id="anaconda创建虚拟环境"><a href="#anaconda创建虚拟环境" class="headerlink" title="anaconda创建虚拟环境"></a>anaconda创建虚拟环境</h2><p>安装案之后回过头来觉得创建一个虚拟环境是对的，防止污染我的base或其他envs，虽然在<strong>后序操作中会多几个步骤</strong></p><p><del>当键入<code>pip install doccano</code>之后，pip开始疯狂的安装三方库（这些事后话）</del></p><p>这里安装的python版本是3.10，官方给出的要求是$&gt; 3.9$</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda create <span class="token parameter variable">-n</span> doccano <span class="token assign-left variable">python</span><span class="token operator">=</span><span class="token number">3.10</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>然后一路确定安装完虚拟环境</p><h2 id="安装doccano"><a href="#安装doccano" class="headerlink" title="安装doccano"></a>安装doccano</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda activate doccano<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>激活虚拟环境doccno，然后<code>pip install</code>即可</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip <span class="token function">install</span> doccano<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>一路顺利安装</p><h2 id="初始化doccno"><a href="#初始化doccno" class="headerlink" title="初始化doccno"></a>初始化doccno</h2><ul><li>初始化doccano需要<strong>在安装的虚拟环境下进行</strong></li></ul><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">doccano init<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">doccano createuser <span class="token parameter variable">--username</span> xxxx <span class="token parameter variable">--password</span> xxxx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="启动doccano"><a href="#启动doccano" class="headerlink" title="启动doccano"></a>启动doccano</h2><ul><li>启动doccano需要<strong>在安装的虚拟环境下进行</strong>，这里占用的端口是8000，请合理分配</li></ul><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">doccano webserver <span class="token parameter variable">--port</span> <span class="token number">8000</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><ul><li>新开一个<strong>doccano虚拟环境的shell窗口</strong>，运行下面的代码启动任务队列</li></ul><pre class="line-numbers language-none"><code class="language-none">doccano tast<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>doccano程序在本机8000端口运行</p><p><img src="/imgs/doccano/1.png" alt="image-20240329234236912"></p><p><img src="/imgs/doccano2.png" alt="image-20240329234409537"></p><h2 id="运行doccano"><a href="#运行doccano" class="headerlink" title="运行doccano"></a>运行doccano</h2><p><strong>上一部分执行完后</strong>，在浏览器键入网址<code>127.0.0.1:8000</code>即可进入doccano初始界面，点击登录就可以创建新的打标任务了</p><p><img src="/imgs/doccano3.png" alt="image-20240329234535060"></p><p>如何进行打标且看后续内容</p><blockquote><p>To Be Continued</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 软件安装 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 机器学习 </tag>
+            
+            <tag> 打标工具 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>循环神经网络</title>
       <link href="/2024/03/06/%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
       <url>/2024/03/06/%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</url>
@@ -225,7 +252,7 @@
       
       <categories>
           
-          <category> 杂七杂八的东西 </category>
+          <category> 软件安装 </category>
           
       </categories>
       
@@ -487,7 +514,7 @@
       
       <categories>
           
-          <category> 杂七杂八的东西 </category>
+          <category> 软件安装 </category>
           
       </categories>
       
