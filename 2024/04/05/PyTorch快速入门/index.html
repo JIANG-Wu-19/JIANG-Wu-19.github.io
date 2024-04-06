@@ -422,7 +422,7 @@
                 <p>学习了一点深度学习之后发现自己的PyTorch学的一知半解，数据集、训练&#x2F;测试函数写的一坨，所以重新学一下PyTorch深度学习整个流程的</p>
 <h2 id="Dataset与DataLoader"><a href="#Dataset与DataLoader" class="headerlink" title="Dataset与DataLoader"></a>Dataset与DataLoader</h2><p>Dataset类的半官方文档</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">Init signature<span class="token punctuation">:</span> Dataset<span class="token punctuation">(</span><span class="token punctuation">)</span>
-Source<span class="token punctuation">:</span>      
+Source<span class="token punctuation">:</span>    
 <span class="token keyword">class</span> <span class="token class-name">Dataset</span><span class="token punctuation">(</span>Generic<span class="token punctuation">[</span>T_co<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">r"""An abstract class representing a :class:`Dataset`.
 
@@ -465,7 +465,7 @@ Subclasses<span class="token punctuation">:</span>     IterableDataset<span clas
         img_path<span class="token operator">=</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>self<span class="token punctuation">.</span>path<span class="token punctuation">,</span>img_name<span class="token punctuation">)</span>
         img<span class="token operator">=</span>Image<span class="token punctuation">.</span><span class="token builtin">open</span><span class="token punctuation">(</span>img_path<span class="token punctuation">)</span>
         label<span class="token operator">=</span>self<span class="token punctuation">.</span>label_dir
-      
+    
         <span class="token keyword">return</span> img<span class="token punctuation">,</span>label
     <span class="token keyword">def</span> <span class="token function">__len__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token keyword">return</span> <span class="token builtin">len</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>img_path<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -483,10 +483,10 @@ Subclasses<span class="token punctuation">:</span>     IterableDataset<span clas
         label_name<span class="token operator">=</span>self<span class="token punctuation">.</span>label_path<span class="token punctuation">[</span>idx<span class="token punctuation">]</span>
         img_path<span class="token operator">=</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>self<span class="token punctuation">.</span>root_dir<span class="token punctuation">,</span>self<span class="token punctuation">.</span>img_dir<span class="token punctuation">,</span>img_name<span class="token punctuation">)</span>
         label_path<span class="token operator">=</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>self<span class="token punctuation">.</span>root_dir<span class="token punctuation">,</span>self<span class="token punctuation">.</span>label_dir<span class="token punctuation">,</span>label_name<span class="token punctuation">)</span>
-      
+    
         img<span class="token operator">=</span>Image<span class="token punctuation">.</span><span class="token builtin">open</span><span class="token punctuation">(</span>img_path<span class="token punctuation">)</span>
         <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>label_path<span class="token punctuation">,</span><span class="token string">"r"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
-            label<span class="token operator">=</span>f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>      
+            label<span class="token operator">=</span>f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>    
         <span class="token keyword">return</span> img<span class="token punctuation">,</span>label
     <span class="token keyword">def</span> <span class="token function">__len__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token keyword">return</span> <span class="token builtin">len</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>img_path<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -510,7 +510,7 @@ Subclasses<span class="token punctuation">:</span>     IterableDataset<span clas
 writer<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="tranforms"><a href="#tranforms" class="headerlink" title="tranforms"></a>tranforms</h2><p>对数据进行变形处理</p>
-<p><img src="E:\jiang_blog\Hexo\source\imgs\pytorch\1.png" alt="image-20240406153921024"></p>
+<p><img src="/imgs/pytorch/1.png" alt="image-20240406153921024"></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> torchvision <span class="token keyword">import</span> transforms<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="ToTensor"><a href="#ToTensor" class="headerlink" title="ToTensor()"></a>ToTensor()</h3><p>将PIL格式的图片转换成张量格式</p>
