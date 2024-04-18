@@ -394,14 +394,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    724
+                    808
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    4 分
                 </div>
                 
 
@@ -491,7 +491,7 @@ Subclasses<span class="token punctuation">:</span>     IterableDataset<span clas
     <span class="token keyword">def</span> <span class="token function">__len__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token keyword">return</span> <span class="token builtin">len</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>img_path<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="TensorBoard的使用"><a href="#TensorBoard的使用" class="headerlink" title="TensorBoard的使用"></a>TensorBoard的使用</h2><p>尽管pytorch可以调用tensorboard，仍然需要单独安装 <code>tensorboard</code>库</p>
+<h2 id="TensorBoard"><a href="#TensorBoard" class="headerlink" title="TensorBoard"></a>TensorBoard</h2><p>尽管pytorch可以调用tensorboard，仍然需要单独安装 <code>tensorboard</code>库</p>
 <p>虚拟环境下运行 <code>pip install tensorboard</code></p>
 <p>查看日志的方法：</p>
 <ul>
@@ -548,6 +548,20 @@ compose<span class="token operator">=</span>transforms<span class="token punctua
 writer<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>transforms的数据操作方法还是很多的，用到再掌握也可以</p>
+<h2 id="torchvision数据集"><a href="#torchvision数据集" class="headerlink" title="torchvision数据集"></a>torchvision数据集</h2><p><code>torchvision.datasets</code>中有很多官方数据集，使用直接下载即可</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">toTensor<span class="token operator">=</span>transforms<span class="token punctuation">.</span>ToTensor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+train_set<span class="token operator">=</span>torchvision<span class="token punctuation">.</span>datasets<span class="token punctuation">.</span>CIFAR10<span class="token punctuation">(</span>root<span class="token operator">=</span><span class="token string">"../data"</span><span class="token punctuation">,</span>train<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span>download<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span>transform<span class="token operator">=</span>toTensor<span class="token punctuation">)</span>
+test_set<span class="token operator">=</span>torchvision<span class="token punctuation">.</span>datasets<span class="token punctuation">.</span>CIFAR10<span class="token punctuation">(</span>root<span class="token operator">=</span><span class="token string">"../data"</span><span class="token punctuation">,</span>train<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span>download<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span>transform<span class="token operator">=</span>toTensor<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="DataLoader"><a href="#DataLoader" class="headerlink" title="DataLoader"></a>DataLoader</h2><p><img src="E:\jiang_blog\Hexo\source\imgs\pytorch\2.png" alt="image-20240407003415392"></p>
+<p><code>dataset</code>与<code>dataloader</code>的区别</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> torch<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>data <span class="token keyword">import</span> DataLoader
+toTensor<span class="token operator">=</span>transforms<span class="token punctuation">.</span>ToTensor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+test_set<span class="token operator">=</span>torchvision<span class="token punctuation">.</span>datasets<span class="token punctuation">.</span>CIFAR10<span class="token punctuation">(</span>root<span class="token operator">=</span><span class="token string">"../data"</span><span class="token punctuation">,</span>train<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span>download<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span>transform<span class="token operator">=</span>toTensor<span class="token punctuation">)</span>
+test_data<span class="token operator">=</span>DataLoader<span class="token punctuation">(</span>test_set<span class="token punctuation">,</span>batch_size<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">,</span>shuffle<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span>num_workers<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>drop_last<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <blockquote>
 <p>To Be Continued</p>
 </blockquote>
@@ -1053,30 +1067,29 @@ writer<span class="token punctuation">.</span>close<span class="token punctuatio
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/04/05/PyTorch%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/">
+                <a href="/2024/04/18/%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="PyTorch快速入门">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="损失函数">
                         
-                        <span class="card-title">PyTorch快速入门</span>
+                        <span class="card-title">损失函数</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            PyTorch深度学习快速入门
+                            常用的损失函数
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-05
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-04-18
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1089,16 +1102,11 @@ writer<span class="token punctuation">.</span>close<span class="token punctuatio
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
-                        <span class="chip bg-color">深度学习</span>
-                    </a>
-                    
-                    <a href="/tags/PyTorch/">
-                        <span class="chip bg-color">PyTorch</span>
+                    <a href="/tags/loss/">
+                        <span class="chip bg-color">loss</span>
                     </a>
                     
                 </div>
@@ -1340,7 +1348,7 @@ writer<span class="token punctuation">.</span>close<span class="token punctuatio
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">268.5k</span>&nbsp;字
+                class="white-color">270.5k</span>&nbsp;字
             
             
             
