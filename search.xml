@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>语义潜在分解与归一化流的人脸编辑</title>
+      <link href="/2024/05/25/%E8%AF%AD%E4%B9%89%E6%BD%9C%E5%9C%A8%E5%88%86%E8%A7%A3%E4%B8%8E%E5%BD%92%E4%B8%80%E5%8C%96%E6%B5%81%E7%9A%84%E4%BA%BA%E8%84%B8%E7%BC%96%E8%BE%91/"/>
+      <url>/2024/05/25/%E8%AF%AD%E4%B9%89%E6%BD%9C%E5%9C%A8%E5%88%86%E8%A7%A3%E4%B8%8E%E5%BD%92%E4%B8%80%E5%8C%96%E6%B5%81%E7%9A%84%E4%BA%BA%E8%84%B8%E7%BC%96%E8%BE%91/</url>
+      
+        <content type="html"><![CDATA[<p>搜张老师的Google Scholar，筛掉了一些不感兴趣的文章，找到了这一篇蛮有意思的文章，关于人脸编辑的文章，通过语义解构解决了人脸上属性之间的纠缠的挑战，这里挂一个arxiv的链接</p><p><a href="https://arxiv.org/abs/2309.05314">2309.05314 Semantic Latent Decomposition with Normalizing Flows for Face Editing (arxiv.org)</a></p><blockquote><p>However, the resulting methods usually encounter challenges in complicated navigation due to the entanglement among different attributes in the latent space.</p><p>在潜在空间中不同属性之间的纠缠</p></blockquote><p>读abstract的时候积累到一个好词组<code>qualitatively and quantitatively</code><del>以后在写论文的时候，吹自己论文怎么怎么牛逼的时候就这么写’our model outperforms the state of the art model qualitatively and quantitatively’</del>。</p><p>回归正题，为了解决上述问题，提出了一个全新的模型</p><blockquote><p>a novel framework, termed SDFlow, with a semantic decomposition in original latent space using continuous conditional normalizing flows</p></blockquote><p>怎么个解决法？</p><p>有两个子模块</p><h2 id="a-semantic-encoder"><a href="#a-semantic-encoder" class="headerlink" title="a semantic encoder"></a>a semantic encoder</h2><h2 id="a-flow-based-transformation-module"><a href="#a-flow-based-transformation-module" class="headerlink" title="a flow-based transformation module"></a>a flow-based transformation module</h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> GAN </tag>
+            
+            <tag> FaceEditing </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>损失函数</title>
       <link href="/2024/04/18/%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/"/>
       <url>/2024/04/18/%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/</url>
