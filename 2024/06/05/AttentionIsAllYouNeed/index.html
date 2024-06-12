@@ -390,14 +390,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.7k
+                    1.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    7 分
                 </div>
                 
 
@@ -490,7 +490,12 @@
 <p>位置编码的维度也是$d_{model}$，以便于相加</p>
 <p>使用了不同频率的正弦和余弦函数作为位置编码<br>$$<br>PE_{(pos,2i)}&#x3D;sin(pos&#x2F;10000^{2i&#x2F;d_{\mathrm{model}}})<br>$$</p>
 <p>$$<br>PE_{(pos,2i+1)}&#x3D;cos(pos&#x2F;10000^{2i&#x2F;d_{\mathrm{model}}})<br>$$</p>
-<h2 id="看文献学英语"><a href="#看文献学英语" class="headerlink" title="看文献学英语"></a>看文献学英语</h2><p><strong>solely</strong>：仅仅 可以替换only</p>
+<p>位置编码的每个维度对应一个正弦波，其波长是一个从$2\pi-10000 \cdot 2\pi$</p>
+<p>选择这种编码的原因是让模型容易地学会通过相对位置进行关注</p>
+<p>使用正弦版本能够使模型推理时如遇到更长的序列可以进行合理外推。</p>
+<h2 id="为什么用Self-Attention"><a href="#为什么用Self-Attention" class="headerlink" title="为什么用Self-Attention"></a>为什么用Self-Attention</h2><p>self-attention与循环层、卷积层进行对比。</p>
+<p>使用self-attention大致有三个原因</p>
+<h3 id="total-computational-complexity-per-layer"><a href="#total-computational-complexity-per-layer" class="headerlink" title="total computational complexity per layer"></a>total computational complexity per layer</h3><h3 id="the-amount-of-computation-that-can-be-parallelized"><a href="#the-amount-of-computation-that-can-be-parallelized" class="headerlink" title="the amount of computation that can be parallelized"></a>the amount of computation that can be parallelized</h3><h3 id="the-path-length-between-lond-range-dependencies-in-the-network"><a href="#the-path-length-between-lond-range-dependencies-in-the-network" class="headerlink" title="the path length between lond-range dependencies in the network"></a>the path length between lond-range dependencies in the network</h3><h2 id="看文献学英语"><a href="#看文献学英语" class="headerlink" title="看文献学英语"></a>看文献学英语</h2><p><strong>solely</strong>：仅仅 可以替换only</p>
 <p>**… have become an integral part of ….**：…已经成为…不可或缺的一部分</p>
 <p><strong>in all but a few cases</strong>：在绝大多数情况下</p>
 <p><strong>in conjunction with</strong>：与…结合</p>
@@ -1280,7 +1285,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">284.2k</span>&nbsp;字
+                class="white-color">284.7k</span>&nbsp;字
             
             
             
