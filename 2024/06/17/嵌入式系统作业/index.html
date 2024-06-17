@@ -1,0 +1,2651 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="嵌入式系统作业, J&amp;Ocean BLOG">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>嵌入式系统作业 | J&amp;Ocean BLOG</title>
+    <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+
+   <style>
+    body{
+       background-image: url(https://github.com/JIANG-Wu-19/JIANG-Wu-19/blob/master/99759389_p0.png?raw=true);
+       background-repeat:no-repeat;
+       background-size:cover;
+       background-attachment:fixed;
+    }
+</style>
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.ico" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">J&amp;Ocean BLOG</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.ico" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">J&amp;Ocean BLOG</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">嵌入式系统作业</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F/">
+                                <span class="chip bg-color">嵌入式系统</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%80%9D%E8%80%83%E9%A2%98/" class="post-category">
+                                思考题
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2024-06-17
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    13.3k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    55 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="第一次作业"><a href="#第一次作业" class="headerlink" title="第一次作业"></a>第一次作业</h2><h3 id="列举目前市面上常用的嵌入式操作系统名字（越多越好）"><a href="#列举目前市面上常用的嵌入式操作系统名字（越多越好）" class="headerlink" title="列举目前市面上常用的嵌入式操作系统名字（越多越好）"></a>列举目前市面上常用的嵌入式操作系统名字（越多越好）</h3><ol>
+<li><p>FreeRTOS：一个小型实时操作系统，特别适用于微控制器和嵌入式设备，具有低延迟和低内存占用的特点。</p>
+</li>
+<li><p>μC&#x2F;OS：一种小型、可裁剪的实时操作系统，具有高度可移植性和可裁剪性，适用于各种嵌入式系统。</p>
+</li>
+<li><p>ThreadX：一款高度优化的实时操作系统，具有快速启动时间和低内存占用，广泛应用于通信、汽车、工业和消费电子等领域。</p>
+</li>
+<li><p>eCos：嵌入式配置的开源实时操作系统，具有灵活的内核设计和广泛的硬件支持，适用于多种嵌入式应用。</p>
+</li>
+<li><p>VxWorks：一款功能强大的实时操作系统，被广泛应用于工业控制、航空航天、医疗设备等领域，具有高度可靠性和实时性。</p>
+</li>
+<li><p>QNX：一种高度可靠的实时操作系统，特别适用于安全关键型嵌入式系统，如汽车、医疗设备和工业控制。</p>
+</li>
+<li><p>INTEGRITY：一款面向安全关键型应用的实时操作系统，具有严格的安全性和可靠性特性，适用于航空航天、军事和汽车等领域。</p>
+</li>
+<li><p>Linux Embedded：Linux内核的嵌入式版本，具有广泛的软件支持和社区资源，适用于各种嵌入式应用，从消费电子到工业控制等。</p>
+</li>
+<li><p>Zephyr：一个开源的实时操作系统，针对小型嵌入式设备和物联网应用，具有灵活的内核设计和可扩展性。</p>
+</li>
+<li><p>RIOT OS：一款专注于物联网设备的开源操作系统，具有低功耗、低内存占用和多种网络协议支持的特点。</p>
+</li>
+<li><p>Contiki：一种轻量级的开源操作系统，专注于低功耗和物联网应用，具有分布式网络和IPv6支持。</p>
+</li>
+<li><p>TinyOS：一款为传感器网络设计的开源操作系统，具有低功耗和高度分布式的特点，适用于传感器节点等嵌入式设备。</p>
+</li>
+<li><p>NuttX：一个可裁剪的实时操作系统，具有类Unix风格的设计和广泛的硬件支持，适用于各种嵌入式应用。</p>
+</li>
+<li><p>Mbed OS：一款面向物联网设备的开源操作系统，提供丰富的硬件支持和易用的开发工具，加速物联网产品的开发。</p>
+</li>
+<li><p>AliOS Things (AliOS-Things)：由阿里巴巴推出的物联网操作系统，提供丰富的物联网协议支持和云端服务集成。</p>
+</li>
+<li><p>RT-Thread：一款开源的实时操作系统，具有小巧灵活、易裁剪和支持多种编程语言等特点。</p>
+</li>
+<li><p>LiteOS：华为推出的轻量级物联网操作系统，具有低功耗、快速启动和高度安全的特点，适用于各种物联网设备。</p>
+</li>
+<li><p>HarmonyOS：华为推出的分布式操作系统，具有分布式架构、跨设备共享和高度安全的特点，适用于多种智能设备。</p>
+</li>
+<li><p>mLinux：一种基于Linux的嵌入式操作系统，具有丰富的软件支持和易用性，适用于各种嵌入式应用。</p>
+</li>
+<li><p>Contiki-NG：Contiki的下一代版本，继承了Contiki的特点并提供了更多新功能和改进。</p>
+</li>
+</ol>
+<h3 id="列举基于模型的系统工程-与-传统开发流程的优势"><a href="#列举基于模型的系统工程-与-传统开发流程的优势" class="headerlink" title="列举基于模型的系统工程 与 传统开发流程的优势"></a>列举基于模型的系统工程 与 传统开发流程的优势</h3><h4 id="基于模型的系统工程"><a href="#基于模型的系统工程" class="headerlink" title="基于模型的系统工程"></a>基于模型的系统工程</h4><p>基于模型的系统工程（Model-Based Systems Engineering，MBSE）是一种系统工程方法论，它使用抽象的模型来描述、分析和设计复杂系统的结构、行为和性能。</p>
+<p>优势：</p>
+<ol>
+<li><strong>可视化与抽象化：</strong> 使用模型来描述系统结构和行为，使系统设计变得可视化和更易于理解。这有助于团队成员之间的沟通和协作，以及客户对系统的理解。</li>
+<li><strong>自动化分析与验证：</strong> 模型可以用于自动化验证系统的性能、安全性、可靠性等方面的属性，从而提前发现和解决潜在的问题，减少后期成本和风险。</li>
+<li><strong>迭代开发与快速原型：</strong> 模型驱动开发允许快速创建原型和模拟，以便在早期阶段发现和验证设计概念，从而加速开发周期。</li>
+<li><strong>需求管理和跟踪：</strong> 基于模型的系统工程可以将需求与设计、验证和实现过程相集成，实现需求的跟踪和管理，确保系统的最终交付满足客户需求。</li>
+<li><strong>复用性与组件化：</strong> 模型允许设计人员将系统划分为可重用的组件，促进模块化设计和组件化开发，从而提高系统的可维护性和扩展性。</li>
+</ol>
+<h4 id="传统开发流程"><a href="#传统开发流程" class="headerlink" title="传统开发流程"></a>传统开发流程</h4><p>传统开发流程是指软件或系统开发中使用的传统方法论，通常以线性、阶段性的方式进行，包括需求分析、系统设计、实现、测试和部署等阶段。在传统开发流程中，每个阶段按照严格的顺序进行，并且通常在前一阶段完成后才能开始下一个阶段。</p>
+<p>优势：</p>
+<ol>
+<li><strong>结构清晰：</strong> 传统开发流程采用阶段性、线性的开发模式，每个阶段有明确定义的任务和目标，使得项目的结构和进程更加清晰明了。</li>
+<li><strong>适用性广泛：</strong> 传统开发流程已经在许多项目中得到广泛验证和应用，适用于各种规模和类型的软件开发项目，包括大型企业级系统和小型应用软件。</li>
+<li><strong>规范化和标准化：</strong> 传统开发流程强调项目管理、文档管理和质量控制，有成熟的工作流程和标准化的文档模板，有助于提高开发质量和可维护性。</li>
+<li><strong>风险管理：</strong> 传统开发流程通过将项目分解为多个阶段，并在每个阶段引入严格的验证和审查机制，有助于及早发现和解决问题，降低项目风险。</li>
+<li><strong>可控性和可预测性：</strong> 传统开发流程通过严格的计划和控制，使得项目的进度和成本更加可控和可预测，有助于满足客户的需求和期望。</li>
+<li><strong>文档化程度高：</strong> 传统开发流程注重文档的编写和管理，包括需求文档、设计文档、测试文档等，有助于记录项目的历史和知识，提高项目的可维护性和可持续性。</li>
+</ol>
+<h3 id="列举RISC-V相对ARM构架的优势和缺陷，各三条"><a href="#列举RISC-V相对ARM构架的优势和缺陷，各三条" class="headerlink" title="列举RISC-V相对ARM构架的优势和缺陷，各三条"></a>列举RISC-V相对ARM构架的优势和缺陷，各三条</h3><p>优势</p>
+<ol>
+<li><strong>开放性和灵活性：</strong> RISC-V 是一种开放的指令集架构，可以自由访问其规范和设计，而 ARM 架构则受到 ARM 公司的专利限制。这种开放性使得 RISC-V 更具灵活性，可以根据需求进行定制和优化。</li>
+<li><strong>低成本和可定制性：</strong> RISC-V 的开放性使得其在芯片设计和制造方面成本更低，同时也更容易定制，用户可以根据具体应用需求进行自定义设计，提高性能和功耗效率。</li>
+<li><strong>社区支持和生态系统：</strong> RISC-V 社区日益壮大，吸引了众多厂商和开发者的参与，推动了 RISC-V 生态系统的发展。相比之下，ARM 生态系统虽然庞大，但也受到 ARM 公司的控制，对于一些新兴市场和创新项目，RISC-V 的社区支持可能更具吸引力。</li>
+</ol>
+<p>劣势</p>
+<ol>
+<li>由于RISC-V诞生时间太短，相关的编译器、开发工具和软件开发环境（IDE）以及其它生态要素还在发展；</li>
+<li>RISC-V 定义了一个很小的、带有扩展的ISA，导致<strong>ISA碎片化</strong>；</li>
+<li>RISC-V <strong>尚未实现部分性能的提升</strong>，如超标量执行等。</li>
+</ol>
+<h3 id="查询自己手机的处理器型号、性能和参数，并描述其ARM版本（或源自的版本），以及指令集的版本"><a href="#查询自己手机的处理器型号、性能和参数，并描述其ARM版本（或源自的版本），以及指令集的版本" class="headerlink" title="查询自己手机的处理器型号、性能和参数，并描述其ARM版本（或源自的版本），以及指令集的版本"></a>查询自己手机的处理器型号、性能和参数，并描述其ARM版本（或源自的版本），以及指令集的版本</h3><p><img src="/imgs/es/1.jpg" alt="1.jpg"></p>
+<p><strong>型号</strong>：Exynos 1080</p>
+<p><strong>性能</strong>：三星 Exynos 1080 处理器采用最新（<em>2020年底</em>） 5nm 制程工艺，相较三星 7nm 工艺制程，三星 5nm 制程在晶体管数量密度上增加超过 80%，能够带来更强性能和更低的功耗。三星表示，此次Exynos 1080处理器采用的是全新的CPU架构核心，单核性能提升50%，多核性能提升近2倍。Exynos1080 5G采用1个大核+3个中核+4个小核的核心配置，其中大核与中核采用的是A78的架构，小核采用的是A55的架构。大核最高主频能达到2.8GHz。</p>
+<p><strong>参数</strong>：</p>
+<table>
+<thead>
+<tr>
+<th align="center">项目</th>
+<th align="center">参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">网络制式</td>
+<td align="center">2G&#x2F;3G&#x2F;4G&#x2F;5G</td>
+</tr>
+<tr>
+<td align="center">CPU制程</td>
+<td align="center">5nm</td>
+</tr>
+<tr>
+<td align="center">CPU配置</td>
+<td align="center">1<em><a href="mailto:&#65;&#x37;&#56;&#64;&#x32;&#46;&#56;&#71;&#72;&#x7a;">&#65;&#x37;&#56;&#64;&#x32;&#46;&#56;&#71;&#72;&#x7a;</a>+3</em><a href="mailto:&#65;&#x37;&#56;&#x40;&#x32;&#x2e;&#54;&#x47;&#x48;&#122;">&#65;&#x37;&#56;&#x40;&#x32;&#x2e;&#54;&#x47;&#x48;&#122;</a>+4*<a href="mailto:&#65;&#53;&#53;&#64;&#50;&#46;&#48;&#71;&#72;&#122;">&#65;&#53;&#53;&#64;&#50;&#46;&#48;&#71;&#72;&#122;</a></td>
+</tr>
+<tr>
+<td align="center">GPU</td>
+<td align="center">Mali™-G78 GPU</td>
+</tr>
+<tr>
+<td align="center">通用闪存</td>
+<td align="center">UFS 3.1</td>
+</tr>
+</tbody></table>
+<p><strong>ARM版本</strong></p>
+<p>Arm cortex-A78 CPU，Arm cortex-A55 CPU</p>
+<p>Mali-G78 GPU</p>
+<p><strong>指令集</strong></p>
+<p>ARM v8.2</p>
+<h2 id="第二次作业"><a href="#第二次作业" class="headerlink" title="第二次作业"></a>第二次作业</h2><h3 id="深入调研并介绍IIC总线的结构、通信原理、特点（速度、同步性、双工性等）等。从理解的角度分析IIC总线的优缺点（相对SPI和CAN）"><a href="#深入调研并介绍IIC总线的结构、通信原理、特点（速度、同步性、双工性等）等。从理解的角度分析IIC总线的优缺点（相对SPI和CAN）" class="headerlink" title="深入调研并介绍IIC总线的结构、通信原理、特点（速度、同步性、双工性等）等。从理解的角度分析IIC总线的优缺点（相对SPI和CAN）"></a>深入调研并介绍IIC总线的结构、通信原理、特点（速度、同步性、双工性等）等。从理解的角度分析IIC总线的优缺点（相对SPI和CAN）</h3><p>I²C（Inter-Integrated Circuit）总线，也被称作IIC或I2C，是一种广泛使用的串行通信协议，主要设计用于芯片之间的短距离通信。它由Philips Semiconductor（现在的NXP Semiconductors）在1980年代早期推出</p>
+<h4 id="IIC总线的结构与通信原理"><a href="#IIC总线的结构与通信原理" class="headerlink" title="IIC总线的结构与通信原理"></a>IIC总线的结构与通信原理</h4><p>IIC总线采用两线制，包括一个串行数据线（SDA）和一个串行时钟线（SCL），通过这两根线实现多个设备之间的通信。所有的IIC设备都连接到同一对SDA和SCL上，每个设备都有一个唯一的地址。通信的两端各有一个主设备和一个或多个从设备。主设备控制总线的访问，从设备响应主设备的命令并提供数据。总线上的设备通过IIC地址进行寻址。</p>
+<p><img src="/imgs/es/2.png" alt="image-20230424233937803"></p>
+<h4 id="IIC总线的通信原理"><a href="#IIC总线的通信原理" class="headerlink" title="IIC总线的通信原理"></a>IIC总线的通信原理</h4><p>IC总线采用主从结构进行通信，主设备可以是任何一台能够控制总线的设备（通常是微控制器），而从设备则是被控制的设备（如温度传感器、EEPROM存储器等）。通信分为两种模式：传输模式和接收模式。在传输模式下，主设备向从设备发送数据，从设备负责接收并响应；在接收模式下，主设备向从设备发送命令，从设备则会发送数据给主设备。</p>
+<p>在IIC总线通信时，主设备控制SCL线的时钟信号，而SDA线上的数据则在时钟信号的控制下进行传输。传输时，主设备在SCL线上产生时钟脉冲，同时在SDA线上发送数据位。从设备在时钟脉冲的控制下读取SDA线上的数据位，并在下一个时钟脉冲的前沿将其应答给主设备。如果数据传输成功，则从设备返回应答信号。</p>
+<p>通信时，一个主设备（master）通过SCL线控制时钟信号，启动和终止数据传输，而一个或多个从设备（slave）根据主设备的指令进行响应。</p>
+<h4 id="IIC总线的特点"><a href="#IIC总线的特点" class="headerlink" title="IIC总线的特点"></a>IIC总线的特点</h4><ul>
+<li><strong>速度</strong>：IIC总线的速度取决于SCL线上的时钟频率。IIC总线支持多种速度模式，包括标准模式（100kbps）、快速模式（400kbps）、快速模式加（1Mbps）和高速模式（3.4Mbps）。</li>
+<li><strong>同步性</strong>：IIC是一种同步通信协议，意味着数据传输是由时钟信号（SCL）来同步的。主设备通过控制时钟信号来确保通信的同步性，从而保证数据的准确传输。</li>
+<li><strong>双工性</strong>：IIC总线支持双向通信，即主设备和从设备都可以发送和接收数据。主设备可以在任何时候控制总线的访问，并根据需要在总线上发送数据或接收数据。从设备只有在主设备允许时才能发送数据，并且只有在主设备发起读操作时才能发送数据。在同一时间内，IIC总线只能进行读或写操作，不能同时进行，属于半双工同步传输型总线。</li>
+<li><strong>多主机支持</strong>：IIC总线支持多主机系统，即在同一总线上连接多个主设备。在这种情况下，每个主设备都有自己的地址，并且在使用总线之前必须获得总线的控制权。多主机系统可以提高系统的灵活性和可扩展性，可以实现更复杂的系统设计。</li>
+<li><strong>适用范围广</strong>：IIC总线的应用范围非常广泛，可以用于连接各种类型的设备，如传感器、存储器、显示屏、电机驱动器等。它也可以用于通信距离比较短的应用场景，如板级通信、嵌入式系统等。</li>
+</ul>
+<h4 id="IIC总线的优点"><a href="#IIC总线的优点" class="headerlink" title="IIC总线的优点"></a>IIC总线的优点</h4><ul>
+<li><strong>简单性</strong>：由于仅使用两根线进行通信，IIC总线的物理接口简单，有利于降低系统的复杂度和成本。相对于SPI总线和CAN总线，IIC总线只需要两条信号线进行通信，因此线路非常简单，易于实现和维护。相比之下，SPI总线需要四条信号线（一个主设备选择线、一个主设备输出线、一个从设备输出线和一个时钟线），而CAN总线需要两条信号线（一个CAN高速线和一个CAN低速线），因此IIC总线在线路复杂度方面具有优势。</li>
+<li><strong>灵活性</strong>：可以在同一总线上连接多个从设备，且每个设备都有唯一的地址，易于扩展。</li>
+<li><strong>支持多主设备</strong>：IIC协议支持多个主设备在同一总线上协作，在同一总线上连接多个主设备，每个主设备都有自己的地址，并且在使用总线之前必须获得总线的控制权，增加了系统的灵活性。而SPI总线只支持单主机系统，CAN总线虽然支持多主机系统，但需要使用更复杂的控制协议。</li>
+</ul>
+<h4 id="IIC总线的缺点"><a href="#IIC总线的缺点" class="headerlink" title="IIC总线的缺点"></a>IIC总线的缺点</h4><ul>
+<li><strong>速度较慢</strong>：相比于SPI和CAN，IIC在速度上通常较慢，特别是在数据量大或距离较远的情况下。相比之下，SPI总线的最高速度可以达到100Mbps，CAN总线的最高速度可以达到1Mbps或更高，因此在速度方面，IIC总线具有劣势。</li>
+<li><strong>总线冲突</strong>：在多主模式下，可能会出现总线冲突的情况，需要通过复杂的算法来管理。</li>
+<li><strong>同步性差</strong>：IIC总线的同步性较差，因为IIC总线的时钟由主设备控制，因此在一些高精度时序要求的应用中可能会出现问题。相比之下，SPI总线和CAN总线都具有较好的同步性，因为它们都有独立的时钟线。</li>
+<li><strong>双工性差</strong>：IIC总线的双工性较差，在同一时间内，IIC总线只能进行读或写操作，不能同时进行；而SPI总线和CAN总线都具有良好的双工性，可以同时进行读和写操作。</li>
+<li><strong>距离限制</strong>：由于信号的电容效应，IIC总线在距离较长时可能会出现信号质量问题。</li>
+</ul>
+<h4 id="相对于SPI和CAN的比较"><a href="#相对于SPI和CAN的比较" class="headerlink" title="相对于SPI和CAN的比较"></a>相对于SPI和CAN的比较</h4><ul>
+<li><strong>相对于SPI</strong>：SPI通常提供更高的数据传输速率，并且可以实现全双工通信。然而，SPI需要更多的信号线（至少需要三根线，通常是四根），这在物理连接和成本上可能不如IIC经济。</li>
+<li><strong>相对于CAN</strong>：CAN总线专为汽车及其他需要高可靠性和较长距离通信的环境设计，支持更高的抗干扰能力和错误处理机制。IIC则更适用于板级通信或短距离应用，成本更低，但抗干扰能力较弱。</li>
+</ul>
+<h3 id="结合下面两幅图和课堂内容，设异常触发指令的地址为0xFFFF0100，计算一下各个异常模式时，PC、LR、PRI-、Return-Code的具体取值，写明分析过程。"><a href="#结合下面两幅图和课堂内容，设异常触发指令的地址为0xFFFF0100，计算一下各个异常模式时，PC、LR、PRI-、Return-Code的具体取值，写明分析过程。" class="headerlink" title="结合下面两幅图和课堂内容，设异常触发指令的地址为0xFFFF0100，计算一下各个异常模式时，PC、LR、PRI*、Return Code的具体取值，写明分析过程。"></a>结合下面两幅图和课堂内容，设异常触发指令的地址为0xFFFF0100，计算一下各个异常模式时，PC、LR、PRI*、Return Code的具体取值，写明分析过程。</h3><p><img src="/imgs/es/3.png" alt="3"></p>
+<p><img src="/imgs/es/4.png" alt="4"></p>
+<h4 id="Reset模式"><a href="#Reset模式" class="headerlink" title="Reset模式"></a>Reset模式</h4><p>在Reset模式下，处理器会执行一系列初始化操作，包括将寄存器清零和设置中断向量表等。</p>
+<p>PC未更新，PC&#x3D;异常触发指令地址+8，PC地址0xFFFF0108</p>
+<p>LR、PRI*、Return Code均为N&#x2F;A（不确定）。</p>
+<h4 id="Undefined-Instruction模式"><a href="#Undefined-Instruction模式" class="headerlink" title="Undefined Instruction模式"></a>Undefined Instruction模式</h4><p>当处理器遇到一条无法识别的指令时，它会进入Undefined Instruction异常模式。在这个模式下，处理器会暂停执行，并且会向操作系统发出一个异常信号，以便系统处理这个异常。</p>
+<p>PC未更新，PC&#x3D;异常触发指令地址+8，PC地址0xFFFF0108</p>
+<p>LR&#x3D;PC-4，LR地址0xFFFF0104</p>
+<p>PRI*为下一条指令的地址，PRI*地址0xFFFF0104</p>
+<p>Return Code：<code>MOVS PC,R14_und</code>，当执行 MOVS PC, R14_und 指令时，将恢复PC（从R14_und），并返回到未定义指令后的下一条指令，则Return Code为0xFFFF0104</p>
+<h4 id="Software-Interrupt模式"><a href="#Software-Interrupt模式" class="headerlink" title="Software Interrupt模式"></a>Software Interrupt模式</h4><p>当执行软件中断指令时，处理器会进入Software Interrupt异常模式。该模式用于处理与处理器相关的软件中断请求。</p>
+<p>PC未更新，PC&#x3D;异常触发指令地址+8，PC地址0xFFFF0108</p>
+<p>LR&#x3D;PC-4，LR地址0xFFFF0104</p>
+<p>PRI*为下一条指令的地址，PRI*地址0xFFFF0104</p>
+<p>Return Code：<code>MOVS PC,R14_svc</code>，当执行指令时，将恢复PC（从R14_svc）和CPSR（从SPSR_svc）的值，并返回到SWI的下一条指令，则Return Code为0xFFFF0104</p>
+<h4 id="Prefetch-Abort模式"><a href="#Prefetch-Abort模式" class="headerlink" title="Prefetch Abort模式"></a>Prefetch Abort模式</h4><p>当处理器试图执行从内存中读取的非法指令或数据时，会触发Prefetch Abort异常。</p>
+<p>PC未更新，PC&#x3D;异常触发指令地址+8，PC地址0xFFFF0108</p>
+<p>LR&#x3D;PC-4，LR地址0xFFFF0104</p>
+<p>PRI*重做指令，PRI*地址0xFFFF0100</p>
+<p>Return Code：<code>SUBS PC,R14_abt,#4</code>，当执行指令后，将重新执行被中止的指令，则Return Code为0xFFFF0100。</p>
+<h4 id="Data-Abort模式"><a href="#Data-Abort模式" class="headerlink" title="Data Abort模式"></a>Data Abort模式</h4><p>当处理器试图执行或存储非法数据时，会触发Data Abort异常。这可能是因为数据不在可寻址的内存空间中，或者由于硬件错误而导致读取或写入失败。</p>
+<p>PC更新，PC&#x3D;异常触发指令地址+12，PC地址0xFFFF010C</p>
+<p>LR&#x3D;PC-4，LR地址0xFFFF0108</p>
+<p>PRI*重做指令，PRI*地址0xFFFF0100</p>
+<p>Return Code：<code>SUBS PC,R14_abt,#8</code>，当执行指令后，将重新执行被中止的指令，则Return Code为0xFFFF0100。</p>
+<h4 id="Interrupt模式"><a href="#Interrupt模式" class="headerlink" title="Interrupt模式"></a>Interrupt模式</h4><p>当处理器接收到来自外部设备的中断信号时，会进入Interrupt异常模式。在该模式下，处理器会执行特定的中断服务例程，以响应外部中断请求。</p>
+<p>PC更新，PC&#x3D;异常触发指令地址+12，PC地址0xFFFF010C</p>
+<p>LR&#x3D;PC-4，LR地址0xFFFF0108</p>
+<p>PRI*为下一指令，PRI*地址0xFFFF0104</p>
+<p>Return Code：<code>SUBS PC,R14_irq,#4</code>，当执行指令后，将重新执行被中止的指令，则Return Code为0xFFFF0104。</p>
+<h4 id="Fast-Interrupt模式"><a href="#Fast-Interrupt模式" class="headerlink" title="Fast Interrupt模式"></a>Fast Interrupt模式</h4><p>当Fast Interrupt信号被触发时，处理器会立即跳转到Fast Interrupt异常模式，并且禁用中断响应。在该模式下，处理器会执行特定的中断服务例程，以尽快响应高优先级的中断请求。</p>
+<p>PC更新，PC&#x3D;异常触发指令地址+12，PC地址0xFFFF010C</p>
+<p>LR&#x3D;PC-4，LR地址0xFFFF0108</p>
+<p>PRI*为下一指令，PRI*地址0xFFFF0104</p>
+<p>Return Code：<code>SUBS PC,R14_fiq,#4</code>，当执行指令后，将重新执行被中止的指令，则Return Code为0xFFFF0104。</p>
+<h2 id="第三次作业"><a href="#第三次作业" class="headerlink" title="第三次作业"></a>第三次作业</h2><h3 id="SUB-R3，R2，R1，LSR-R0-写出上面指令的32位编码，并说明每一位（或几位）的含义。"><a href="#SUB-R3，R2，R1，LSR-R0-写出上面指令的32位编码，并说明每一位（或几位）的含义。" class="headerlink" title="SUB R3，R2，R1，LSR R0 写出上面指令的32位编码，并说明每一位（或几位）的含义。"></a>SUB R3，R2，R1，LSR R0 写出上面指令的32位编码，并说明每一位（或几位）的含义。</h3><table>
+<thead>
+<tr>
+<th align="center">指令编码（从高位到低位）</th>
+<th align="center">位数</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1110</td>
+<td align="center">31-28</td>
+<td align="center">条件位，为默认值AL，表示任何时候都执行本指令</td>
+</tr>
+<tr>
+<td align="center">000</td>
+<td align="center">27-25</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="center">未知</td>
+<td align="center">24-21</td>
+<td align="center">SUB操作码</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">20</td>
+<td align="center">不影响CPSR寄存器的值</td>
+</tr>
+<tr>
+<td align="center">0010</td>
+<td align="center">19-16</td>
+<td align="center">第一个操作数的寄存器R2</td>
+</tr>
+<tr>
+<td align="center">0011</td>
+<td align="center">15-12</td>
+<td align="center">目标寄存器R3</td>
+</tr>
+<tr>
+<td align="center">00000</td>
+<td align="center">11-7</td>
+<td align="center">左移位数的存放寄存器R0</td>
+</tr>
+<tr>
+<td align="center">01</td>
+<td align="center">6-5</td>
+<td align="center">LSR逻辑右移</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">4</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="center">0001</td>
+<td align="center">3-0</td>
+<td align="center">第二个操作数的寄存器R1</td>
+</tr>
+</tbody></table>
+<h3 id="读程序，给每一行增加注释，并说明执行过程中R0-R1-R2的值如何变化"><a href="#读程序，给每一行增加注释，并说明执行过程中R0-R1-R2的值如何变化" class="headerlink" title="读程序，给每一行增加注释，并说明执行过程中R0,R1,R2的值如何变化"></a>读程序，给每一行增加注释，并说明执行过程中R0,R1,R2的值如何变化</h3><pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">AREA StrCopy, CODE, READONLY ; 定义代码区域，不可修改，只可读
+ENTRY            ; 指定程序的入口点
+start            ; 程序入口
+
+X EQU 88           ; 定义符号常量X为88
+Y EQU 76           ; 定义符号常量Y为76
+Z EQU 96           ; 定义符号常量Z为96
+
+STACK_TOP EQU 0X1000     ; 定义符号常量STACK_TOP为0X1000
+  MOV R0, #0XAB      ; 把0XAB的值加载到寄存器R0中，R0&#x3D;0xAB
+LOOP1
+  MOV R0, R0, ASR #1    ; 把R0右移一位，并把结果存回R0，R0&#x3D;0x55，第二次执行该语句时变为R0&#x3D;0x2A
+  CMP R0, #0X50      ; 比较R0与0X50的大小
+  BGE LOOP1        ; 如果R0大于等于0X50则跳转到LOOP1标记处（此处会跳转）
+  MOV R1, #Y        ; 把Y的值加载到寄存器R1中，R1&#x3D;76&#x3D;0x4C
+  ADD R2, R0, R1, LSL #1  ; 把R0和R1左移一位的结果相加，存入R2中, R2&#x3D;R0+R1*2&#x3D;0xC2
+  MOV SP, #0X1000     ; 把0X1000的值加载到栈指针寄存器SP中
+  STR R2, [SP]       ; 把R2的值存入以栈指针寄存器SP的值为地址的存储单元中
+  MOV R0, #Z        ; 把Z的值加载到寄存器R0中,R0&#x3D;96&#x3D;0x60
+  AND R0, R0, #0XFF    ; 把R0与0XFF进行与运算，存入R0中, R0&#x3D;0x60
+  MOV R1, #Y        ; 把Y的值加载到寄存器R1中,R1&#x3D;76&#x3D;0x4C
+  ADD R2, R0, R1, LSR #1  ; 把R0和R1右移一位的结果相加，存入R2中,R2&#x3D;R0+R1&#x2F;2&#x3D;0x86
+  LDR R0, [SP]       ; 将以栈指针寄存器SP的值为地址的存储单元中的内容加载到寄存器R0中,R0&#x3D;0xC2
+  MOV R1, #0X01      ; 把0X01的值加载到寄存器R1中，R1&#x3D;0x01
+  ORR R0, R0, R1      ; 把R0和R1进行或运算，存入R0中,R0&#x3D;0xC3
+  MOV R1, R2        ; 把R2的值加载到寄存器R1中,R1&#x3D;0x86
+  ADD R2, R0, R1, LSR #1  ; 把R0和R1右移一位的结果相加，存入R2中,R2&#x3D;R0+R1&#x2F;2&#x3D;0x106
+STOP
+  B STOP          ; 无条件跳转到STOP标记处，即进入死循环
+END<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>LOOP1执行两次循环，直到R0&#x3D;0x2A&lt;0x50</p>
+<p>R1&#x3D;0x4C</p>
+<p>R2&#x3D;R0+R1*2&#x3D;0xC2</p>
+<p>R0&#x3D;0x60</p>
+<p>R1&#x3D;0x4C</p>
+<p>R2&#x3D;R0+R1&#x2F;2&#x3D;0x86</p>
+<p>R0&#x3D;0xC2</p>
+<p>R1&#x3D;0x01</p>
+<p>R0&#x3D;0xC3</p>
+<p>R1&#x3D;0x86</p>
+<p>R2&#x3D;R0+R1&#x2F;2&#x3D;0x106</p>
+<p>程序最终运行结果为：R0&#x3D;0xC3, R1&#x3D;0x86, R2&#x3D;0x106</p>
+<h2 id="第四次作业"><a href="#第四次作业" class="headerlink" title="第四次作业"></a>第四次作业</h2><h3 id="安装ARM编译环境"><a href="#安装ARM编译环境" class="headerlink" title="安装ARM编译环境"></a>安装ARM编译环境</h3><p><img src="/imgs/es/5.png" alt="image-20240403230127370"></p>
+<p>对项目代码进行编译，显示0 Errors, 0 Warnings，说明环境配置正常，编译通过；</p>
+<h3 id="运行STM32F746-Experiment-v1-1-01-汇编-3-1-asm1-Asm1-b例程，进入debug模式"><a href="#运行STM32F746-Experiment-v1-1-01-汇编-3-1-asm1-Asm1-b例程，进入debug模式" class="headerlink" title="运行STM32F746_Experiment_v1.1\01_汇编\3.1_asm1\Asm1_b例程，进入debug模式"></a>运行STM32F746_Experiment_v1.1\01_汇编\3.1_asm1\Asm1_b例程，进入debug模式</h3><p>1）阅读并调试代码，观察每行代码的地址位置、代码指令编码、代码反编译结果、寄存器更新值。在提交作业中，把所有代码复制一遍，在注释中给出每行代码运行后寄存器（或存储器）的值更新情况。<br>2）截图uVision5程序运行完毕时，寄存器窗口R0-R15的值，以及memory窗口中0x30200000位置处的值。</p>
+<p>启动debug界面如下</p>
+<p><img src="/imgs/es/6.png" alt="image-20240403231316202"></p>
+<p>阅读代码，计算每行代码的目标寄存器的值。</p>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">;#********************************************************************************************
+;# NAME:		asm1_b.s													                                               *
+;# Author: 	WUHAN R&amp;D Center, Embest									                                       *
+;# Desc:		ARM instruction examples									                                       *
+;# History:	TianYunFang 2007.05.12										                                       *
+;#********************************************************************************************
+;&#x2F;*------------------------------------------------------------------------------------------*&#x2F;
+;&#x2F;*	 					constant define		 			 				                                               *&#x2F;
+;&#x2F;*------------------------------------------------------------------------------------------*&#x2F;
+x			EQU 45							      ;&#x2F;* x&#x3D;45 *&#x2F;
+y			EQU	64							      ;&#x2F;* y&#x3D;64 *&#x2F;
+z			EQU	87								    ;&#x2F;* z&#x3D;87 *&#x2F;
+stack_top	EQU	0x30200000			  ;&#x2F;* define the top address for stacks*&#x2F;
+			                 export	Reset_Handler
+
+;&#x2F;*-------------------------------------------------------------------------------------------*&#x2F;
+;&#x2F;*	 					                           code						 	                                    *&#x2F;
+;&#x2F;*-------------------------------------------------------------------------------------------*&#x2F;
+	AREA text,CODE,READONLY
+
+Reset_Handler										;&#x2F;* code start *&#x2F;
+		mov		r0, #x 								;&#x2F;* R0&#x3D;0x2D  *&#x2F;
+		mov		r0, r0, lsl #8						;&#x2F;* R0&#x3D;0x2D00  *&#x2F;
+		mov		r1, #y								;&#x2F;* R1&#x3D;0x40  *&#x2F;
+		add		r2, r0, r1, lsr #1					;&#x2F;* R2&#x3D;0x2D20 *&#x2F;
+		ldr		sp, &#x3D;stack_top						;&#x2F;* SP&#x3D;0x30200000 *&#x2F;
+		str		r2, [sp]							
+
+		mov		r0, #z								;&#x2F;* R0&#x3D;0x57  *&#x2F;
+		and		r0, r0, #0xFF						;&#x2F;* R0&#x3D;0x57 *&#x2F;
+		mov		r1, #y								;&#x2F;* R1&#x3D;0x40  *&#x2F;
+		add		r2, r0, r1, lsr #1					;&#x2F;* R2&#x3D;0x77 *&#x2F;
+		
+		ldr		r0, [sp]							;&#x2F;* R1&#x3D;0x40 *&#x2F;
+		mov		r1, #0x01							;&#x2F;* R1&#x3D;0x01 *&#x2F;
+		orr		r0, r0, r1							;&#x2F;* R0&#x3D;0x2D21
+		mov		r1, R2								;&#x2F;* R1&#x3D;0x77  *&#x2F;
+		add		r2, r0, r1, lsr #1					;&#x2F;* R2&#x3D;0x2D5C  *&#x2F;
+
+stop
+		b		stop								    ;&#x2F;* end the code £¬cycling*&#x2F;
+		END
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>截图uVision5程序运行完毕</p>
+<p><img src="/imgs/es/7.png" alt="image-20240403232318771"></p>
+<h2 id="第五次作业"><a href="#第五次作业" class="headerlink" title="第五次作业"></a>第五次作业</h2><h3 id="阅读发布的Um-s3c2410-pdf开发手册，回答如下问题"><a href="#阅读发布的Um-s3c2410-pdf开发手册，回答如下问题" class="headerlink" title="阅读发布的Um_s3c2410.pdf开发手册，回答如下问题"></a>阅读发布的Um_s3c2410.pdf开发手册，回答如下问题</h3><h4 id="对于I-x2F-O端口操作需求，假设GPB0端口连接了一个按键，我需要读按键的值。"><a href="#对于I-x2F-O端口操作需求，假设GPB0端口连接了一个按键，我需要读按键的值。" class="headerlink" title="对于I&#x2F;O端口操作需求，假设GPB0端口连接了一个按键，我需要读按键的值。"></a>对于I&#x2F;O端口操作需求，假设GPB0端口连接了一个按键，我需要读按键的值。</h4><h5 id="至少需要操作哪两个寄存器，对应的地址是多少"><a href="#至少需要操作哪两个寄存器，对应的地址是多少" class="headerlink" title="至少需要操作哪两个寄存器，对应的地址是多少"></a>至少需要操作哪两个寄存器，对应的地址是多少</h5><p>搜索“GPB0”，找到寄存器名和地址</p>
+<p>需要以下两个寄存器</p>
+<ol>
+<li>GPBCON寄存器，寄存器的地址为0x56000010</li>
+<li>GPBDAT寄存器，寄存器的地址为0x56000014</li>
+</ol>
+<h5 id="需要操作这两个寄存器的哪几个bit位，如何操作"><a href="#需要操作这两个寄存器的哪几个bit位，如何操作" class="headerlink" title="需要操作这两个寄存器的哪几个bit位，如何操作"></a>需要操作这两个寄存器的哪几个bit位，如何操作</h5><p>提示：例如 传感器GP****[0:1]&#x3D;00，按键值&#x3D;GP***[*]</p>
+<ul>
+<li>寄存器GPBCON[1:0]&#x3D;01</li>
+<li>按键值&#x3D;GPBDAT[0]</li>
+</ul>
+<h4 id="解释下列寄存器的含义以及地址"><a href="#解释下列寄存器的含义以及地址" class="headerlink" title="解释下列寄存器的含义以及地址"></a>解释下列寄存器的含义以及地址</h4><ol>
+<li><p>ADCCON</p>
+<p>含义：ADC控制寄存器。这个寄存器用于控制模拟到数字转换器（ADC）的配置和操作。它可能包含启动ADC转换、选择输入通道、设置采样率等选项。</p>
+<p>地址：0x58000000</p>
+</li>
+<li><p>WTCON</p>
+<p>含义：看门狗定时器控制寄存器。这个寄存器用于配置和控制看门狗定时器的操作。看门狗定时器是一种硬件计时器，用于监控系统的正常运行。如果系统在一定时间内没有响应，看门狗定时器会触发一个复位或其他动作。</p>
+<p>地址：0x53000000</p>
+</li>
+<li><p>SPPIN0</p>
+<p>含义：串行端口引脚输入控制寄存器。这个寄存器用于控制与串行通信相关的引脚输入。它可能包含配置串行端口的输入方向、输入缓冲区等功能。</p>
+<p>地址：0x59000008</p>
+</li>
+<li><p>BWSCON</p>
+<p>含义：总线宽度和存储空间大小控制寄存器。这个寄存器用于配置系统的总线宽度和存储空间的大小。它可能包含设置数据总线宽度、地址空间大小等选项。</p>
+<p>地址：0x48000000</p>
+</li>
+<li><p>BANKSIZE</p>
+<p>含义：存储体大小寄存器。这个寄存器用于确定存储器的组织方式和大小。它可能包含设置存储体的行数、列数等参数，以确定存储器的容量和访问方式。</p>
+<p>地址：0x48000028</p>
+</li>
+</ol>
+<h3 id="结合STM32F746-Experiment-v1-1-01-汇编-common-src-2410init-s和sys-init-c-interrupts-init-。进行程序分析。"><a href="#结合STM32F746-Experiment-v1-1-01-汇编-common-src-2410init-s和sys-init-c-interrupts-init-。进行程序分析。" class="headerlink" title="结合STM32F746_Experiment_v1.1\01_汇编\common\src\2410init.s和sys_init.c\interrupts_init()。进行程序分析。"></a>结合STM32F746_Experiment_v1.1\01_汇编\common\src\2410init.s和sys_init.c\interrupts_init()。进行程序分析。</h3><h4 id="分析sys-init-c-debug-swi-函数的执行效果。代码-注释的方式。"><a href="#分析sys-init-c-debug-swi-函数的执行效果。代码-注释的方式。" class="headerlink" title="分析sys_init.c\debug_swi()函数的执行效果。代码+注释的方式。"></a>分析sys_init.c\debug_swi()函数的执行效果。代码+注释的方式。</h4><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void debug_swi(void)
+&#123;
+	uart_printf(&quot;!!!Enter SWI exception. %d\r\n&quot;, nCNT+&#x3D;1);	&#x2F;&#x2F;将字符串&quot;!!!Enter SWI exception. %d\r\n&quot;打印到串口输出。其中，%d是一个占位符，用于显示变量nCNT的值
+	break_point(); &#x2F;&#x2F;调用break_point()函数，进入中断
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这个函数是进入软件中断SWI的一个函数，并呈现当前的中断状态</p>
+<p>看一下<code>break_point()</code>函数</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void break_point(void)
+&#123;
+	int i;	
+	char m &#x3D; 200;
+	uart_printf(&quot;!!!Enter break point.&quot;);	&#x2F;&#x2F;将字符串&quot;!!!Enter break point.&quot;打印到串口输出
+
+	rGPFCON&#x3D;0x5500;                  &#x2F;&#x2F;PORTF7&#x2F;6&#x2F;5&#x2F;4 OUTPUT，配置端口F7、F6、F5和F4为输出模式
+	rGPFUP&#x3D;0;                        &#x2F;&#x2F;PULL-UP ENABLE ，启用上拉电阻
+	while(m) &#123;
+		rGPFDAT&#x3D;0; &#x2F;&#x2F;将寄存器rGPFDAT的值设置为0
+		beep(1); &#x2F;&#x2F;调用beep(1)函数发出声音
+		for(i&#x3D;0;i&lt;20000;i++); &#x2F;&#x2F;通过一个空循环进行延时
+		rGPFDAT&#x3D;0xF0; &#x2F;&#x2F;将寄存器GPFDAT的值设置为0xF0
+		beep(0); &#x2F;&#x2F;调用beep(0)函数停止声音
+		for(i&#x3D;0;i&lt;20000;i++);&#x2F;&#x2F;再次通过一个空循环进行延时
+		m--;
+	&#125;&#x2F;&#x2F;当m的值减到0时，退出循环
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>进入断点时通过控制GPIO端口F7、F6、F5和F4来产生声音信号</p>
+<h4 id="分析2410init-s和2410init-s，并结合课上内容，以EINT3中断（设定为IRQ）为例，说清楚跳中断是如何传入ARM，并最终被执行的，可截取关键代码进行注释描述。"><a href="#分析2410init-s和2410init-s，并结合课上内容，以EINT3中断（设定为IRQ）为例，说清楚跳中断是如何传入ARM，并最终被执行的，可截取关键代码进行注释描述。" class="headerlink" title="分析2410init.s和2410init.s，并结合课上内容，以EINT3中断（设定为IRQ）为例，说清楚跳中断是如何传入ARM，并最终被执行的，可截取关键代码进行注释描述。"></a>分析2410init.s和2410init.s，并结合课上内容，以EINT3中断（设定为IRQ）为例，说清楚跳中断是如何传入ARM，并最终被执行的，可截取关键代码进行注释描述。</h4><p><img src="/imgs/es/8.png" alt="8"></p>
+<ul>
+<li>请求源（带有子寄存器）：这表示有中断请求的源，并且这些源有关联的子寄存器。</li>
+<li>SUBSRCPND：子源挂起寄存器，记录了哪些中断源发出了中断请求。</li>
+<li>SUBMASK：子掩码寄存器，用于决定哪些子中断源可以影响主中断挂起状态。</li>
+<li>SRCPND：源挂起寄存器，记录了当前哪些中断源发出了中断请求。</li>
+<li>MASK：掩码寄存器，用于控制是否允许对应的中断源产生中断信号。</li>
+<li>MODE：模式选择，可能用于选择不同的中断处理模式。</li>
+<li>INTPND：中断挂起，显示了当前正在等待处理的中断。</li>
+<li>优先级：此处可能涉及优先级逻辑，以决定哪个中断信号将被优先处理。</li>
+<li>IRQ：常规中断请求，处理普通优先级的中断。</li>
+<li>FIQ：快速中断请求，处理高优先级的中断</li>
+</ul>
+<p>中断信号的行进路线：</p>
+<ol>
+<li>中断源发出中断请求</li>
+<li>这个请求被记录在SUBSRCPND或SRCPND中，取决于是否带有子寄存器。</li>
+<li>通过SUBMASK和MASK控制这些请求是否会被允许影响处理器状态。</li>
+<li>如果不允许中断，中断信号被挂起</li>
+<li>如果允许，中断请求信号就会基于优先级逻辑产生一个中断，要么是常规的IRQ，要么是快速的FIQ。</li>
+</ol>
+<p>在<code>sys_init.c\interrupts_init()</code>中看到</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">pISR_EINT3     	&#x3D; (unsigned) break_point;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>这里是初始化中断服务程序</p>
+<p>当外部事件（如按键按下、传感器触发等）发生时，它会通过GPIO（通用输入输出）或其他外部中断线路触发EINT3。</p>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">.equ	HandleEINT3,	_ISR_STARTADDRESS+4*11<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>设定为IRQ</p>
+<p>查询到</p>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">HandlerIRQ      HANDLER HandleIRQ<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>搜索宏<code>HANDLER</code>，并阅读宏定义</p>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">.macro HANDLER HandleLabel
+    sub	    sp,sp,#4				&#x2F;* 减去sp的值（以存储跳转地址） *&#x2F;
+    stmfd   sp!,&#123;r0&#125;				&#x2F;* 将工作寄存器r0压栈（lr不压栈，因为它返回到原始地址） *&#x2F;
+    ldr	    r0,&#x3D;\HandleLabel		&#x2F;* 将HandleXXX的地址加载到r0 *&#x2F;
+    ldr	    r0,[r0]					&#x2F;* 加载HandleXXX的内容（服务例程的起始地址）到r0 *&#x2F;
+    str	    r0,[sp,#4]				&#x2F;* 将HandleXXX的内容（ISR）存储到栈上 *&#x2F;
+    ldmfd   sp!,&#123;r0,pc&#125;				&#x2F;* 从栈中弹出工作寄存器和程序计数器pc（跳转到ISR） *&#x2F;
+.endm<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">MACRO
+$HandlerLabel HANDLER $HandleLabel
+
+$HandlerLabel
+	sub	sp,sp,#4	;decrement sp(to store jump address)
+	stmfd	sp!,&#123;r0&#125;	;PUSH the work register to stack(lr does not push because it return to original address)
+	ldr     r0,&#x3D;$HandleLabel;load the address of HandleXXX to r0
+	ldr     r0,[r0]	 ;load the contents(service routine start address) of HandleXXX
+	str     r0,[sp,#4]      ;store the contents(ISR) of HandleXXX to stack
+	ldmfd   sp!,&#123;r0,pc&#125;     ;POP the work register and pc(jump to ISR)
+MEND<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在_ISR_STARTADDRESS&#x3D;0x33FF_FF00里定义的第一级中断向量表是采用型如Handle***的方式的</p>
+<p>而在程序的ENTRY处(程序开始处)采用的是b Handler***的方式</p>
+<p>在这里Handler***就是通过HANDLER这个宏和Handle***建立联系的</p>
+<p>然后跳转到位于0x18处的统一中断函数中该函数通过读取interrupt pending寄存器中对应标志位 来判断中断源 并根据优先级关系再跳到对应中断源的处理代码中</p>
+<p>我们要处理的就是IRQ</p>
+<p>下面这段程序是用来处理非向量中断（EINT3），具体判断I_ISPR中各位是否置1 置1表示目前此中断等待响应（每次只能有一位置1），从最高优先级中断位开始判断，检测到等待服务中断就将pc置为中断服务函数首地址</p>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">IsrIRQ
+    sub	sp,sp,#4       ; 为PC（程序计数器）保留空间
+    stmfd	sp!,&#123;r8-r9&#125;  ; 将r8和r9寄存器压栈保存
+
+    ldr	r9,&#x3D;INTOFFSET  ; 将INTOFFSET的地址加载到r9
+    ldr	r9,[r9]        ; 加载INTOFFSET的内容到r9，这可能是一个中断向量偏移量
+    ldr	r8,&#x3D;HandleEINT0  ; 将HandleEINT0的地址加载到r8
+    add	r8,r8,r9,lsl #2  ; 将r8和r9的值相加，r9左移两位，得到具体的中断处理函数地址
+    ldr	r8,[r8]        ; 加载r8指向的地址中的值，即中断处理函数的入口地址
+    str	r8,[sp,#8]     ; 将中断处理函数的入口地址存储到栈上，位置是sp+8
+    ldmfd	sp!,&#123;r8-r9,pc&#125; ; 从栈中弹出r8, r9和pc，并将pc设置为中断处理函数的入口地址，跳转到中断处理函数
+
+    LTORG<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这里需要将当前pc进栈，然后将pc的地址赋给EINT3的首地址，即<code>_ISR_STARTADDRESS+4*11</code></p>
+<h3 id="以实验包中“STM32F746-Experiment-v1-1-02-GPIO”例程为例子，描述STM32系列嵌入式系统的启动过程（如何调用到main函数的，之前经过了哪些初始化工作）。"><a href="#以实验包中“STM32F746-Experiment-v1-1-02-GPIO”例程为例子，描述STM32系列嵌入式系统的启动过程（如何调用到main函数的，之前经过了哪些初始化工作）。" class="headerlink" title="以实验包中“STM32F746_Experiment_v1.1\02_GPIO”例程为例子，描述STM32系列嵌入式系统的启动过程（如何调用到main函数的，之前经过了哪些初始化工作）。"></a>以实验包中“STM32F746_Experiment_v1.1\02_GPIO”例程为例子，描述STM32系列嵌入式系统的启动过程（如何调用到main函数的，之前经过了哪些初始化工作）。</h3><p>参考资料如下：</p>
+<ol>
+<li><p>STM32F74xx中文参考手册(1).pdf （STM32F746_Experiment_v1.1目录下）</p>
+</li>
+<li><p>上课讲课的PPT</p>
+</li>
+<li><p>自行网上搜索。例如：<a target="_blank" rel="noopener" href="https://blog.csdn.net/luobeihai/article/details/117595762">https://blog.csdn.net/luobeihai/article/details/117595762</a></p>
+</li>
+</ol>
+<h4 id="设置栈和堆的信息"><a href="#设置栈和堆的信息" class="headerlink" title="设置栈和堆的信息"></a>设置栈和堆的信息</h4><h5 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h5><pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">Stack_Size   EQU   0x00000400
+	AREA  STACK, NOINIT, READWRITE, ALIGN&#x3D;3
+	Stack_Mem    SPACE  Stack_Size
+__initial_sp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>开辟栈的大小为 0X00000400（1KB），栈的作用是用于局部变量、函数调用、函数形参等的开销；标号<code>__initial_sp</code>紧挨着 SPACE 语句放置，表示栈的结束地址，即栈顶地址。</p>
+<h5 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h5><pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">Heap_Size    EQU   0x00000200
+	AREA  HEAP, NOINIT, READWRITE, ALIGN&#x3D;3
+__heap_base
+Heap_Mem    SPACE  Heap_Size
+__heap_limit
+     PRESERVE8
+     THUMB<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>开辟堆的大小为 0X00000200（512 字节），heap_base 表示堆的起始地址， heap_limit 表示堆的结束地址。堆主要用来动态内存的分配。</p>
+<h4 id="定义中断向量表"><a href="#定义中断向量表" class="headerlink" title="定义中断向量表"></a>定义中断向量表</h4><pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">__Vectors    DCD   __initial_sp    ; Top of Stack
+        DCD   Reset_Handler        ; Reset Handler
+        DCD   NMI_Handler      	   ; NMI Handler
+        DCD   HardFault_Handler    ; Hard Fault Handler
+        DCD   MemManage_Handler    ; MPU Fault Handler
+        DCD   BusFault_Handler     ; Bus Fault Handler
+        DCD   UsageFault_Handler   ; Usage Fault Handler        
+		......<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>ARM 规定向量表的起始位置存放的是栈顶指针 MSP 的地址值，紧接着存放的是复位中断入口函数的地址。当刚上电的时候，硬件会根据向量表的地址找到向量表的具体位置（对于向量表的地址是可以通过 NVIC 中的一个重定位寄存器来设置的，复位时该寄存器的值为0），然后会根据向量表中的这两个数据，设置 SP、PC 的值，这时 CPU 就会从复位中断的入口函数开始取指令运行程序。</p>
+<h4 id="调用SystemInit函数，设置系统时钟"><a href="#调用SystemInit函数，设置系统时钟" class="headerlink" title="调用SystemInit函数，设置系统时钟"></a>调用SystemInit函数，设置系统时钟</h4><pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">Reset_Handler  PROC
+       EXPORT Reset_Handler       [WEAK]
+       IMPORT __main
+       IMPORT SystemInit
+       LDR   R0, &#x3D;SystemInit
+       BLX   R0        			; 调用SystemInit函数
+       LDR   R0, &#x3D;__main
+       BX   R0
+ENDP<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>硬件设置好了 SP、PC 的值后，这时CPU 会从 Reset_Handler 处开始取指令运行，首先会调用 SystemInit 函数来初始化系统时钟，该函数是官方固件库提供的一个库函数，在 system_stm32f7xx.c 文件中定义如下：</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">SystemInit</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+ <span class="token comment">/* FPU settings */</span>
+ <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">if</span> <span class="token expression"><span class="token punctuation">(</span>__FPU_PRESENT <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>__FPU_USED <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span></span></span>
+ SCB<span class="token operator">-></span>CPACR <span class="token operator">|=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3UL</span> <span class="token operator">&lt;&lt;</span> <span class="token number">10</span><span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">|</span><span class="token punctuation">(</span><span class="token number">3UL</span> <span class="token operator">&lt;&lt;</span> <span class="token number">11</span><span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">/* set CP10 and CP11 Full Access */</span>
+ <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">endif</span></span>
+ 
+ <span class="token comment">/* Reset the RCC clock configuration to the default reset state */</span>
+ <span class="token comment">/* Set HSION bit */</span>
+ RCC<span class="token operator">-></span>CR <span class="token operator">|=</span> <span class="token punctuation">(</span><span class="token class-name">uint32_t</span><span class="token punctuation">)</span><span class="token number">0x00000001</span><span class="token punctuation">;</span>
+ 
+ <span class="token comment">/* Reset CFGR register */</span>
+ RCC<span class="token operator">-></span>CFGR <span class="token operator">=</span> <span class="token number">0x00000000</span><span class="token punctuation">;</span>
+
+ <span class="token comment">/* Reset HSEON, CSSON and PLLON bits */</span>
+ RCC<span class="token operator">-></span>CR <span class="token operator">&amp;=</span> <span class="token punctuation">(</span><span class="token class-name">uint32_t</span><span class="token punctuation">)</span><span class="token number">0xFEF6FFFF</span><span class="token punctuation">;</span>
+
+ <span class="token comment">/* Reset PLLCFGR register */</span>
+ RCC<span class="token operator">-></span>PLLCFGR <span class="token operator">=</span> <span class="token number">0x24003010</span><span class="token punctuation">;</span>
+
+ <span class="token comment">/* Reset HSEBYP bit */</span>
+ RCC<span class="token operator">-></span>CR <span class="token operator">&amp;=</span> <span class="token punctuation">(</span><span class="token class-name">uint32_t</span><span class="token punctuation">)</span><span class="token number">0xFFFBFFFF</span><span class="token punctuation">;</span>
+
+ <span class="token comment">/* Disable all interrupts */</span>
+ RCC<span class="token operator">-></span>CIR <span class="token operator">=</span> <span class="token number">0x00000000</span><span class="token punctuation">;</span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">if</span> <span class="token expression"><span class="token function">defined</span> <span class="token punctuation">(</span>DATA_IN_ExtSRAM<span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token function">defined</span> <span class="token punctuation">(</span>DATA_IN_ExtSDRAM<span class="token punctuation">)</span></span></span>
+	<span class="token function">SystemInit_ExtMemCtl</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">endif</span> <span class="token comment">/* DATA_IN_ExtSRAM || DATA_IN_ExtSDRAM */</span></span>
+
+<span class="token comment">/* Configure the Vector Table location add offset address */</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">ifdef</span> <span class="token expression">VECT_TAB_SRAM</span></span>
+	SCB<span class="token operator">-></span>VTOR <span class="token operator">=</span> SRAM1_BASE <span class="token operator">|</span> VECT_TAB_OFFSET<span class="token punctuation">;</span> <span class="token comment">/* Vector Table Relocation in Internal SRAM */</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">else</span></span>
+ 	SCB<span class="token operator">-></span>VTOR <span class="token operator">=</span> FLASH_BASE <span class="token operator">|</span> VECT_TAB_OFFSET<span class="token punctuation">;</span> <span class="token comment">/* Vector Table Relocation in Internal FLASH */</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">endif</span></span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>该函数完成以下功能：</p>
+<ul>
+<li><strong>FPU 设置部分</strong>：如果芯片支持 FPU（浮点运算器），则设置 CP10 和 CP11 为完全访问权限。</li>
+<li><strong>RCC 时钟配置部分</strong>：将芯片的 RCC 寄存器设置为默认值。具体步骤包括：<ul>
+<li>打开 HSION（内部高速时钟）位。</li>
+<li>重置 CFGR 寄存器为 0；</li>
+<li>关闭 HSEON（外部高速时钟）、CSSON（时钟安全系统）和 PLLON（锁相环）位；</li>
+<li>将 PLLCFGR 寄存器重置为默认值；</li>
+<li>关闭 HSEBYP（外部高速时钟旁路）位；</li>
+<li>禁用所有中断。</li>
+</ul>
+</li>
+<li><strong>外部存储器部分</strong>：如果使用外部存储器（如外部 SRAM 或 SDRAM），则调用 SystemInit_ExtMemCtl() 函数进行配置。</li>
+<li><strong>向量表位置部分</strong>：根据宏定义的设置，将向量表位置设置为内部 SRAM 或内部 FLASH。</li>
+</ul>
+<h4 id="调用-main函数"><a href="#调用-main函数" class="headerlink" title="调用__main函数"></a>调用__main函数</h4><p>__main 函数是系统自带的库函数</p>
+<p>接下来就跳转到了 __scatterload 函数，从函数名可以看出这是一个分散加载函数，该函数主要实现的功能就是数据段的重定位和清除 bss 段，初始化栈空间。</p>
+<h4 id="调用main函数"><a href="#调用main函数" class="headerlink" title="调用main函数"></a>调用main函数</h4><p>scatterload 函数最后调用了 main_after_scatterload 函数，这个函数实现的功能就是跳转到了用户的 main 函数，进入到用户程序。__main_after_scatterload 函数的代码如下：</p>
+<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">__main_after_scatterload
+  _main_clock
+  _main_cpp_init
+  _main_init
+    0x08000138:  4800    .H   LDR   r0,[pc,#0] ; [0x800013c] &#x3D; 0x80004c1
+    0x0800013a:  4700    .G   BX    r0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>可以看出，代码最后跳转到了 r0 寄存器所指示的地址中去了，实际上这个地址就是用户的 main 函数地址。由此完成 STM32 的启动过程，接下来运行的是用户程序的代码。</p>
+<h2 id="第六次作业"><a href="#第六次作业" class="headerlink" title="第六次作业"></a>第六次作业</h2><h3 id="自学工作"><a href="#自学工作" class="headerlink" title="自学工作"></a>自学工作</h3><p><img src="/imgs/es/10.png" alt="image-20240523162907180"></p>
+<p><img src="/imgs/es/11.png" alt="image-20240523163035499"></p>
+<p><img src="/imgs/es/12.png" alt="image-20240523163434687"></p>
+<p><img src="/imgs/es/9.png" alt="image-20240523161543724"></p>
+<h3 id="以main-c函数为代码起点，通过向内层代码跳转（CTRL-鼠标左键），弄清楚整个代码的执行流程（截图分析执行流程）。"><a href="#以main-c函数为代码起点，通过向内层代码跳转（CTRL-鼠标左键），弄清楚整个代码的执行流程（截图分析执行流程）。" class="headerlink" title="以main.c函数为代码起点，通过向内层代码跳转（CTRL + 鼠标左键），弄清楚整个代码的执行流程（截图分析执行流程）。"></a>以main.c函数为代码起点，通过向内层代码跳转（CTRL + 鼠标左键），弄清楚整个代码的执行流程（截图分析执行流程）。</h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">int main(void)
+&#123;
+  System_Init();
+  
+  &#x2F;* Initialize LED1 mounted on board *&#x2F;
+  BSP_LED_Init(LED1);
+  
+  &#x2F;* Configure EXTI15_10 (connected to PC.13 pin) in interrupt mode *&#x2F;
+  EXTI15_10_IRQHandler_Config();
+  
+  while (1)
+  &#123;
+  &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>上述是<code>main.c</code>中的<code>main</code>函数，</p>
+<ol>
+<li><p>首先调用<code>System_Init()</code>函数进行系统初始化，跳转到对应界面得到的是</p>
+<p><img src="/imgs/es/13.png" alt="image-20240523170250652"></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void System_Init(void)
+&#123;
+  &#x2F;* Enable the CPU Cache *&#x2F;
+  CPU_CACHE_Enable(); &#x2F;&#x2F; 启用CPU缓存以提高系统性能
+
+  &#x2F;* STM32F7xx HAL library initialization *&#x2F;
+  HAL_Init(); &#x2F;&#x2F; 初始化STM32F7系列的HAL库，配置系统级的硬件抽象层
+
+  &#x2F;* Configure the system clock to 216 MHz *&#x2F;
+  SystemClock_Config(); &#x2F;&#x2F; 配置系统时钟为216 MHz，确保系统以正确的频率运行
+  
+  &#x2F;* Configure UART *&#x2F;
+  UART_Config(); &#x2F;&#x2F; 配置UART通信接口，初始化串口通信
+  
+  printf(&quot;\n\rSystem initialize success\n\r&quot;); &#x2F;&#x2F; 打印系统初始化成功的信息
+&#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>调用了四个函数初始化嵌入式系统，这里不具体展开系统初始化的函数</p>
+</li>
+<li><p>接下来初始化指定的LED，在这里我们初始化的是LED1</p>
+<p><img src="/imgs/es/14.png" alt="image-20240523171153487"></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void BSP_LED_Init(Led_TypeDef Led)
+&#123;
+  GPIO_InitTypeDef  gpio_init_structure; &#x2F;&#x2F; 定义一个GPIO初始化结构体
+  GPIO_TypeDef*     gpio_led; &#x2F;&#x2F; 定义一个指向GPIO端口的指针
+  &#x2F;&#x2F; 实际上这里只有一个LED被初始化
+  switch(Led)
+  &#123;
+    case LED1:
+      &#x2F;* 启用LED1的GPIO时钟 *&#x2F;
+      LED1_GPIO_CLK_ENABLE();
+      gpio_led &#x3D; LED1_GPIO_PORT; &#x2F;&#x2F; 指向LED1的GPIO端口
+      break;
+    case LED2:
+      &#x2F;* 启用LED2的GPIO时钟 *&#x2F;
+      LED2_GPIO_CLK_ENABLE();
+      gpio_led &#x3D; LED2_GPIO_PORT; &#x2F;&#x2F; 指向LED2的GPIO端口
+      break;
+    case LED3:
+      &#x2F;* 启用LED3的GPIO时钟 *&#x2F;
+      LED3_GPIO_CLK_ENABLE();
+      gpio_led &#x3D; LED3_GPIO_PORT; &#x2F;&#x2F; 指向LED3的GPIO端口
+      break;
+    case LED4:
+      &#x2F;* 启用LED4的GPIO时钟 *&#x2F;
+      LED4_GPIO_CLK_ENABLE();
+      gpio_led &#x3D; LED4_GPIO_PORT; &#x2F;&#x2F; 指向LED4的GPIO端口
+      break;
+    default:
+      break;
+  &#125;
+  &#x2F;* 配置GPIO_LED引脚 *&#x2F;
+  gpio_init_structure.Pin &#x3D; GPIO_PIN[Led]; &#x2F;&#x2F; 设置GPIO引脚编号
+  gpio_init_structure.Mode &#x3D; GPIO_MODE_OUTPUT_PP; &#x2F;&#x2F; 设置GPIO模式为推挽输出
+  gpio_init_structure.Pull &#x3D; GPIO_PULLUP; &#x2F;&#x2F; 设置GPIO上拉
+  gpio_init_structure.Speed &#x3D; GPIO_SPEED_HIGH; &#x2F;&#x2F; 设置GPIO速度为高
+
+  HAL_GPIO_Init(gpio_led, &amp;gpio_init_structure); &#x2F;&#x2F; 初始化GPIO
+
+  &#x2F;* 默认情况下，关闭LED *&#x2F;
+  HAL_GPIO_WritePin(gpio_led, GPIO_PIN[Led], GPIO_PIN_SET); &#x2F;&#x2F; 设置GPIO引脚为高电平，关闭LED
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>我们这里初始化了LED1，所以在函数中只执行case LED1，引脚编号也是设置的LED1</p>
+<p>继续跳转</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#define LED1_GPIO_CLK_ENABLE()           __HAL_RCC_GPIOA_CLK_ENABLE()<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#define __HAL_RCC_GPIOA_CLK_ENABLE()   do &#123; \
+                                      __IO uint32_t tmpreg &#x3D; 0x00; \
+                                        SET_BIT(RCC-&gt;AHB1ENR, RCC_AHB1ENR_GPIOAEN);\
+                                        &#x2F;* Delay after an RCC peripheral clock enabling *&#x2F; \
+                                        tmpreg &#x3D; READ_BIT(RCC-&gt;AHB1ENR, RCC_AHB1ENR_GPIOAEN);\
+                                        UNUSED(tmpreg); \
+                                      &#125; while(0)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>用于在嵌入式系统中启用 GPIOA 的时钟。该宏定义了一段代码块，用于设置与验证 RCC（复位与时钟控制）外设的 AHB1 外设时钟使能寄存器 (AHB1ENR) 中的 GPIOA 使能位 (GPIOAEN)。</p>
+</li>
+<li><p>配置连接到PC13引脚的外部中断</p>
+<p><img src="/imgs/es/15.png" alt="image-20240523171912121"></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;* 
+ * Configures EXTI lines 15 to 10 (connected to PC.13 pin) in interrupt mode 
+ *&#x2F;
+void EXTI15_10_IRQHandler_Config(void)
+&#123;
+  GPIO_InitTypeDef   GPIO_InitStructure;
+
+  &#x2F;* Enable GPIOC clock *&#x2F;
+  __HAL_RCC_GPIOC_CLK_ENABLE();										&#x2F;&#x2F; 使能GPIOC时钟
+	
+  &#x2F;* Configure PC.13 pin as input floating *&#x2F;
+  GPIO_InitStructure.Mode &#x3D; GPIO_MODE_IT_FALLING;			&#x2F;&#x2F; 设置PC13引脚为下降沿触发中断
+  GPIO_InitStructure.Pull &#x3D; GPIO_NOPULL;						&#x2F;&#x2F; 配置GPIO引脚无内部上拉或下拉
+  GPIO_InitStructure.Pin &#x3D; GPIO_PIN_13;							
+  HAL_GPIO_Init(GPIOC, &amp;GPIO_InitStructure);					&#x2F;&#x2F; 初始化PC13引脚配置
+
+  &#x2F;* Enable and set EXTI lines 15 to 10 Interrupt to the lowest priority *&#x2F;
+  HAL_NVIC_SetPriority(EXTI15_10_IRQn, 2, 0);					&#x2F;&#x2F; 设置EXTI15_10中断优先级为2
+  HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);								&#x2F;&#x2F; 使能EXTI15_10中断
+&#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>使能GPIOC外设时钟，以便使用PC.13引脚。</li>
+<li>配置PC.13引脚为下降沿触发的中断模式，无内部上拉或下拉。</li>
+<li>设置并使能EXTI15_10中断，优先级设置为2（相对较低的优先级）</li>
+</ul>
+</li>
+</ol>
+<h3 id="以源码和注释的形式，讲解代码的执行流程，重点是描述下面函数内代码的执行与配置原理（讲解关键语句即可）"><a href="#以源码和注释的形式，讲解代码的执行流程，重点是描述下面函数内代码的执行与配置原理（讲解关键语句即可）" class="headerlink" title="以源码和注释的形式，讲解代码的执行流程，重点是描述下面函数内代码的执行与配置原理（讲解关键语句即可）"></a>以源码和注释的形式，讲解代码的执行流程，重点是描述下面函数内代码的执行与配置原理（讲解关键语句即可）</h3><h4 id="System-Init-UART-Config"><a href="#System-Init-UART-Config" class="headerlink" title="System_Init()\UART_Config()"></a>System_Init()\UART_Config()</h4><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void UART_Config(void)
+&#123;
+  &#x2F;* 配置UART外设 *&#x2F;
+  &#x2F;* 将USART外设设置为异步模式（UART模式） *&#x2F;
+  &#x2F;* UART配置如下：
+      - 字长 &#x3D; 8位
+      - 停止位 &#x3D; 1个停止位
+      - 奇偶校验 &#x3D; 无校验
+      - 波特率 &#x3D; 115200波特
+      - 硬件流控制禁用（RTS和CTS信号） *&#x2F;
+  
+  &#x2F;&#x2F; 设置USART实例
+  UartHandle.Instance        &#x3D; USARTx;
+
+  &#x2F;&#x2F; 设置波特率为115200
+  UartHandle.Init.BaudRate   &#x3D; 115200;
+  &#x2F;&#x2F; 设置字长为8位
+  UartHandle.Init.WordLength &#x3D; UART_WORDLENGTH_8B;
+  &#x2F;&#x2F; 设置停止位为1个停止位
+  UartHandle.Init.StopBits   &#x3D; UART_STOPBITS_1;
+  &#x2F;&#x2F; 设置无奇偶校验
+  UartHandle.Init.Parity     &#x3D; UART_PARITY_NONE;
+  &#x2F;&#x2F; 禁用硬件流控制
+  UartHandle.Init.HwFlowCtl  &#x3D; UART_HWCONTROL_NONE;
+  &#x2F;&#x2F; 设置UART模式为发送和接收
+  UartHandle.Init.Mode       &#x3D; UART_MODE_TX_RX;
+
+  &#x2F;&#x2F; 初始化UART
+  HAL_UART_Init(&amp;UartHandle);
+&#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>具体配置包括波特率、字长、停止位、奇偶校验、硬件流控制和模式等参数，然后将参数实例传入初始化函数进行初始化</p>
+<h4 id="System-Init-UART-Config-HAL-UART-Init"><a href="#System-Init-UART-Config-HAL-UART-Init" class="headerlink" title="System_Init()\UART_Config()\HAL_UART_Init()"></a>System_Init()\UART_Config()\HAL_UART_Init()</h4><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">HAL_StatusTypeDef HAL_UART_Init(UART_HandleTypeDef *huart)
+&#123;
+  &#x2F;* 检查 UART 句柄是否分配 *&#x2F;
+  if(huart &#x3D;&#x3D; NULL)
+  &#123;
+    return HAL_ERROR;
+  &#125;
+  
+  if(huart-&gt;Init.HwFlowCtl !&#x3D; UART_HWCONTROL_NONE)
+  &#123;
+    &#x2F;* 检查硬件流控制参数 *&#x2F;
+    assert_param(IS_UART_HWFLOW_INSTANCE(huart-&gt;Instance));
+  &#125;
+  else
+  &#123;
+    &#x2F;* 检查 UART 实例参数 *&#x2F;
+    assert_param(IS_UART_INSTANCE(huart-&gt;Instance));
+  &#125;
+  
+  if(huart-&gt;State &#x3D;&#x3D; HAL_UART_STATE_RESET)
+  &#123;
+    &#x2F;* 分配锁资源并初始化 *&#x2F;
+    huart-&gt;Lock &#x3D; HAL_UNLOCKED;
+
+    &#x2F;* 初始化底层硬件：GPIO，时钟 *&#x2F;
+    HAL_UART_MspInit(huart);
+  &#125;
+
+  &#x2F;* 设置 UART 状态为忙 *&#x2F;
+  huart-&gt;State &#x3D; HAL_UART_STATE_BUSY;
+
+  &#x2F;* 禁用外设 *&#x2F;
+  __HAL_UART_DISABLE(huart);
+  
+  &#x2F;* 设置 UART 通信参数 *&#x2F;
+  if (UART_SetConfig(huart) &#x3D;&#x3D; HAL_ERROR)
+  &#123;
+    return HAL_ERROR;
+  &#125;
+
+  &#x2F;* 如果需要高级特性初始化，则配置 *&#x2F;
+  if (huart-&gt;AdvancedInit.AdvFeatureInit !&#x3D; UART_ADVFEATURE_NO_INIT)
+  &#123;
+    UART_AdvFeatureConfig(huart);
+  &#125;
+
+  &#x2F;* 在异步模式下，必须清除以下位：
+     - USART_CR2 寄存器中的 LINEN 和 CLKEN 位，
+     - USART_CR3 寄存器中的 SCEN、HDSEL 和 IREN 位 *&#x2F;
+  huart-&gt;Instance-&gt;CR2 &amp;&#x3D; ~(USART_CR2_LINEN | USART_CR2_CLKEN);
+  huart-&gt;Instance-&gt;CR3 &amp;&#x3D; ~(USART_CR3_SCEN | USART_CR3_HDSEL | USART_CR3_IREN);
+
+  &#x2F;* 启用外设 *&#x2F;
+  __HAL_UART_ENABLE(huart);
+
+  &#x2F;* 在将 huart-&gt;State 设置为就绪之前检查 TEACK 和&#x2F;或 REACK *&#x2F;
+  return (UART_CheckIdleState(huart));
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="BSP-LED-Init"><a href="#BSP-LED-Init" class="headerlink" title="BSP_LED_Init()"></a>BSP_LED_Init()</h4><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void BSP_LED_Init(Led_TypeDef Led)
+&#123;
+  GPIO_InitTypeDef  gpio_init_structure;
+  GPIO_TypeDef*     gpio_led;
+	
+  &#x2F;&#x2F; 根据传入的LED类型初始化相应的GPIO端口
+	switch(Led)
+	&#123;
+		case LED1:
+			&#x2F;* 使能LED1的GPIO时钟 *&#x2F;
+      LED1_GPIO_CLK_ENABLE();
+			gpio_led &#x3D; LED1_GPIO_PORT;
+			break;
+		case LED2:
+			&#x2F;* 使能LED2的GPIO时钟 *&#x2F;
+      LED2_GPIO_CLK_ENABLE();
+			gpio_led &#x3D; LED2_GPIO_PORT;
+			break;
+		case LED3:
+			&#x2F;* 使能LED3的GPIO时钟 *&#x2F;
+      LED3_GPIO_CLK_ENABLE();
+			gpio_led &#x3D; LED3_GPIO_PORT;
+			break;
+		case LED4:
+			&#x2F;* 使能LED4的GPIO时钟 *&#x2F;
+      LED4_GPIO_CLK_ENABLE();
+			gpio_led &#x3D; LED4_GPIO_PORT;
+			break;
+		default:
+			break;
+	&#125;
+
+  &#x2F;&#x2F; 配置GPIO端口
+	gpio_init_structure.Pin &#x3D; GPIO_PIN[Led];           &#x2F;&#x2F; 设置引脚号
+	gpio_init_structure.Mode &#x3D; GPIO_MODE_OUTPUT_PP;   &#x2F;&#x2F; 设置引脚为推挽输出模式
+	gpio_init_structure.Pull &#x3D; GPIO_PULLUP;           &#x2F;&#x2F; 设置引脚上拉
+	gpio_init_structure.Speed &#x3D; GPIO_SPEED_HIGH;      &#x2F;&#x2F; 设置引脚速度为高
+
+  &#x2F;&#x2F; 初始化GPIO
+	HAL_GPIO_Init(gpio_led, &amp;gpio_init_structure);
+	
+	&#x2F;&#x2F; 默认关闭LED
+	HAL_GPIO_WritePin(gpio_led, GPIO_PIN[Led], GPIO_PIN_SET);
+&#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="BSP-LED-Init-HAL-GPIO-Init"><a href="#BSP-LED-Init-HAL-GPIO-Init" class="headerlink" title="BSP_LED_Init()\HAL_GPIO_Init()"></a>BSP_LED_Init()\HAL_GPIO_Init()</h4><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;*
+ * 函数名：HAL_GPIO_Init
+ * 参数：
+ *   - GPIOx：GPIO端口指针，表示要初始化的GPIO端口
+ *   - GPIO_Init：GPIO初始化结构体指针，包含了GPIO初始化的各项参数
+ * 返回值：无
+ * 功能：初始化指定GPIO端口的各项配置
+ *&#x2F;
+void HAL_GPIO_Init(GPIO_TypeDef  *GPIOx, GPIO_InitTypeDef *GPIO_Init)
+&#123;
+  uint32_t position &#x3D; 0x00;
+  uint32_t ioposition &#x3D; 0x00;
+  uint32_t iocurrent &#x3D; 0x00;
+  uint32_t temp &#x3D; 0x00;
+
+  &#x2F;* 检查参数的有效性 *&#x2F;
+  assert_param(IS_GPIO_ALL_INSTANCE(GPIOx));
+  assert_param(IS_GPIO_PIN(GPIO_Init-&gt;Pin));
+  assert_param(IS_GPIO_MODE(GPIO_Init-&gt;Mode));
+  assert_param(IS_GPIO_PULL(GPIO_Init-&gt;Pull));
+
+  &#x2F;* 配置端口引脚 *&#x2F;
+  for(position &#x3D; 0; position &lt; GPIO_NUMBER; position++)
+  &#123;
+    &#x2F;* 获取引脚位置 *&#x2F;
+    ioposition &#x3D; ((uint32_t)0x01) &lt;&lt; position;
+    &#x2F;* 获取当前引脚位置的值 *&#x2F;
+    iocurrent &#x3D; (uint32_t)(GPIO_Init-&gt;Pin) &amp; ioposition;
+
+    if(iocurrent &#x3D;&#x3D; ioposition)
+    &#123;
+      &#x2F;*--------------------- 配置GPIO模式 ------------------------*&#x2F;
+      &#x2F;* 如果选择了复用功能模式 *&#x2F;
+      if((GPIO_Init-&gt;Mode &#x3D;&#x3D; GPIO_MODE_AF_PP) || (GPIO_Init-&gt;Mode &#x3D;&#x3D; GPIO_MODE_AF_OD))
+      &#123;
+        &#x2F;* 检查复用功能参数的有效性 *&#x2F;
+        assert_param(IS_GPIO_AF(GPIO_Init-&gt;Alternate));
+        
+        &#x2F;* 配置当前IO的复用功能 *&#x2F;
+        temp &#x3D; GPIOx-&gt;AFR[position &gt;&gt; 3];
+        temp &amp;&#x3D; ~((uint32_t)0xF &lt;&lt; ((uint32_t)(position &amp; (uint32_t)0x07) * 4)) ;
+        temp |&#x3D; ((uint32_t)(GPIO_Init-&gt;Alternate) &lt;&lt; (((uint32_t)position &amp; (uint32_t)0x07) * 4));
+        GPIOx-&gt;AFR[position &gt;&gt; 3] &#x3D; temp;
+      &#125;
+
+      &#x2F;* 配置IO方向模式（输入、输出、复用或模拟） *&#x2F;
+      temp &#x3D; GPIOx-&gt;MODER;
+      temp &amp;&#x3D; ~(GPIO_MODER_MODER0 &lt;&lt; (position * 2));
+      temp |&#x3D; ((GPIO_Init-&gt;Mode &amp; GPIO_MODE) &lt;&lt; (position * 2));
+      GPIOx-&gt;MODER &#x3D; temp;
+
+      &#x2F;* 如果选择了输出或复用功能模式 *&#x2F;
+      if((GPIO_Init-&gt;Mode &#x3D;&#x3D; GPIO_MODE_OUTPUT_PP) || (GPIO_Init-&gt;Mode &#x3D;&#x3D; GPIO_MODE_AF_PP) ||
+         (GPIO_Init-&gt;Mode &#x3D;&#x3D; GPIO_MODE_OUTPUT_OD) || (GPIO_Init-&gt;Mode &#x3D;&#x3D; GPIO_MODE_AF_OD))
+      &#123;
+        &#x2F;* 检查速度参数的有效性 *&#x2F;
+        assert_param(IS_GPIO_SPEED(GPIO_Init-&gt;Speed));
+        &#x2F;* 配置IO速度 *&#x2F;
+        temp &#x3D; GPIOx-&gt;OSPEEDR; 
+        temp &amp;&#x3D; ~(GPIO_OSPEEDER_OSPEEDR0 &lt;&lt; (position * 2));
+        temp |&#x3D; (GPIO_Init-&gt;Speed &lt;&lt; (position * 2));
+        GPIOx-&gt;OSPEEDR &#x3D; temp;
+
+        &#x2F;* 配置IO输出类型 *&#x2F;
+        temp &#x3D; GPIOx-&gt;OTYPER;
+        temp &amp;&#x3D; ~(GPIO_OTYPER_OT_0 &lt;&lt; position) ;
+        temp |&#x3D; (((GPIO_Init-&gt;Mode &amp; GPIO_OUTPUT_TYPE) &gt;&gt; 4) &lt;&lt; position);
+        GPIOx-&gt;OTYPER &#x3D; temp;
+      &#125;
+
+      &#x2F;* 激活当前IO的上拉或下拉电阻 *&#x2F;
+      temp &#x3D; GPIOx-&gt;PUPDR;
+      temp &amp;&#x3D; ~(GPIO_PUPDR_PUPDR0 &lt;&lt; (position * 2));
+      temp |&#x3D; ((GPIO_Init-&gt;Pull) &lt;&lt; (position * 2));
+      GPIOx-&gt;PUPDR &#x3D; temp;
+
+      &#x2F;*--------------------- 配置外部中断模式 ------------------------*&#x2F;
+      &#x2F;* 配置当前IO的外部中断或事件 *&#x2F;
+      if((GPIO_Init-&gt;Mode &amp; EXTI_MODE) &#x3D;&#x3D; EXTI_MODE)
+      &#123;
+        &#x2F;* 使能SYSCFG时钟 *&#x2F;
+        __HAL_RCC_SYSCFG_CLK_ENABLE();
+
+        temp &#x3D; SYSCFG-&gt;EXTICR[position &gt;&gt; 2];
+        temp &amp;&#x3D; ~(((uint32_t)0x0F) &lt;&lt; (4 * (position &amp; 0x03)));
+        temp |&#x3D; ((uint32_t)(GPIO_GET_INDEX(GPIOx)) &lt;&lt; (4 * (position &amp; 0x03)));
+        SYSCFG-&gt;EXTICR[position &gt;&gt; 2] &#x3D; temp;
+
+        &#x2F;* 清除外部中断线配置 *&#x2F;
+        temp &#x3D; EXTI-&gt;IMR;
+        temp &amp;&#x3D; ~((uint32_t)iocurrent);
+        if((GPIO_Init-&gt;Mode &amp; GPIO_MODE_IT) &#x3D;&#x3D; GPIO_MODE_IT)
+        &#123;
+          temp |&#x3D; iocurrent;
+        &#125;
+        EXTI-&gt;IMR &#x3D; temp;
+
+        temp &#x3D; EXTI-&gt;EMR;
+        temp &amp;&#x3D; ~((uint32_t)iocurrent);
+        if((GPIO_Init-&gt;Mode &amp; GPIO_MODE_EVT) &#x3D;&#x3D; GPIO_MODE_EVT)
+        &#123;
+          temp |&#x3D; iocurrent;
+        &#125;
+        EXTI-&gt;EMR &#x3D; temp;
+
+        &#x2F;* 清除上升沿下降沿触发配置 *&#x2F;
+        temp &#x3D; EXTI-&gt;RTSR;
+        temp &amp;&#x3D; ~((uint32_t)iocurrent);
+        if((GPIO_Init-&gt;Mode &amp; RISING_EDGE) &#x3D;&#x3D; RISING_EDGE)
+        &#123;
+          temp |&#x3D; iocurrent;
+        &#125;
+        EXTI-&gt;RTSR &#x3D; temp;
+
+        temp &#x3D; EXTI-&gt;FTSR;
+        temp &amp;&#x3D; ~((uint32_t)iocurrent);
+        if((GPIO_Init-&gt;Mode &amp; FALLING_EDGE) &#x3D;&#x3D; FALLING_EDGE)
+        &#123;
+          temp |&#x3D; iocurrent;
+        &#125;
+        EXTI-&gt;FTSR &#x3D; temp;
+      &#125;
+    &#125;
+  &#125;
+&#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="BSP-LED-Init-HAL-GPIO-WritePin"><a href="#BSP-LED-Init-HAL-GPIO-WritePin" class="headerlink" title="BSP_LED_Init()\HAL_GPIO_WritePin()"></a>BSP_LED_Init()\HAL_GPIO_WritePin()</h4><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void HAL_GPIO_WritePin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState)
+&#123;
+  &#x2F;* 检查参数是否合法 *&#x2F;
+  assert_param(IS_GPIO_PIN(GPIO_Pin));       &#x2F;&#x2F; 确认GPIO_Pin是有效的GPIO引脚
+  assert_param(IS_GPIO_PIN_ACTION(PinState)); &#x2F;&#x2F; 确认PinState是有效的引脚状态（高电平或低电平）
+
+  if(PinState !&#x3D; GPIO_PIN_RESET) &#x2F;&#x2F; 如果PinState不是低电平（即设置为高电平）
+  &#123;
+    GPIOx-&gt;BSRR &#x3D; GPIO_Pin; &#x2F;&#x2F; 设置对应的GPIO引脚为高电平
+  &#125;
+  else &#x2F;&#x2F; 如果PinState是低电平
+  &#123;
+    GPIOx-&gt;BSRR &#x3D; (uint32_t)GPIO_Pin &lt;&lt; 16; &#x2F;&#x2F; 设置对应的GPIO引脚为低电平
+  &#125;
+&#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="EXTI15-10-IRQHandler-Config"><a href="#EXTI15-10-IRQHandler-Config" class="headerlink" title="EXTI15_10_IRQHandler_Config()"></a>EXTI15_10_IRQHandler_Config()</h4><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void EXTI15_10_IRQHandler_Config(void)
+&#123;
+  GPIO_InitTypeDef   GPIO_InitStructure;
+
+  &#x2F;* 启用GPIOC时钟 *&#x2F;
+  __HAL_RCC_GPIOC_CLK_ENABLE();
+	
+  &#x2F;* 配置PC13引脚为输入浮空模式 *&#x2F;
+  GPIO_InitStructure.Mode &#x3D; GPIO_MODE_IT_FALLING;        &#x2F;&#x2F; 中断触发方式：下降沿触发
+  GPIO_InitStructure.Pull &#x3D; GPIO_NOPULL;                 &#x2F;&#x2F; GPIO内部无上拉或下拉
+  GPIO_InitStructure.Pin &#x3D; GPIO_PIN_13;                  
+  HAL_GPIO_Init(GPIOC, &amp;GPIO_InitStructure);             &#x2F;&#x2F; 初始化PC13引脚
+
+  &#x2F;* 启用并设置EXTI15到10线中断，优先级最低 *&#x2F;
+  HAL_NVIC_SetPriority(EXTI15_10_IRQn, 2, 0);            &#x2F;&#x2F; 设置中断优先级
+  HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);                    &#x2F;&#x2F; 开启中断
+&#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="EXTI15-10-IRQHandler-Config-HAL-GPIO-Init"><a href="#EXTI15-10-IRQHandler-Config-HAL-GPIO-Init" class="headerlink" title="EXTI15_10_IRQHandler_Config()\HAL_GPIO_Init()"></a>EXTI15_10_IRQHandler_Config()\HAL_GPIO_Init()</h4><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;*
+ * 函数名：HAL_GPIO_Init
+ * 参数：
+ *   - GPIOx：GPIO端口指针，表示要初始化的GPIO端口
+ *   - GPIO_Init：GPIO初始化结构体指针，包含了GPIO初始化的各项参数
+ * 返回值：无
+ * 功能：初始化指定GPIO端口的各项配置
+ *&#x2F;
+void HAL_GPIO_Init(GPIO_TypeDef  *GPIOx, GPIO_InitTypeDef *GPIO_Init)
+&#123;
+  uint32_t position &#x3D; 0x00;
+  uint32_t ioposition &#x3D; 0x00;
+  uint32_t iocurrent &#x3D; 0x00;
+  uint32_t temp &#x3D; 0x00;
+
+  &#x2F;* 检查参数的有效性 *&#x2F;
+  assert_param(IS_GPIO_ALL_INSTANCE(GPIOx));
+  assert_param(IS_GPIO_PIN(GPIO_Init-&gt;Pin));
+  assert_param(IS_GPIO_MODE(GPIO_Init-&gt;Mode));
+  assert_param(IS_GPIO_PULL(GPIO_Init-&gt;Pull));
+
+  &#x2F;* 配置端口引脚 *&#x2F;
+  for(position &#x3D; 0; position &lt; GPIO_NUMBER; position++)
+  &#123;
+    &#x2F;* 获取引脚位置 *&#x2F;
+    ioposition &#x3D; ((uint32_t)0x01) &lt;&lt; position;
+    &#x2F;* 获取当前引脚位置的值 *&#x2F;
+    iocurrent &#x3D; (uint32_t)(GPIO_Init-&gt;Pin) &amp; ioposition;
+
+    if(iocurrent &#x3D;&#x3D; ioposition)
+    &#123;
+      &#x2F;*--------------------- 配置GPIO模式 ------------------------*&#x2F;
+      &#x2F;* 如果选择了复用功能模式 *&#x2F;
+      if((GPIO_Init-&gt;Mode &#x3D;&#x3D; GPIO_MODE_AF_PP) || (GPIO_Init-&gt;Mode &#x3D;&#x3D; GPIO_MODE_AF_OD))
+      &#123;
+        &#x2F;* 检查复用功能参数的有效性 *&#x2F;
+        assert_param(IS_GPIO_AF(GPIO_Init-&gt;Alternate));
+        
+        &#x2F;* 配置当前IO的复用功能 *&#x2F;
+        temp &#x3D; GPIOx-&gt;AFR[position &gt;&gt; 3];
+        temp &amp;&#x3D; ~((uint32_t)0xF &lt;&lt; ((uint32_t)(position &amp; (uint32_t)0x07) * 4)) ;
+        temp |&#x3D; ((uint32_t)(GPIO_Init-&gt;Alternate) &lt;&lt; (((uint32_t)position &amp; (uint32_t)0x07) * 4));
+        GPIOx-&gt;AFR[position &gt;&gt; 3] &#x3D; temp;
+      &#125;
+
+      &#x2F;* 配置IO方向模式（输入、输出、复用或模拟） *&#x2F;
+      temp &#x3D; GPIOx-&gt;MODER;
+      temp &amp;&#x3D; ~(GPIO_MODER_MODER0 &lt;&lt; (position * 2));
+      temp |&#x3D; ((GPIO_Init-&gt;Mode &amp; GPIO_MODE) &lt;&lt; (position * 2));
+      GPIOx-&gt;MODER &#x3D; temp;
+
+      &#x2F;* 如果选择了输出或复用功能模式 *&#x2F;
+      if((GPIO_Init-&gt;Mode &#x3D;&#x3D; GPIO_MODE_OUTPUT_PP) || (GPIO_Init-&gt;Mode &#x3D;&#x3D; GPIO_MODE_AF_PP) ||
+         (GPIO_Init-&gt;Mode &#x3D;&#x3D; GPIO_MODE_OUTPUT_OD) || (GPIO_Init-&gt;Mode &#x3D;&#x3D; GPIO_MODE_AF_OD))
+      &#123;
+        &#x2F;* 检查速度参数的有效性 *&#x2F;
+        assert_param(IS_GPIO_SPEED(GPIO_Init-&gt;Speed));
+        &#x2F;* 配置IO速度 *&#x2F;
+        temp &#x3D; GPIOx-&gt;OSPEEDR; 
+        temp &amp;&#x3D; ~(GPIO_OSPEEDER_OSPEEDR0 &lt;&lt; (position * 2));
+        temp |&#x3D; (GPIO_Init-&gt;Speed &lt;&lt; (position * 2));
+        GPIOx-&gt;OSPEEDR &#x3D; temp;
+
+        &#x2F;* 配置IO输出类型 *&#x2F;
+        temp &#x3D; GPIOx-&gt;OTYPER;
+        temp &amp;&#x3D; ~(GPIO_OTYPER_OT_0 &lt;&lt; position) ;
+        temp |&#x3D; (((GPIO_Init-&gt;Mode &amp; GPIO_OUTPUT_TYPE) &gt;&gt; 4) &lt;&lt; position);
+        GPIOx-&gt;OTYPER &#x3D; temp;
+      &#125;
+
+      &#x2F;* 激活当前IO的上拉或下拉电阻 *&#x2F;
+      temp &#x3D; GPIOx-&gt;PUPDR;
+      temp &amp;&#x3D; ~(GPIO_PUPDR_PUPDR0 &lt;&lt; (position * 2));
+      temp |&#x3D; ((GPIO_Init-&gt;Pull) &lt;&lt; (position * 2));
+      GPIOx-&gt;PUPDR &#x3D; temp;
+
+      &#x2F;*--------------------- 配置外部中断模式 ------------------------*&#x2F;
+      &#x2F;* 配置当前IO的外部中断或事件 *&#x2F;
+      if((GPIO_Init-&gt;Mode &amp; EXTI_MODE) &#x3D;&#x3D; EXTI_MODE)
+      &#123;
+        &#x2F;* 使能SYSCFG时钟 *&#x2F;
+        __HAL_RCC_SYSCFG_CLK_ENABLE();
+
+        temp &#x3D; SYSCFG-&gt;EXTICR[position &gt;&gt; 2];
+        temp &amp;&#x3D; ~(((uint32_t)0x0F) &lt;&lt; (4 * (position &amp; 0x03)));
+        temp |&#x3D; ((uint32_t)(GPIO_GET_INDEX(GPIOx)) &lt;&lt; (4 * (position &amp; 0x03)));
+        SYSCFG-&gt;EXTICR[position &gt;&gt; 2] &#x3D; temp;
+
+        &#x2F;* 清除外部中断线配置 *&#x2F;
+        temp &#x3D; EXTI-&gt;IMR;
+        temp &amp;&#x3D; ~((uint32_t)iocurrent);
+        if((GPIO_Init-&gt;Mode &amp; GPIO_MODE_IT) &#x3D;&#x3D; GPIO_MODE_IT)
+        &#123;
+          temp |&#x3D; iocurrent;
+        &#125;
+        EXTI-&gt;IMR &#x3D; temp;
+
+        temp &#x3D; EXTI-&gt;EMR;
+        temp &amp;&#x3D; ~((uint32_t)iocurrent);
+        if((GPIO_Init-&gt;Mode &amp; GPIO_MODE_EVT) &#x3D;&#x3D; GPIO_MODE_EVT)
+        &#123;
+          temp |&#x3D; iocurrent;
+        &#125;
+        EXTI-&gt;EMR &#x3D; temp;
+
+        &#x2F;* 清除上升沿下降沿触发配置 *&#x2F;
+        temp &#x3D; EXTI-&gt;RTSR;
+        temp &amp;&#x3D; ~((uint32_t)iocurrent);
+        if((GPIO_Init-&gt;Mode &amp; RISING_EDGE) &#x3D;&#x3D; RISING_EDGE)
+        &#123;
+          temp |&#x3D; iocurrent;
+        &#125;
+        EXTI-&gt;RTSR &#x3D; temp;
+
+        temp &#x3D; EXTI-&gt;FTSR;
+        temp &amp;&#x3D; ~((uint32_t)iocurrent);
+        if((GPIO_Init-&gt;Mode &amp; FALLING_EDGE) &#x3D;&#x3D; FALLING_EDGE)
+        &#123;
+          temp |&#x3D; iocurrent;
+        &#125;
+        EXTI-&gt;FTSR &#x3D; temp;
+      &#125;
+    &#125;
+  &#125;
+&#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="HAL-GPIO-EXTI-Callback"><a href="#HAL-GPIO-EXTI-Callback" class="headerlink" title="HAL_GPIO_EXTI_Callback()"></a>HAL_GPIO_EXTI_Callback()</h4><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)            &#x2F;&#x2F; 定义HAL_GPIO_EXTI_Callback回调函数，当GPIO引脚发生外部中断时被调用
+&#123;
+    if (GPIO_Pin &#x3D;&#x3D; GPIO_PIN_13)                         &#x2F;&#x2F; 检查触发中断的GPIO引脚是否为13号引脚
+    &#123;
+        &#x2F;* Toggle LED1 *&#x2F;
+        BSP_LED_Toggle(LED1);                            &#x2F;&#x2F; 切换LED1的状态（如果是亮的则熄灭，反之亦然）
+
+        printf(&quot;\n\rLED1 switched\n\r&quot;);                 &#x2F;&#x2F; 向串口打印消息，表示LED1的状态已切换
+    &#125;
+&#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="HAL-GPIO-EXTI-Callback-BSP-LED-Toggle"><a href="#HAL-GPIO-EXTI-Callback-BSP-LED-Toggle" class="headerlink" title="HAL_GPIO_EXTI_Callback()\BSP_LED_Toggle()"></a>HAL_GPIO_EXTI_Callback()\BSP_LED_Toggle()</h4><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void BSP_LED_Toggle(Led_TypeDef Led)
+&#123;
+	GPIO_TypeDef* gpio_led;  &#x2F;&#x2F; 定义一个指向GPIO端口的指针变量
+
+	&#x2F;&#x2F; 实际上这里只有一个LED被处理
+	switch(Led)
+	&#123;
+		case LED1:  &#x2F;&#x2F; 如果传入的参数是LED1
+			gpio_led &#x3D; LED1_GPIO_PORT;  &#x2F;&#x2F; 将指针指向LED1的GPIO端口
+			break;
+		case LED2:  &#x2F;&#x2F; 如果传入的参数是LED2
+			gpio_led &#x3D; LED2_GPIO_PORT;  &#x2F;&#x2F; 将指针指向LED2的GPIO端口
+			break;
+		case LED3:  &#x2F;&#x2F; 如果传入的参数是LED3
+			gpio_led &#x3D; LED3_GPIO_PORT;  &#x2F;&#x2F; 将指针指向LED3的GPIO端口
+			break;
+		case LED4:  &#x2F;&#x2F; 如果传入的参数是LED4
+			gpio_led &#x3D; LED4_GPIO_PORT;  &#x2F;&#x2F; 将指针指向LED4的GPIO端口
+			break;
+		default:  &#x2F;&#x2F; 如果传入的参数不是以上几种情况
+			break;  &#x2F;&#x2F; 什么也不做
+	&#125;
+	HAL_GPIO_TogglePin(gpio_led, GPIO_PIN[Led]);  &#x2F;&#x2F; 切换对应GPIO端口的引脚状态（高电平变低电平，低电平变高电平）
+&#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>切换指定LED的状态</p>
+<h3 id="解释原理，上述代码中"><a href="#解释原理，上述代码中" class="headerlink" title="解释原理，上述代码中"></a>解释原理，上述代码中</h3><h4 id="在哪个地方设置的GPIO口的中断和触发模式"><a href="#在哪个地方设置的GPIO口的中断和触发模式" class="headerlink" title="在哪个地方设置的GPIO口的中断和触发模式"></a>在哪个地方设置的GPIO口的中断和触发模式</h4><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">void EXTI15_10_IRQHandler_Config(void)
+&#123;
+  GPIO_InitTypeDef   GPIO_InitStructure;
+
+  &#x2F;* Enable GPIOC clock *&#x2F;
+  __HAL_RCC_GPIOC_CLK_ENABLE();										&#x2F;&#x2F; 使能GPIOC时钟
+	
+  &#x2F;* Configure PC.13 pin as input floating *&#x2F;
+  GPIO_InitStructure.Mode &#x3D; GPIO_MODE_IT_FALLING;			&#x2F;&#x2F; 设置PC13引脚为下降沿触发中断
+  GPIO_InitStructure.Pull &#x3D; GPIO_NOPULL;						&#x2F;&#x2F; 配置GPIO引脚无内部上拉或下拉
+  GPIO_InitStructure.Pin &#x3D; GPIO_PIN_13;							
+  HAL_GPIO_Init(GPIOC, &amp;GPIO_InitStructure);					&#x2F;&#x2F; 初始化PC13引脚配置
+
+  &#x2F;* Enable and set EXTI lines 15 to 10 Interrupt to the lowest priority *&#x2F;
+  HAL_NVIC_SetPriority(EXTI15_10_IRQn, 2, 0);					&#x2F;&#x2F; 设置EXTI15_10中断优先级为2
+  HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);								&#x2F;&#x2F; 使能EXTI15_10中断
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>使能GPIOC外设时钟，以便使用PC.13引脚。</li>
+<li>配置PC.13引脚为下降沿触发的中断模式，无内部上拉或下拉。</li>
+<li>设置并使能EXTI15_10中断，优先级设置为2（相对较低的优先级）</li>
+</ul>
+<h4 id="如何绑定到中断函数HAL-GPIO-EXTI-Callback"><a href="#如何绑定到中断函数HAL-GPIO-EXTI-Callback" class="headerlink" title="如何绑定到中断函数HAL_GPIO_EXTI_Callback"></a>如何绑定到中断函数HAL_GPIO_EXTI_Callback</h4><p>通过中断处理程序（IRQ Handler）和相应的中断处理函数（HAL_GPIO_EXTI_IRQHandler）间接绑定的</p>
+<ol>
+<li>配置GPIO引脚为中断模式：这包括设置GPIO引脚的模式为中断模式（上升沿、下降沿或双边沿触发），并初始化GPIO引脚。</li>
+<li>配置中断优先级和使能中断：通过设置NVIC的中断优先级并使能中断。</li>
+<li>实现中断处理程序（IRQ Handler）：在IRQ Handler中调用 HAL_GPIO_EXTI_IRQHandler 函数。</li>
+<li>实现中断回调函数 HAL_GPIO_EXTI_Callback：在回调函数中处理具体的中断事件。</li>
+</ol>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">J&Ocean</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://jiang-wu-19.github.io/2024/06/17/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E4%BD%9C%E4%B8%9A/">https://jiang-wu-19.github.io/2024/06/17/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E4%BD%9C%E4%B8%9A/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">J&Ocean</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F/">
+                                    <span class="chip bg-color">嵌入式系统</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">请我喝杯奶茶吧~</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'Nv6Wx6PAYH30bfcx7u0eDWHy-gzGzoHsz',
+        appKey: 'IhPcpC3fDP8Ro7eaPakG2vSt',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2024/06/17/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E4%BD%9C%E4%B8%9A/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="嵌入式系统作业">
+                        
+                        <span class="card-title">嵌入式系统作业</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            嵌入式系统课后作业
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-06-17
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%80%9D%E8%80%83%E9%A2%98/" class="post-category">
+                                    思考题
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F/">
+                        <span class="chip bg-color">嵌入式系统</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/06/12/%E7%95%85%E8%AF%BE%E5%B9%B3%E5%8F%B0PDF%E4%B8%8B%E8%BD%BD/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="畅课平台PDF下载">
+                        
+                        <span class="card-title">畅课平台PDF下载</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            只提供阅读按钮的PDF文件下载
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-06-12
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB%E7%9A%84%E4%B8%9C%E8%A5%BF/" class="post-category">
+                                    杂七杂八的东西
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+                        <span class="chip bg-color">计算机网络</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: J&amp;Ocean BLOG<br />'
+            + '文章作者: J&amp;Ocean<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2023-2024</span>
+            
+            <span id="year">2023</span>
+            <a href="/about" target="_blank">J&Ocean</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">298k</span>&nbsp;字
+            
+            
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2023";
+                    var startMonth = "7";
+                    var startDate = "2";
+                    var startHour = "12";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+    <a href="https://github.com/JIANG-Wu-19" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:wujiang0319@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=870027163" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 870027163" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+    <a href="https://www.zhihu.com/people/bei-wei-xiao-wu-32" class="tooltipped" target="_blank" data-tooltip="关注我的知乎: https://www.zhihu.com/people/bei-wei-xiao-wu-32" data-position="top" data-delay="50">
+        <i class="fab fa-zhihu1">知</i>
+    </a>
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
